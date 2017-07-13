@@ -75,36 +75,56 @@ class CSSPropertyAPI10 : public CSSPropertyAPI {
 const CSSPropertyAPI& GetPropertyAPI(int id) {
   static constexpr CSSPropertyAPI default_api;
   switch (id) {
+  case 20:
+  static constexpr CSSPropertyAPI api_20;
+  return api_20;
+  case 19:
+  return default_api;  // default implementation
+  case 18:
+  static constexpr CSSPropertyAPI api_18;
+  return api_18;
+  case 17:
+  return default_api;  // default implementation
+  case 16:
+  static constexpr CSSPropertyAPI api_16;
+  return api_16;
+  case 15:
+  return default_api;  // default implementation
+  case 14:
+  static constexpr CSSPropertyAPI api_14;
+  return api_14;
+  case 13:
+  return default_api;  // default implementation
+  case 12:
+  static constexpr CSSPropertyAPI api_12;
+  return api_12;
+  case 11:
+  return default_api;  // default implementation
   case 10:
-    static constexpr CSSPropertyAPI api_10;
-    return api_10;
+  static constexpr CSSPropertyAPI api_10;
+  return api_10;
   case 9:
-    static constexpr CSSPropertyAPI api_9;
-    return api_9;
+  return default_api;  // default implementation
   case 8:
-    static constexpr CSSPropertyAPI api_8;
-    return api_8;
+  static constexpr CSSPropertyAPI api_8;
+  return api_8;
   case 7:
-    static constexpr CSSPropertyAPI api_7;
-    return api_7;
+  return default_api;  // default implementation
   case 6:
-    static constexpr CSSPropertyAPI api_6;
-    return api_6;
+  static constexpr CSSPropertyAPI api_6;
+  return api_6;
   case 5:
-    static constexpr CSSPropertyAPI api_5;
-    return api_5;
+  return default_api;  // default implementation
   case 4:
-    static constexpr CSSPropertyAPI api_4;
-    return api_4;
+  static constexpr CSSPropertyAPI api_4;
+  return api_4;
   case 3:
-    static constexpr CSSPropertyAPI api_3;
-    return api_3;
+  return default_api;  // default implementation
   case 2:
-    static constexpr CSSPropertyAPI api_2;
-    return api_2;
+  static constexpr CSSPropertyAPI api_2;
+  return api_2;
   case 1:
-    static constexpr CSSPropertyAPI api_1;
-    return api_1;
+  return default_api;  // default implementation
   default:
     return default_api;
   }

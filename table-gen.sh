@@ -17,7 +17,9 @@ class CSSPropertyAPI {
   virtual void parse() const {
     increment_me += 1;
   }
-};"
+};
+static constexpr CSSPropertyAPI api_0;
+"
 
 for ((a=1; a <= NUM_CLASSES; a++))
 do
@@ -34,9 +36,15 @@ done
 echo "
 constexpr const CSSPropertyAPI* const property_apis[] = {"
 
-for ((a=NUM_CLASSES; a > 0; a--))
+for ((a=NUM_CLASSES*2; a > 0; a--))
 do
-  echo "  &api_$a,"
+  let "remainder = $a % 2"
+  let "id = $a / 2"
+  if [[ $remainder == 0 ]]; then
+    echo "  &api_$id,"
+  else
+    echo "  &api_0, // default implementation"
+  fi
 done
 
 echo "};
