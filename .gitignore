@@ -1,0 +1,8 @@
+/out/*
+/generated/*
+/disassembly/*
+
+!/out/*-10-classes-test
+!/generated/*-10-classes-test.cpp
+!/disassembly/*-10-classes-test.s
+
