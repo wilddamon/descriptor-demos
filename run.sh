@@ -3,7 +3,7 @@
 OLEVEL=2
 NUM_CLASSES=100
 NUM_ITERATIONS=1000000000
-REPEATS=10
+REPEATS=50
 
 GENFOLDER="generated"
 SFOLDER="disassembly"
@@ -44,6 +44,11 @@ while test $# -gt 0; do
       shift
   esac
 done
+
+echo "o $OLEVEL"
+echo "num_classes $NUM_CLASSES"
+echo "num_it $NUM_ITERATIONS"
+echo "num_re $REPEATS"
 
 function run_impl() {
   name=$1

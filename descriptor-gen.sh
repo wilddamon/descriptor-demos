@@ -2,7 +2,7 @@
 
 NUM_CLASSES=$1
 NUM_ITERATIONS=$2
-REPEATS=10
+REPEATS=$3
 
 echo "#include <cstdio>
 #include <iostream>
