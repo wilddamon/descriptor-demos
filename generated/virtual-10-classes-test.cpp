@@ -76,56 +76,56 @@ class CSSPropertyAPI10 : public CSSPropertyAPI {
 const CSSPropertyAPI& GetPropertyAPI(int id) {
   static constexpr CSSPropertyAPI default_api;
   switch (id) {
-  case 20:
-  static constexpr CSSPropertyAPI api_20;
-  return api_20;
-  case 19:
-  return default_api;  // default implementation
-  case 18:
-  static constexpr CSSPropertyAPI api_18;
-  return api_18;
-  case 17:
-  return default_api;  // default implementation
-  case 16:
-  static constexpr CSSPropertyAPI api_16;
-  return api_16;
-  case 15:
-  return default_api;  // default implementation
-  case 14:
-  static constexpr CSSPropertyAPI api_14;
-  return api_14;
-  case 13:
-  return default_api;  // default implementation
-  case 12:
-  static constexpr CSSPropertyAPI api_12;
-  return api_12;
-  case 11:
-  return default_api;  // default implementation
-  case 10:
-  static constexpr CSSPropertyAPI api_10;
-  return api_10;
-  case 9:
-  return default_api;  // default implementation
-  case 8:
-  static constexpr CSSPropertyAPI api_8;
-  return api_8;
-  case 7:
-  return default_api;  // default implementation
-  case 6:
-  static constexpr CSSPropertyAPI api_6;
-  return api_6;
-  case 5:
-  return default_api;  // default implementation
-  case 4:
-  static constexpr CSSPropertyAPI api_4;
-  return api_4;
-  case 3:
-  return default_api;  // default implementation
-  case 2:
-  static constexpr CSSPropertyAPI api_2;
-  return api_2;
   case 1:
   return default_api;  // default implementation
+  case 2:
+  static constexpr CSSPropertyAPI9 api_9;
+  return api_9;
+  case 3:
+  static constexpr CSSPropertyAPI10 api_10;
+  return api_10;
+  case 4:
+  return default_api;  // default implementation
+  case 5:
+  return default_api;  // default implementation
+  case 6:
+  return default_api;  // default implementation
+  case 7:
+  return default_api;  // default implementation
+  case 8:
+  static constexpr CSSPropertyAPI4 api_4;
+  return api_4;
+  case 9:
+  return default_api;  // default implementation
+  case 10:
+  return default_api;  // default implementation
+  case 11:
+  return default_api;  // default implementation
+  case 12:
+  static constexpr CSSPropertyAPI3 api_3;
+  return api_3;
+  case 13:
+  static constexpr CSSPropertyAPI6 api_6;
+  return api_6;
+  case 14:
+  static constexpr CSSPropertyAPI2 api_2;
+  return api_2;
+  case 15:
+  static constexpr CSSPropertyAPI1 api_1;
+  return api_1;
+  case 16:
+  return default_api;  // default implementation
+  case 17:
+  static constexpr CSSPropertyAPI7 api_7;
+  return api_7;
+  case 18:
+  return default_api;  // default implementation
+  case 19:
+  static constexpr CSSPropertyAPI8 api_8;
+  return api_8;
+  case 20:
+  static constexpr CSSPropertyAPI5 api_5;
+  return api_5;
   default:
     return default_api;
   }
@@ -138,21 +138,19 @@ int parse(int id) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  int user_num = rand() % (10/2);
-  printf("Randomly selected %d\n", user_num);
   clock_t results[10];
   clock_t avg_result = 0;
 
   for (int r = 0; r < 10 + 1; r++) {
-    int num = user_num + r;
+    int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 10000000; i++) {
+    for (int i = 0; i < 100; i++) {
       parse(num);
     }
     clock_t result = clock() - t;
 
     // Ignore the first run
-    if (r > 1) {
+    if (r >= 1) {
       results[r - 1] = result;
       avg_result += result;
     }

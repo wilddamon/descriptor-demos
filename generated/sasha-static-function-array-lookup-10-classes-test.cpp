@@ -6,66 +6,62 @@ using namespace std;
 
 volatile int increment_me = 0;
 
-class ClassApi {
- public:
-  void doSomethingStaticArrayLookup();
-};
 
-class Class1 : public ClassApi {
+class Class1 {
  public:
   static void doSomethingStatic () {
     increment_me += 1;
   }
 };
-class Class2 : public ClassApi {
+class Class2 {
  public:
   static void doSomethingStatic () {
     increment_me += 2;
   }
 };
-class Class3 : public ClassApi {
+class Class3 {
  public:
   static void doSomethingStatic () {
     increment_me += 3;
   }
 };
-class Class4 : public ClassApi {
+class Class4 {
  public:
   static void doSomethingStatic () {
     increment_me += 4;
   }
 };
-class Class5 : public ClassApi {
+class Class5 {
  public:
   static void doSomethingStatic () {
     increment_me += 5;
   }
 };
-class Class6 : public ClassApi {
+class Class6 {
  public:
   static void doSomethingStatic () {
     increment_me += 6;
   }
 };
-class Class7 : public ClassApi {
+class Class7 {
  public:
   static void doSomethingStatic () {
     increment_me += 7;
   }
 };
-class Class8 : public ClassApi {
+class Class8 {
  public:
   static void doSomethingStatic () {
     increment_me += 8;
   }
 };
-class Class9 : public ClassApi {
+class Class9 {
  public:
   static void doSomethingStatic () {
     increment_me += 9;
   }
 };
-class Class10 : public ClassApi {
+class Class10 {
  public:
   static void doSomethingStatic () {
     increment_me += 10;
@@ -75,15 +71,15 @@ class Class10 : public ClassApi {
 typedef void (*do_something_function)();
 do_something_function function_array[] = {
   Class1::doSomethingStatic,
-  Class2::doSomethingStatic,
-  Class3::doSomethingStatic,
-  Class4::doSomethingStatic,
-  Class5::doSomethingStatic,
-  Class6::doSomethingStatic,
   Class7::doSomethingStatic,
-  Class8::doSomethingStatic,
+  Class4::doSomethingStatic,
   Class9::doSomethingStatic,
+  Class6::doSomethingStatic,
+  Class2::doSomethingStatic,
   Class10::doSomethingStatic,
+  Class5::doSomethingStatic,
+  Class3::doSomethingStatic,
+  Class8::doSomethingStatic,
 };
 
 void callWithArrayLookup(int classId) {
@@ -93,21 +89,19 @@ void callWithArrayLookup(int classId) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  int user_num = rand() % (10/2);
-  printf("Randomly selected %d\n", user_num);
   clock_t results[10];
   clock_t avg_result = 0;
 
   for (int r = 0; r < 10 + 1; r++) {
-    int num = user_num + r;
+    int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 10000000; i++) {
+    for (int i = 0; i < 100; i++) {
       callWithArrayLookup(num);
     }
     clock_t result = clock() - t;
 
     // Ignore the first run
-    if (r > 1) {
+    if (r >= 1) {
       results[r - 1] = result;
       avg_result += result;
     }

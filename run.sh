@@ -11,11 +11,14 @@ OUTFOLDER="out"
 
 tests=(
   descriptor
+  descriptor-with-default
   virtual
+  virtual-split
   table
   sasha-static-array-lookup
   sasha-static-function-array-lookup
   sasha-static-switch
+  sasha-static-switch-statement
   sasha-virtual-singleton-array-lookup)
 WHICH="all"
 
@@ -61,6 +64,31 @@ function run_impl() {
   $compile_cmd && ./$runfile
 }
 
+function run_virtual_split() {
+  filename="virtual-split-$NUM_CLASSES-classes-test"
+  mainfile=$filename-main.cpp
+  headerfile=$filename.h
+  cppfile=$filename.cpp
+
+  ./virtual-split-main-gen.sh \
+    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename > $GENFOLDER/$mainfile
+  ./virtual-split-header-gen.sh $NUM_CLASSES > $GENFOLDER/$headerfile
+  ./virtual-split-cpp-gen.sh $NUM_CLASSES $filename > $GENFOLDER/$cppfile
+
+  g++ $GENFOLDER/$mainfile -std=c++11 -O$OLEVEL -S -o $SFOLDER/$mainfile.s
+  #cmd="g++ $GENFOLDER/$cppfile $GENFOLDER/$headerfile -std=c++11 -O$OLEVEL -S -o $SFOLDER/$mainfile.s"
+  #echo $cmd
+  #$cmd
+
+
+  compile_cmd="g++ \
+    $GENFOLDER/$mainfile \
+    $GENFOLDER/$headerfile \
+    $GENFOLDER/$cppfile \
+    -std=c++11 -O$OLEVEL -o $OUTFOLDER/$filename"
+  $compile_cmd && ./$OUTFOLDER/$filename
+}
+
 if [[ $WHICH == "all" ]]
 then
   tests_to_run=${tests[@]}
@@ -76,5 +104,10 @@ fi
 for test in ${tests_to_run[@]}
 do
   if [[ $WHICH == "all" ]]; then echo "running $test"; fi
-  run_impl $test
+  if [[ $test == "virtual-split" ]]
+  then
+    run_virtual_split
+  else
+    run_impl $test
+  fi
 done

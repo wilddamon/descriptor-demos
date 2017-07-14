@@ -51,40 +51,40 @@ class Class10 : public ClassApi {
   static void doSomethingStatic() { increment_me += 10; }
 };
 
-void ClassApi::doSomethingStaticSwitch(int input) {
-  switch (input) {
-  case 9:
+void callWithSwitchStatement(int classId) {
+  switch (classId) {
+  case 1:
     Class8::doSomethingStatic();
     break;
-  case 5:
-    Class6::doSomethingStatic();
-    break;
   case 8:
-    Class1::doSomethingStatic();
-    break;
-  case 4:
-    Class10::doSomethingStatic();
-    break;
-  case 2:
-    Class2::doSomethingStatic();
-    break;
-  case 1:
-    Class5::doSomethingStatic();
-    break;
-  case 7:
-    Class3::doSomethingStatic();
-    break;
-  case 10:
-    Class9::doSomethingStatic();
-    break;
-  case 6:
-    Class7::doSomethingStatic();
-    break;
-  case 3:
     Class4::doSomethingStatic();
     break;
+  case 7:
+    Class6::doSomethingStatic();
+    break;
+  case 9:
+    Class5::doSomethingStatic();
+    break;
+  case 3:
+    Class10::doSomethingStatic();
+    break;
+  case 4:
+    Class1::doSomethingStatic();
+    break;
+  case 2:
+    Class7::doSomethingStatic();
+    break;
+  case 10:
+    Class3::doSomethingStatic();
+    break;
+  case 5:
+    Class2::doSomethingStatic();
+    break;
+  case 6:
+    Class9::doSomethingStatic();
+    break;
   }
-  increment_me += 4;
+  increment_me += 5;
 }
 int main(int argc, char** argv) {
   srand(time(nullptr));
@@ -96,7 +96,7 @@ int main(int argc, char** argv) {
     int num = rand() % (10);
     t = clock();
     for (int i = 0; i < 100; i++) {
-      ClassApi::doSomethingStaticSwitch(num);
+      callWithSwitchStatement(num);
     }
     clock_t result = clock() - t;
 

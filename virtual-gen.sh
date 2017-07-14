@@ -34,15 +34,16 @@ echo "const CSSPropertyAPI& GetPropertyAPI(int id) {
   static constexpr CSSPropertyAPI default_api;
   switch (id) {"
 
-for ((a=NUM_CLASSES*2; a > 0; a--))
+# Shuffle the mapping of Class number -> input value.
+paste <(seq 1 $((NUM_CLASSES*2))) <(seq 1 $((NUM_CLASSES*2)) | shuf) | while read a b
 do
-  let "remainder = $a % 2"
-  let "id = $a / 2"
+  let "remainder = $b % 2"
+  let "id = $b / 2"
 
   echo "  case $a:"
   if [[ $remainder == 0 ]]; then
-  echo "  static constexpr CSSPropertyAPI$ai api_$a;
-  return api_$a;"
+  echo "  static constexpr CSSPropertyAPI$id api_$id;
+  return api_$id;"
   else
     echo "  return default_api;  // default implementation"
   fi

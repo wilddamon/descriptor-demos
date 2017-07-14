@@ -195,17 +195,14 @@ _Z5parsei:
 	.cfi_endproc
 .LFE1311:
 	.size	_Z5parsei, .-_Z5parsei
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"Randomly selected %d\n"
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
-.LC2:
+.LC1:
 	.string	"Took %ld clicks (%f seconds).\n"
-	.section	.rodata.str1.1
-.LC3:
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC2:
 	.string	"avg clicks\n"
-.LC4:
+.LC3:
 	.string	"%ld\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
@@ -229,7 +226,7 @@ main:
 	pushq	%r12
 	.cfi_def_cfa_offset 40
 	.cfi_offset 12, -40
-	xorl	%r12d, %r12d
+	movl	$1, %r12d
 	pushq	%rbp
 	.cfi_def_cfa_offset 48
 	.cfi_offset 6, -48
@@ -241,57 +238,54 @@ main:
 	call	time
 	movl	%eax, %edi
 	call	srand
-	call	rand
-	movl	%eax, %ecx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	imull	%r15d
-	movl	%ecx, %eax
-	sarl	$31, %eax
-	movl	%edx, %r15d
-	sarl	%r15d
-	subl	%eax, %r15d
-	leal	(%r15,%r15,4), %eax
-	subl	%eax, %ecx
-	xorl	%eax, %eax
-	movl	%ecx, %edx
-	movl	%ecx, %r15d
-	call	__printf_chk
 	.p2align 4,,10
 	.p2align 3
-.L20:
+.L16:
+	call	rand
+	movl	%eax, %ebx
 	call	clock
 	movq	%rax, %r14
-	leal	(%r12,%r15), %eax
-	movl	$10000000, %ebx
-	cltq
+	movl	%ebx, %eax
+	imull	%r15d
+	movl	%ebx, %eax
+	sarl	$31, %eax
+	sarl	$2, %edx
+	subl	%eax, %edx
+	leal	(%rdx,%rdx,4), %eax
+	addl	%eax, %eax
+	subl	%eax, %ebx
+	movslq	%ebx, %rax
+	movl	$100, %ebx
 	movq	_ZL13property_apis(,%rax,8), %rbp
 	.p2align 4,,10
 	.p2align 3
-.L17:
+.L18:
 	movq	0(%rbp), %rax
 	movq	%rbp, %rdi
 	call	*(%rax)
 	subl	$1, %ebx
-	jne	.L17
+	jne	.L18
 	call	clock
 	subq	%r14, %rax
-	cmpl	$2, %r12d
-	movl	$.LC2, %esi
+	cmpl	$1, %r12d
+	je	.L19
 	cvtsi2ssq	%rax, %xmm0
-	leaq	0(%r13,%rax), %rdx
-	movl	$1, %edi
-	cmovge	%rdx, %r13
+	addq	%rax, %r13
 	movq	%rax, %rdx
-	addl	$1, %r12d
+	movl	$.LC1, %esi
+	movl	$1, %edi
 	movl	$1, %eax
-	divss	.LC1(%rip), %xmm0
+	divss	.LC0(%rip), %xmm0
 	unpcklps	%xmm0, %xmm0
 	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
 	cmpl	$11, %r12d
-	jne	.L20
-	movl	$.LC3, %esi
+	je	.L25
+.L20:
+	addl	$1, %r12d
+	jmp	.L16
+.L25:
+	movl	$.LC2, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	call	__printf_chk
@@ -299,13 +293,14 @@ main:
 	movabsq	$7378697629483820647, %rdx
 	sarq	$63, %r13
 	imulq	%rdx
-	movl	$.LC4, %esi
+	movl	$.LC3, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	sarq	$2, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
+	.cfi_remember_state
 	.cfi_def_cfa_offset 56
 	xorl	%eax, %eax
 	popq	%rbx
@@ -321,6 +316,17 @@ main:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	ret
+.L19:
+	.cfi_restore_state
+	cvtsi2ssq	%rax, %xmm0
+	movq	%rax, %rdx
+	movl	$.LC1, %esi
+	movl	$1, %edi
+	movl	$1, %eax
+	divss	.LC0(%rip), %xmm0
+	cvtss2sd	%xmm0, %xmm0
+	call	__printf_chk
+	jmp	.L20
 	.cfi_endproc
 .LFE1312:
 	.size	main, .-main
@@ -350,24 +356,24 @@ _GLOBAL__sub_I_increment_me:
 	.type	_ZL13property_apis, @object
 	.size	_ZL13property_apis, 160
 _ZL13property_apis:
-	.quad	_ZL6api_10
 	.quad	_ZL5api_0
-	.quad	_ZL5api_9
+	.quad	_ZL5api_5
+	.quad	_ZL5api_4
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_6
+	.quad	_ZL5api_3
+	.quad	_ZL6api_10
 	.quad	_ZL5api_0
 	.quad	_ZL5api_8
 	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
 	.quad	_ZL5api_7
 	.quad	_ZL5api_0
-	.quad	_ZL5api_6
 	.quad	_ZL5api_0
-	.quad	_ZL5api_5
-	.quad	_ZL5api_0
-	.quad	_ZL5api_4
-	.quad	_ZL5api_0
-	.quad	_ZL5api_3
-	.quad	_ZL5api_0
+	.quad	_ZL5api_9
 	.quad	_ZL5api_2
-	.quad	_ZL5api_0
 	.quad	_ZL5api_1
 	.quad	_ZL5api_0
 	.align 8
@@ -710,7 +716,7 @@ increment_me:
 	.comm	_ZStL8__ioinit,1,1
 	.section	.rodata.cst4,"aM",@progbits,4
 	.align 4
-.LC1:
+.LC0:
 	.long	1232348160
 	.hidden	__dso_handle
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"

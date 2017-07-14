@@ -29,7 +29,7 @@ echo "
 void callWithSwitchStatement(int classId) {
   switch (classId) {"
 
-paste <(seq 1 100 | shuf) <(seq 1 100 | shuf) | while read a b
+paste <(seq 1 $NUM_CLASSES | shuf) <(seq 1 $NUM_CLASSES | shuf) | while read a b
 do
   echo "  case $a:
     Class$b::doSomethingStatic();
@@ -37,7 +37,7 @@ do
 done
 
 echo "  }
-  return 0;
+  increment_me += 5;
 }"
 
 ./main-gen.sh "callWithSwitchStatement" \

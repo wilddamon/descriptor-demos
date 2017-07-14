@@ -162,17 +162,14 @@ _Z19callWithArrayLookupi:
 	.cfi_endproc
 .LFE1276:
 	.size	_Z19callWithArrayLookupi, .-_Z19callWithArrayLookupi
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"Randomly selected %d\n"
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
-.LC2:
+.LC1:
 	.string	"Took %ld clicks (%f seconds).\n"
-	.section	.rodata.str1.1
-.LC3:
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC2:
 	.string	"avg clicks\n"
-.LC4:
+.LC3:
 	.string	"%ld\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
@@ -185,10 +182,10 @@ main:
 	.cfi_def_cfa_offset 16
 	.cfi_offset 15, -16
 	xorl	%edi, %edi
-	movl	$1717986919, %r15d
 	pushq	%r14
 	.cfi_def_cfa_offset 24
 	.cfi_offset 14, -24
+	movl	$1717986919, %r14d
 	pushq	%r13
 	.cfi_def_cfa_offset 32
 	.cfi_offset 13, -32
@@ -196,7 +193,7 @@ main:
 	pushq	%r12
 	.cfi_def_cfa_offset 40
 	.cfi_offset 12, -40
-	xorl	%r12d, %r12d
+	movl	$1, %r12d
 	pushq	%rbp
 	.cfi_def_cfa_offset 48
 	.cfi_offset 6, -48
@@ -208,31 +205,26 @@ main:
 	call	time
 	movl	%eax, %edi
 	call	srand
-	call	rand
-	movl	%eax, %ecx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	imull	%r15d
-	movl	%ecx, %eax
-	sarl	$31, %eax
-	movl	%edx, %r15d
-	sarl	%r15d
-	subl	%eax, %r15d
-	leal	(%r15,%r15,4), %eax
-	subl	%eax, %ecx
-	xorl	%eax, %eax
-	movl	%ecx, %edx
-	movl	%ecx, %r15d
-	call	__printf_chk
 	.p2align 4,,10
 	.p2align 3
-.L17:
+.L13:
+	call	rand
+	movl	%eax, %ebx
 	call	clock
-	leal	(%r12,%r15), %ecx
-	movq	%rax, %r14
-	movl	$1717986919, %eax
-	movl	$10000000, %ebx
-	imull	%ecx
+	movq	%rax, %r15
+	movl	%ebx, %eax
+	movl	%ebx, %ecx
+	imull	%r14d
+	movl	%ebx, %eax
+	movl	$100, %ebx
+	sarl	$31, %eax
+	sarl	$2, %edx
+	subl	%eax, %edx
+	leal	(%rdx,%rdx,4), %eax
+	addl	%eax, %eax
+	subl	%eax, %ecx
+	movl	%ecx, %eax
+	imull	%r14d
 	movl	%ecx, %eax
 	sarl	$31, %eax
 	sarl	$2, %edx
@@ -243,28 +235,31 @@ main:
 	movslq	%ecx, %rbp
 	.p2align 4,,10
 	.p2align 3
-.L14:
+.L15:
 	call	*function_array(,%rbp,8)
 	subl	$1, %ebx
-	jne	.L14
+	jne	.L15
 	call	clock
-	subq	%r14, %rax
-	cmpl	$2, %r12d
-	movl	$.LC2, %esi
+	subq	%r15, %rax
+	cmpl	$1, %r12d
+	je	.L16
 	cvtsi2ssq	%rax, %xmm0
-	leaq	0(%r13,%rax), %rdx
-	movl	$1, %edi
-	cmovge	%rdx, %r13
+	addq	%rax, %r13
 	movq	%rax, %rdx
-	addl	$1, %r12d
+	movl	$.LC1, %esi
+	movl	$1, %edi
 	movl	$1, %eax
-	divss	.LC1(%rip), %xmm0
+	divss	.LC0(%rip), %xmm0
 	unpcklps	%xmm0, %xmm0
 	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
 	cmpl	$11, %r12d
-	jne	.L17
-	movl	$.LC3, %esi
+	je	.L22
+.L17:
+	addl	$1, %r12d
+	jmp	.L13
+.L22:
+	movl	$.LC2, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	call	__printf_chk
@@ -272,13 +267,14 @@ main:
 	movabsq	$7378697629483820647, %rdx
 	sarq	$63, %r13
 	imulq	%rdx
-	movl	$.LC4, %esi
+	movl	$.LC3, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	sarq	$2, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
+	.cfi_remember_state
 	.cfi_def_cfa_offset 56
 	xorl	%eax, %eax
 	popq	%rbx
@@ -294,6 +290,17 @@ main:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	ret
+.L16:
+	.cfi_restore_state
+	cvtsi2ssq	%rax, %xmm0
+	movq	%rax, %rdx
+	movl	$.LC1, %esi
+	movl	$1, %edi
+	movl	$1, %eax
+	divss	.LC0(%rip), %xmm0
+	cvtss2sd	%xmm0, %xmm0
+	call	__printf_chk
+	jmp	.L17
 	.cfi_endproc
 .LFE1277:
 	.size	main, .-main
@@ -325,15 +332,15 @@ _GLOBAL__sub_I_increment_me:
 	.size	function_array, 80
 function_array:
 	.quad	_ZN6Class117doSomethingStaticEv
-	.quad	_ZN6Class217doSomethingStaticEv
-	.quad	_ZN6Class317doSomethingStaticEv
-	.quad	_ZN6Class417doSomethingStaticEv
-	.quad	_ZN6Class517doSomethingStaticEv
-	.quad	_ZN6Class617doSomethingStaticEv
 	.quad	_ZN6Class717doSomethingStaticEv
-	.quad	_ZN6Class817doSomethingStaticEv
+	.quad	_ZN6Class417doSomethingStaticEv
 	.quad	_ZN6Class917doSomethingStaticEv
+	.quad	_ZN6Class617doSomethingStaticEv
+	.quad	_ZN6Class217doSomethingStaticEv
 	.quad	_ZN7Class1017doSomethingStaticEv
+	.quad	_ZN6Class517doSomethingStaticEv
+	.quad	_ZN6Class317doSomethingStaticEv
+	.quad	_ZN6Class817doSomethingStaticEv
 	.globl	increment_me
 	.bss
 	.align 4
@@ -345,7 +352,7 @@ increment_me:
 	.comm	_ZStL8__ioinit,1,1
 	.section	.rodata.cst4,"aM",@progbits,4
 	.align 4
-.LC1:
+.LC0:
 	.long	1232348160
 	.hidden	__dso_handle
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"

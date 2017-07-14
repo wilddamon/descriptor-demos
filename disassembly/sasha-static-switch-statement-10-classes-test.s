@@ -1,10 +1,9 @@
-	.file	"sasha-static-switch-10-classes-test.cpp"
+	.file	"sasha-static-switch-statement-10-classes-test.cpp"
 	.text
-	.align 2
 	.p2align 4,,15
-	.globl	_ZN8ClassApi23doSomethingStaticSwitchEi
-	.type	_ZN8ClassApi23doSomethingStaticSwitchEi, @function
-_ZN8ClassApi23doSomethingStaticSwitchEi:
+	.globl	_Z23callWithSwitchStatementi
+	.type	_Z23callWithSwitchStatementi, @function
+_Z23callWithSwitchStatementi:
 .LFB1276:
 	.cfi_startproc
 	cmpl	$10, %edi
@@ -29,7 +28,7 @@ _ZN8ClassApi23doSomethingStaticSwitchEi:
 	.text
 	.p2align 4,,10
 	.p2align 3
-.L12:
+.L3:
 	movl	increment_me(%rip), %eax
 	addl	$8, %eax
 	movl	%eax, increment_me(%rip)
@@ -37,75 +36,75 @@ _ZN8ClassApi23doSomethingStaticSwitchEi:
 	.p2align 3
 .L2:
 	movl	increment_me(%rip), %eax
-	addl	$4, %eax
+	addl	$5, %eax
 	movl	%eax, increment_me(%rip)
 	ret
 	.p2align 4,,10
 	.p2align 3
 .L13:
 	movl	increment_me(%rip), %eax
-	addl	$9, %eax
-	movl	%eax, increment_me(%rip)
-	jmp	.L2
-	.p2align 4,,10
-	.p2align 3
-.L3:
-	movl	increment_me(%rip), %eax
-	addl	$5, %eax
+	addl	$3, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L5:
 	movl	increment_me(%rip), %eax
-	addl	$2, %eax
+	addl	$7, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L6:
 	movl	increment_me(%rip), %eax
-	addl	$4, %eax
+	addl	$10, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L7:
 	movl	increment_me(%rip), %eax
-	addl	$10, %eax
+	addl	$1, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L8:
 	movl	increment_me(%rip), %eax
-	addl	$6, %eax
+	addl	$2, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L9:
 	movl	increment_me(%rip), %eax
-	addl	$7, %eax
+	addl	$9, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L10:
 	movl	increment_me(%rip), %eax
-	addl	$3, %eax
+	addl	$6, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L11:
 	movl	increment_me(%rip), %eax
-	addl	$1, %eax
+	addl	$4, %eax
+	movl	%eax, increment_me(%rip)
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	movl	increment_me(%rip), %eax
+	addl	$5, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.cfi_endproc
 .LFE1276:
-	.size	_ZN8ClassApi23doSomethingStaticSwitchEi, .-_ZN8ClassApi23doSomethingStaticSwitchEi
+	.size	_Z23callWithSwitchStatementi, .-_Z23callWithSwitchStatementi
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
 .LC1:
@@ -171,7 +170,7 @@ main:
 	.p2align 3
 .L18:
 	movl	%ebp, %edi
-	call	_ZN8ClassApi23doSomethingStaticSwitchEi
+	call	_Z23callWithSwitchStatementi
 	subl	$1, %ebx
 	jne	.L18
 	call	clock

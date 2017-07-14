@@ -35,7 +35,8 @@ done
 echo "
 ClassApi *class_array[] = {"
 
-for ((a=1; a <= NUM_CLASSES; a++))
+# Shuffle the mapping of Class number -> input value.
+for a in $(seq 1 $NUM_CLASSES | shuf)
 do
   echo -n "  class$a"
   echo -n "_singleton,
@@ -50,3 +51,8 @@ void ClassApi::doSomethingStaticArrayLookup(int type) {
 
 ./main-gen.sh "ClassApi::doSomethingStaticArrayLookup" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
+
+# Eddy's note:
+# This looks very similar to table-gen, except it uses new ClassFoo()
+# instead of constexpr. It's slightly faster than table-gen, but requires us
+# to implement all the APIs at once.

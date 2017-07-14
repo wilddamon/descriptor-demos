@@ -11,6 +11,13 @@ echo "#include <cstdio>
 using namespace std;
 
 volatile int increment_me = 0;
+
+class CSSPropertyAPIDefault {
+ public:
+  static void parse() {
+    increment_me += increment_me;
+  }
+};
 "
 
 for  ((a=1; a <= NUM_CLASSES; a++))
@@ -44,7 +51,7 @@ do
   },"
   else
     echo "  {
-    nullptr,
+    CSSPropertyAPIDefault::parse,
   },"
   fi
 
@@ -67,11 +74,11 @@ const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
 echo "
 void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
-  if (d.parse) {
-    d.parse();
-  }
-  increment_me += 1;
+  d.parse();
 }"
 
 ./main-gen.sh "parse" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
+
+# Eddy's note:
+# This is interesting because it demonstrates the cost of the branch.

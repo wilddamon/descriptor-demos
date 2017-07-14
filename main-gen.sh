@@ -14,13 +14,11 @@ cat <<EOF
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  int user_num = rand() % ($NUM_CLASSES/2);
-  printf("Randomly selected %d\n", user_num);
   clock_t results[$REPEATS];
   clock_t avg_result = 0;
 
   for (int r = 0; r < $REPEATS + $IGNORE_FIRST_N_REPEATS; r++) {
-    int num = user_num + r;
+    int num = rand() % ($NUM_CLASSES);
     t = clock();
     for (int i = 0; i < $NUM_ITERATIONS; i++) {
       $fun(num);
@@ -28,7 +26,7 @@ int main(int argc, char** argv) {
     clock_t result = clock() - t;
 
     // Ignore the first run
-    if (r > $IGNORE_FIRST_N_REPEATS) {
+    if (r >= $IGNORE_FIRST_N_REPEATS) {
       results[r - 1] = result;
       avg_result += result;
     }

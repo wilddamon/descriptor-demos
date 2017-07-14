@@ -6,6 +6,13 @@ using namespace std;
 
 volatile int increment_me = 0;
 
+class CSSPropertyAPIDefault {
+ public:
+  static void parse() {
+    increment_me += increment_me;
+  }
+};
+
 class CSSPropertyAPI1 {
  public:
   static void parse() {
@@ -75,88 +82,88 @@ struct CSSPropertyDescriptor {
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    nullptr,
+    CSSPropertyAPIDefault::parse,
   },
   {
     CSSPropertyAPI4::parse,
   },
   {
-    CSSPropertyAPI2::parse,
-  },
-  {
-    CSSPropertyAPI7::parse,
-  },
-  {
-    nullptr,
-  },
-  {
-    CSSPropertyAPI6::parse,
-  },
-  {
-    CSSPropertyAPI9::parse,
-  },
-  {
     CSSPropertyAPI8::parse,
-  },
-  {
-    CSSPropertyAPI1::parse,
-  },
-  {
-    nullptr,
-  },
-  {
-    nullptr,
-  },
-  {
-    nullptr,
-  },
-  {
-    nullptr,
-  },
-  {
-    nullptr,
-  },
-  {
-    CSSPropertyAPI5::parse,
-  },
-  {
-    nullptr,
-  },
-  {
-    CSSPropertyAPI10::parse,
   },
   {
     CSSPropertyAPI3::parse,
   },
   {
-    nullptr,
+    CSSPropertyAPI5::parse,
   },
   {
-    nullptr,
+    CSSPropertyAPI1::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPI6::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPI10::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPI2::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPI9::parse,
+  },
+  {
+    CSSPropertyAPI7::parse,
   },
 };
 
 static size_t descriptorIndices[] = {
-  12,
+  15,
   18,
-  1,
-  8,
-  13,
-  4,
-  7,
-  5,
   14,
-  10,
+  5,
+  17,
   11,
   9,
-  0,
-  19,
-  17,
-  16,
+  13,
+  4,
   3,
-  15,
-  6,
+  7,
+  19,
+  16,
+  12,
+  8,
+  10,
   2,
+  6,
+  1,
+  0,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
@@ -165,10 +172,7 @@ const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
 
 void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
-  if (d.parse) {
-    d.parse();
-  }
-  increment_me += 1;
+  d.parse();
 }
 int main(int argc, char** argv) {
   srand(time(nullptr));

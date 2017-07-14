@@ -29,6 +29,7 @@ echo "
 void ClassApi::doSomethingStaticSwitch(int input) {
   switch (input) {"
 
+# Shuffle the mapping of Class number -> input value
 paste <(seq 1 $NUM_CLASSES | shuf) <(seq 1 $NUM_CLASSES | shuf) | while read a b
 do
   echo "  case $a:
@@ -43,3 +44,4 @@ echo "  }
 
 ./main-gen.sh "ClassApi::doSomethingStaticSwitch" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
+

@@ -96,24 +96,24 @@ class CSSPropertyAPI10 : public CSSPropertyAPI {
 static constexpr CSSPropertyAPI10 api_10;
 
 constexpr const CSSPropertyAPI* const property_apis[] = {
-  &api_10,
   &api_0, // default implementation
-  &api_9,
+  &api_5,
+  &api_4,
+  &api_0, // default implementation
+  &api_0, // default implementation
+  &api_6,
+  &api_3,
+  &api_10,
   &api_0, // default implementation
   &api_8,
   &api_0, // default implementation
+  &api_0, // default implementation
+  &api_0, // default implementation
   &api_7,
   &api_0, // default implementation
-  &api_6,
   &api_0, // default implementation
-  &api_5,
-  &api_0, // default implementation
-  &api_4,
-  &api_0, // default implementation
-  &api_3,
-  &api_0, // default implementation
+  &api_9,
   &api_2,
-  &api_0, // default implementation
   &api_1,
   &api_0, // default implementation
 };
@@ -129,21 +129,19 @@ int parse(int id) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  int user_num = rand() % (10/2);
-  printf("Randomly selected %d\n", user_num);
   clock_t results[10];
   clock_t avg_result = 0;
 
   for (int r = 0; r < 10 + 1; r++) {
-    int num = user_num + r;
+    int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 10000000; i++) {
+    for (int i = 0; i < 100; i++) {
       parse(num);
     }
     clock_t result = clock() - t;
 
     // Ignore the first run
-    if (r > 1) {
+    if (r >= 1) {
       results[r - 1] = result;
       avg_result += result;
     }

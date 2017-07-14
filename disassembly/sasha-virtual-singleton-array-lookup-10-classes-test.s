@@ -164,17 +164,14 @@ _Z18virtualArrayLookupi:
 	.cfi_endproc
 .LFE1309:
 	.size	_Z18virtualArrayLookupi, .-_Z18virtualArrayLookupi
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"Randomly selected %d\n"
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
-.LC2:
+.LC1:
 	.string	"Took %ld clicks (%f seconds).\n"
-	.section	.rodata.str1.1
-.LC3:
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC2:
 	.string	"avg clicks\n"
-.LC4:
+.LC3:
 	.string	"%ld\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
@@ -201,7 +198,7 @@ main:
 	pushq	%rbp
 	.cfi_def_cfa_offset 48
 	.cfi_offset 6, -48
-	xorl	%ebp, %ebp
+	movl	$1, %ebp
 	pushq	%rbx
 	.cfi_def_cfa_offset 56
 	.cfi_offset 3, -56
@@ -210,56 +207,53 @@ main:
 	call	time
 	movl	%eax, %edi
 	call	srand
+	.p2align 4,,10
+	.p2align 3
+.L13:
 	call	rand
 	movl	%eax, %ecx
-	movl	$.LC0, %esi
-	movl	$1, %edi
+	movl	$100, %ebx
 	imull	%r14d
 	movl	%ecx, %eax
 	sarl	$31, %eax
-	movl	%edx, %r14d
-	sarl	%r14d
-	subl	%eax, %r14d
-	leal	(%r14,%r14,4), %eax
+	movl	%edx, %r15d
+	sarl	$2, %r15d
+	subl	%eax, %r15d
+	leal	(%r15,%r15,4), %eax
+	addl	%eax, %eax
 	subl	%eax, %ecx
-	xorl	%eax, %eax
-	movl	%ecx, %edx
-	movl	%ecx, %r14d
-	call	__printf_chk
-	.p2align 4,,10
-	.p2align 3
-.L17:
-	leal	0(%rbp,%r14), %r15d
-	movl	$10000000, %ebx
+	movslq	%ecx, %r15
 	call	clock
-	movslq	%r15d, %r15
 	movq	%rax, %r13
 	.p2align 4,,10
 	.p2align 3
-.L14:
+.L15:
 	movq	class_array(,%r15,8), %rdi
 	movq	(%rdi), %rax
 	call	*(%rax)
 	subl	$1, %ebx
-	jne	.L14
+	jne	.L15
 	call	clock
 	subq	%r13, %rax
-	cmpl	$2, %ebp
-	movl	$.LC2, %esi
+	cmpl	$1, %ebp
+	je	.L16
 	cvtsi2ssq	%rax, %xmm0
-	leaq	(%r12,%rax), %rdx
-	movl	$1, %edi
-	cmovge	%rdx, %r12
+	addq	%rax, %r12
 	movq	%rax, %rdx
-	addl	$1, %ebp
+	movl	$.LC1, %esi
+	movl	$1, %edi
 	movl	$1, %eax
-	divss	.LC1(%rip), %xmm0
+	divss	.LC0(%rip), %xmm0
 	unpcklps	%xmm0, %xmm0
 	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
 	cmpl	$11, %ebp
-	jne	.L17
-	movl	$.LC3, %esi
+	je	.L22
+.L17:
+	addl	$1, %ebp
+	jmp	.L13
+.L22:
+	movl	$.LC2, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	call	__printf_chk
@@ -267,13 +261,14 @@ main:
 	movabsq	$7378697629483820647, %rdx
 	sarq	$63, %r12
 	imulq	%rdx
-	movl	$.LC4, %esi
+	movl	$.LC3, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	sarq	$2, %rdx
 	subq	%r12, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
+	.cfi_remember_state
 	.cfi_def_cfa_offset 56
 	xorl	%eax, %eax
 	popq	%rbx
@@ -289,6 +284,17 @@ main:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	ret
+.L16:
+	.cfi_restore_state
+	cvtsi2ssq	%rax, %xmm0
+	movq	%rax, %rdx
+	movl	$.LC1, %esi
+	movl	$1, %edi
+	movl	$1, %eax
+	divss	.LC0(%rip), %xmm0
+	cvtss2sd	%xmm0, %xmm0
+	call	__printf_chk
+	jmp	.L17
 	.cfi_endproc
 .LFE1310:
 	.size	main, .-main
@@ -713,7 +719,7 @@ increment_me:
 	.comm	_ZStL8__ioinit,1,1
 	.section	.rodata.cst4,"aM",@progbits,4
 	.align 4
-.LC1:
+.LC0:
 	.long	1232348160
 	.hidden	__dso_handle
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"

@@ -36,7 +36,8 @@ done
 echo "
 constexpr const CSSPropertyAPI* const property_apis[] = {"
 
-for ((a=NUM_CLASSES*2; a > 0; a--))
+# Shuffle the mapping of Class number -> input value.
+for a in $(seq 1 $((NUM_CLASSES*2)) | shuf)
 do
   let "remainder = $a % 2"
   let "id = $a / 2"
