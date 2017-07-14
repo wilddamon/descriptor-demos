@@ -25,7 +25,7 @@ _Z14GetPropertyAPIi:
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %eax
 	cmpl	$19, %edi
 	ja	.L3
-	movq	CSWTCH.101(,%rdi,8), %rax
+	movq	CSWTCH.94(,%rdi,8), %rax
 .L3:
 	rep ret
 	.cfi_endproc
@@ -43,7 +43,7 @@ _Z5parsei:
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
 	cmpl	$19, %eax
 	ja	.L7
-	movq	CSWTCH.101(,%rax,8), %rdi
+	movq	CSWTCH.94(,%rax,8), %rdi
 .L7:
 	movq	(%rdi), %rax
 	call	*(%rax)
@@ -55,11 +55,16 @@ _Z5parsei:
 	.size	_Z5parsei, .-_Z5parsei
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
-	.string	"enter a number"
+	.string	"Randomly selected %d\n"
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
 .LC2:
 	.string	"Took %ld clicks (%f seconds).\n"
+	.section	.rodata.str1.1
+.LC3:
+	.string	"avg clicks\n"
+.LC4:
+	.string	"%ld\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
 	.globl	main
@@ -67,36 +72,51 @@ _Z5parsei:
 main:
 .LFB1282:
 	.cfi_startproc
-	pushq	%r13
+	pushq	%r14
 	.cfi_def_cfa_offset 16
-	.cfi_offset 13, -16
-	movl	$.LC0, %esi
-	movl	$_ZSt4cout, %edi
-	pushq	%r12
+	.cfi_offset 14, -16
+	xorl	%edi, %edi
+	pushq	%r13
 	.cfi_def_cfa_offset 24
-	.cfi_offset 12, -24
+	.cfi_offset 13, -24
+	xorl	%r13d, %r13d
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
 	xorl	%r12d, %r12d
 	pushq	%rbp
-	.cfi_def_cfa_offset 32
-	.cfi_offset 6, -32
-	pushq	%rbx
 	.cfi_def_cfa_offset 40
-	.cfi_offset 3, -40
-	subq	$24, %rsp
-	.cfi_def_cfa_offset 64
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-	leaq	12(%rsp), %rsi
-	movl	$_ZSt3cin, %edi
-	call	_ZNSirsERi
+	.cfi_offset 6, -40
+	movl	$1717986919, %ebp
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	call	time
+	movl	%eax, %edi
+	call	srand
+	call	rand
+	movl	%eax, %ecx
+	movl	$.LC0, %esi
+	movl	$1, %edi
+	imull	%ebp
+	movl	%ecx, %eax
+	sarl	$31, %eax
+	movl	%edx, %ebp
+	sarl	%ebp
+	subl	%eax, %ebp
+	leal	0(%rbp,%rbp,4), %eax
+	subl	%eax, %ecx
+	xorl	%eax, %eax
+	movl	%ecx, %ebp
+	movl	%ecx, %edx
+	subl	$1, %ebp
+	call	__printf_chk
 	.p2align 4,,10
 	.p2align 3
-.L15:
-	movl	12(%rsp), %ebp
-	movl	$1000000000, %ebx
+.L16:
 	call	clock
-	movq	%rax, %r13
-	addl	%r12d, %ebp
-	subl	$1, %ebp
+	movl	$10000000, %ebx
+	movq	%rax, %r14
 	.p2align 4,,10
 	.p2align 3
 .L13:
@@ -104,36 +124,54 @@ main:
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
 	ja	.L11
 	movl	%ebp, %eax
-	movq	CSWTCH.101(,%rax,8), %rdi
+	movq	CSWTCH.94(,%rax,8), %rdi
 .L11:
-	movq	(%rdi), %rdx
-	call	*(%rdx)
+	movq	(%rdi), %rax
+	call	*(%rax)
 	subl	$1, %ebx
 	jne	.L13
 	call	clock
-	subq	%r13, %rax
+	subq	%r14, %rax
+	cmpl	$2, %r12d
 	movl	$.LC2, %esi
-	movl	$1, %edi
 	cvtsi2ssq	%rax, %xmm0
+	leaq	0(%r13,%rax), %rdx
+	movl	$1, %edi
+	cmovge	%rdx, %r13
 	movq	%rax, %rdx
 	addl	$1, %r12d
 	movl	$1, %eax
+	addl	$1, %ebp
 	divss	.LC1(%rip), %xmm0
 	unpcklps	%xmm0, %xmm0
 	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
-	cmpl	$10, %r12d
-	jne	.L15
-	addq	$24, %rsp
-	.cfi_def_cfa_offset 40
+	cmpl	$11, %r12d
+	jne	.L16
+	movl	$.LC3, %esi
+	movl	$1, %edi
 	xorl	%eax, %eax
+	call	__printf_chk
+	movq	%r13, %rax
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r13
+	imulq	%rdx
+	movl	$.LC4, %esi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	sarq	$2, %rdx
+	subq	%r13, %rdx
+	call	__printf_chk
 	popq	%rbx
-	.cfi_def_cfa_offset 32
+	.cfi_def_cfa_offset 40
 	popq	%rbp
-	.cfi_def_cfa_offset 24
+	.cfi_def_cfa_offset 32
 	popq	%r12
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 24
 	popq	%r13
+	.cfi_def_cfa_offset 16
+	xorl	%eax, %eax
+	popq	%r14
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
@@ -142,7 +180,7 @@ main:
 	.p2align 4,,15
 	.type	_GLOBAL__sub_I_increment_me, @function
 _GLOBAL__sub_I_increment_me:
-.LFB1433:
+.LFB1430:
 	.cfi_startproc
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
@@ -155,16 +193,16 @@ _GLOBAL__sub_I_increment_me:
 	.cfi_def_cfa_offset 8
 	jmp	__cxa_atexit
 	.cfi_endproc
-.LFE1433:
+.LFE1430:
 	.size	_GLOBAL__sub_I_increment_me, .-_GLOBAL__sub_I_increment_me
 	.section	.init_array,"aw"
 	.align 8
 	.quad	_GLOBAL__sub_I_increment_me
 	.section	.rodata
 	.align 32
-	.type	CSWTCH.101, @object
-	.size	CSWTCH.101, 160
-CSWTCH.101:
+	.type	CSWTCH.94, @object
+	.size	CSWTCH.94, 160
+CSWTCH.94:
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_2
 	.quad	_ZZ14GetPropertyAPIiE11default_api

@@ -186,11 +186,16 @@ _Z5parsei:
 	.size	_Z5parsei, .-_Z5parsei
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
-	.string	"enter a number"
+	.string	"Randomly selected %d\n"
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
 .LC2:
 	.string	"Took %ld clicks (%f seconds).\n"
+	.section	.rodata.str1.1
+.LC3:
+	.string	"avg clicks\n"
+.LC4:
+	.string	"%ld\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
 	.globl	main
@@ -198,56 +203,80 @@ _Z5parsei:
 main:
 .LFB1278:
 	.cfi_startproc
-	pushq	%r13
+	pushq	%r15
 	.cfi_def_cfa_offset 16
-	.cfi_offset 13, -16
-	movl	$.LC0, %esi
-	movl	$_ZSt4cout, %edi
-	pushq	%r12
+	.cfi_offset 15, -16
+	xorl	%edi, %edi
+	movl	$1717986919, %r15d
+	pushq	%r14
 	.cfi_def_cfa_offset 24
-	.cfi_offset 12, -24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	xorl	%r13d, %r13d
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
 	xorl	%r12d, %r12d
 	pushq	%rbp
-	.cfi_def_cfa_offset 32
-	.cfi_offset 6, -32
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
 	pushq	%rbx
-	.cfi_def_cfa_offset 40
-	.cfi_offset 3, -40
-	subq	$24, %rsp
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$8, %rsp
 	.cfi_def_cfa_offset 64
-	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-	leaq	12(%rsp), %rsi
-	movl	$_ZSt3cin, %edi
-	call	_ZNSirsERi
+	call	time
+	movl	%eax, %edi
+	call	srand
+	call	rand
+	movl	%eax, %ecx
+	movl	$.LC0, %esi
+	movl	$1, %edi
+	imull	%r15d
+	movl	%ecx, %eax
+	sarl	$31, %eax
+	movl	%edx, %r15d
+	sarl	%r15d
+	subl	%eax, %r15d
+	leal	(%r15,%r15,4), %eax
+	subl	%eax, %ecx
+	xorl	%eax, %eax
+	movl	%ecx, %edx
+	movl	%ecx, %r15d
+	call	__printf_chk
 	.p2align 4,,10
 	.p2align 3
-.L25:
-	movl	12(%rsp), %ebx
+.L26:
 	call	clock
-	movq	%rax, %r13
-	addl	%r12d, %ebx
-	movslq	%ebx, %rbx
-	movq	_ZL17descriptorIndices(,%rbx,8), %rax
-	movl	$1000000000, %ebx
+	movq	%rax, %r14
+	leal	(%r12,%r15), %eax
+	movl	$10000000, %ebx
+	cltq
+	movq	_ZL17descriptorIndices(,%rax,8), %rax
 	leaq	_ZL11descriptors(,%rax,8), %rbp
 	.p2align 4,,10
 	.p2align 3
 .L23:
-	movq	0(%rbp), %rdx
-	testq	%rdx, %rdx
+	movq	0(%rbp), %rax
+	testq	%rax, %rax
 	je	.L21
-	call	*%rdx
+	call	*%rax
 .L21:
-	movl	increment_me(%rip), %edx
-	addl	$1, %edx
+	movl	increment_me(%rip), %eax
+	addl	$1, %eax
 	subl	$1, %ebx
-	movl	%edx, increment_me(%rip)
+	movl	%eax, increment_me(%rip)
 	jne	.L23
 	call	clock
-	subq	%r13, %rax
+	subq	%r14, %rax
+	cmpl	$2, %r12d
 	movl	$.LC2, %esi
-	movl	$1, %edi
 	cvtsi2ssq	%rax, %xmm0
+	leaq	0(%r13,%rax), %rdx
+	movl	$1, %edi
+	cmovge	%rdx, %r13
 	movq	%rax, %rdx
 	addl	$1, %r12d
 	movl	$1, %eax
@@ -255,18 +284,36 @@ main:
 	unpcklps	%xmm0, %xmm0
 	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
-	cmpl	$10, %r12d
-	jne	.L25
-	addq	$24, %rsp
-	.cfi_def_cfa_offset 40
+	cmpl	$11, %r12d
+	jne	.L26
+	movl	$.LC3, %esi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk
+	movq	%r13, %rax
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r13
+	imulq	%rdx
+	movl	$.LC4, %esi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	sarq	$2, %rdx
+	subq	%r13, %rdx
+	call	__printf_chk
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 56
 	xorl	%eax, %eax
 	popq	%rbx
-	.cfi_def_cfa_offset 32
+	.cfi_def_cfa_offset 48
 	popq	%rbp
-	.cfi_def_cfa_offset 24
+	.cfi_def_cfa_offset 40
 	popq	%r12
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 32
 	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
@@ -275,7 +322,7 @@ main:
 	.p2align 4,,15
 	.type	_GLOBAL__sub_I_increment_me, @function
 _GLOBAL__sub_I_increment_me:
-.LFB1429:
+.LFB1426:
 	.cfi_startproc
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
@@ -288,7 +335,7 @@ _GLOBAL__sub_I_increment_me:
 	.cfi_def_cfa_offset 8
 	jmp	__cxa_atexit
 	.cfi_endproc
-.LFE1429:
+.LFE1426:
 	.size	_GLOBAL__sub_I_increment_me, .-_GLOBAL__sub_I_increment_me
 	.section	.init_array,"aw"
 	.align 8

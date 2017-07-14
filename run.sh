@@ -4,11 +4,20 @@ OLEVEL=2
 NUM_CLASSES=100
 NUM_ITERATIONS=1000000000
 REPEATS=10
-WHICH="descriptor"
 
 GENFOLDER="generated"
 SFOLDER="disassembly"
 OUTFOLDER="out"
+
+tests=(
+  descriptor
+  virtual
+  table
+  sasha-static-array-lookup
+  sasha-static-function-array-lookup
+  sasha-static-switch
+  sasha-virtual-singleton-array-lookup)
+WHICH="all"
 
 while test $# -gt 0; do
   case "$1" in
@@ -45,13 +54,27 @@ function run_impl() {
 
   # Compile disassembly
   disassemble_cmd="g++ $cppname -std=c++11 -O$OLEVEL -S -o $sname"
-  echo $disassemble_cmd
   $disassemble_cmd
 
-  echo "running with $NUM_ITERATIONS iterations, $NUM_CLASSES classes at O$OLEVEL"
+  #echo "running with $NUM_ITERATIONS iterations, $NUM_CLASSES classes at O$OLEVEL"
   compile_cmd="g++ $cppname -std=c++11 -O$OLEVEL -o $runfile"
-  echo "$compile_cmd && ./$runfile"
   $compile_cmd && ./$runfile
 }
 
-run_impl $WHICH
+if [[ $WHICH == "all" ]]
+then
+  tests_to_run=${tests[@]}
+else
+  if [[ ! ${tests[*]} =~ $WHICH ]]
+  then
+    echo "$WHICH not recoginized"
+    exit 1
+  fi
+  tests_to_run=( $WHICH )
+fi
+
+for test in ${tests_to_run[@]}
+do
+  if [[ $WHICH == "all" ]]; then echo "running $test"; fi
+  run_impl $test
+done

@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -134,24 +135,30 @@ int parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
 }
-
 int main(int argc, char** argv) {
+  srand(time(nullptr));
   clock_t t;
-  int user_num;
+  int user_num = rand() % (10/2);
+  printf("Randomly selected %d\n", user_num);
   clock_t results[10];
+  clock_t avg_result = 0;
 
-  cout << "enter a number";
-  cin >> user_num;
-
-  for (int r = 0; r < 10; r++) {
+  for (int r = 0; r < 10 + 1; r++) {
     int num = user_num + r;
     t = clock();
-    for (int i = 0; i < 1000000000; i++) {
+    for (int i = 0; i < 10000000; i++) {
       parse(num);
     }
     clock_t result = clock() - t;
-    results[r] = result;
+
+    // Ignore the first run
+    if (r > 1) {
+      results[r - 1] = result;
+      avg_result += result;
+    }
     printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
   }
 
+  printf("avg clicks\n");
+  printf("%ld\n", avg_result / 10);
 }

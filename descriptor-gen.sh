@@ -7,6 +7,7 @@ REPEATS=10
 echo "#include <cstdio>
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -71,24 +72,5 @@ void parse(int id) {
   increment_me += 1;
 }"
 
-echo "
-int main(int argc, char** argv) {
-  clock_t t;
-  int user_num;
-  clock_t results[$REPEATS];
-
-  cout << \"enter a number\";
-  cin >> user_num;
-
-  for (int r = 0; r < $REPEATS; r++) {
-    int num = user_num + r;
-    t = clock();
-    for (int i = 0; i < $NUM_ITERATIONS; i++) {
-      parse(num);
-    }
-    clock_t result = clock() - t;
-    results[r] = result;
-    printf(\"Took %ld clicks (%f seconds).\n\", result, ((float)result)/CLOCKS_PER_SEC);
-  }
-
-}"
+./main-gen.sh "parse" \
+  $NUM_CLASSES $NUM_ITERATIONS $REPEATS
