@@ -106,6 +106,7 @@ function run_split_impl() {
   ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename > $genfolder/$cppfile
 
   g++ $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
+  g++ $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
 
   compile_cmd="g++ \
     $genfolder/$mainfile \
