@@ -2,7 +2,5 @@
 /generated/*
 /disassembly/*
 
-!/out/*-10-classes-test**
-!/generated/*-10-classes-test**
-!/disassembly/*-10-classes-test**
+!**/*-10-classes-test*
 
