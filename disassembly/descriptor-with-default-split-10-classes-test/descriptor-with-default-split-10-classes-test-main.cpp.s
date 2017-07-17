@@ -1,168 +1,159 @@
-	.file	"descriptor-with-default-split-10-classes-test-main.cpp"
+	.file	"generated/descriptor-with-default-split-10-classes-test/descriptor-with-default-split-10-classes-test-main.cpp"
 	.text
-	.p2align 4,,15
 	.globl	_Z5parsei
-	.type	_Z5parsei, @function
-_Z5parsei:
-.LFB1266:
+	.align	16, 0x90
+	.type	_Z5parsei,@function
+_Z5parsei:                              # @_Z5parsei
 	.cfi_startproc
-	subq	$8, %rsp
+# BB#0:
+	pushq	%rax
+.Ltmp1:
 	.cfi_def_cfa_offset 16
-	call	_ZN21CSSPropertyDescriptor3GetEi
-	movq	(%rax), %rax
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
-	jmp	*%rax
+	callq	_ZN21CSSPropertyDescriptor3GetEi
+	popq	%rdx
+	jmpq	*(%rax)  # TAILCALL
+.Ltmp2:
+	.size	_Z5parsei, .Ltmp2-_Z5parsei
 	.cfi_endproc
-.LFE1266:
-	.size	_Z5parsei, .-_Z5parsei
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"%ld\n"
-.LC1:
-	.string	"avg clicks\n"
-	.section	.text.startup,"ax",@progbits
-	.p2align 4,,15
+
 	.globl	main
-	.type	main, @function
-main:
-.LFB1267:
+	.align	16, 0x90
+	.type	main,@function
+main:                                   # @main
 	.cfi_startproc
-	pushq	%r15
-	.cfi_def_cfa_offset 16
-	.cfi_offset 15, -16
-	xorl	%edi, %edi
-	movl	$1717986919, %r15d
-	pushq	%r14
-	.cfi_def_cfa_offset 24
-	.cfi_offset 14, -24
-	pushq	%r13
-	.cfi_def_cfa_offset 32
-	.cfi_offset 13, -32
-	xorl	%r13d, %r13d
-	pushq	%r12
-	.cfi_def_cfa_offset 40
-	.cfi_offset 12, -40
-	movl	$1, %r12d
+# BB#0:
 	pushq	%rbp
-	.cfi_def_cfa_offset 48
-	.cfi_offset 6, -48
+.Ltmp9:
+	.cfi_def_cfa_offset 16
+	pushq	%r15
+.Ltmp10:
+	.cfi_def_cfa_offset 24
+	pushq	%r14
+.Ltmp11:
+	.cfi_def_cfa_offset 32
+	pushq	%r12
+.Ltmp12:
+	.cfi_def_cfa_offset 40
 	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	.cfi_offset 3, -56
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 64
-	call	time
+.Ltmp13:
+	.cfi_def_cfa_offset 48
+.Ltmp14:
+	.cfi_offset %rbx, -48
+.Ltmp15:
+	.cfi_offset %r12, -40
+.Ltmp16:
+	.cfi_offset %r14, -32
+.Ltmp17:
+	.cfi_offset %r15, -24
+.Ltmp18:
+	.cfi_offset %rbp, -16
+	xorl	%edi, %edi
+	callq	time
 	movl	%eax, %edi
-	call	srand
-	.p2align 4,,10
-	.p2align 3
-.L4:
-	call	rand
-	movl	%eax, %ecx
-	movl	$10000, %ebx
-	imull	%r15d
-	movl	%ecx, %eax
-	sarl	$31, %eax
-	movl	%edx, %ebp
-	sarl	$2, %ebp
-	subl	%eax, %ebp
-	leal	0(%rbp,%rbp,4), %eax
-	addl	%eax, %eax
-	subl	%eax, %ecx
-	movl	%ecx, %ebp
-	call	clock
-	movq	%rax, %r14
-	.p2align 4,,10
-	.p2align 3
-.L6:
-	movl	%ebp, %edi
-	call	_ZN21CSSPropertyDescriptor3GetEi
-	call	*(%rax)
-	subl	$1, %ebx
-	jne	.L6
-	.p2align 4,,8
-	call	clock
-	subq	%r14, %rax
-	cmpl	$1, %r12d
-	je	.L7
-	addq	%rax, %r13
-	movq	%rax, %rdx
-	movl	$.LC0, %esi
+	callq	srand
+	xorl	%r14d, %r14d
+	xorl	%r12d, %r12d
+	.align	16, 0x90
+.LBB1_1:                                # =>This Loop Header: Depth=1
+                                        #     Child Loop BB1_2 Depth 2
+	callq	rand
+	movslq	%eax, %rbx
+	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
+	movq	%rax, %rcx
+	shrq	$63, %rcx
+	sarq	$34, %rax
+	addl	%ecx, %eax
+	imull	$10, %eax, %eax
+	subl	%eax, %ebx
+	movl	$1000, %ebp             # imm = 0x3E8
+	callq	clock
+	movq	%rax, %r15
+	.align	16, 0x90
+.LBB1_2:                                #   Parent Loop BB1_1 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movl	%ebx, %edi
+	callq	_ZN21CSSPropertyDescriptor3GetEi
+	callq	*(%rax)
+	decl	%ebp
+	jne	.LBB1_2
+# BB#3:                                 #   in Loop: Header=BB1_1 Depth=1
+	callq	clock
+	movq	%rax, %rcx
+	subq	%r15, %rcx
+	testl	%r12d, %r12d
+	movl	$0, %eax
+	cmovgq	%rcx, %rax
+	addq	%rax, %r14
+	movl	$.L.str, %edi
 	xorl	%eax, %eax
-	movl	$1, %edi
-	call	__printf_chk
-	cmpl	$11, %r12d
-	je	.L13
-.L8:
-	addl	$1, %r12d
-	jmp	.L4
-.L13:
-	movl	$.LC1, %esi
-	movl	$1, %edi
+	movq	%rcx, %rsi
+	callq	printf
+	incl	%r12d
+	cmpl	$51, %r12d
+	jne	.LBB1_1
+# BB#4:
+	movl	$.Lstr, %edi
+	callq	puts
+	movabsq	$-6640827866535438581, %rcx # imm = 0xA3D70A3D70A3D70B
+	movq	%r14, %rax
+	imulq	%rcx
+	addq	%r14, %rdx
+	movq	%rdx, %rax
+	shrq	$63, %rax
+	sarq	$5, %rdx
+	leaq	(%rdx,%rax), %rsi
+	movl	$.L.str, %edi
 	xorl	%eax, %eax
-	call	__printf_chk
-	movq	%r13, %rax
-	movabsq	$7378697629483820647, %rdx
-	sarq	$63, %r13
-	imulq	%rdx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	xorl	%eax, %eax
-	sarq	$2, %rdx
-	subq	%r13, %rdx
-	call	__printf_chk
-	addq	$8, %rsp
-	.cfi_remember_state
-	.cfi_def_cfa_offset 56
+	callq	printf
 	xorl	%eax, %eax
 	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%rbp
-	.cfi_def_cfa_offset 40
 	popq	%r12
-	.cfi_def_cfa_offset 32
-	popq	%r13
-	.cfi_def_cfa_offset 24
 	popq	%r14
-	.cfi_def_cfa_offset 16
 	popq	%r15
-	.cfi_def_cfa_offset 8
+	popq	%rbp
 	ret
-.L7:
-	.cfi_restore_state
-	movq	%rax, %rdx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	xorl	%eax, %eax
-	call	__printf_chk
-	jmp	.L8
+.Ltmp19:
+	.size	main, .Ltmp19-main
 	.cfi_endproc
-.LFE1267:
-	.size	main, .-main
-	.p2align 4,,15
-	.type	_GLOBAL__sub_I__Z5parsei, @function
-_GLOBAL__sub_I__Z5parsei:
-.LFB1415:
+
+	.section	.text.startup,"ax",@progbits
+	.align	16, 0x90
+	.type	_GLOBAL__I_a,@function
+_GLOBAL__I_a:                           # @_GLOBAL__I_a
 	.cfi_startproc
-	subq	$8, %rsp
+# BB#0:
+	pushq	%rax
+.Ltmp21:
 	.cfi_def_cfa_offset 16
 	movl	$_ZStL8__ioinit, %edi
-	call	_ZNSt8ios_base4InitC1Ev
-	movl	$__dso_handle, %edx
-	movl	$_ZStL8__ioinit, %esi
+	callq	_ZNSt8ios_base4InitC1Ev
 	movl	$_ZNSt8ios_base4InitD1Ev, %edi
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
-	jmp	__cxa_atexit
+	movl	$_ZStL8__ioinit, %esi
+	movl	$__dso_handle, %edx
+	popq	%rax
+	jmp	__cxa_atexit            # TAILCALL
+.Ltmp22:
+	.size	_GLOBAL__I_a, .Ltmp22-_GLOBAL__I_a
 	.cfi_endproc
-.LFE1415:
-	.size	_GLOBAL__sub_I__Z5parsei, .-_GLOBAL__sub_I__Z5parsei
-	.section	.init_array,"aw"
-	.align 8
-	.quad	_GLOBAL__sub_I__Z5parsei
+
+	.type	_ZStL8__ioinit,@object  # @_ZStL8__ioinit
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
-	.hidden	__dso_handle
-	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
-	.section	.note.GNU-stack,"",@progbits
+	.type	.L.str,@object          # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"%ld\n"
+	.size	.L.str, 5
+
+	.section	.init_array,"aw",@init_array
+	.align	8
+	.quad	_GLOBAL__I_a
+	.type	.Lstr,@object           # @str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.Lstr:
+	.asciz	"avg clicks"
+	.size	.Lstr, 11
+
+
+	.ident	"Ubuntu clang version 3.4-1ubuntu3 (tags/RELEASE_34/final) (based on LLVM 3.4)"
+	.section	".note.GNU-stack","",@progbits

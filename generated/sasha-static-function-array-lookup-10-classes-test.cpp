@@ -70,16 +70,16 @@ class Class10 {
 
 typedef void (*do_something_function)();
 do_something_function function_array[] = {
-  Class10::doSomethingStatic,
+  Class5::doSomethingStatic,
+  Class8::doSomethingStatic,
+  Class7::doSomethingStatic,
+  Class3::doSomethingStatic,
+  Class2::doSomethingStatic,
   Class6::doSomethingStatic,
   Class1::doSomethingStatic,
-  Class7::doSomethingStatic,
-  Class8::doSomethingStatic,
-  Class3::doSomethingStatic,
-  Class5::doSomethingStatic,
+  Class10::doSomethingStatic,
   Class9::doSomethingStatic,
   Class4::doSomethingStatic,
-  Class2::doSomethingStatic,
 };
 
 void callWithArrayLookup(int classId) {
@@ -89,13 +89,13 @@ void callWithArrayLookup(int classId) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  clock_t results[10];
+  clock_t results[50];
   clock_t avg_result = 0;
 
-  for (int r = 0; r < 10 + 1; r++) {
+  for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 1000; i++) {
       callWithArrayLookup(num);
     }
     clock_t result = clock() - t;
@@ -110,5 +110,5 @@ int main(int argc, char** argv) {
   }
 
   printf("avg clicks\n");
-  printf("%ld\n", avg_result / 10);
+  printf("%ld\n", avg_result / 50);
 }

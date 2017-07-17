@@ -94,48 +94,28 @@ increment_me += 11;
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
     CSSPropertyAPI3::parse,
     CSSPropertyAPI3::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
-  },
-  {
-    CSSPropertyAPI8::parse,
-    CSSPropertyAPI8::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
   },
   {
     CSSPropertyAPI10::parse,
     CSSPropertyAPI10::other,
   },
   {
-    CSSPropertyAPI4::parse,
-    CSSPropertyAPI4::other,
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
+  },
+  {
+    CSSPropertyAPI8::parse,
+    CSSPropertyAPI8::other,
   },
   {
     CSSPropertyAPIDefault::parse,
@@ -150,6 +130,34 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPIDefault::other,
   },
   {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI4::parse,
+    CSSPropertyAPI4::other,
+  },
+  {
     CSSPropertyAPI9::parse,
     CSSPropertyAPI9::other,
   },
@@ -158,44 +166,36 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPIDefault::other,
   },
   {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
   },
   {
     CSSPropertyAPI6::parse,
     CSSPropertyAPI6::other,
   },
-  {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
 };
 
 static size_t descriptorIndices[] = {
-  5,
+  8,
   10,
+  15,
+  2,
+  17,
+  4,
+  0,
+  5,
+  14,
+  7,
+  9,
+  1,
+  12,
   3,
   19,
   6,
-  17,
-  11,
-  12,
-  2,
-  13,
-  4,
-  8,
-  15,
-  1,
-  16,
   18,
-  9,
-  0,
-  7,
-  14,
+  13,
+  16,
+  11,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

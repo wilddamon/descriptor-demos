@@ -1,509 +1,509 @@
-	.file	"descriptor-with-default-10-classes-test.cpp"
-	.section	.text._ZN21CSSPropertyAPIDefault5parseEv,"axG",@progbits,_ZN21CSSPropertyAPIDefault5parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN21CSSPropertyAPIDefault5parseEv
-	.type	_ZN21CSSPropertyAPIDefault5parseEv, @function
-_ZN21CSSPropertyAPIDefault5parseEv:
-.LFB1266:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	movl	increment_me(%rip), %edx
-	addl	%edx, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1266:
-	.size	_ZN21CSSPropertyAPIDefault5parseEv, .-_ZN21CSSPropertyAPIDefault5parseEv
-	.section	.text._ZN21CSSPropertyAPIDefault5otherEv,"axG",@progbits,_ZN21CSSPropertyAPIDefault5otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN21CSSPropertyAPIDefault5otherEv
-	.type	_ZN21CSSPropertyAPIDefault5otherEv, @function
-_ZN21CSSPropertyAPIDefault5otherEv:
-.LFB1267:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$10, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1267:
-	.size	_ZN21CSSPropertyAPIDefault5otherEv, .-_ZN21CSSPropertyAPIDefault5otherEv
-	.section	.text._ZN15CSSPropertyAPI15parseEv,"axG",@progbits,_ZN15CSSPropertyAPI15parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI15parseEv
-	.type	_ZN15CSSPropertyAPI15parseEv, @function
-_ZN15CSSPropertyAPI15parseEv:
-.LFB1268:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$1, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1268:
-	.size	_ZN15CSSPropertyAPI15parseEv, .-_ZN15CSSPropertyAPI15parseEv
-	.section	.text._ZN15CSSPropertyAPI15otherEv,"axG",@progbits,_ZN15CSSPropertyAPI15otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI15otherEv
-	.type	_ZN15CSSPropertyAPI15otherEv, @function
-_ZN15CSSPropertyAPI15otherEv:
-.LFB1269:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$2, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1269:
-	.size	_ZN15CSSPropertyAPI15otherEv, .-_ZN15CSSPropertyAPI15otherEv
-	.section	.text._ZN15CSSPropertyAPI25parseEv,"axG",@progbits,_ZN15CSSPropertyAPI25parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI25parseEv
-	.type	_ZN15CSSPropertyAPI25parseEv, @function
-_ZN15CSSPropertyAPI25parseEv:
-.LFB1270:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$2, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1270:
-	.size	_ZN15CSSPropertyAPI25parseEv, .-_ZN15CSSPropertyAPI25parseEv
-	.section	.text._ZN15CSSPropertyAPI25otherEv,"axG",@progbits,_ZN15CSSPropertyAPI25otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI25otherEv
-	.type	_ZN15CSSPropertyAPI25otherEv, @function
-_ZN15CSSPropertyAPI25otherEv:
-.LFB1271:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$3, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1271:
-	.size	_ZN15CSSPropertyAPI25otherEv, .-_ZN15CSSPropertyAPI25otherEv
-	.section	.text._ZN15CSSPropertyAPI35parseEv,"axG",@progbits,_ZN15CSSPropertyAPI35parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI35parseEv
-	.type	_ZN15CSSPropertyAPI35parseEv, @function
-_ZN15CSSPropertyAPI35parseEv:
-.LFB1272:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$3, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1272:
-	.size	_ZN15CSSPropertyAPI35parseEv, .-_ZN15CSSPropertyAPI35parseEv
-	.section	.text._ZN15CSSPropertyAPI35otherEv,"axG",@progbits,_ZN15CSSPropertyAPI35otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI35otherEv
-	.type	_ZN15CSSPropertyAPI35otherEv, @function
-_ZN15CSSPropertyAPI35otherEv:
-.LFB1273:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$4, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1273:
-	.size	_ZN15CSSPropertyAPI35otherEv, .-_ZN15CSSPropertyAPI35otherEv
-	.section	.text._ZN15CSSPropertyAPI45parseEv,"axG",@progbits,_ZN15CSSPropertyAPI45parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI45parseEv
-	.type	_ZN15CSSPropertyAPI45parseEv, @function
-_ZN15CSSPropertyAPI45parseEv:
-.LFB1274:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$4, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1274:
-	.size	_ZN15CSSPropertyAPI45parseEv, .-_ZN15CSSPropertyAPI45parseEv
-	.section	.text._ZN15CSSPropertyAPI45otherEv,"axG",@progbits,_ZN15CSSPropertyAPI45otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI45otherEv
-	.type	_ZN15CSSPropertyAPI45otherEv, @function
-_ZN15CSSPropertyAPI45otherEv:
-.LFB1275:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$5, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1275:
-	.size	_ZN15CSSPropertyAPI45otherEv, .-_ZN15CSSPropertyAPI45otherEv
-	.section	.text._ZN15CSSPropertyAPI55parseEv,"axG",@progbits,_ZN15CSSPropertyAPI55parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI55parseEv
-	.type	_ZN15CSSPropertyAPI55parseEv, @function
-_ZN15CSSPropertyAPI55parseEv:
-.LFB1276:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$5, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1276:
-	.size	_ZN15CSSPropertyAPI55parseEv, .-_ZN15CSSPropertyAPI55parseEv
-	.section	.text._ZN15CSSPropertyAPI55otherEv,"axG",@progbits,_ZN15CSSPropertyAPI55otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI55otherEv
-	.type	_ZN15CSSPropertyAPI55otherEv, @function
-_ZN15CSSPropertyAPI55otherEv:
-.LFB1277:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$6, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1277:
-	.size	_ZN15CSSPropertyAPI55otherEv, .-_ZN15CSSPropertyAPI55otherEv
-	.section	.text._ZN15CSSPropertyAPI65parseEv,"axG",@progbits,_ZN15CSSPropertyAPI65parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI65parseEv
-	.type	_ZN15CSSPropertyAPI65parseEv, @function
-_ZN15CSSPropertyAPI65parseEv:
-.LFB1278:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$6, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1278:
-	.size	_ZN15CSSPropertyAPI65parseEv, .-_ZN15CSSPropertyAPI65parseEv
-	.section	.text._ZN15CSSPropertyAPI65otherEv,"axG",@progbits,_ZN15CSSPropertyAPI65otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI65otherEv
-	.type	_ZN15CSSPropertyAPI65otherEv, @function
-_ZN15CSSPropertyAPI65otherEv:
-.LFB1279:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$7, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1279:
-	.size	_ZN15CSSPropertyAPI65otherEv, .-_ZN15CSSPropertyAPI65otherEv
-	.section	.text._ZN15CSSPropertyAPI75parseEv,"axG",@progbits,_ZN15CSSPropertyAPI75parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI75parseEv
-	.type	_ZN15CSSPropertyAPI75parseEv, @function
-_ZN15CSSPropertyAPI75parseEv:
-.LFB1280:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$7, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1280:
-	.size	_ZN15CSSPropertyAPI75parseEv, .-_ZN15CSSPropertyAPI75parseEv
-	.section	.text._ZN15CSSPropertyAPI75otherEv,"axG",@progbits,_ZN15CSSPropertyAPI75otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI75otherEv
-	.type	_ZN15CSSPropertyAPI75otherEv, @function
-_ZN15CSSPropertyAPI75otherEv:
-.LFB1281:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$8, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1281:
-	.size	_ZN15CSSPropertyAPI75otherEv, .-_ZN15CSSPropertyAPI75otherEv
-	.section	.text._ZN15CSSPropertyAPI85parseEv,"axG",@progbits,_ZN15CSSPropertyAPI85parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI85parseEv
-	.type	_ZN15CSSPropertyAPI85parseEv, @function
-_ZN15CSSPropertyAPI85parseEv:
-.LFB1282:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$8, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1282:
-	.size	_ZN15CSSPropertyAPI85parseEv, .-_ZN15CSSPropertyAPI85parseEv
-	.section	.text._ZN15CSSPropertyAPI85otherEv,"axG",@progbits,_ZN15CSSPropertyAPI85otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI85otherEv
-	.type	_ZN15CSSPropertyAPI85otherEv, @function
-_ZN15CSSPropertyAPI85otherEv:
-.LFB1283:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$9, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1283:
-	.size	_ZN15CSSPropertyAPI85otherEv, .-_ZN15CSSPropertyAPI85otherEv
-	.section	.text._ZN15CSSPropertyAPI95parseEv,"axG",@progbits,_ZN15CSSPropertyAPI95parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI95parseEv
-	.type	_ZN15CSSPropertyAPI95parseEv, @function
-_ZN15CSSPropertyAPI95parseEv:
-.LFB1284:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$9, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1284:
-	.size	_ZN15CSSPropertyAPI95parseEv, .-_ZN15CSSPropertyAPI95parseEv
-	.section	.text._ZN15CSSPropertyAPI95otherEv,"axG",@progbits,_ZN15CSSPropertyAPI95otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN15CSSPropertyAPI95otherEv
-	.type	_ZN15CSSPropertyAPI95otherEv, @function
-_ZN15CSSPropertyAPI95otherEv:
-.LFB1285:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$10, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1285:
-	.size	_ZN15CSSPropertyAPI95otherEv, .-_ZN15CSSPropertyAPI95otherEv
-	.section	.text._ZN16CSSPropertyAPI105parseEv,"axG",@progbits,_ZN16CSSPropertyAPI105parseEv,comdat
-	.p2align 4,,15
-	.weak	_ZN16CSSPropertyAPI105parseEv
-	.type	_ZN16CSSPropertyAPI105parseEv, @function
-_ZN16CSSPropertyAPI105parseEv:
-.LFB1286:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$10, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1286:
-	.size	_ZN16CSSPropertyAPI105parseEv, .-_ZN16CSSPropertyAPI105parseEv
-	.section	.text._ZN16CSSPropertyAPI105otherEv,"axG",@progbits,_ZN16CSSPropertyAPI105otherEv,comdat
-	.p2align 4,,15
-	.weak	_ZN16CSSPropertyAPI105otherEv
-	.type	_ZN16CSSPropertyAPI105otherEv, @function
-_ZN16CSSPropertyAPI105otherEv:
-.LFB1287:
-	.cfi_startproc
-	movl	increment_me(%rip), %eax
-	addl	$11, %eax
-	movl	%eax, increment_me(%rip)
-	ret
-	.cfi_endproc
-.LFE1287:
-	.size	_ZN16CSSPropertyAPI105otherEv, .-_ZN16CSSPropertyAPI105otherEv
+	.file	"generated/descriptor-with-default-10-classes-test.cpp"
 	.text
-	.align 2
-	.p2align 4,,15
 	.globl	_ZN21CSSPropertyDescriptor3GetEi
-	.type	_ZN21CSSPropertyDescriptor3GetEi, @function
-_ZN21CSSPropertyDescriptor3GetEi:
-.LFB1288:
+	.align	16, 0x90
+	.type	_ZN21CSSPropertyDescriptor3GetEi,@function
+_ZN21CSSPropertyDescriptor3GetEi:       # @_ZN21CSSPropertyDescriptor3GetEi
 	.cfi_startproc
-	movslq	%edi, %rdi
-	movq	_ZL17descriptorIndices(,%rdi,8), %rax
-	salq	$4, %rax
-	addq	$_ZL11descriptors, %rax
+# BB#0:
+	movslq	%edi, %rax
+	movq	_ZL17descriptorIndices(,%rax,8), %rax
+	shlq	$4, %rax
+	leaq	_ZL11descriptors(%rax), %rax
 	ret
+.Ltmp0:
+	.size	_ZN21CSSPropertyDescriptor3GetEi, .Ltmp0-_ZN21CSSPropertyDescriptor3GetEi
 	.cfi_endproc
-.LFE1288:
-	.size	_ZN21CSSPropertyDescriptor3GetEi, .-_ZN21CSSPropertyDescriptor3GetEi
-	.p2align 4,,15
+
 	.globl	_Z5parsei
-	.type	_Z5parsei, @function
-_Z5parsei:
-.LFB1289:
+	.align	16, 0x90
+	.type	_Z5parsei,@function
+_Z5parsei:                              # @_Z5parsei
 	.cfi_startproc
-	movslq	%edi, %rdi
-	movq	_ZL17descriptorIndices(,%rdi,8), %rax
-	salq	$4, %rax
-	movq	_ZL11descriptors(%rax), %rax
-	jmp	*%rax
+# BB#0:
+	movslq	%edi, %rax
+	movq	_ZL17descriptorIndices(,%rax,8), %rax
+	shlq	$4, %rax
+	jmpq	*_ZL11descriptors(%rax)  # TAILCALL
+.Ltmp1:
+	.size	_Z5parsei, .Ltmp1-_Z5parsei
 	.cfi_endproc
-.LFE1289:
-	.size	_Z5parsei, .-_Z5parsei
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"%ld\n"
-.LC1:
-	.string	"avg clicks\n"
-	.section	.text.startup,"ax",@progbits
-	.p2align 4,,15
+
 	.globl	main
-	.type	main, @function
-main:
-.LFB1290:
+	.align	16, 0x90
+	.type	main,@function
+main:                                   # @main
 	.cfi_startproc
-	pushq	%r15
-	.cfi_def_cfa_offset 16
-	.cfi_offset 15, -16
-	xorl	%edi, %edi
-	movl	$1717986919, %r15d
-	pushq	%r14
-	.cfi_def_cfa_offset 24
-	.cfi_offset 14, -24
-	pushq	%r13
-	.cfi_def_cfa_offset 32
-	.cfi_offset 13, -32
-	xorl	%r13d, %r13d
-	pushq	%r12
-	.cfi_def_cfa_offset 40
-	.cfi_offset 12, -40
-	movl	$1, %r12d
+# BB#0:
 	pushq	%rbp
-	.cfi_def_cfa_offset 48
-	.cfi_offset 6, -48
+.Ltmp8:
+	.cfi_def_cfa_offset 16
+	pushq	%r15
+.Ltmp9:
+	.cfi_def_cfa_offset 24
+	pushq	%r14
+.Ltmp10:
+	.cfi_def_cfa_offset 32
+	pushq	%r12
+.Ltmp11:
+	.cfi_def_cfa_offset 40
 	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	.cfi_offset 3, -56
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 64
-	call	time
+.Ltmp12:
+	.cfi_def_cfa_offset 48
+.Ltmp13:
+	.cfi_offset %rbx, -48
+.Ltmp14:
+	.cfi_offset %r12, -40
+.Ltmp15:
+	.cfi_offset %r14, -32
+.Ltmp16:
+	.cfi_offset %r15, -24
+.Ltmp17:
+	.cfi_offset %rbp, -16
+	xorl	%edi, %edi
+	callq	time
 	movl	%eax, %edi
-	call	srand
-	.p2align 4,,10
-	.p2align 3
-.L26:
-	call	rand
-	movl	%eax, %ebx
-	call	clock
-	movq	%rax, %r14
-	movl	%ebx, %eax
-	imull	%r15d
-	movl	%ebx, %eax
-	sarl	$31, %eax
-	sarl	$2, %edx
-	subl	%eax, %edx
-	leal	(%rdx,%rdx,4), %eax
-	addl	%eax, %eax
+	callq	srand
+	xorl	%r15d, %r15d
+	xorl	%r12d, %r12d
+	.align	16, 0x90
+.LBB2_1:                                # =>This Loop Header: Depth=1
+                                        #     Child Loop BB2_2 Depth 2
+	callq	rand
+	movslq	%eax, %rbx
+	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
+	movq	%rax, %rcx
+	shrq	$63, %rcx
+	sarq	$34, %rax
+	addl	%ecx, %eax
+	imull	$10, %eax, %eax
 	subl	%eax, %ebx
+	callq	clock
+	movq	%rax, %r14
 	movslq	%ebx, %rax
-	movl	$10000, %ebx
-	movq	_ZL17descriptorIndices(,%rax,8), %rbp
-	salq	$4, %rbp
-	addq	$_ZL11descriptors, %rbp
-	.p2align 4,,10
-	.p2align 3
-.L28:
-	call	*0(%rbp)
-	subl	$1, %ebx
-	jne	.L28
-	call	clock
-	subq	%r14, %rax
-	cmpl	$1, %r12d
-	je	.L29
-	addq	%rax, %r13
-	movq	%rax, %rdx
-	movl	$.LC0, %esi
+	movq	_ZL17descriptorIndices(,%rax,8), %rax
+	shlq	$4, %rax
+	movq	_ZL11descriptors(%rax), %rbx
+	movl	$1000, %ebp             # imm = 0x3E8
+	.align	16, 0x90
+.LBB2_2:                                #   Parent Loop BB2_1 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	callq	*%rbx
+	decl	%ebp
+	jne	.LBB2_2
+# BB#3:                                 #   in Loop: Header=BB2_1 Depth=1
+	callq	clock
+	movq	%rax, %rcx
+	subq	%r14, %rcx
+	testl	%r12d, %r12d
+	movl	$0, %eax
+	cmovgq	%rcx, %rax
+	addq	%rax, %r15
+	movl	$.L.str, %edi
 	xorl	%eax, %eax
-	movl	$1, %edi
-	call	__printf_chk
-	cmpl	$11, %r12d
-	je	.L35
-.L30:
-	addl	$1, %r12d
-	jmp	.L26
-.L35:
-	movl	$.LC1, %esi
-	movl	$1, %edi
+	movq	%rcx, %rsi
+	callq	printf
+	incl	%r12d
+	cmpl	$51, %r12d
+	jne	.LBB2_1
+# BB#4:
+	movl	$.Lstr, %edi
+	callq	puts
+	movabsq	$-6640827866535438581, %rcx # imm = 0xA3D70A3D70A3D70B
+	movq	%r15, %rax
+	imulq	%rcx
+	addq	%r15, %rdx
+	movq	%rdx, %rax
+	shrq	$63, %rax
+	sarq	$5, %rdx
+	leaq	(%rdx,%rax), %rsi
+	movl	$.L.str, %edi
 	xorl	%eax, %eax
-	call	__printf_chk
-	movq	%r13, %rax
-	movabsq	$7378697629483820647, %rdx
-	sarq	$63, %r13
-	imulq	%rdx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	xorl	%eax, %eax
-	sarq	$2, %rdx
-	subq	%r13, %rdx
-	call	__printf_chk
-	addq	$8, %rsp
-	.cfi_remember_state
-	.cfi_def_cfa_offset 56
+	callq	printf
 	xorl	%eax, %eax
 	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%rbp
-	.cfi_def_cfa_offset 40
 	popq	%r12
-	.cfi_def_cfa_offset 32
-	popq	%r13
-	.cfi_def_cfa_offset 24
 	popq	%r14
-	.cfi_def_cfa_offset 16
 	popq	%r15
-	.cfi_def_cfa_offset 8
+	popq	%rbp
 	ret
-.L29:
-	.cfi_restore_state
-	movq	%rax, %rdx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	xorl	%eax, %eax
-	call	__printf_chk
-	jmp	.L30
+.Ltmp18:
+	.size	main, .Ltmp18-main
 	.cfi_endproc
-.LFE1290:
-	.size	main, .-main
-	.p2align 4,,15
-	.type	_GLOBAL__sub_I_increment_me, @function
-_GLOBAL__sub_I_increment_me:
-.LFB1438:
+
+	.section	.text._ZN21CSSPropertyAPIDefault5parseEv,"axG",@progbits,_ZN21CSSPropertyAPIDefault5parseEv,comdat
+	.weak	_ZN21CSSPropertyAPIDefault5parseEv
+	.align	16, 0x90
+	.type	_ZN21CSSPropertyAPIDefault5parseEv,@function
+_ZN21CSSPropertyAPIDefault5parseEv:     # @_ZN21CSSPropertyAPIDefault5parseEv
 	.cfi_startproc
-	subq	$8, %rsp
+# BB#0:
+	movl	increment_me(%rip), %eax
+	addl	%eax, increment_me(%rip)
+	ret
+.Ltmp19:
+	.size	_ZN21CSSPropertyAPIDefault5parseEv, .Ltmp19-_ZN21CSSPropertyAPIDefault5parseEv
+	.cfi_endproc
+
+	.section	.text._ZN21CSSPropertyAPIDefault5otherEv,"axG",@progbits,_ZN21CSSPropertyAPIDefault5otherEv,comdat
+	.weak	_ZN21CSSPropertyAPIDefault5otherEv
+	.align	16, 0x90
+	.type	_ZN21CSSPropertyAPIDefault5otherEv,@function
+_ZN21CSSPropertyAPIDefault5otherEv:     # @_ZN21CSSPropertyAPIDefault5otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$50, increment_me(%rip)
+	ret
+.Ltmp20:
+	.size	_ZN21CSSPropertyAPIDefault5otherEv, .Ltmp20-_ZN21CSSPropertyAPIDefault5otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI45parseEv,"axG",@progbits,_ZN15CSSPropertyAPI45parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI45parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI45parseEv,@function
+_ZN15CSSPropertyAPI45parseEv:           # @_ZN15CSSPropertyAPI45parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$4, increment_me(%rip)
+	ret
+.Ltmp21:
+	.size	_ZN15CSSPropertyAPI45parseEv, .Ltmp21-_ZN15CSSPropertyAPI45parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI45otherEv,"axG",@progbits,_ZN15CSSPropertyAPI45otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI45otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI45otherEv,@function
+_ZN15CSSPropertyAPI45otherEv:           # @_ZN15CSSPropertyAPI45otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$5, increment_me(%rip)
+	ret
+.Ltmp22:
+	.size	_ZN15CSSPropertyAPI45otherEv, .Ltmp22-_ZN15CSSPropertyAPI45otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI25parseEv,"axG",@progbits,_ZN15CSSPropertyAPI25parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI25parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI25parseEv,@function
+_ZN15CSSPropertyAPI25parseEv:           # @_ZN15CSSPropertyAPI25parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$2, increment_me(%rip)
+	ret
+.Ltmp23:
+	.size	_ZN15CSSPropertyAPI25parseEv, .Ltmp23-_ZN15CSSPropertyAPI25parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI25otherEv,"axG",@progbits,_ZN15CSSPropertyAPI25otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI25otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI25otherEv,@function
+_ZN15CSSPropertyAPI25otherEv:           # @_ZN15CSSPropertyAPI25otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$3, increment_me(%rip)
+	ret
+.Ltmp24:
+	.size	_ZN15CSSPropertyAPI25otherEv, .Ltmp24-_ZN15CSSPropertyAPI25otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI75parseEv,"axG",@progbits,_ZN15CSSPropertyAPI75parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI75parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI75parseEv,@function
+_ZN15CSSPropertyAPI75parseEv:           # @_ZN15CSSPropertyAPI75parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$7, increment_me(%rip)
+	ret
+.Ltmp25:
+	.size	_ZN15CSSPropertyAPI75parseEv, .Ltmp25-_ZN15CSSPropertyAPI75parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI75otherEv,"axG",@progbits,_ZN15CSSPropertyAPI75otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI75otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI75otherEv,@function
+_ZN15CSSPropertyAPI75otherEv:           # @_ZN15CSSPropertyAPI75otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$8, increment_me(%rip)
+	ret
+.Ltmp26:
+	.size	_ZN15CSSPropertyAPI75otherEv, .Ltmp26-_ZN15CSSPropertyAPI75otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI95parseEv,"axG",@progbits,_ZN15CSSPropertyAPI95parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI95parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI95parseEv,@function
+_ZN15CSSPropertyAPI95parseEv:           # @_ZN15CSSPropertyAPI95parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$9, increment_me(%rip)
+	ret
+.Ltmp27:
+	.size	_ZN15CSSPropertyAPI95parseEv, .Ltmp27-_ZN15CSSPropertyAPI95parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI95otherEv,"axG",@progbits,_ZN15CSSPropertyAPI95otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI95otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI95otherEv,@function
+_ZN15CSSPropertyAPI95otherEv:           # @_ZN15CSSPropertyAPI95otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$10, increment_me(%rip)
+	ret
+.Ltmp28:
+	.size	_ZN15CSSPropertyAPI95otherEv, .Ltmp28-_ZN15CSSPropertyAPI95otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI15parseEv,"axG",@progbits,_ZN15CSSPropertyAPI15parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI15parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI15parseEv,@function
+_ZN15CSSPropertyAPI15parseEv:           # @_ZN15CSSPropertyAPI15parseEv
+	.cfi_startproc
+# BB#0:
+	incl	increment_me(%rip)
+	ret
+.Ltmp29:
+	.size	_ZN15CSSPropertyAPI15parseEv, .Ltmp29-_ZN15CSSPropertyAPI15parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI15otherEv,"axG",@progbits,_ZN15CSSPropertyAPI15otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI15otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI15otherEv,@function
+_ZN15CSSPropertyAPI15otherEv:           # @_ZN15CSSPropertyAPI15otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$2, increment_me(%rip)
+	ret
+.Ltmp30:
+	.size	_ZN15CSSPropertyAPI15otherEv, .Ltmp30-_ZN15CSSPropertyAPI15otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI35parseEv,"axG",@progbits,_ZN15CSSPropertyAPI35parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI35parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI35parseEv,@function
+_ZN15CSSPropertyAPI35parseEv:           # @_ZN15CSSPropertyAPI35parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$3, increment_me(%rip)
+	ret
+.Ltmp31:
+	.size	_ZN15CSSPropertyAPI35parseEv, .Ltmp31-_ZN15CSSPropertyAPI35parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI35otherEv,"axG",@progbits,_ZN15CSSPropertyAPI35otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI35otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI35otherEv,@function
+_ZN15CSSPropertyAPI35otherEv:           # @_ZN15CSSPropertyAPI35otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$4, increment_me(%rip)
+	ret
+.Ltmp32:
+	.size	_ZN15CSSPropertyAPI35otherEv, .Ltmp32-_ZN15CSSPropertyAPI35otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI85parseEv,"axG",@progbits,_ZN15CSSPropertyAPI85parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI85parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI85parseEv,@function
+_ZN15CSSPropertyAPI85parseEv:           # @_ZN15CSSPropertyAPI85parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$8, increment_me(%rip)
+	ret
+.Ltmp33:
+	.size	_ZN15CSSPropertyAPI85parseEv, .Ltmp33-_ZN15CSSPropertyAPI85parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI85otherEv,"axG",@progbits,_ZN15CSSPropertyAPI85otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI85otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI85otherEv,@function
+_ZN15CSSPropertyAPI85otherEv:           # @_ZN15CSSPropertyAPI85otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$9, increment_me(%rip)
+	ret
+.Ltmp34:
+	.size	_ZN15CSSPropertyAPI85otherEv, .Ltmp34-_ZN15CSSPropertyAPI85otherEv
+	.cfi_endproc
+
+	.section	.text._ZN16CSSPropertyAPI105parseEv,"axG",@progbits,_ZN16CSSPropertyAPI105parseEv,comdat
+	.weak	_ZN16CSSPropertyAPI105parseEv
+	.align	16, 0x90
+	.type	_ZN16CSSPropertyAPI105parseEv,@function
+_ZN16CSSPropertyAPI105parseEv:          # @_ZN16CSSPropertyAPI105parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$10, increment_me(%rip)
+	ret
+.Ltmp35:
+	.size	_ZN16CSSPropertyAPI105parseEv, .Ltmp35-_ZN16CSSPropertyAPI105parseEv
+	.cfi_endproc
+
+	.section	.text._ZN16CSSPropertyAPI105otherEv,"axG",@progbits,_ZN16CSSPropertyAPI105otherEv,comdat
+	.weak	_ZN16CSSPropertyAPI105otherEv
+	.align	16, 0x90
+	.type	_ZN16CSSPropertyAPI105otherEv,@function
+_ZN16CSSPropertyAPI105otherEv:          # @_ZN16CSSPropertyAPI105otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$11, increment_me(%rip)
+	ret
+.Ltmp36:
+	.size	_ZN16CSSPropertyAPI105otherEv, .Ltmp36-_ZN16CSSPropertyAPI105otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI55parseEv,"axG",@progbits,_ZN15CSSPropertyAPI55parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI55parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI55parseEv,@function
+_ZN15CSSPropertyAPI55parseEv:           # @_ZN15CSSPropertyAPI55parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$5, increment_me(%rip)
+	ret
+.Ltmp37:
+	.size	_ZN15CSSPropertyAPI55parseEv, .Ltmp37-_ZN15CSSPropertyAPI55parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI55otherEv,"axG",@progbits,_ZN15CSSPropertyAPI55otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI55otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI55otherEv,@function
+_ZN15CSSPropertyAPI55otherEv:           # @_ZN15CSSPropertyAPI55otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$6, increment_me(%rip)
+	ret
+.Ltmp38:
+	.size	_ZN15CSSPropertyAPI55otherEv, .Ltmp38-_ZN15CSSPropertyAPI55otherEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI65parseEv,"axG",@progbits,_ZN15CSSPropertyAPI65parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI65parseEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI65parseEv,@function
+_ZN15CSSPropertyAPI65parseEv:           # @_ZN15CSSPropertyAPI65parseEv
+	.cfi_startproc
+# BB#0:
+	addl	$6, increment_me(%rip)
+	ret
+.Ltmp39:
+	.size	_ZN15CSSPropertyAPI65parseEv, .Ltmp39-_ZN15CSSPropertyAPI65parseEv
+	.cfi_endproc
+
+	.section	.text._ZN15CSSPropertyAPI65otherEv,"axG",@progbits,_ZN15CSSPropertyAPI65otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI65otherEv
+	.align	16, 0x90
+	.type	_ZN15CSSPropertyAPI65otherEv,@function
+_ZN15CSSPropertyAPI65otherEv:           # @_ZN15CSSPropertyAPI65otherEv
+	.cfi_startproc
+# BB#0:
+	addl	$7, increment_me(%rip)
+	ret
+.Ltmp40:
+	.size	_ZN15CSSPropertyAPI65otherEv, .Ltmp40-_ZN15CSSPropertyAPI65otherEv
+	.cfi_endproc
+
+	.section	.text.startup,"ax",@progbits
+	.align	16, 0x90
+	.type	_GLOBAL__I_a,@function
+_GLOBAL__I_a:                           # @_GLOBAL__I_a
+	.cfi_startproc
+# BB#0:
+	pushq	%rax
+.Ltmp42:
 	.cfi_def_cfa_offset 16
 	movl	$_ZStL8__ioinit, %edi
-	call	_ZNSt8ios_base4InitC1Ev
-	movl	$__dso_handle, %edx
-	movl	$_ZStL8__ioinit, %esi
+	callq	_ZNSt8ios_base4InitC1Ev
 	movl	$_ZNSt8ios_base4InitD1Ev, %edi
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
-	jmp	__cxa_atexit
+	movl	$_ZStL8__ioinit, %esi
+	movl	$__dso_handle, %edx
+	popq	%rax
+	jmp	__cxa_atexit            # TAILCALL
+.Ltmp43:
+	.size	_GLOBAL__I_a, .Ltmp43-_GLOBAL__I_a
 	.cfi_endproc
-.LFE1438:
-	.size	_GLOBAL__sub_I_increment_me, .-_GLOBAL__sub_I_increment_me
-	.section	.init_array,"aw"
-	.align 8
-	.quad	_GLOBAL__sub_I_increment_me
-	.section	.rodata
-	.align 32
-	.type	_ZL11descriptors, @object
-	.size	_ZL11descriptors, 320
+
+	.type	_ZStL8__ioinit,@object  # @_ZStL8__ioinit
+	.local	_ZStL8__ioinit
+	.comm	_ZStL8__ioinit,1,1
+	.type	increment_me,@object    # @increment_me
+	.bss
+	.globl	increment_me
+	.align	4
+increment_me:
+	.long	0                       # 0x0
+	.size	increment_me, 4
+
+	.type	_ZL17descriptorIndices,@object # @_ZL17descriptorIndices
+	.section	.rodata,"a",@progbits
+	.align	16
+_ZL17descriptorIndices:
+	.quad	18                      # 0x12
+	.quad	0                       # 0x0
+	.quad	1                       # 0x1
+	.quad	10                      # 0xa
+	.quad	8                       # 0x8
+	.quad	12                      # 0xc
+	.quad	2                       # 0x2
+	.quad	19                      # 0x13
+	.quad	17                      # 0x11
+	.quad	16                      # 0x10
+	.quad	7                       # 0x7
+	.quad	5                       # 0x5
+	.quad	11                      # 0xb
+	.quad	6                       # 0x6
+	.quad	14                      # 0xe
+	.quad	15                      # 0xf
+	.quad	9                       # 0x9
+	.quad	3                       # 0x3
+	.quad	13                      # 0xd
+	.quad	4                       # 0x4
+	.size	_ZL17descriptorIndices, 160
+
+	.type	_ZL11descriptors,@object # @_ZL11descriptors
+	.align	16
 _ZL11descriptors:
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
 	.quad	_ZN15CSSPropertyAPI45parseEv
 	.quad	_ZN15CSSPropertyAPI45otherEv
-	.quad	_ZN15CSSPropertyAPI85parseEv
-	.quad	_ZN15CSSPropertyAPI85otherEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN15CSSPropertyAPI25parseEv
+	.quad	_ZN15CSSPropertyAPI25otherEv
 	.quad	_ZN15CSSPropertyAPI75parseEv
 	.quad	_ZN15CSSPropertyAPI75otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN15CSSPropertyAPI95parseEv
+	.quad	_ZN15CSSPropertyAPI95otherEv
 	.quad	_ZN15CSSPropertyAPI15parseEv
 	.quad	_ZN15CSSPropertyAPI15otherEv
-	.quad	_ZN15CSSPropertyAPI65parseEv
-	.quad	_ZN15CSSPropertyAPI65otherEv
+	.quad	_ZN15CSSPropertyAPI35parseEv
+	.quad	_ZN15CSSPropertyAPI35otherEv
+	.quad	_ZN15CSSPropertyAPI85parseEv
+	.quad	_ZN15CSSPropertyAPI85otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN16CSSPropertyAPI105parseEv
+	.quad	_ZN16CSSPropertyAPI105otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
@@ -512,55 +512,29 @@ _ZL11descriptors:
 	.quad	_ZN15CSSPropertyAPI55otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN16CSSPropertyAPI105parseEv
-	.quad	_ZN16CSSPropertyAPI105otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN15CSSPropertyAPI35parseEv
-	.quad	_ZN15CSSPropertyAPI35otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN15CSSPropertyAPI95parseEv
-	.quad	_ZN15CSSPropertyAPI95otherEv
-	.quad	_ZN15CSSPropertyAPI25parseEv
-	.quad	_ZN15CSSPropertyAPI25otherEv
+	.quad	_ZN15CSSPropertyAPI65parseEv
+	.quad	_ZN15CSSPropertyAPI65otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.align 32
-	.type	_ZL17descriptorIndices, @object
-	.size	_ZL17descriptorIndices, 160
-_ZL17descriptorIndices:
-	.quad	9
-	.quad	4
-	.quad	17
-	.quad	0
-	.quad	7
-	.quad	13
-	.quad	10
-	.quad	1
-	.quad	19
-	.quad	11
-	.quad	15
-	.quad	16
-	.quad	2
-	.quad	8
-	.quad	14
-	.quad	3
-	.quad	12
-	.quad	5
-	.quad	6
-	.quad	18
-	.globl	increment_me
-	.bss
-	.align 4
-	.type	increment_me, @object
-	.size	increment_me, 4
-increment_me:
-	.zero	4
-	.local	_ZStL8__ioinit
-	.comm	_ZStL8__ioinit,1,1
-	.hidden	__dso_handle
-	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
-	.section	.note.GNU-stack,"",@progbits
+	.size	_ZL11descriptors, 320
+
+	.type	.L.str,@object          # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"%ld\n"
+	.size	.L.str, 5
+
+	.section	.init_array,"aw",@init_array
+	.align	8
+	.quad	_GLOBAL__I_a
+	.type	.Lstr,@object           # @str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.Lstr:
+	.asciz	"avg clicks"
+	.size	.Lstr, 11
+
+
+	.ident	"Ubuntu clang version 3.4-1ubuntu3 (tags/RELEASE_34/final) (based on LLVM 3.4)"
+	.section	".note.GNU-stack","",@progbits
