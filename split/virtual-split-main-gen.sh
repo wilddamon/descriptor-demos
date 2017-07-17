@@ -13,7 +13,7 @@ cat <<EOF
 #include <ctime>
 #include <cstdlib>
 
-int parse(int id) {
+void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
 }

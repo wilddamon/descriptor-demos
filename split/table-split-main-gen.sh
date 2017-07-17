@@ -14,7 +14,7 @@ cat <<EOF
 EOF
 
 echo "
-int parse(int id) {
+void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
 }"

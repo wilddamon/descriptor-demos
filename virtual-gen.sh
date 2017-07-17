@@ -15,6 +15,7 @@ volatile int increment_me = 0;
 
 class CSSPropertyAPI {
  public:
+  constexpr CSSPropertyAPI() {}
   virtual void parse() const {
     increment_me += 1;
   }
@@ -24,6 +25,7 @@ for ((a=1; a <= NUM_CLASSES; a++))
 do
   echo "class CSSPropertyAPI$a : public CSSPropertyAPI {
  public:
+  constexpr CSSPropertyAPI$a() {}
   void parse() const override {
     increment_me += $a;
   }
@@ -55,7 +57,7 @@ echo "  default:
 }"
 
 echo "
-int parse(int id) {
+void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
 }"

@@ -3,7 +3,7 @@
 OLEVEL=2
 NUM_CLASSES=100
 NUM_ITERATIONS=1000000000
-REPEATS=10
+REPEATS=50
 
 GENFOLDER="generated"
 SFOLDER="disassembly"
@@ -72,11 +72,11 @@ function run_impl() {
   ./$name-gen.sh $NUM_CLASSES $NUM_ITERATIONS $REPEATS > $cppname
 
   # Compile disassembly
-  disassemble_cmd="g++ $cppname -std=c++11 -O$OLEVEL -S -o $sname"
+  disassemble_cmd="clang++ $cppname -std=c++11 -O$OLEVEL -S -o $sname"
   $disassemble_cmd
 
   #echo "running with $NUM_ITERATIONS iterations, $NUM_CLASSES classes at O$OLEVEL"
-  compile_cmd="g++ $cppname -std=c++11 -O$OLEVEL -o $runfile"
+  compile_cmd="clang++ $cppname -std=c++11 -O$OLEVEL -o $runfile"
   $compile_cmd && ./$runfile
 }
 
@@ -105,12 +105,11 @@ function run_split_impl() {
   ./split/$name-split-header-gen.sh $NUM_CLASSES > $genfolder/$headerfile
   ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename > $genfolder/$cppfile
 
-  g++ $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
-  g++ $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
+  clang++ $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
+  clang++ $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
 
-  compile_cmd="g++ \
+  compile_cmd="clang++ \
     $genfolder/$mainfile \
-    $genfolder/$headerfile \
     $genfolder/$cppfile \
     -std=c++11 -O$OLEVEL -o $outfolder/$filename"
   $compile_cmd && ./$outfolder/$filename
