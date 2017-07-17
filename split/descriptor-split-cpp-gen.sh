@@ -19,7 +19,11 @@ do
   echo "
 void CSSPropertyAPI$a::parse() {
   increment_me += $a;
-}"
+}
+void CSSPropertyAPI$a::other() {
+  increment_me += $(($a + 1));
+}
+"
 done
 
 echo "static constexpr CSSPropertyDescriptor descriptors[] = {"
@@ -32,9 +36,11 @@ do
   if [[ $remainder == 0 ]]; then
     echo "  {
     CSSPropertyAPI$id::parse,
+    CSSPropertyAPI$id::other,
   },"
   else
     echo "  {
+    nullptr,
     nullptr,
   },"
   fi

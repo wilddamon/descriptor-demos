@@ -20,12 +20,16 @@ do
   static void parse() {
     increment_me += $a;
   }
+  static void other() {
+    increment_me += $(($a + 1));
+  }
 };"
 done
 
 echo "
 struct CSSPropertyDescriptor {
   void (*parse)();
+  void (*other)();
 
   static const CSSPropertyDescriptor& Get(int id);
 };"
@@ -41,9 +45,11 @@ do
   if [[ $remainder == 0 ]]; then
     echo "  {
     CSSPropertyAPI$id::parse,
+    CSSPropertyAPI$id::other,
   },"
   else
     echo "  {
+    nullptr,
     nullptr,
   },"
   fi

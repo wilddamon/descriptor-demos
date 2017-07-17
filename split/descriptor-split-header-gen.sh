@@ -13,12 +13,14 @@ do
   echo "class CSSPropertyAPI$a {
  public:
   static void parse();
+  static void other();
 };"
 done
 
 cat <<EOF
 struct CSSPropertyDescriptor {
   void (*parse)();
+  void (*other)();
 
   static const CSSPropertyDescriptor& Get(int id);
 };

@@ -358,55 +358,30 @@ _GLOBAL__sub_I_increment_me:
 	.size	CSWTCH.94, 160
 CSWTCH.94:
 	.quad	_ZZ14GetPropertyAPIiE6api_10
+	.quad	_ZZ14GetPropertyAPIiE5api_4
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE5api_1
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE5api_6
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE5api_2
+	.quad	_ZZ14GetPropertyAPIiE5api_5
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_7
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_3
-	.quad	_ZZ14GetPropertyAPIiE5api_9
-	.quad	_ZZ14GetPropertyAPIiE5api_4
-	.quad	_ZZ14GetPropertyAPIiE5api_5
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_8
 	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE5api_9
+	.quad	_ZZ14GetPropertyAPIiE5api_6
+	.quad	_ZZ14GetPropertyAPIiE5api_2
+	.quad	_ZZ14GetPropertyAPIiE5api_1
 	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_8, @object
-	.size	_ZZ14GetPropertyAPIiE5api_8, 8
-_ZZ14GetPropertyAPIiE5api_8:
-	.quad	_ZTV15CSSPropertyAPI8+16
-	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_5, @object
-	.size	_ZZ14GetPropertyAPIiE5api_5, 8
-_ZZ14GetPropertyAPIiE5api_5:
-	.quad	_ZTV15CSSPropertyAPI5+16
-	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_4, @object
-	.size	_ZZ14GetPropertyAPIiE5api_4, 8
-_ZZ14GetPropertyAPIiE5api_4:
-	.quad	_ZTV15CSSPropertyAPI4+16
-	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_9, @object
-	.size	_ZZ14GetPropertyAPIiE5api_9, 8
-_ZZ14GetPropertyAPIiE5api_9:
-	.quad	_ZTV15CSSPropertyAPI9+16
-	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_3, @object
-	.size	_ZZ14GetPropertyAPIiE5api_3, 8
-_ZZ14GetPropertyAPIiE5api_3:
-	.quad	_ZTV15CSSPropertyAPI3+16
-	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_7, @object
-	.size	_ZZ14GetPropertyAPIiE5api_7, 8
-_ZZ14GetPropertyAPIiE5api_7:
-	.quad	_ZTV15CSSPropertyAPI7+16
+	.type	_ZZ14GetPropertyAPIiE5api_1, @object
+	.size	_ZZ14GetPropertyAPIiE5api_1, 8
+_ZZ14GetPropertyAPIiE5api_1:
+	.quad	_ZTV15CSSPropertyAPI1+16
 	.align 8
 	.type	_ZZ14GetPropertyAPIiE5api_2, @object
 	.size	_ZZ14GetPropertyAPIiE5api_2, 8
@@ -418,15 +393,40 @@ _ZZ14GetPropertyAPIiE5api_2:
 _ZZ14GetPropertyAPIiE5api_6:
 	.quad	_ZTV15CSSPropertyAPI6+16
 	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_1, @object
-	.size	_ZZ14GetPropertyAPIiE5api_1, 8
-_ZZ14GetPropertyAPIiE5api_1:
-	.quad	_ZTV15CSSPropertyAPI1+16
+	.type	_ZZ14GetPropertyAPIiE5api_9, @object
+	.size	_ZZ14GetPropertyAPIiE5api_9, 8
+_ZZ14GetPropertyAPIiE5api_9:
+	.quad	_ZTV15CSSPropertyAPI9+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_8, @object
+	.size	_ZZ14GetPropertyAPIiE5api_8, 8
+_ZZ14GetPropertyAPIiE5api_8:
+	.quad	_ZTV15CSSPropertyAPI8+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_3, @object
+	.size	_ZZ14GetPropertyAPIiE5api_3, 8
+_ZZ14GetPropertyAPIiE5api_3:
+	.quad	_ZTV15CSSPropertyAPI3+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_7, @object
+	.size	_ZZ14GetPropertyAPIiE5api_7, 8
+_ZZ14GetPropertyAPIiE5api_7:
+	.quad	_ZTV15CSSPropertyAPI7+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_5, @object
+	.size	_ZZ14GetPropertyAPIiE5api_5, 8
+_ZZ14GetPropertyAPIiE5api_5:
+	.quad	_ZTV15CSSPropertyAPI5+16
 	.align 8
 	.type	_ZZ14GetPropertyAPIiE11default_api, @object
 	.size	_ZZ14GetPropertyAPIiE11default_api, 8
 _ZZ14GetPropertyAPIiE11default_api:
 	.quad	_ZTV14CSSPropertyAPI+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_4, @object
+	.size	_ZZ14GetPropertyAPIiE5api_4, 8
+_ZZ14GetPropertyAPIiE5api_4:
+	.quad	_ZTV15CSSPropertyAPI4+16
 	.align 8
 	.type	_ZZ14GetPropertyAPIiE6api_10, @object
 	.size	_ZZ14GetPropertyAPIiE6api_10, 8

@@ -320,16 +320,16 @@ _GLOBAL__sub_I_increment_me:
 	.type	function_array, @object
 	.size	function_array, 80
 function_array:
-	.quad	_ZN6Class617doSomethingStaticEv
-	.quad	_ZN6Class217doSomethingStaticEv
-	.quad	_ZN6Class717doSomethingStaticEv
-	.quad	_ZN6Class117doSomethingStaticEv
-	.quad	_ZN6Class917doSomethingStaticEv
 	.quad	_ZN7Class1017doSomethingStaticEv
-	.quad	_ZN6Class517doSomethingStaticEv
+	.quad	_ZN6Class617doSomethingStaticEv
+	.quad	_ZN6Class117doSomethingStaticEv
+	.quad	_ZN6Class717doSomethingStaticEv
 	.quad	_ZN6Class817doSomethingStaticEv
-	.quad	_ZN6Class417doSomethingStaticEv
 	.quad	_ZN6Class317doSomethingStaticEv
+	.quad	_ZN6Class517doSomethingStaticEv
+	.quad	_ZN6Class917doSomethingStaticEv
+	.quad	_ZN6Class417doSomethingStaticEv
+	.quad	_ZN6Class217doSomethingStaticEv
 	.globl	increment_me
 	.bss
 	.align 4

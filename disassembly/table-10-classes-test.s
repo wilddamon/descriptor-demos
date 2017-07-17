@@ -345,26 +345,26 @@ _GLOBAL__sub_I_increment_me:
 	.type	_ZL13property_apis, @object
 	.size	_ZL13property_apis, 160
 _ZL13property_apis:
-	.quad	_ZL5api_5
+	.quad	_ZL5api_8
 	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_9
+	.quad	_ZL5api_4
+	.quad	_ZL5api_0
+	.quad	_ZL5api_1
 	.quad	_ZL5api_7
-	.quad	_ZL6api_10
-	.quad	_ZL5api_0
-	.quad	_ZL5api_0
 	.quad	_ZL5api_0
 	.quad	_ZL5api_6
 	.quad	_ZL5api_0
 	.quad	_ZL5api_0
-	.quad	_ZL5api_4
-	.quad	_ZL5api_8
 	.quad	_ZL5api_0
-	.quad	_ZL5api_2
-	.quad	_ZL5api_9
-	.quad	_ZL5api_0
-	.quad	_ZL5api_1
+	.quad	_ZL5api_5
 	.quad	_ZL5api_0
 	.quad	_ZL5api_3
-	.quad	_ZL5api_0
+	.quad	_ZL6api_10
+	.quad	_ZL5api_2
 	.align 8
 	.type	_ZL6api_10, @object
 	.size	_ZL6api_10, 8

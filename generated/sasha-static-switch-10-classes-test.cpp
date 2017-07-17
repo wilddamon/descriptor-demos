@@ -54,34 +54,34 @@ class Class10 : public ClassApi {
 void ClassApi::doSomethingStaticSwitch(int input) {
   switch (input) {
   case 10:
-    Class7::doSomethingStatic();
-    break;
-  case 9:
-    Class8::doSomethingStatic();
-    break;
-  case 8:
-    Class5::doSomethingStatic();
-    break;
-  case 3:
-    Class4::doSomethingStatic();
-    break;
-  case 2:
     Class6::doSomethingStatic();
     break;
+  case 3:
+    Class1::doSomethingStatic();
+    break;
+  case 2:
+    Class4::doSomethingStatic();
+    break;
+  case 9:
+    Class9::doSomethingStatic();
+    break;
+  case 8:
+    Class7::doSomethingStatic();
+    break;
   case 6:
-    Class3::doSomethingStatic();
+    Class2::doSomethingStatic();
     break;
   case 4:
     Class10::doSomethingStatic();
     break;
-  case 7:
-    Class1::doSomethingStatic();
-    break;
   case 5:
-    Class2::doSomethingStatic();
+    Class8::doSomethingStatic();
+    break;
+  case 7:
+    Class3::doSomethingStatic();
     break;
   case 1:
-    Class9::doSomethingStatic();
+    Class5::doSomethingStatic();
     break;
   }
   increment_me += 4;

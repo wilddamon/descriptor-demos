@@ -13,6 +13,9 @@ volatile int increment_me = 0;
 void CSSPropertyAPIDefault::parse() {
   increment_me += increment_me;
 }
+void CSSPropertyAPIDefault::other() {
+  increment_me += $NUM_CLASSES;
+}
 EOF
 
 for  ((a=1; a <= NUM_CLASSES; a++))
@@ -20,7 +23,11 @@ do
   echo "
 void CSSPropertyAPI$a::parse() {
   increment_me += $a;
-}"
+}
+void CSSPropertyAPI$a::other() {
+increment_me += $(($a + 1));
+}
+"
 done
 
 echo "
@@ -35,10 +42,12 @@ do
   if [[ $remainder == 0 ]]; then
     echo "  {
     CSSPropertyAPI$id::parse,
+    CSSPropertyAPI$id::other,
   },"
   else
     echo "  {
     CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
   },"
   fi
 

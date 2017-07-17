@@ -28,9 +28,9 @@ _Z23callWithSwitchStatementi:
 	.text
 	.p2align 4,,10
 	.p2align 3
-.L13:
+.L10:
 	movl	increment_me(%rip), %eax
-	addl	$4, %eax
+	addl	$6, %eax
 	movl	%eax, increment_me(%rip)
 	.p2align 4,,10
 	.p2align 3
@@ -41,16 +41,23 @@ _Z23callWithSwitchStatementi:
 	ret
 	.p2align 4,,10
 	.p2align 3
+.L13:
+	movl	increment_me(%rip), %eax
+	addl	$5, %eax
+	movl	%eax, increment_me(%rip)
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
 .L3:
 	movl	increment_me(%rip), %eax
-	addl	$1, %eax
+	addl	$3, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L5:
 	movl	increment_me(%rip), %eax
-	addl	$6, %eax
+	addl	$1, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
@@ -64,42 +71,35 @@ _Z23callWithSwitchStatementi:
 	.p2align 3
 .L7:
 	movl	increment_me(%rip), %eax
-	addl	$5, %eax
+	addl	$10, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L8:
 	movl	increment_me(%rip), %eax
-	addl	$7, %eax
+	addl	$9, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L9:
 	movl	increment_me(%rip), %eax
-	addl	$3, %eax
-	movl	%eax, increment_me(%rip)
-	jmp	.L2
-	.p2align 4,,10
-	.p2align 3
-.L10:
-	movl	increment_me(%rip), %eax
-	addl	$2, %eax
+	addl	$4, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L11:
 	movl	increment_me(%rip), %eax
-	addl	$9, %eax
+	addl	$2, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L12:
 	movl	increment_me(%rip), %eax
-	addl	$10, %eax
+	addl	$7, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.cfi_endproc

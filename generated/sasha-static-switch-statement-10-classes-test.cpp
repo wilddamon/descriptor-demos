@@ -53,35 +53,35 @@ class Class10 : public ClassApi {
 
 void callWithSwitchStatement(int classId) {
   switch (classId) {
-  case 10:
-    Class4::doSomethingStatic();
+  case 7:
+    Class6::doSomethingStatic();
     break;
   case 6:
-    Class3::doSomethingStatic();
+    Class4::doSomethingStatic();
     break;
-  case 7:
-    Class2::doSomethingStatic();
+  case 4:
+    Class10::doSomethingStatic();
     break;
-  case 8:
+  case 10:
+    Class5::doSomethingStatic();
+    break;
+  case 5:
     Class9::doSomethingStatic();
     break;
   case 2:
-    Class6::doSomethingStatic();
-    break;
-  case 5:
-    Class7::doSomethingStatic();
+    Class1::doSomethingStatic();
     break;
   case 9:
-    Class10::doSomethingStatic();
+    Class7::doSomethingStatic();
+    break;
+  case 8:
+    Class2::doSomethingStatic();
     break;
   case 3:
     Class8::doSomethingStatic();
     break;
-  case 4:
-    Class5::doSomethingStatic();
-    break;
   case 1:
-    Class1::doSomethingStatic();
+    Class3::doSomethingStatic();
     break;
   }
   increment_me += 5;
