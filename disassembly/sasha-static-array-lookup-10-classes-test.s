@@ -165,15 +165,11 @@ _ZN8ClassApi28doSomethingStaticArrayLookupEi:
 	.cfi_endproc
 .LFE1309:
 	.size	_ZN8ClassApi28doSomethingStaticArrayLookupEi, .-_ZN8ClassApi28doSomethingStaticArrayLookupEi
-	.section	.rodata.str1.8,"aMS",@progbits,1
-	.align 8
-.LC1:
-	.string	"Took %ld clicks (%f seconds).\n"
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC2:
-	.string	"avg clicks\n"
-.LC3:
+.LC0:
 	.string	"%ld\n"
+.LC1:
+	.string	"avg clicks\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
 	.globl	main
@@ -213,7 +209,7 @@ main:
 .L13:
 	call	rand
 	movl	%eax, %ecx
-	movl	$100, %ebx
+	movl	$1000000000, %ebx
 	imull	%r14d
 	movl	%ecx, %eax
 	sarl	$31, %eax
@@ -238,34 +234,31 @@ main:
 	subq	%r13, %rax
 	cmpl	$1, %ebp
 	je	.L16
-	cvtsi2ssq	%rax, %xmm0
 	addq	%rax, %r12
 	movq	%rax, %rdx
-	movl	$.LC1, %esi
+	movl	$.LC0, %esi
+	xorl	%eax, %eax
 	movl	$1, %edi
-	movl	$1, %eax
-	divss	.LC0(%rip), %xmm0
-	unpcklps	%xmm0, %xmm0
-	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
-	cmpl	$11, %ebp
+	cmpl	$51, %ebp
 	je	.L22
 .L17:
 	addl	$1, %ebp
 	jmp	.L13
 .L22:
-	movl	$.LC2, %esi
+	movl	$.LC1, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r12, %rax
-	movabsq	$7378697629483820647, %rdx
-	sarq	$63, %r12
+	movabsq	$-6640827866535438581, %rdx
+	movl	$.LC0, %esi
 	imulq	%rdx
-	movl	$.LC3, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	sarq	$2, %rdx
+	addq	%r12, %rdx
+	sarq	$63, %r12
+	sarq	$5, %rdx
 	subq	%r12, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -287,13 +280,10 @@ main:
 	ret
 .L16:
 	.cfi_restore_state
-	cvtsi2ssq	%rax, %xmm0
 	movq	%rax, %rdx
-	movl	$.LC1, %esi
+	movl	$.LC0, %esi
 	movl	$1, %edi
-	movl	$1, %eax
-	divss	.LC0(%rip), %xmm0
-	cvtss2sd	%xmm0, %xmm0
+	xorl	%eax, %eax
 	call	__printf_chk
 	jmp	.L17
 	.cfi_endproc
@@ -351,26 +341,26 @@ _GLOBAL__sub_I_increment_me:
 	movq	%rax, class9_singleton(%rip)
 	call	_Znwm
 	movq	$_ZTV7Class10+16, (%rax)
-	movq	class4_singleton(%rip), %rdx
 	movq	%rax, class10_singleton(%rip)
-	movq	%rax, class_array+64(%rip)
+	movq	%rax, class_array+32(%rip)
+	movq	class2_singleton(%rip), %rax
+	movq	class8_singleton(%rip), %rdx
+	movq	%rax, class_array+40(%rip)
 	movq	class5_singleton(%rip), %rax
 	movq	%rdx, class_array(%rip)
-	movq	class6_singleton(%rip), %rdx
-	movq	%rax, class_array+72(%rip)
-	movq	%rdx, class_array+8(%rip)
-	movq	class7_singleton(%rip), %rdx
-	movq	%rdx, class_array+16(%rip)
 	movq	class1_singleton(%rip), %rdx
-	movq	%rdx, class_array+24(%rip)
+	movq	%rax, class_array+48(%rip)
+	movq	class7_singleton(%rip), %rax
+	movq	%rdx, class_array+8(%rip)
+	movq	class6_singleton(%rip), %rdx
+	movq	%rax, class_array+56(%rip)
+	movq	class4_singleton(%rip), %rax
+	movq	%rdx, class_array+16(%rip)
 	movq	class3_singleton(%rip), %rdx
-	movq	%rdx, class_array+32(%rip)
-	movq	class2_singleton(%rip), %rdx
-	movq	%rdx, class_array+40(%rip)
-	movq	class9_singleton(%rip), %rdx
-	movq	%rdx, class_array+48(%rip)
-	movq	class8_singleton(%rip), %rdx
-	movq	%rdx, class_array+56(%rip)
+	movq	%rax, class_array+64(%rip)
+	movq	class9_singleton(%rip), %rax
+	movq	%rdx, class_array+24(%rip)
+	movq	%rax, class_array+72(%rip)
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
 	ret
@@ -718,10 +708,6 @@ increment_me:
 	.zero	4
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
-	.section	.rodata.cst4,"aM",@progbits,4
-	.align 4
-.LC0:
-	.long	1232348160
 	.hidden	__dso_handle
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
 	.section	.note.GNU-stack,"",@progbits

@@ -85,37 +85,46 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPIDefault::parse,
   },
   {
-    CSSPropertyAPI4::parse,
-  },
-  {
-    CSSPropertyAPI8::parse,
-  },
-  {
-    CSSPropertyAPI3::parse,
+    CSSPropertyAPIDefault::parse,
   },
   {
     CSSPropertyAPI5::parse,
   },
   {
-    CSSPropertyAPI1::parse,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-  },
-  {
     CSSPropertyAPI6::parse,
   },
   {
+    CSSPropertyAPI3::parse,
+  },
+  {
     CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPI9::parse,
+  },
+  {
+    CSSPropertyAPI7::parse,
+  },
+  {
+    CSSPropertyAPI8::parse,
   },
   {
     CSSPropertyAPIDefault::parse,
   },
   {
     CSSPropertyAPI10::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+  },
+  {
+    CSSPropertyAPI4::parse,
+  },
+  {
+    CSSPropertyAPI1::parse,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
   },
   {
     CSSPropertyAPIDefault::parse,
@@ -132,37 +141,28 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
   {
     CSSPropertyAPIDefault::parse,
   },
-  {
-    CSSPropertyAPIDefault::parse,
-  },
-  {
-    CSSPropertyAPI9::parse,
-  },
-  {
-    CSSPropertyAPI7::parse,
-  },
 };
 
 static size_t descriptorIndices[] = {
+  1,
+  9,
+  19,
+  10,
+  4,
+  6,
   15,
   18,
+  8,
+  16,
+  7,
+  12,
+  13,
   14,
+  3,
   5,
   17,
   11,
-  9,
-  13,
-  4,
-  3,
-  7,
-  19,
-  16,
-  12,
-  8,
-  10,
   2,
-  6,
-  1,
   0,
 };
 
@@ -177,13 +177,13 @@ void parse(int id) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  clock_t results[10];
+  clock_t results[50];
   clock_t avg_result = 0;
 
-  for (int r = 0; r < 10 + 1; r++) {
+  for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000000000; i++) {
       parse(num);
     }
     clock_t result = clock() - t;
@@ -193,9 +193,10 @@ int main(int argc, char** argv) {
       results[r - 1] = result;
       avg_result += result;
     }
-    printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
+    //printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
+    printf("%ld\n", result);
   }
 
   printf("avg clicks\n");
-  printf("%ld\n", avg_result / 10);
+  printf("%ld\n", avg_result / 50);
 }

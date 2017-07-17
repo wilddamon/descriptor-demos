@@ -96,25 +96,25 @@ class CSSPropertyAPI10 : public CSSPropertyAPI {
 static constexpr CSSPropertyAPI10 api_10;
 
 constexpr const CSSPropertyAPI* const property_apis[] = {
+  &api_9,
+  &api_2,
   &api_0, // default implementation
   &api_5,
-  &api_4,
   &api_0, // default implementation
-  &api_0, // default implementation
-  &api_6,
-  &api_3,
   &api_10,
-  &api_0, // default implementation
-  &api_8,
-  &api_0, // default implementation
-  &api_0, // default implementation
   &api_0, // default implementation
   &api_7,
   &api_0, // default implementation
+  &api_3,
+  &api_4,
   &api_0, // default implementation
-  &api_9,
-  &api_2,
+  &api_8,
   &api_1,
+  &api_0, // default implementation
+  &api_0, // default implementation
+  &api_0, // default implementation
+  &api_6,
+  &api_0, // default implementation
   &api_0, // default implementation
 };
 
@@ -129,13 +129,13 @@ int parse(int id) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  clock_t results[10];
+  clock_t results[50];
   clock_t avg_result = 0;
 
-  for (int r = 0; r < 10 + 1; r++) {
+  for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000000000; i++) {
       parse(num);
     }
     clock_t result = clock() - t;
@@ -145,9 +145,10 @@ int main(int argc, char** argv) {
       results[r - 1] = result;
       avg_result += result;
     }
-    printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
+    //printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
+    printf("%ld\n", result);
   }
 
   printf("avg clicks\n");
-  printf("%ld\n", avg_result / 10);
+  printf("%ld\n", avg_result / 50);
 }

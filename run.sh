@@ -8,18 +8,21 @@ REPEATS=50
 GENFOLDER="generated"
 SFOLDER="disassembly"
 OUTFOLDER="out"
+SPLIT=0
 
 tests=(
   descriptor
   descriptor-with-default
   virtual
-  virtual-split
   table
   sasha-static-array-lookup
   sasha-static-function-array-lookup
   sasha-static-switch
   sasha-static-switch-statement
   sasha-virtual-singleton-array-lookup)
+split_tests=(
+  descriptor
+  virtual)
 WHICH="all"
 
 while test $# -gt 0; do
@@ -39,6 +42,10 @@ while test $# -gt 0; do
       OLEVEL=$1
       shift
       ;;
+    -s)
+      SPLIT=1
+      shift
+      ;;
     *)
       WHICH=$1
       shift
@@ -49,9 +56,11 @@ echo "o $OLEVEL"
 echo "num_classes $NUM_CLASSES"
 echo "num_it $NUM_ITERATIONS"
 echo "num_re $REPEATS"
+echo "split $SPLIT"
 
 function run_impl() {
   name=$1
+  if [[ $WHICH == "all" ]]; then echo "running $name"; fi
 
   filename="$name-$NUM_CLASSES-classes-test"
   cppname="$GENFOLDER/$filename.cpp"
@@ -69,22 +78,21 @@ function run_impl() {
   $compile_cmd && ./$runfile
 }
 
-function run_virtual_split() {
-  filename="virtual-split-$NUM_CLASSES-classes-test"
+function run_split_impl() {
+  name=$1
+  if [[ $WHICH == "all" ]]; then echo "running $name"; fi
+
+  filename="$name-split-$NUM_CLASSES-classes-test"
   mainfile=$filename-main.cpp
   headerfile=$filename.h
   cppfile=$filename.cpp
 
-  ./virtual-split-main-gen.sh \
+  ./$name-split-main-gen.sh \
     $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename > $GENFOLDER/$mainfile
-  ./virtual-split-header-gen.sh $NUM_CLASSES > $GENFOLDER/$headerfile
-  ./virtual-split-cpp-gen.sh $NUM_CLASSES $filename > $GENFOLDER/$cppfile
+  ./$name-split-header-gen.sh $NUM_CLASSES > $GENFOLDER/$headerfile
+  ./$name-split-cpp-gen.sh $NUM_CLASSES $filename > $GENFOLDER/$cppfile
 
   g++ $GENFOLDER/$mainfile -std=c++11 -O$OLEVEL -S -o $SFOLDER/$mainfile.s
-  #cmd="g++ $GENFOLDER/$cppfile $GENFOLDER/$headerfile -std=c++11 -O$OLEVEL -S -o $SFOLDER/$mainfile.s"
-  #echo $cmd
-  #$cmd
-
 
   compile_cmd="g++ \
     $GENFOLDER/$mainfile \
@@ -94,11 +102,19 @@ function run_virtual_split() {
   $compile_cmd && ./$OUTFOLDER/$filename
 }
 
+### main below ###
+if [[ $SPLIT == 1 ]]; then
+  all_tests=${split_tests[@]}
+else
+  all_tests=${tests[@]}
+fi
+
 if [[ $WHICH == "all" ]]
 then
-  tests_to_run=${tests[@]}
+  tests_to_run=${all_tests[@]}
 else
-  if [[ ! ${tests[*]} =~ $WHICH ]]
+  # TODO this test doesn't work for substrings, but oh well.
+  if [[ ! ${all_tests[*]} =~ $WHICH ]]
   then
     echo "$WHICH not recoginized"
     exit 1
@@ -108,10 +124,9 @@ fi
 
 for test in ${tests_to_run[@]}
 do
-  if [[ $WHICH == "all" ]]; then echo "running $test"; fi
-  if [[ $test == "virtual-split" ]]
+  if [[ $SPLIT == 1 ]]
   then
-    run_virtual_split
+    run_split_impl $test
   else
     run_impl $test
   fi

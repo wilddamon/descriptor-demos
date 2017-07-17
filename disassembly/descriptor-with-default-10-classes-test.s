@@ -182,15 +182,11 @@ _Z5parsei:
 	.cfi_endproc
 .LFE1278:
 	.size	_Z5parsei, .-_Z5parsei
-	.section	.rodata.str1.8,"aMS",@progbits,1
-	.align 8
-.LC1:
-	.string	"Took %ld clicks (%f seconds).\n"
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC2:
-	.string	"avg clicks\n"
-.LC3:
+.LC0:
 	.string	"%ld\n"
+.LC1:
+	.string	"avg clicks\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
 	.globl	main
@@ -242,7 +238,7 @@ main:
 	addl	%eax, %eax
 	subl	%eax, %ebx
 	movslq	%ebx, %rax
-	movl	$100, %ebx
+	movl	$1000000000, %ebx
 	movq	_ZL17descriptorIndices(,%rax,8), %rax
 	leaq	_ZL11descriptors(,%rax,8), %rbp
 	.p2align 4,,10
@@ -255,34 +251,31 @@ main:
 	subq	%r14, %rax
 	cmpl	$1, %r12d
 	je	.L18
-	cvtsi2ssq	%rax, %xmm0
 	addq	%rax, %r13
 	movq	%rax, %rdx
-	movl	$.LC1, %esi
+	movl	$.LC0, %esi
+	xorl	%eax, %eax
 	movl	$1, %edi
-	movl	$1, %eax
-	divss	.LC0(%rip), %xmm0
-	unpcklps	%xmm0, %xmm0
-	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
-	cmpl	$11, %r12d
+	cmpl	$51, %r12d
 	je	.L24
 .L19:
 	addl	$1, %r12d
 	jmp	.L15
 .L24:
-	movl	$.LC2, %esi
+	movl	$.LC1, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r13, %rax
-	movabsq	$7378697629483820647, %rdx
-	sarq	$63, %r13
+	movabsq	$-6640827866535438581, %rdx
+	movl	$.LC0, %esi
 	imulq	%rdx
-	movl	$.LC3, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	sarq	$2, %rdx
+	addq	%r13, %rdx
+	sarq	$63, %r13
+	sarq	$5, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -304,13 +297,10 @@ main:
 	ret
 .L18:
 	.cfi_restore_state
-	cvtsi2ssq	%rax, %xmm0
 	movq	%rax, %rdx
-	movl	$.LC1, %esi
+	movl	$.LC0, %esi
 	movl	$1, %edi
-	movl	$1, %eax
-	divss	.LC0(%rip), %xmm0
-	cvtss2sd	%xmm0, %xmm0
+	xorl	%eax, %eax
 	call	__printf_chk
 	jmp	.L19
 	.cfi_endproc
@@ -343,48 +333,48 @@ _GLOBAL__sub_I_increment_me:
 	.size	_ZL11descriptors, 160
 _ZL11descriptors:
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN15CSSPropertyAPI45parseEv
-	.quad	_ZN15CSSPropertyAPI85parseEv
-	.quad	_ZN15CSSPropertyAPI35parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN15CSSPropertyAPI55parseEv
-	.quad	_ZN15CSSPropertyAPI15parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN15CSSPropertyAPI65parseEv
+	.quad	_ZN15CSSPropertyAPI35parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN15CSSPropertyAPI95parseEv
+	.quad	_ZN15CSSPropertyAPI75parseEv
+	.quad	_ZN15CSSPropertyAPI85parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN16CSSPropertyAPI105parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN15CSSPropertyAPI45parseEv
+	.quad	_ZN15CSSPropertyAPI15parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN15CSSPropertyAPI25parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN15CSSPropertyAPI95parseEv
-	.quad	_ZN15CSSPropertyAPI75parseEv
 	.align 32
 	.type	_ZL17descriptorIndices, @object
 	.size	_ZL17descriptorIndices, 160
 _ZL17descriptorIndices:
+	.quad	1
+	.quad	9
+	.quad	19
+	.quad	10
+	.quad	4
+	.quad	6
 	.quad	15
 	.quad	18
+	.quad	8
+	.quad	16
+	.quad	7
+	.quad	12
+	.quad	13
 	.quad	14
+	.quad	3
 	.quad	5
 	.quad	17
 	.quad	11
-	.quad	9
-	.quad	13
-	.quad	4
-	.quad	3
-	.quad	7
-	.quad	19
-	.quad	16
-	.quad	12
-	.quad	8
-	.quad	10
 	.quad	2
-	.quad	6
-	.quad	1
 	.quad	0
 	.globl	increment_me
 	.bss
@@ -395,10 +385,6 @@ increment_me:
 	.zero	4
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
-	.section	.rodata.cst4,"aM",@progbits,4
-	.align 4
-.LC0:
-	.long	1232348160
 	.hidden	__dso_handle
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
 	.section	.note.GNU-stack,"",@progbits

@@ -53,35 +53,35 @@ class Class10 : public ClassApi {
 
 void callWithSwitchStatement(int classId) {
   switch (classId) {
-  case 1:
-    Class8::doSomethingStatic();
+  case 10:
+    Class3::doSomethingStatic();
     break;
-  case 8:
-    Class4::doSomethingStatic();
+  case 2:
+    Class9::doSomethingStatic();
     break;
-  case 7:
-    Class6::doSomethingStatic();
-    break;
-  case 9:
+  case 5:
     Class5::doSomethingStatic();
     break;
+  case 6:
+    Class4::doSomethingStatic();
+    break;
+  case 8:
+    Class2::doSomethingStatic();
+    break;
   case 3:
+    Class6::doSomethingStatic();
+    break;
+  case 1:
+    Class7::doSomethingStatic();
+    break;
+  case 9:
+    Class8::doSomethingStatic();
+    break;
+  case 7:
     Class10::doSomethingStatic();
     break;
   case 4:
     Class1::doSomethingStatic();
-    break;
-  case 2:
-    Class7::doSomethingStatic();
-    break;
-  case 10:
-    Class3::doSomethingStatic();
-    break;
-  case 5:
-    Class2::doSomethingStatic();
-    break;
-  case 6:
-    Class9::doSomethingStatic();
     break;
   }
   increment_me += 5;
@@ -89,13 +89,13 @@ void callWithSwitchStatement(int classId) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  clock_t results[10];
+  clock_t results[50];
   clock_t avg_result = 0;
 
-  for (int r = 0; r < 10 + 1; r++) {
+  for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000000000; i++) {
       callWithSwitchStatement(num);
     }
     clock_t result = clock() - t;
@@ -105,9 +105,10 @@ int main(int argc, char** argv) {
       results[r - 1] = result;
       avg_result += result;
     }
-    printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
+    //printf("Took %ld clicks (%f seconds).\n", result, ((float)result)/CLOCKS_PER_SEC);
+    printf("%ld\n", result);
   }
 
   printf("avg clicks\n");
-  printf("%ld\n", avg_result / 10);
+  printf("%ld\n", avg_result / 50);
 }

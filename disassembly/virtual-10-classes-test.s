@@ -173,7 +173,7 @@ _Z14GetPropertyAPIi:
 	.cfi_startproc
 	subl	$2, %edi
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %eax
-	cmpl	$18, %edi
+	cmpl	$17, %edi
 	ja	.L13
 	movq	CSWTCH.94(,%rdi,8), %rax
 .L13:
@@ -191,7 +191,7 @@ _Z5parsei:
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
-	cmpl	$18, %eax
+	cmpl	$17, %eax
 	ja	.L17
 	movq	CSWTCH.94(,%rax,8), %rdi
 .L17:
@@ -203,15 +203,11 @@ _Z5parsei:
 	.cfi_endproc
 .LFE1311:
 	.size	_Z5parsei, .-_Z5parsei
-	.section	.rodata.str1.8,"aMS",@progbits,1
-	.align 8
-.LC1:
-	.string	"Took %ld clicks (%f seconds).\n"
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC2:
-	.string	"avg clicks\n"
-.LC3:
+.LC0:
 	.string	"%ld\n"
+.LC1:
+	.string	"avg clicks\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4,,15
 	.globl	main
@@ -251,7 +247,7 @@ main:
 .L21:
 	call	rand
 	movl	%eax, %ebp
-	movl	$100, %ebx
+	movl	$1000000000, %ebx
 	call	clock
 	movq	%rax, %r14
 	movl	%ebp, %eax
@@ -267,7 +263,7 @@ main:
 	.p2align 4,,10
 	.p2align 3
 .L24:
-	cmpl	$18, %ebp
+	cmpl	$17, %ebp
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
 	ja	.L22
 	movl	%ebp, %eax
@@ -281,34 +277,31 @@ main:
 	subq	%r14, %rax
 	cmpl	$1, %r12d
 	je	.L25
-	cvtsi2ssq	%rax, %xmm0
 	addq	%rax, %r13
 	movq	%rax, %rdx
-	movl	$.LC1, %esi
+	movl	$.LC0, %esi
+	xorl	%eax, %eax
 	movl	$1, %edi
-	movl	$1, %eax
-	divss	.LC0(%rip), %xmm0
-	unpcklps	%xmm0, %xmm0
-	cvtps2pd	%xmm0, %xmm0
 	call	__printf_chk
-	cmpl	$11, %r12d
+	cmpl	$51, %r12d
 	je	.L31
 .L26:
 	addl	$1, %r12d
 	jmp	.L21
 .L31:
-	movl	$.LC2, %esi
+	movl	$.LC1, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r13, %rax
-	movabsq	$7378697629483820647, %rdx
-	sarq	$63, %r13
+	movabsq	$-6640827866535438581, %rdx
+	movl	$.LC0, %esi
 	imulq	%rdx
-	movl	$.LC3, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	sarq	$2, %rdx
+	addq	%r13, %rdx
+	sarq	$63, %r13
+	sarq	$5, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -330,13 +323,10 @@ main:
 	ret
 .L25:
 	.cfi_restore_state
-	cvtsi2ssq	%rax, %xmm0
 	movq	%rax, %rdx
-	movl	$.LC1, %esi
+	movl	$.LC0, %esi
 	movl	$1, %edi
-	movl	$1, %eax
-	divss	.LC0(%rip), %xmm0
-	cvtss2sd	%xmm0, %xmm0
+	xorl	%eax, %eax
 	call	__printf_chk
 	jmp	.L26
 	.cfi_endproc
@@ -366,32 +356,31 @@ _GLOBAL__sub_I_increment_me:
 	.section	.rodata
 	.align 32
 	.type	CSWTCH.94, @object
-	.size	CSWTCH.94, 152
+	.size	CSWTCH.94, 144
 CSWTCH.94:
 	.quad	_ZZ14GetPropertyAPIiE5api_9
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE5api_4
+	.quad	_ZZ14GetPropertyAPIiE5api_2
+	.quad	_ZZ14GetPropertyAPIiE5api_5
 	.quad	_ZZ14GetPropertyAPIiE6api_10
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE5api_4
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE11default_api
-	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_3
-	.quad	_ZZ14GetPropertyAPIiE5api_6
-	.quad	_ZZ14GetPropertyAPIiE5api_2
 	.quad	_ZZ14GetPropertyAPIiE5api_1
-	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_7
-	.quad	_ZZ14GetPropertyAPIiE11default_api
 	.quad	_ZZ14GetPropertyAPIiE5api_8
-	.quad	_ZZ14GetPropertyAPIiE5api_5
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE11default_api
+	.quad	_ZZ14GetPropertyAPIiE5api_6
 	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_5, @object
-	.size	_ZZ14GetPropertyAPIiE5api_5, 8
-_ZZ14GetPropertyAPIiE5api_5:
-	.quad	_ZTV15CSSPropertyAPI5+16
+	.type	_ZZ14GetPropertyAPIiE5api_6, @object
+	.size	_ZZ14GetPropertyAPIiE5api_6, 8
+_ZZ14GetPropertyAPIiE5api_6:
+	.quad	_ZTV15CSSPropertyAPI6+16
 	.align 8
 	.type	_ZZ14GetPropertyAPIiE5api_8, @object
 	.size	_ZZ14GetPropertyAPIiE5api_8, 8
@@ -408,30 +397,30 @@ _ZZ14GetPropertyAPIiE5api_7:
 _ZZ14GetPropertyAPIiE5api_1:
 	.quad	_ZTV15CSSPropertyAPI1+16
 	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_2, @object
-	.size	_ZZ14GetPropertyAPIiE5api_2, 8
-_ZZ14GetPropertyAPIiE5api_2:
-	.quad	_ZTV15CSSPropertyAPI2+16
-	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_6, @object
-	.size	_ZZ14GetPropertyAPIiE5api_6, 8
-_ZZ14GetPropertyAPIiE5api_6:
-	.quad	_ZTV15CSSPropertyAPI6+16
-	.align 8
 	.type	_ZZ14GetPropertyAPIiE5api_3, @object
 	.size	_ZZ14GetPropertyAPIiE5api_3, 8
 _ZZ14GetPropertyAPIiE5api_3:
 	.quad	_ZTV15CSSPropertyAPI3+16
 	.align 8
-	.type	_ZZ14GetPropertyAPIiE5api_4, @object
-	.size	_ZZ14GetPropertyAPIiE5api_4, 8
-_ZZ14GetPropertyAPIiE5api_4:
-	.quad	_ZTV15CSSPropertyAPI4+16
-	.align 8
 	.type	_ZZ14GetPropertyAPIiE6api_10, @object
 	.size	_ZZ14GetPropertyAPIiE6api_10, 8
 _ZZ14GetPropertyAPIiE6api_10:
 	.quad	_ZTV16CSSPropertyAPI10+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_5, @object
+	.size	_ZZ14GetPropertyAPIiE5api_5, 8
+_ZZ14GetPropertyAPIiE5api_5:
+	.quad	_ZTV15CSSPropertyAPI5+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_2, @object
+	.size	_ZZ14GetPropertyAPIiE5api_2, 8
+_ZZ14GetPropertyAPIiE5api_2:
+	.quad	_ZTV15CSSPropertyAPI2+16
+	.align 8
+	.type	_ZZ14GetPropertyAPIiE5api_4, @object
+	.size	_ZZ14GetPropertyAPIiE5api_4, 8
+_ZZ14GetPropertyAPIiE5api_4:
+	.quad	_ZTV15CSSPropertyAPI4+16
 	.align 8
 	.type	_ZZ14GetPropertyAPIiE5api_9, @object
 	.size	_ZZ14GetPropertyAPIiE5api_9, 8
@@ -725,10 +714,6 @@ increment_me:
 	.zero	4
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
-	.section	.rodata.cst4,"aM",@progbits,4
-	.align 4
-.LC0:
-	.long	1232348160
 	.hidden	__dso_handle
 	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
 	.section	.note.GNU-stack,"",@progbits
