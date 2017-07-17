@@ -22,7 +22,9 @@ tests=(
   sasha-virtual-singleton-array-lookup)
 split_tests=(
   descriptor
-  virtual)
+  descriptor-with-default
+  virtual
+  table)
 WHICH="all"
 
 while test $# -gt 0; do
@@ -87,19 +89,30 @@ function run_split_impl() {
   headerfile=$filename.h
   cppfile=$filename.cpp
 
-  ./$name-split-main-gen.sh \
-    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename > $GENFOLDER/$mainfile
-  ./$name-split-header-gen.sh $NUM_CLASSES > $GENFOLDER/$headerfile
-  ./$name-split-cpp-gen.sh $NUM_CLASSES $filename > $GENFOLDER/$cppfile
+  genfolder=$GENFOLDER/$filename
+  sfolder=$SFOLDER/$filename
+  outfolder=$OUTFOLDER/$filename
 
-  g++ $GENFOLDER/$mainfile -std=c++11 -O$OLEVEL -S -o $SFOLDER/$mainfile.s
+  # Make sure folders exist
+  for f in $genfolder $sfolder $outfolder; do
+    if [[ ! -d $f ]]; then
+      mkdir $f
+    fi
+  done
+
+  ./split/$name-split-main-gen.sh \
+    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename > $genfolder/$mainfile
+  ./split/$name-split-header-gen.sh $NUM_CLASSES > $genfolder/$headerfile
+  ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename > $genfolder/$cppfile
+
+  g++ $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
 
   compile_cmd="g++ \
-    $GENFOLDER/$mainfile \
-    $GENFOLDER/$headerfile \
-    $GENFOLDER/$cppfile \
-    -std=c++11 -O$OLEVEL -o $OUTFOLDER/$filename"
-  $compile_cmd && ./$OUTFOLDER/$filename
+    $genfolder/$mainfile \
+    $genfolder/$headerfile \
+    $genfolder/$cppfile \
+    -std=c++11 -O$OLEVEL -o $outfolder/$filename"
+  $compile_cmd && ./$outfolder/$filename
 }
 
 ### main below ###

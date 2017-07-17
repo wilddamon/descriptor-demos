@@ -54,33 +54,33 @@ class Class10 : public ClassApi {
 void callWithSwitchStatement(int classId) {
   switch (classId) {
   case 10:
-    Class3::doSomethingStatic();
-    break;
-  case 2:
-    Class9::doSomethingStatic();
-    break;
-  case 5:
-    Class5::doSomethingStatic();
-    break;
-  case 6:
     Class4::doSomethingStatic();
     break;
-  case 8:
+  case 6:
+    Class3::doSomethingStatic();
+    break;
+  case 7:
     Class2::doSomethingStatic();
     break;
-  case 3:
+  case 8:
+    Class9::doSomethingStatic();
+    break;
+  case 2:
     Class6::doSomethingStatic();
     break;
-  case 1:
+  case 5:
     Class7::doSomethingStatic();
     break;
   case 9:
-    Class8::doSomethingStatic();
-    break;
-  case 7:
     Class10::doSomethingStatic();
     break;
+  case 3:
+    Class8::doSomethingStatic();
+    break;
   case 4:
+    Class5::doSomethingStatic();
+    break;
+  case 1:
     Class1::doSomethingStatic();
     break;
   }
@@ -89,13 +89,13 @@ void callWithSwitchStatement(int classId) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  clock_t results[50];
+  clock_t results[10];
   clock_t avg_result = 0;
 
-  for (int r = 0; r < 50 + 1; r++) {
+  for (int r = 0; r < 10 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000000000; i++) {
+    for (int i = 0; i < 10000; i++) {
       callWithSwitchStatement(num);
     }
     clock_t result = clock() - t;
@@ -110,5 +110,5 @@ int main(int argc, char** argv) {
   }
 
   printf("avg clicks\n");
-  printf("%ld\n", avg_result / 50);
+  printf("%ld\n", avg_result / 10);
 }

@@ -212,7 +212,7 @@ main:
 	movl	%ebx, %ecx
 	imull	%r14d
 	movl	%ebx, %eax
-	movl	$1000000000, %ebx
+	movl	$10000, %ebx
 	sarl	$31, %eax
 	sarl	$2, %edx
 	subl	%eax, %edx
@@ -245,7 +245,7 @@ main:
 	xorl	%eax, %eax
 	movl	$1, %edi
 	call	__printf_chk
-	cmpl	$51, %r12d
+	cmpl	$11, %r12d
 	je	.L22
 .L17:
 	addl	$1, %r12d
@@ -256,14 +256,13 @@ main:
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r13, %rax
-	movabsq	$-6640827866535438581, %rdx
-	movl	$.LC0, %esi
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r13
 	imulq	%rdx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	addq	%r13, %rdx
-	sarq	$63, %r13
-	sarq	$5, %rdx
+	sarq	$2, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -321,16 +320,16 @@ _GLOBAL__sub_I_increment_me:
 	.type	function_array, @object
 	.size	function_array, 80
 function_array:
-	.quad	_ZN6Class317doSomethingStaticEv
-	.quad	_ZN6Class417doSomethingStaticEv
 	.quad	_ZN6Class617doSomethingStaticEv
-	.quad	_ZN7Class1017doSomethingStaticEv
 	.quad	_ZN6Class217doSomethingStaticEv
-	.quad	_ZN6Class917doSomethingStaticEv
-	.quad	_ZN6Class517doSomethingStaticEv
 	.quad	_ZN6Class717doSomethingStaticEv
-	.quad	_ZN6Class817doSomethingStaticEv
 	.quad	_ZN6Class117doSomethingStaticEv
+	.quad	_ZN6Class917doSomethingStaticEv
+	.quad	_ZN7Class1017doSomethingStaticEv
+	.quad	_ZN6Class517doSomethingStaticEv
+	.quad	_ZN6Class817doSomethingStaticEv
+	.quad	_ZN6Class417doSomethingStaticEv
+	.quad	_ZN6Class317doSomethingStaticEv
 	.globl	increment_me
 	.bss
 	.align 4

@@ -209,7 +209,7 @@ main:
 .L13:
 	call	rand
 	movl	%eax, %ecx
-	movl	$1000000000, %ebx
+	movl	$10000, %ebx
 	imull	%r14d
 	movl	%ecx, %eax
 	sarl	$31, %eax
@@ -240,7 +240,7 @@ main:
 	xorl	%eax, %eax
 	movl	$1, %edi
 	call	__printf_chk
-	cmpl	$51, %ebp
+	cmpl	$11, %ebp
 	je	.L22
 .L17:
 	addl	$1, %ebp
@@ -251,14 +251,13 @@ main:
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r12, %rax
-	movabsq	$-6640827866535438581, %rdx
-	movl	$.LC0, %esi
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r12
 	imulq	%rdx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	addq	%r12, %rdx
-	sarq	$63, %r12
-	sarq	$5, %rdx
+	sarq	$2, %rdx
 	subq	%r12, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -341,26 +340,26 @@ _GLOBAL__sub_I_increment_me:
 	movq	%rax, class9_singleton(%rip)
 	call	_Znwm
 	movq	$_ZTV7Class10+16, (%rax)
+	movq	class4_singleton(%rip), %rdx
 	movq	%rax, class10_singleton(%rip)
-	movq	%rax, class_array+32(%rip)
-	movq	class2_singleton(%rip), %rax
-	movq	class8_singleton(%rip), %rdx
 	movq	%rax, class_array+40(%rip)
 	movq	class5_singleton(%rip), %rax
 	movq	%rdx, class_array(%rip)
-	movq	class1_singleton(%rip), %rdx
+	movq	class8_singleton(%rip), %rdx
 	movq	%rax, class_array+48(%rip)
 	movq	class7_singleton(%rip), %rax
 	movq	%rdx, class_array+8(%rip)
-	movq	class6_singleton(%rip), %rdx
+	movq	class2_singleton(%rip), %rdx
 	movq	%rax, class_array+56(%rip)
-	movq	class4_singleton(%rip), %rax
+	movq	class9_singleton(%rip), %rax
 	movq	%rdx, class_array+16(%rip)
 	movq	class3_singleton(%rip), %rdx
 	movq	%rax, class_array+64(%rip)
-	movq	class9_singleton(%rip), %rax
+	movq	class6_singleton(%rip), %rax
 	movq	%rdx, class_array+24(%rip)
+	movq	class1_singleton(%rip), %rdx
 	movq	%rax, class_array+72(%rip)
+	movq	%rdx, class_array+32(%rip)
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
 	ret

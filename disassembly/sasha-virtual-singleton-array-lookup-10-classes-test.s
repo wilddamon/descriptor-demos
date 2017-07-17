@@ -208,7 +208,7 @@ main:
 .L13:
 	call	rand
 	movl	%eax, %ecx
-	movl	$1000000000, %ebx
+	movl	$10000, %ebx
 	imull	%r14d
 	movl	%ecx, %eax
 	sarl	$31, %eax
@@ -239,7 +239,7 @@ main:
 	xorl	%eax, %eax
 	movl	$1, %edi
 	call	__printf_chk
-	cmpl	$51, %ebp
+	cmpl	$11, %ebp
 	je	.L22
 .L17:
 	addl	$1, %ebp
@@ -250,14 +250,13 @@ main:
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r12, %rax
-	movabsq	$-6640827866535438581, %rdx
-	movl	$.LC0, %esi
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r12
 	imulq	%rdx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	addq	%r12, %rdx
-	sarq	$63, %r12
-	sarq	$5, %rdx
+	sarq	$2, %rdx
 	subq	%r12, %rdx
 	call	__printf_chk
 	addq	$8, %rsp

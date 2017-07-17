@@ -238,7 +238,7 @@ main:
 	addl	%eax, %eax
 	subl	%eax, %ebx
 	movslq	%ebx, %rax
-	movl	$1000000000, %ebx
+	movl	$10000, %ebx
 	movq	_ZL17descriptorIndices(,%rax,8), %rax
 	leaq	_ZL11descriptors(,%rax,8), %rbp
 	.p2align 4,,10
@@ -257,7 +257,7 @@ main:
 	xorl	%eax, %eax
 	movl	$1, %edi
 	call	__printf_chk
-	cmpl	$51, %r12d
+	cmpl	$11, %r12d
 	je	.L24
 .L19:
 	addl	$1, %r12d
@@ -268,14 +268,13 @@ main:
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r13, %rax
-	movabsq	$-6640827866535438581, %rdx
-	movl	$.LC0, %esi
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r13
 	imulq	%rdx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	addq	%r13, %rdx
-	sarq	$63, %r13
-	sarq	$5, %rdx
+	sarq	$2, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -334,48 +333,48 @@ _GLOBAL__sub_I_increment_me:
 _ZL11descriptors:
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN15CSSPropertyAPI55parseEv
-	.quad	_ZN15CSSPropertyAPI65parseEv
-	.quad	_ZN15CSSPropertyAPI35parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN15CSSPropertyAPI95parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN15CSSPropertyAPI75parseEv
+	.quad	_ZN15CSSPropertyAPI25parseEv
 	.quad	_ZN15CSSPropertyAPI85parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN16CSSPropertyAPI105parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN15CSSPropertyAPI45parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN15CSSPropertyAPI35parseEv
 	.quad	_ZN15CSSPropertyAPI15parseEv
+	.quad	_ZN15CSSPropertyAPI55parseEv
+	.quad	_ZN16CSSPropertyAPI105parseEv
+	.quad	_ZN15CSSPropertyAPI65parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN15CSSPropertyAPI25parseEv
+	.quad	_ZN15CSSPropertyAPI95parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.align 32
 	.type	_ZL17descriptorIndices, @object
 	.size	_ZL17descriptorIndices, 160
 _ZL17descriptorIndices:
-	.quad	1
-	.quad	9
-	.quad	19
 	.quad	10
-	.quad	4
-	.quad	6
+	.quad	3
+	.quad	17
+	.quad	12
 	.quad	15
-	.quad	18
+	.quad	2
+	.quad	6
+	.quad	7
+	.quad	14
+	.quad	5
 	.quad	8
 	.quad	16
-	.quad	7
-	.quad	12
-	.quad	13
-	.quad	14
-	.quad	3
-	.quad	5
-	.quad	17
 	.quad	11
-	.quad	2
+	.quad	13
+	.quad	18
+	.quad	19
+	.quad	9
 	.quad	0
+	.quad	1
+	.quad	4
 	.globl	increment_me
 	.bss
 	.align 4

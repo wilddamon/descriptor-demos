@@ -30,7 +30,7 @@ _Z23callWithSwitchStatementi:
 	.p2align 3
 .L13:
 	movl	increment_me(%rip), %eax
-	addl	$3, %eax
+	addl	$4, %eax
 	movl	%eax, increment_me(%rip)
 	.p2align 4,,10
 	.p2align 3
@@ -43,63 +43,63 @@ _Z23callWithSwitchStatementi:
 	.p2align 3
 .L3:
 	movl	increment_me(%rip), %eax
-	addl	$7, %eax
+	addl	$1, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L5:
 	movl	increment_me(%rip), %eax
-	addl	$9, %eax
+	addl	$6, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L6:
 	movl	increment_me(%rip), %eax
-	addl	$6, %eax
+	addl	$8, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L7:
 	movl	increment_me(%rip), %eax
-	addl	$1, %eax
+	addl	$5, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L8:
 	movl	increment_me(%rip), %eax
-	addl	$5, %eax
+	addl	$7, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L9:
 	movl	increment_me(%rip), %eax
-	addl	$4, %eax
+	addl	$3, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L10:
 	movl	increment_me(%rip), %eax
-	addl	$10, %eax
+	addl	$2, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L11:
 	movl	increment_me(%rip), %eax
-	addl	$2, %eax
+	addl	$9, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.p2align 4,,10
 	.p2align 3
 .L12:
 	movl	increment_me(%rip), %eax
-	addl	$8, %eax
+	addl	$10, %eax
 	movl	%eax, increment_me(%rip)
 	jmp	.L2
 	.cfi_endproc
@@ -149,7 +149,7 @@ main:
 .L16:
 	call	rand
 	movl	%eax, %ecx
-	movl	$1000000000, %ebx
+	movl	$10000, %ebx
 	imull	%r15d
 	movl	%ecx, %eax
 	sarl	$31, %eax
@@ -179,7 +179,7 @@ main:
 	xorl	%eax, %eax
 	movl	$1, %edi
 	call	__printf_chk
-	cmpl	$51, %r12d
+	cmpl	$11, %r12d
 	je	.L24
 .L20:
 	addl	$1, %r12d
@@ -190,14 +190,13 @@ main:
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r13, %rax
-	movabsq	$-6640827866535438581, %rdx
-	movl	$.LC0, %esi
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r13
 	imulq	%rdx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	addq	%r13, %rdx
-	sarq	$63, %r13
-	sarq	$5, %rdx
+	sarq	$2, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp

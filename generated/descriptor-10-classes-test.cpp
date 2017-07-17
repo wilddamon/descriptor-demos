@@ -75,34 +75,7 @@ struct CSSPropertyDescriptor {
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPI8::parse,
-  },
-  {
-    CSSPropertyAPI7::parse,
-  },
-  {
-    nullptr,
-  },
-  {
-    CSSPropertyAPI6::parse,
-  },
-  {
-    nullptr,
-  },
-  {
-    CSSPropertyAPI2::parse,
-  },
-  {
     CSSPropertyAPI9::parse,
-  },
-  {
-    CSSPropertyAPI4::parse,
-  },
-  {
-    nullptr,
-  },
-  {
-    CSSPropertyAPI3::parse,
   },
   {
     nullptr,
@@ -111,13 +84,13 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI5::parse,
   },
   {
-    nullptr,
+    CSSPropertyAPI3::parse,
   },
   {
-    nullptr,
+    CSSPropertyAPI2::parse,
   },
   {
-    CSSPropertyAPI10::parse,
+    CSSPropertyAPI8::parse,
   },
   {
     CSSPropertyAPI1::parse,
@@ -132,31 +105,58 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     nullptr,
   },
   {
+    CSSPropertyAPI10::parse,
+  },
+  {
+    CSSPropertyAPI4::parse,
+  },
+  {
+    nullptr,
+  },
+  {
+    nullptr,
+  },
+  {
+    nullptr,
+  },
+  {
+    nullptr,
+  },
+  {
+    CSSPropertyAPI6::parse,
+  },
+  {
+    nullptr,
+  },
+  {
+    CSSPropertyAPI7::parse,
+  },
+  {
     nullptr,
   },
 };
 
 static size_t descriptorIndices[] = {
-  7,
-  1,
-  0,
-  14,
+  5,
   10,
-  13,
-  12,
-  15,
   18,
-  19,
-  8,
-  17,
+  12,
   16,
-  6,
-  9,
+  15,
   3,
   11,
-  5,
-  2,
+  19,
+  1,
+  7,
+  0,
   4,
+  2,
+  8,
+  9,
+  14,
+  6,
+  13,
+  17,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
@@ -173,13 +173,13 @@ void parse(int id) {
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
-  clock_t results[50];
+  clock_t results[10];
   clock_t avg_result = 0;
 
-  for (int r = 0; r < 50 + 1; r++) {
+  for (int r = 0; r < 10 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000000000; i++) {
+    for (int i = 0; i < 10000; i++) {
       parse(num);
     }
     clock_t result = clock() - t;
@@ -194,5 +194,5 @@ int main(int argc, char** argv) {
   }
 
   printf("avg clicks\n");
-  printf("%ld\n", avg_result / 50);
+  printf("%ld\n", avg_result / 10);
 }

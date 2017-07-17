@@ -251,7 +251,7 @@ main:
 	addl	%eax, %eax
 	subl	%eax, %ebx
 	movslq	%ebx, %rax
-	movl	$1000000000, %ebx
+	movl	$10000, %ebx
 	movq	_ZL13property_apis(,%rax,8), %rbp
 	.p2align 4,,10
 	.p2align 3
@@ -271,7 +271,7 @@ main:
 	xorl	%eax, %eax
 	movl	$1, %edi
 	call	__printf_chk
-	cmpl	$51, %r12d
+	cmpl	$11, %r12d
 	je	.L25
 .L20:
 	addl	$1, %r12d
@@ -282,14 +282,13 @@ main:
 	xorl	%eax, %eax
 	call	__printf_chk
 	movq	%r13, %rax
-	movabsq	$-6640827866535438581, %rdx
-	movl	$.LC0, %esi
+	movabsq	$7378697629483820647, %rdx
+	sarq	$63, %r13
 	imulq	%rdx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	xorl	%eax, %eax
-	addq	%r13, %rdx
-	sarq	$63, %r13
-	sarq	$5, %rdx
+	sarq	$2, %rdx
 	subq	%r13, %rdx
 	call	__printf_chk
 	addq	$8, %rsp
@@ -346,25 +345,25 @@ _GLOBAL__sub_I_increment_me:
 	.type	_ZL13property_apis, @object
 	.size	_ZL13property_apis, 160
 _ZL13property_apis:
-	.quad	_ZL5api_9
-	.quad	_ZL5api_2
-	.quad	_ZL5api_0
 	.quad	_ZL5api_5
 	.quad	_ZL5api_0
-	.quad	_ZL6api_10
-	.quad	_ZL5api_0
 	.quad	_ZL5api_7
-	.quad	_ZL5api_0
-	.quad	_ZL5api_3
-	.quad	_ZL5api_4
-	.quad	_ZL5api_0
-	.quad	_ZL5api_8
-	.quad	_ZL5api_1
+	.quad	_ZL6api_10
 	.quad	_ZL5api_0
 	.quad	_ZL5api_0
 	.quad	_ZL5api_0
 	.quad	_ZL5api_6
 	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_4
+	.quad	_ZL5api_8
+	.quad	_ZL5api_0
+	.quad	_ZL5api_2
+	.quad	_ZL5api_9
+	.quad	_ZL5api_0
+	.quad	_ZL5api_1
+	.quad	_ZL5api_0
+	.quad	_ZL5api_3
 	.quad	_ZL5api_0
 	.align 8
 	.type	_ZL6api_10, @object
