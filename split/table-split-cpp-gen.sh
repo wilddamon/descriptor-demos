@@ -13,6 +13,9 @@ volatile int increment_me = 0;
 void CSSPropertyAPI::parse() const {
   increment_me += 1;
 }
+void CSSPropertyAPI::other() const {
+  increment_me += 1;
+}
 static constexpr CSSPropertyAPI api_0;
 
 EOF
@@ -21,6 +24,9 @@ for ((a=1; a <= NUM_CLASSES; a++))
 do
   echo "
 void CSSPropertyAPI$a::parse() const {
+  increment_me += $a;
+}
+void CSSPropertyAPI$a::other() const {
   increment_me += $a;
 }
 static constexpr CSSPropertyAPI$a api_$a;
@@ -46,4 +52,12 @@ echo "};
 
 const CSSPropertyAPI& GetPropertyAPI(int id) {
   return *property_apis[id];
-}"
+}
+
+void ParsePropertyAPI(int id) {
+  GetPropertyAPI(id).parse();
+}
+void OtherPropertyAPI(int id) {
+  GetPropertyAPI(id).other();
+}
+"

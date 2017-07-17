@@ -19,6 +19,9 @@ class CSSPropertyAPI {
   virtual void parse() const {
     increment_me += 1;
   }
+  virtual void other() const {
+    increment_me += 1;
+  }
 };
 static constexpr CSSPropertyAPI api_0;
 "
@@ -31,6 +34,9 @@ class CSSPropertyAPI$a : public CSSPropertyAPI {
   constexpr CSSPropertyAPI$a() {}
 
   void parse() const override {
+    increment_me += $a;
+  }
+  void other() const override {
     increment_me += $a;
   }
 };
@@ -62,6 +68,7 @@ echo "
 void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
+  api.other();
 }"
 
 ./main-gen.sh "parse" \

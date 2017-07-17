@@ -7,6 +7,7 @@ class CSSPropertyAPI {
  public:
   constexpr CSSPropertyAPI() {}
   virtual void parse() const;
+  virtual void other() const;
 };
 "
 
@@ -17,9 +18,13 @@ class CSSPropertyAPI$a : public CSSPropertyAPI {
  public:
   constexpr CSSPropertyAPI$a() {}
   void parse() const override;
+  void other() const override;
 };"
 done
 
 echo "
 const CSSPropertyAPI& GetPropertyAPI(int id);
+void ParsePropertyAPI(int id);
+void OtherPropertyAPI(int id);
+
 "
