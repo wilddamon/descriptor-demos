@@ -98,7 +98,10 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 5000; i++) {
+      virtualArrayLookup(num);
+    }
+    for (int i = 0; i < 5000; i++) {
       virtualArrayLookup(num);
     }
     clock_t result = clock() - t;

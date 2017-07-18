@@ -93,16 +93,16 @@ class Class10 : public ClassApi {
 Class10* class10_singleton = new Class10();
 
 ClassApi *class_array[] = {
-  class2_singleton,
-  class5_singleton,
-  class10_singleton,
-  class8_singleton,
-  class1_singleton,
   class4_singleton,
   class9_singleton,
+  class10_singleton,
   class3_singleton,
-  class6_singleton,
+  class1_singleton,
+  class5_singleton,
+  class8_singleton,
+  class2_singleton,
   class7_singleton,
+  class6_singleton,
 };
 
 void ClassApi::doSomethingStaticArrayLookup(int type) {
@@ -117,7 +117,10 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 5000; i++) {
+      ClassApi::doSomethingStaticArrayLookup(num);
+    }
+    for (int i = 0; i < 5000; i++) {
       ClassApi::doSomethingStaticArrayLookup(num);
     }
     clock_t result = clock() - t;

@@ -1,185 +1,187 @@
+	.text
 	.file	"generated/sasha-static-function-array-lookup-10-classes-test.cpp"
 	.section	.text._ZN6Class517doSomethingStaticEv,"axG",@progbits,_ZN6Class517doSomethingStaticEv,comdat
-	.weak	_ZN6Class517doSomethingStaticEv
-	.align	16, 0x90
+	.weak	_ZN6Class517doSomethingStaticEv # -- Begin function _ZN6Class517doSomethingStaticEv
+	.p2align	4, 0x90
 	.type	_ZN6Class517doSomethingStaticEv,@function
 _ZN6Class517doSomethingStaticEv:        # @_ZN6Class517doSomethingStaticEv
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	addl	$5, increment_me(%rip)
-	ret
-.Ltmp0:
-	.size	_ZN6Class517doSomethingStaticEv, .Ltmp0-_ZN6Class517doSomethingStaticEv
+	retq
+.Lfunc_end0:
+	.size	_ZN6Class517doSomethingStaticEv, .Lfunc_end0-_ZN6Class517doSomethingStaticEv
 	.cfi_endproc
-
-	.section	.text._ZN6Class817doSomethingStaticEv,"axG",@progbits,_ZN6Class817doSomethingStaticEv,comdat
-	.weak	_ZN6Class817doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN6Class817doSomethingStaticEv,@function
-_ZN6Class817doSomethingStaticEv:        # @_ZN6Class817doSomethingStaticEv
-	.cfi_startproc
-# BB#0:
-	addl	$8, increment_me(%rip)
-	ret
-.Ltmp1:
-	.size	_ZN6Class817doSomethingStaticEv, .Ltmp1-_ZN6Class817doSomethingStaticEv
-	.cfi_endproc
-
-	.section	.text._ZN6Class717doSomethingStaticEv,"axG",@progbits,_ZN6Class717doSomethingStaticEv,comdat
-	.weak	_ZN6Class717doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN6Class717doSomethingStaticEv,@function
-_ZN6Class717doSomethingStaticEv:        # @_ZN6Class717doSomethingStaticEv
-	.cfi_startproc
-# BB#0:
-	addl	$7, increment_me(%rip)
-	ret
-.Ltmp2:
-	.size	_ZN6Class717doSomethingStaticEv, .Ltmp2-_ZN6Class717doSomethingStaticEv
-	.cfi_endproc
-
-	.section	.text._ZN6Class317doSomethingStaticEv,"axG",@progbits,_ZN6Class317doSomethingStaticEv,comdat
-	.weak	_ZN6Class317doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN6Class317doSomethingStaticEv,@function
-_ZN6Class317doSomethingStaticEv:        # @_ZN6Class317doSomethingStaticEv
-	.cfi_startproc
-# BB#0:
-	addl	$3, increment_me(%rip)
-	ret
-.Ltmp3:
-	.size	_ZN6Class317doSomethingStaticEv, .Ltmp3-_ZN6Class317doSomethingStaticEv
-	.cfi_endproc
-
-	.section	.text._ZN6Class217doSomethingStaticEv,"axG",@progbits,_ZN6Class217doSomethingStaticEv,comdat
-	.weak	_ZN6Class217doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN6Class217doSomethingStaticEv,@function
-_ZN6Class217doSomethingStaticEv:        # @_ZN6Class217doSomethingStaticEv
-	.cfi_startproc
-# BB#0:
-	addl	$2, increment_me(%rip)
-	ret
-.Ltmp4:
-	.size	_ZN6Class217doSomethingStaticEv, .Ltmp4-_ZN6Class217doSomethingStaticEv
-	.cfi_endproc
-
-	.section	.text._ZN6Class617doSomethingStaticEv,"axG",@progbits,_ZN6Class617doSomethingStaticEv,comdat
-	.weak	_ZN6Class617doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN6Class617doSomethingStaticEv,@function
-_ZN6Class617doSomethingStaticEv:        # @_ZN6Class617doSomethingStaticEv
-	.cfi_startproc
-# BB#0:
-	addl	$6, increment_me(%rip)
-	ret
-.Ltmp5:
-	.size	_ZN6Class617doSomethingStaticEv, .Ltmp5-_ZN6Class617doSomethingStaticEv
-	.cfi_endproc
-
+                                        # -- End function
 	.section	.text._ZN6Class117doSomethingStaticEv,"axG",@progbits,_ZN6Class117doSomethingStaticEv,comdat
-	.weak	_ZN6Class117doSomethingStaticEv
-	.align	16, 0x90
+	.weak	_ZN6Class117doSomethingStaticEv # -- Begin function _ZN6Class117doSomethingStaticEv
+	.p2align	4, 0x90
 	.type	_ZN6Class117doSomethingStaticEv,@function
 _ZN6Class117doSomethingStaticEv:        # @_ZN6Class117doSomethingStaticEv
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	incl	increment_me(%rip)
-	ret
-.Ltmp6:
-	.size	_ZN6Class117doSomethingStaticEv, .Ltmp6-_ZN6Class117doSomethingStaticEv
+	retq
+.Lfunc_end1:
+	.size	_ZN6Class117doSomethingStaticEv, .Lfunc_end1-_ZN6Class117doSomethingStaticEv
 	.cfi_endproc
-
-	.section	.text._ZN7Class1017doSomethingStaticEv,"axG",@progbits,_ZN7Class1017doSomethingStaticEv,comdat
-	.weak	_ZN7Class1017doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN7Class1017doSomethingStaticEv,@function
-_ZN7Class1017doSomethingStaticEv:       # @_ZN7Class1017doSomethingStaticEv
+                                        # -- End function
+	.section	.text._ZN6Class717doSomethingStaticEv,"axG",@progbits,_ZN6Class717doSomethingStaticEv,comdat
+	.weak	_ZN6Class717doSomethingStaticEv # -- Begin function _ZN6Class717doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class717doSomethingStaticEv,@function
+_ZN6Class717doSomethingStaticEv:        # @_ZN6Class717doSomethingStaticEv
 	.cfi_startproc
-# BB#0:
-	addl	$10, increment_me(%rip)
-	ret
-.Ltmp7:
-	.size	_ZN7Class1017doSomethingStaticEv, .Ltmp7-_ZN7Class1017doSomethingStaticEv
+# BB#0:                                 # %entry
+	addl	$7, increment_me(%rip)
+	retq
+.Lfunc_end2:
+	.size	_ZN6Class717doSomethingStaticEv, .Lfunc_end2-_ZN6Class717doSomethingStaticEv
 	.cfi_endproc
-
-	.section	.text._ZN6Class917doSomethingStaticEv,"axG",@progbits,_ZN6Class917doSomethingStaticEv,comdat
-	.weak	_ZN6Class917doSomethingStaticEv
-	.align	16, 0x90
-	.type	_ZN6Class917doSomethingStaticEv,@function
-_ZN6Class917doSomethingStaticEv:        # @_ZN6Class917doSomethingStaticEv
+                                        # -- End function
+	.section	.text._ZN6Class217doSomethingStaticEv,"axG",@progbits,_ZN6Class217doSomethingStaticEv,comdat
+	.weak	_ZN6Class217doSomethingStaticEv # -- Begin function _ZN6Class217doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class217doSomethingStaticEv,@function
+_ZN6Class217doSomethingStaticEv:        # @_ZN6Class217doSomethingStaticEv
 	.cfi_startproc
-# BB#0:
-	addl	$9, increment_me(%rip)
-	ret
-.Ltmp8:
-	.size	_ZN6Class917doSomethingStaticEv, .Ltmp8-_ZN6Class917doSomethingStaticEv
+# BB#0:                                 # %entry
+	addl	$2, increment_me(%rip)
+	retq
+.Lfunc_end3:
+	.size	_ZN6Class217doSomethingStaticEv, .Lfunc_end3-_ZN6Class217doSomethingStaticEv
 	.cfi_endproc
-
+                                        # -- End function
 	.section	.text._ZN6Class417doSomethingStaticEv,"axG",@progbits,_ZN6Class417doSomethingStaticEv,comdat
-	.weak	_ZN6Class417doSomethingStaticEv
-	.align	16, 0x90
+	.weak	_ZN6Class417doSomethingStaticEv # -- Begin function _ZN6Class417doSomethingStaticEv
+	.p2align	4, 0x90
 	.type	_ZN6Class417doSomethingStaticEv,@function
 _ZN6Class417doSomethingStaticEv:        # @_ZN6Class417doSomethingStaticEv
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	addl	$4, increment_me(%rip)
-	ret
-.Ltmp9:
-	.size	_ZN6Class417doSomethingStaticEv, .Ltmp9-_ZN6Class417doSomethingStaticEv
+	retq
+.Lfunc_end4:
+	.size	_ZN6Class417doSomethingStaticEv, .Lfunc_end4-_ZN6Class417doSomethingStaticEv
 	.cfi_endproc
-
+                                        # -- End function
+	.section	.text._ZN7Class1017doSomethingStaticEv,"axG",@progbits,_ZN7Class1017doSomethingStaticEv,comdat
+	.weak	_ZN7Class1017doSomethingStaticEv # -- Begin function _ZN7Class1017doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN7Class1017doSomethingStaticEv,@function
+_ZN7Class1017doSomethingStaticEv:       # @_ZN7Class1017doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$10, increment_me(%rip)
+	retq
+.Lfunc_end5:
+	.size	_ZN7Class1017doSomethingStaticEv, .Lfunc_end5-_ZN7Class1017doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class617doSomethingStaticEv,"axG",@progbits,_ZN6Class617doSomethingStaticEv,comdat
+	.weak	_ZN6Class617doSomethingStaticEv # -- Begin function _ZN6Class617doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class617doSomethingStaticEv,@function
+_ZN6Class617doSomethingStaticEv:        # @_ZN6Class617doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$6, increment_me(%rip)
+	retq
+.Lfunc_end6:
+	.size	_ZN6Class617doSomethingStaticEv, .Lfunc_end6-_ZN6Class617doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class917doSomethingStaticEv,"axG",@progbits,_ZN6Class917doSomethingStaticEv,comdat
+	.weak	_ZN6Class917doSomethingStaticEv # -- Begin function _ZN6Class917doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class917doSomethingStaticEv,@function
+_ZN6Class917doSomethingStaticEv:        # @_ZN6Class917doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$9, increment_me(%rip)
+	retq
+.Lfunc_end7:
+	.size	_ZN6Class917doSomethingStaticEv, .Lfunc_end7-_ZN6Class917doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class817doSomethingStaticEv,"axG",@progbits,_ZN6Class817doSomethingStaticEv,comdat
+	.weak	_ZN6Class817doSomethingStaticEv # -- Begin function _ZN6Class817doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class817doSomethingStaticEv,@function
+_ZN6Class817doSomethingStaticEv:        # @_ZN6Class817doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$8, increment_me(%rip)
+	retq
+.Lfunc_end8:
+	.size	_ZN6Class817doSomethingStaticEv, .Lfunc_end8-_ZN6Class817doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class317doSomethingStaticEv,"axG",@progbits,_ZN6Class317doSomethingStaticEv,comdat
+	.weak	_ZN6Class317doSomethingStaticEv # -- Begin function _ZN6Class317doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class317doSomethingStaticEv,@function
+_ZN6Class317doSomethingStaticEv:        # @_ZN6Class317doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$3, increment_me(%rip)
+	retq
+.Lfunc_end9:
+	.size	_ZN6Class317doSomethingStaticEv, .Lfunc_end9-_ZN6Class317doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
 	.text
-	.globl	_Z19callWithArrayLookupi
-	.align	16, 0x90
+	.globl	_Z19callWithArrayLookupi # -- Begin function _Z19callWithArrayLookupi
+	.p2align	4, 0x90
 	.type	_Z19callWithArrayLookupi,@function
 _Z19callWithArrayLookupi:               # @_Z19callWithArrayLookupi
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	movslq	%edi, %rax
 	imulq	$1717986919, %rax, %rcx # imm = 0x66666667
 	movq	%rcx, %rdx
 	shrq	$63, %rdx
 	sarq	$34, %rcx
 	addl	%edx, %ecx
-	imull	$10, %ecx, %ecx
+	addl	%ecx, %ecx
+	leal	(%rcx,%rcx,4), %ecx
 	subl	%ecx, %eax
 	cltq
-	jmpq	*function_array(,%rax,8)  # TAILCALL
-.Ltmp10:
-	.size	_Z19callWithArrayLookupi, .Ltmp10-_Z19callWithArrayLookupi
+	jmpq	*function_array(,%rax,8) # TAILCALL
+.Lfunc_end10:
+	.size	_Z19callWithArrayLookupi, .Lfunc_end10-_Z19callWithArrayLookupi
 	.cfi_endproc
-
-	.globl	main
-	.align	16, 0x90
+                                        # -- End function
+	.globl	main                    # -- Begin function main
+	.p2align	4, 0x90
 	.type	main,@function
 main:                                   # @main
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	pushq	%rbp
-.Ltmp17:
+.Lcfi0:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp18:
+.Lcfi1:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp19:
+.Lcfi2:
 	.cfi_def_cfa_offset 32
 	pushq	%r12
-.Ltmp20:
+.Lcfi3:
 	.cfi_def_cfa_offset 40
 	pushq	%rbx
-.Ltmp21:
+.Lcfi4:
 	.cfi_def_cfa_offset 48
-.Ltmp22:
+.Lcfi5:
 	.cfi_offset %rbx, -48
-.Ltmp23:
+.Lcfi6:
 	.cfi_offset %r12, -40
-.Ltmp24:
+.Lcfi7:
 	.cfi_offset %r14, -32
-.Ltmp25:
+.Lcfi8:
 	.cfi_offset %r15, -24
-.Ltmp26:
+.Lcfi9:
 	.cfi_offset %rbp, -16
 	xorl	%edi, %edi
 	callq	time
@@ -187,9 +189,11 @@ main:                                   # @main
 	callq	srand
 	xorl	%r15d, %r15d
 	xorl	%r12d, %r12d
-	.align	16, 0x90
-.LBB11_1:                               # =>This Loop Header: Depth=1
+	.p2align	4, 0x90
+.LBB11_1:                               # %for.body
+                                        # =>This Loop Header: Depth=1
                                         #     Child Loop BB11_2 Depth 2
+                                        #     Child Loop BB11_4 Depth 2
 	callq	rand
 	movslq	%eax, %rbx
 	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
@@ -197,33 +201,38 @@ main:                                   # @main
 	shrq	$63, %rcx
 	sarq	$34, %rax
 	addl	%ecx, %eax
-	imull	$10, %eax, %eax
+	addl	%eax, %eax
+	leal	(%rax,%rax,4), %eax
 	subl	%eax, %ebx
 	callq	clock
 	movq	%rax, %r14
-	movslq	%ebx, %rax
-	imulq	$1717986919, %rax, %rcx # imm = 0x66666667
-	sarq	$34, %rcx
-	movl	%ecx, %edx
-	shrl	$31, %edx
-	addl	%ecx, %edx
-	imull	$10, %edx, %ecx
-	subl	%ecx, %eax
-	movslq	%eax, %rbx
-	movl	$1000, %ebp             # imm = 0x3E8
-	.align	16, 0x90
-.LBB11_2:                               #   Parent Loop BB11_1 Depth=1
+	movslq	%ebx, %rbx
+	movl	$5000, %ebp             # imm = 0x1388
+	.p2align	4, 0x90
+.LBB11_2:                               # %for.body6
+                                        #   Parent Loop BB11_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	callq	*function_array(,%rbx,8)
 	decl	%ebp
 	jne	.LBB11_2
-# BB#3:                                 #   in Loop: Header=BB11_1 Depth=1
+# BB#3:                                 # %for.body11.preheader
+                                        #   in Loop: Header=BB11_1 Depth=1
+	movl	$5000, %ebp             # imm = 0x1388
+	.p2align	4, 0x90
+.LBB11_4:                               # %for.body11
+                                        #   Parent Loop BB11_1 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	callq	*function_array(,%rbx,8)
+	decl	%ebp
+	jne	.LBB11_4
+# BB#5:                                 # %for.cond.cleanup10
+                                        #   in Loop: Header=BB11_1 Depth=1
 	callq	clock
 	movq	%rax, %rcx
 	subq	%r14, %rcx
 	testl	%r12d, %r12d
 	movl	$0, %eax
-	cmovgq	%rcx, %rax
+	cmovneq	%rcx, %rax
 	addq	%rax, %r15
 	movl	$.L.str, %edi
 	xorl	%eax, %eax
@@ -232,7 +241,7 @@ main:                                   # @main
 	incl	%r12d
 	cmpl	$51, %r12d
 	jne	.LBB11_1
-# BB#4:
+# BB#6:                                 # %for.cond.cleanup
 	movl	$.Lstr, %edi
 	callq	puts
 	movabsq	$-6640827866535438581, %rcx # imm = 0xA3D70A3D70A3D70B
@@ -252,19 +261,19 @@ main:                                   # @main
 	popq	%r14
 	popq	%r15
 	popq	%rbp
-	ret
-.Ltmp27:
-	.size	main, .Ltmp27-main
+	retq
+.Lfunc_end11:
+	.size	main, .Lfunc_end11-main
 	.cfi_endproc
-
+                                        # -- End function
 	.section	.text.startup,"ax",@progbits
-	.align	16, 0x90
-	.type	_GLOBAL__I_a,@function
-_GLOBAL__I_a:                           # @_GLOBAL__I_a
+	.p2align	4, 0x90         # -- Begin function _GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp
+	.type	_GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp,@function
+_GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp: # @_GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	pushq	%rax
-.Ltmp29:
+.Lcfi10:
 	.cfi_def_cfa_offset 16
 	movl	$_ZStL8__ioinit, %edi
 	callq	_ZNSt8ios_base4InitC1Ev
@@ -273,17 +282,18 @@ _GLOBAL__I_a:                           # @_GLOBAL__I_a
 	movl	$__dso_handle, %edx
 	popq	%rax
 	jmp	__cxa_atexit            # TAILCALL
-.Ltmp30:
-	.size	_GLOBAL__I_a, .Ltmp30-_GLOBAL__I_a
+.Lfunc_end12:
+	.size	_GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp, .Lfunc_end12-_GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp
 	.cfi_endproc
-
+                                        # -- End function
 	.type	_ZStL8__ioinit,@object  # @_ZStL8__ioinit
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
+	.hidden	__dso_handle
 	.type	increment_me,@object    # @increment_me
 	.bss
 	.globl	increment_me
-	.align	4
+	.p2align	2
 increment_me:
 	.long	0                       # 0x0
 	.size	increment_me, 4
@@ -291,18 +301,18 @@ increment_me:
 	.type	function_array,@object  # @function_array
 	.data
 	.globl	function_array
-	.align	16
+	.p2align	4
 function_array:
 	.quad	_ZN6Class517doSomethingStaticEv
-	.quad	_ZN6Class817doSomethingStaticEv
-	.quad	_ZN6Class717doSomethingStaticEv
-	.quad	_ZN6Class317doSomethingStaticEv
-	.quad	_ZN6Class217doSomethingStaticEv
-	.quad	_ZN6Class617doSomethingStaticEv
 	.quad	_ZN6Class117doSomethingStaticEv
-	.quad	_ZN7Class1017doSomethingStaticEv
-	.quad	_ZN6Class917doSomethingStaticEv
+	.quad	_ZN6Class717doSomethingStaticEv
+	.quad	_ZN6Class217doSomethingStaticEv
 	.quad	_ZN6Class417doSomethingStaticEv
+	.quad	_ZN7Class1017doSomethingStaticEv
+	.quad	_ZN6Class617doSomethingStaticEv
+	.quad	_ZN6Class917doSomethingStaticEv
+	.quad	_ZN6Class817doSomethingStaticEv
+	.quad	_ZN6Class317doSomethingStaticEv
 	.size	function_array, 80
 
 	.type	.L.str,@object          # @.str
@@ -312,8 +322,8 @@ function_array:
 	.size	.L.str, 5
 
 	.section	.init_array,"aw",@init_array
-	.align	8
-	.quad	_GLOBAL__I_a
+	.p2align	3
+	.quad	_GLOBAL__sub_I_sasha_static_function_array_lookup_10_classes_test.cpp
 	.type	.Lstr,@object           # @str
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lstr:
@@ -321,5 +331,5 @@ function_array:
 	.size	.Lstr, 11
 
 
-	.ident	"Ubuntu clang version 3.4-1ubuntu3 (tags/RELEASE_34/final) (based on LLVM 3.4)"
+	.ident	"clang version 5.0.0 (trunk 307486)"
 	.section	".note.GNU-stack","",@progbits

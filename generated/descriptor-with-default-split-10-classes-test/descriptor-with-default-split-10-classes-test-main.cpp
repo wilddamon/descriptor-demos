@@ -4,10 +4,14 @@
 #include <iostream>
 #include <ctime>
 
-
 void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   d.parse();
+}
+
+void other(int id) {
+  const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
+  d.other();
 }
 int main(int argc, char** argv) {
   srand(time(nullptr));
@@ -18,8 +22,11 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 5000; i++) {
       parse(num);
+    }
+    for (int i = 0; i < 5000; i++) {
+      other(num);
     }
     clock_t result = clock() - t;
 

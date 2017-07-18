@@ -114,40 +114,36 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     nullptr,
   },
   {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
-  },
-  {
-    CSSPropertyAPI5::parse,
-    CSSPropertyAPI5::other,
-  },
-  {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
-  },
-  {
-    nullptr,
-    nullptr,
+    CSSPropertyAPI10::parse,
+    CSSPropertyAPI10::other,
   },
   {
     CSSPropertyAPI8::parse,
     CSSPropertyAPI8::other,
   },
   {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
+    nullptr,
+    nullptr,
   },
   {
     CSSPropertyAPI9::parse,
     CSSPropertyAPI9::other,
   },
   {
-    CSSPropertyAPI10::parse,
-    CSSPropertyAPI10::other,
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
+  },
+  {
+    CSSPropertyAPI5::parse,
+    CSSPropertyAPI5::other,
+  },
+  {
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
+  },
+  {
+    nullptr,
+    nullptr,
   },
   {
     nullptr,
@@ -166,12 +162,12 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI6::other,
   },
   {
-    nullptr,
-    nullptr,
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
   },
   {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
+    nullptr,
+    nullptr,
   },
   {
     CSSPropertyAPI4::parse,
@@ -185,29 +181,33 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     nullptr,
     nullptr,
   },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
+  },
 };
 
 static size_t descriptorIndices[] = {
-  0,
-  3,
-  6,
-  10,
   13,
-  9,
-  14,
-  8,
-  16,
-  5,
-  15,
-  17,
-  18,
+  6,
   11,
-  7,
-  1,
+  18,
   12,
+  7,
+  17,
+  15,
+  1,
+  2,
+  14,
+  5,
+  8,
+  0,
+  9,
+  10,
   4,
   19,
-  2,
+  3,
+  16,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
@@ -221,6 +221,15 @@ void parse(int id) {
   }
   increment_me += 1;
 }
+
+void other(int id) {
+  const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
+  if (d.other) {
+    d.other();
+  }
+  increment_me += 2;
+}
+
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
@@ -230,8 +239,11 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000000000; i++) {
+    for (int i = 0; i < 5000; i++) {
       parse(num);
+    }
+    for (int i = 0; i < 5000; i++) {
+      other(num);
     }
     clock_t result = clock() - t;
 

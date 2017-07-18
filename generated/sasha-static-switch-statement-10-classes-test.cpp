@@ -53,35 +53,35 @@ class Class10 : public ClassApi {
 
 void callWithSwitchStatement(int classId) {
   switch (classId) {
-  case 1:
+  case 2:
+    Class2::doSomethingStatic();
+    break;
+  case 9:
+    Class5::doSomethingStatic();
+    break;
+  case 7:
     Class10::doSomethingStatic();
     break;
   case 5:
-    Class6::doSomethingStatic();
-    break;
-  case 4:
     Class4::doSomethingStatic();
     break;
-  case 6:
-    Class8::doSomethingStatic();
-    break;
-  case 9:
-    Class2::doSomethingStatic();
-    break;
   case 3:
-    Class5::doSomethingStatic();
-    break;
-  case 8:
-    Class7::doSomethingStatic();
-    break;
-  case 2:
     Class9::doSomethingStatic();
     break;
-  case 7:
+  case 4:
+    Class8::doSomethingStatic();
+    break;
+  case 6:
     Class3::doSomethingStatic();
     break;
   case 10:
     Class1::doSomethingStatic();
+    break;
+  case 1:
+    Class6::doSomethingStatic();
+    break;
+  case 8:
+    Class7::doSomethingStatic();
     break;
   }
   increment_me += 5;
@@ -95,7 +95,10 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 5000; i++) {
+      callWithSwitchStatement(num);
+    }
+    for (int i = 0; i < 5000; i++) {
       callWithSwitchStatement(num);
     }
     clock_t result = clock() - t;

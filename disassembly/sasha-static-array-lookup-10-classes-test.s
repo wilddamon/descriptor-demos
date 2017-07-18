@@ -1,49 +1,49 @@
-	.file	"generated/sasha-static-array-lookup-10-classes-test.cpp"
 	.text
-	.globl	_ZN8ClassApi28doSomethingStaticArrayLookupEi
-	.align	16, 0x90
+	.file	"generated/sasha-static-array-lookup-10-classes-test.cpp"
+	.globl	_ZN8ClassApi28doSomethingStaticArrayLookupEi # -- Begin function _ZN8ClassApi28doSomethingStaticArrayLookupEi
+	.p2align	4, 0x90
 	.type	_ZN8ClassApi28doSomethingStaticArrayLookupEi,@function
 _ZN8ClassApi28doSomethingStaticArrayLookupEi: # @_ZN8ClassApi28doSomethingStaticArrayLookupEi
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	movslq	%edi, %rax
 	movq	class_array(,%rax,8), %rdi
 	movq	(%rdi), %rax
-	jmpq	*(%rax)  # TAILCALL
-.Ltmp0:
-	.size	_ZN8ClassApi28doSomethingStaticArrayLookupEi, .Ltmp0-_ZN8ClassApi28doSomethingStaticArrayLookupEi
+	jmpq	*(%rax)                 # TAILCALL
+.Lfunc_end0:
+	.size	_ZN8ClassApi28doSomethingStaticArrayLookupEi, .Lfunc_end0-_ZN8ClassApi28doSomethingStaticArrayLookupEi
 	.cfi_endproc
-
-	.globl	main
-	.align	16, 0x90
+                                        # -- End function
+	.globl	main                    # -- Begin function main
+	.p2align	4, 0x90
 	.type	main,@function
 main:                                   # @main
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	pushq	%rbp
-.Ltmp7:
+.Lcfi0:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp8:
+.Lcfi1:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp9:
+.Lcfi2:
 	.cfi_def_cfa_offset 32
 	pushq	%r12
-.Ltmp10:
+.Lcfi3:
 	.cfi_def_cfa_offset 40
 	pushq	%rbx
-.Ltmp11:
+.Lcfi4:
 	.cfi_def_cfa_offset 48
-.Ltmp12:
+.Lcfi5:
 	.cfi_offset %rbx, -48
-.Ltmp13:
+.Lcfi6:
 	.cfi_offset %r12, -40
-.Ltmp14:
+.Lcfi7:
 	.cfi_offset %r14, -32
-.Ltmp15:
+.Lcfi8:
 	.cfi_offset %r15, -24
-.Ltmp16:
+.Lcfi9:
 	.cfi_offset %rbp, -16
 	xorl	%edi, %edi
 	callq	time
@@ -51,9 +51,11 @@ main:                                   # @main
 	callq	srand
 	xorl	%r15d, %r15d
 	xorl	%r12d, %r12d
-	.align	16, 0x90
-.LBB1_1:                                # =>This Loop Header: Depth=1
+	.p2align	4, 0x90
+.LBB1_1:                                # %for.body
+                                        # =>This Loop Header: Depth=1
                                         #     Child Loop BB1_2 Depth 2
+                                        #     Child Loop BB1_4 Depth 2
 	callq	rand
 	movslq	%eax, %rbx
 	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
@@ -61,27 +63,42 @@ main:                                   # @main
 	shrq	$63, %rcx
 	sarq	$34, %rax
 	addl	%ecx, %eax
-	imull	$10, %eax, %eax
+	addl	%eax, %eax
+	leal	(%rax,%rax,4), %eax
 	subl	%eax, %ebx
 	callq	clock
 	movq	%rax, %r14
 	movslq	%ebx, %rbx
-	movl	$1000, %ebp             # imm = 0x3E8
-	.align	16, 0x90
-.LBB1_2:                                #   Parent Loop BB1_1 Depth=1
+	movl	$5000, %ebp             # imm = 0x1388
+	.p2align	4, 0x90
+.LBB1_2:                                # %for.body6
+                                        #   Parent Loop BB1_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	movq	class_array(,%rbx,8), %rdi
 	movq	(%rdi), %rax
 	callq	*(%rax)
 	decl	%ebp
 	jne	.LBB1_2
-# BB#3:                                 #   in Loop: Header=BB1_1 Depth=1
+# BB#3:                                 # %for.body11.preheader
+                                        #   in Loop: Header=BB1_1 Depth=1
+	movl	$5000, %ebp             # imm = 0x1388
+	.p2align	4, 0x90
+.LBB1_4:                                # %for.body11
+                                        #   Parent Loop BB1_1 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movq	class_array(,%rbx,8), %rdi
+	movq	(%rdi), %rax
+	callq	*(%rax)
+	decl	%ebp
+	jne	.LBB1_4
+# BB#5:                                 # %for.cond.cleanup10
+                                        #   in Loop: Header=BB1_1 Depth=1
 	callq	clock
 	movq	%rax, %rcx
 	subq	%r14, %rcx
 	testl	%r12d, %r12d
 	movl	$0, %eax
-	cmovgq	%rcx, %rax
+	cmovneq	%rcx, %rax
 	addq	%rax, %r15
 	movl	$.L.str, %edi
 	xorl	%eax, %eax
@@ -90,7 +107,7 @@ main:                                   # @main
 	incl	%r12d
 	cmpl	$51, %r12d
 	jne	.LBB1_1
-# BB#4:
+# BB#6:                                 # %for.cond.cleanup
 	movl	$.Lstr, %edi
 	callq	puts
 	movabsq	$-6640827866535438581, %rcx # imm = 0xA3D70A3D70A3D70B
@@ -110,179 +127,179 @@ main:                                   # @main
 	popq	%r14
 	popq	%r15
 	popq	%rbp
-	ret
-.Ltmp17:
-	.size	main, .Ltmp17-main
+	retq
+.Lfunc_end1:
+	.size	main, .Lfunc_end1-main
 	.cfi_endproc
-
-	.section	.text._ZNK7Class1018doSomethingVirtualEv,"axG",@progbits,_ZNK7Class1018doSomethingVirtualEv,comdat
-	.weak	_ZNK7Class1018doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK7Class1018doSomethingVirtualEv,@function
-_ZNK7Class1018doSomethingVirtualEv:     # @_ZNK7Class1018doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$10, increment_me(%rip)
-	ret
-.Ltmp18:
-	.size	_ZNK7Class1018doSomethingVirtualEv, .Ltmp18-_ZNK7Class1018doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class918doSomethingVirtualEv,"axG",@progbits,_ZNK6Class918doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class918doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class918doSomethingVirtualEv,@function
-_ZNK6Class918doSomethingVirtualEv:      # @_ZNK6Class918doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$9, increment_me(%rip)
-	ret
-.Ltmp19:
-	.size	_ZNK6Class918doSomethingVirtualEv, .Ltmp19-_ZNK6Class918doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class818doSomethingVirtualEv,"axG",@progbits,_ZNK6Class818doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class818doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class818doSomethingVirtualEv,@function
-_ZNK6Class818doSomethingVirtualEv:      # @_ZNK6Class818doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$8, increment_me(%rip)
-	ret
-.Ltmp20:
-	.size	_ZNK6Class818doSomethingVirtualEv, .Ltmp20-_ZNK6Class818doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class718doSomethingVirtualEv,"axG",@progbits,_ZNK6Class718doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class718doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class718doSomethingVirtualEv,@function
-_ZNK6Class718doSomethingVirtualEv:      # @_ZNK6Class718doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$7, increment_me(%rip)
-	ret
-.Ltmp21:
-	.size	_ZNK6Class718doSomethingVirtualEv, .Ltmp21-_ZNK6Class718doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class618doSomethingVirtualEv,"axG",@progbits,_ZNK6Class618doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class618doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class618doSomethingVirtualEv,@function
-_ZNK6Class618doSomethingVirtualEv:      # @_ZNK6Class618doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$6, increment_me(%rip)
-	ret
-.Ltmp22:
-	.size	_ZNK6Class618doSomethingVirtualEv, .Ltmp22-_ZNK6Class618doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class518doSomethingVirtualEv,"axG",@progbits,_ZNK6Class518doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class518doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class518doSomethingVirtualEv,@function
-_ZNK6Class518doSomethingVirtualEv:      # @_ZNK6Class518doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$5, increment_me(%rip)
-	ret
-.Ltmp23:
-	.size	_ZNK6Class518doSomethingVirtualEv, .Ltmp23-_ZNK6Class518doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class418doSomethingVirtualEv,"axG",@progbits,_ZNK6Class418doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class418doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class418doSomethingVirtualEv,@function
-_ZNK6Class418doSomethingVirtualEv:      # @_ZNK6Class418doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$4, increment_me(%rip)
-	ret
-.Ltmp24:
-	.size	_ZNK6Class418doSomethingVirtualEv, .Ltmp24-_ZNK6Class418doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class318doSomethingVirtualEv,"axG",@progbits,_ZNK6Class318doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class318doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class318doSomethingVirtualEv,@function
-_ZNK6Class318doSomethingVirtualEv:      # @_ZNK6Class318doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$3, increment_me(%rip)
-	ret
-.Ltmp25:
-	.size	_ZNK6Class318doSomethingVirtualEv, .Ltmp25-_ZNK6Class318doSomethingVirtualEv
-	.cfi_endproc
-
-	.section	.text._ZNK6Class218doSomethingVirtualEv,"axG",@progbits,_ZNK6Class218doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class218doSomethingVirtualEv
-	.align	16, 0x90
-	.type	_ZNK6Class218doSomethingVirtualEv,@function
-_ZNK6Class218doSomethingVirtualEv:      # @_ZNK6Class218doSomethingVirtualEv
-	.cfi_startproc
-# BB#0:
-	addl	$2, increment_me(%rip)
-	ret
-.Ltmp26:
-	.size	_ZNK6Class218doSomethingVirtualEv, .Ltmp26-_ZNK6Class218doSomethingVirtualEv
-	.cfi_endproc
-
+                                        # -- End function
 	.section	.text._ZNK6Class118doSomethingVirtualEv,"axG",@progbits,_ZNK6Class118doSomethingVirtualEv,comdat
-	.weak	_ZNK6Class118doSomethingVirtualEv
-	.align	16, 0x90
+	.weak	_ZNK6Class118doSomethingVirtualEv # -- Begin function _ZNK6Class118doSomethingVirtualEv
+	.p2align	4, 0x90
 	.type	_ZNK6Class118doSomethingVirtualEv,@function
 _ZNK6Class118doSomethingVirtualEv:      # @_ZNK6Class118doSomethingVirtualEv
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
 	incl	increment_me(%rip)
-	ret
-.Ltmp27:
-	.size	_ZNK6Class118doSomethingVirtualEv, .Ltmp27-_ZNK6Class118doSomethingVirtualEv
+	retq
+.Lfunc_end2:
+	.size	_ZNK6Class118doSomethingVirtualEv, .Lfunc_end2-_ZNK6Class118doSomethingVirtualEv
 	.cfi_endproc
-
-	.section	.text.startup,"ax",@progbits
-	.align	16, 0x90
-	.type	_GLOBAL__I_a,@function
-_GLOBAL__I_a:                           # @_GLOBAL__I_a
+                                        # -- End function
+	.section	.text._ZNK6Class218doSomethingVirtualEv,"axG",@progbits,_ZNK6Class218doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class218doSomethingVirtualEv # -- Begin function _ZNK6Class218doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class218doSomethingVirtualEv,@function
+_ZNK6Class218doSomethingVirtualEv:      # @_ZNK6Class218doSomethingVirtualEv
 	.cfi_startproc
-# BB#0:
+# BB#0:                                 # %entry
+	addl	$2, increment_me(%rip)
+	retq
+.Lfunc_end3:
+	.size	_ZNK6Class218doSomethingVirtualEv, .Lfunc_end3-_ZNK6Class218doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class318doSomethingVirtualEv,"axG",@progbits,_ZNK6Class318doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class318doSomethingVirtualEv # -- Begin function _ZNK6Class318doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class318doSomethingVirtualEv,@function
+_ZNK6Class318doSomethingVirtualEv:      # @_ZNK6Class318doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$3, increment_me(%rip)
+	retq
+.Lfunc_end4:
+	.size	_ZNK6Class318doSomethingVirtualEv, .Lfunc_end4-_ZNK6Class318doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class418doSomethingVirtualEv,"axG",@progbits,_ZNK6Class418doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class418doSomethingVirtualEv # -- Begin function _ZNK6Class418doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class418doSomethingVirtualEv,@function
+_ZNK6Class418doSomethingVirtualEv:      # @_ZNK6Class418doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$4, increment_me(%rip)
+	retq
+.Lfunc_end5:
+	.size	_ZNK6Class418doSomethingVirtualEv, .Lfunc_end5-_ZNK6Class418doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class518doSomethingVirtualEv,"axG",@progbits,_ZNK6Class518doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class518doSomethingVirtualEv # -- Begin function _ZNK6Class518doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class518doSomethingVirtualEv,@function
+_ZNK6Class518doSomethingVirtualEv:      # @_ZNK6Class518doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$5, increment_me(%rip)
+	retq
+.Lfunc_end6:
+	.size	_ZNK6Class518doSomethingVirtualEv, .Lfunc_end6-_ZNK6Class518doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class618doSomethingVirtualEv,"axG",@progbits,_ZNK6Class618doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class618doSomethingVirtualEv # -- Begin function _ZNK6Class618doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class618doSomethingVirtualEv,@function
+_ZNK6Class618doSomethingVirtualEv:      # @_ZNK6Class618doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$6, increment_me(%rip)
+	retq
+.Lfunc_end7:
+	.size	_ZNK6Class618doSomethingVirtualEv, .Lfunc_end7-_ZNK6Class618doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class718doSomethingVirtualEv,"axG",@progbits,_ZNK6Class718doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class718doSomethingVirtualEv # -- Begin function _ZNK6Class718doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class718doSomethingVirtualEv,@function
+_ZNK6Class718doSomethingVirtualEv:      # @_ZNK6Class718doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$7, increment_me(%rip)
+	retq
+.Lfunc_end8:
+	.size	_ZNK6Class718doSomethingVirtualEv, .Lfunc_end8-_ZNK6Class718doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class818doSomethingVirtualEv,"axG",@progbits,_ZNK6Class818doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class818doSomethingVirtualEv # -- Begin function _ZNK6Class818doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class818doSomethingVirtualEv,@function
+_ZNK6Class818doSomethingVirtualEv:      # @_ZNK6Class818doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$8, increment_me(%rip)
+	retq
+.Lfunc_end9:
+	.size	_ZNK6Class818doSomethingVirtualEv, .Lfunc_end9-_ZNK6Class818doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK6Class918doSomethingVirtualEv,"axG",@progbits,_ZNK6Class918doSomethingVirtualEv,comdat
+	.weak	_ZNK6Class918doSomethingVirtualEv # -- Begin function _ZNK6Class918doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK6Class918doSomethingVirtualEv,@function
+_ZNK6Class918doSomethingVirtualEv:      # @_ZNK6Class918doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$9, increment_me(%rip)
+	retq
+.Lfunc_end10:
+	.size	_ZNK6Class918doSomethingVirtualEv, .Lfunc_end10-_ZNK6Class918doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNK7Class1018doSomethingVirtualEv,"axG",@progbits,_ZNK7Class1018doSomethingVirtualEv,comdat
+	.weak	_ZNK7Class1018doSomethingVirtualEv # -- Begin function _ZNK7Class1018doSomethingVirtualEv
+	.p2align	4, 0x90
+	.type	_ZNK7Class1018doSomethingVirtualEv,@function
+_ZNK7Class1018doSomethingVirtualEv:     # @_ZNK7Class1018doSomethingVirtualEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$10, increment_me(%rip)
+	retq
+.Lfunc_end11:
+	.size	_ZNK7Class1018doSomethingVirtualEv, .Lfunc_end11-_ZNK7Class1018doSomethingVirtualEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text.startup,"ax",@progbits
+	.p2align	4, 0x90         # -- Begin function _GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp
+	.type	_GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp,@function
+_GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp: # @_GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp
+	.cfi_startproc
+# BB#0:                                 # %entry
 	pushq	%rbp
-.Ltmp35:
+.Lcfi10:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp36:
+.Lcfi11:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp37:
+.Lcfi12:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp38:
+.Lcfi13:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp39:
+.Lcfi14:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp40:
+.Lcfi15:
 	.cfi_def_cfa_offset 56
 	subq	$24, %rsp
-.Ltmp41:
+.Lcfi16:
 	.cfi_def_cfa_offset 80
-.Ltmp42:
+.Lcfi17:
 	.cfi_offset %rbx, -56
-.Ltmp43:
+.Lcfi18:
 	.cfi_offset %r12, -48
-.Ltmp44:
+.Lcfi19:
 	.cfi_offset %r13, -40
-.Ltmp45:
+.Lcfi20:
 	.cfi_offset %r14, -32
-.Ltmp46:
+.Lcfi21:
 	.cfi_offset %r15, -24
-.Ltmp47:
+.Lcfi22:
 	.cfi_offset %rbp, -16
 	movl	$_ZStL8__ioinit, %edi
 	callq	_ZNSt8ios_base4InitC1Ev
@@ -339,19 +356,19 @@ _GLOBAL__I_a:                           # @_GLOBAL__I_a
 	callq	_Znwm
 	movq	$_ZTV7Class10+16, (%rax)
 	movq	%rax, class10_singleton(%rip)
-	movq	8(%rsp), %rcx           # 8-byte Reload
-	movq	%rcx, class_array(%rip)
-	movq	%rbx, class_array+8(%rip)
+	movq	%r13, class_array(%rip)
+	movq	%r12, class_array+8(%rip)
 	movq	%rax, class_array+16(%rip)
-	movq	%r15, class_array+24(%rip)
+	movq	(%rsp), %rax            # 8-byte Reload
+	movq	%rax, class_array+24(%rip)
 	movq	16(%rsp), %rax          # 8-byte Reload
 	movq	%rax, class_array+32(%rip)
-	movq	%r13, class_array+40(%rip)
-	movq	%r12, class_array+48(%rip)
-	movq	(%rsp), %rax            # 8-byte Reload
+	movq	%rbx, class_array+40(%rip)
+	movq	%r15, class_array+48(%rip)
+	movq	8(%rsp), %rax           # 8-byte Reload
 	movq	%rax, class_array+56(%rip)
-	movq	%rbp, class_array+64(%rip)
-	movq	%r14, class_array+72(%rip)
+	movq	%r14, class_array+64(%rip)
+	movq	%rbp, class_array+72(%rip)
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%r12
@@ -359,95 +376,96 @@ _GLOBAL__I_a:                           # @_GLOBAL__I_a
 	popq	%r14
 	popq	%r15
 	popq	%rbp
-	ret
-.Ltmp48:
-	.size	_GLOBAL__I_a, .Ltmp48-_GLOBAL__I_a
+	retq
+.Lfunc_end12:
+	.size	_GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp, .Lfunc_end12-_GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp
 	.cfi_endproc
-
+                                        # -- End function
 	.type	_ZStL8__ioinit,@object  # @_ZStL8__ioinit
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
+	.hidden	__dso_handle
 	.type	increment_me,@object    # @increment_me
 	.bss
 	.globl	increment_me
-	.align	4
+	.p2align	2
 increment_me:
 	.long	0                       # 0x0
 	.size	increment_me, 4
 
 	.type	class1_singleton,@object # @class1_singleton
 	.globl	class1_singleton
-	.align	8
+	.p2align	3
 class1_singleton:
 	.quad	0
 	.size	class1_singleton, 8
 
 	.type	class2_singleton,@object # @class2_singleton
 	.globl	class2_singleton
-	.align	8
+	.p2align	3
 class2_singleton:
 	.quad	0
 	.size	class2_singleton, 8
 
 	.type	class3_singleton,@object # @class3_singleton
 	.globl	class3_singleton
-	.align	8
+	.p2align	3
 class3_singleton:
 	.quad	0
 	.size	class3_singleton, 8
 
 	.type	class4_singleton,@object # @class4_singleton
 	.globl	class4_singleton
-	.align	8
+	.p2align	3
 class4_singleton:
 	.quad	0
 	.size	class4_singleton, 8
 
 	.type	class5_singleton,@object # @class5_singleton
 	.globl	class5_singleton
-	.align	8
+	.p2align	3
 class5_singleton:
 	.quad	0
 	.size	class5_singleton, 8
 
 	.type	class6_singleton,@object # @class6_singleton
 	.globl	class6_singleton
-	.align	8
+	.p2align	3
 class6_singleton:
 	.quad	0
 	.size	class6_singleton, 8
 
 	.type	class7_singleton,@object # @class7_singleton
 	.globl	class7_singleton
-	.align	8
+	.p2align	3
 class7_singleton:
 	.quad	0
 	.size	class7_singleton, 8
 
 	.type	class8_singleton,@object # @class8_singleton
 	.globl	class8_singleton
-	.align	8
+	.p2align	3
 class8_singleton:
 	.quad	0
 	.size	class8_singleton, 8
 
 	.type	class9_singleton,@object # @class9_singleton
 	.globl	class9_singleton
-	.align	8
+	.p2align	3
 class9_singleton:
 	.quad	0
 	.size	class9_singleton, 8
 
 	.type	class10_singleton,@object # @class10_singleton
 	.globl	class10_singleton
-	.align	8
+	.p2align	3
 class10_singleton:
 	.quad	0
 	.size	class10_singleton, 8
 
 	.type	class_array,@object     # @class_array
 	.globl	class_array
-	.align	16
+	.p2align	4
 class_array:
 	.zero	80
 	.size	class_array, 80
@@ -458,22 +476,22 @@ class_array:
 	.asciz	"%ld\n"
 	.size	.L.str, 5
 
-	.type	_ZTV7Class10,@object    # @_ZTV7Class10
-	.section	.rodata._ZTV7Class10,"aG",@progbits,_ZTV7Class10,comdat
-	.weak	_ZTV7Class10
-	.align	16
-_ZTV7Class10:
+	.type	_ZTV6Class1,@object     # @_ZTV6Class1
+	.section	.rodata._ZTV6Class1,"aG",@progbits,_ZTV6Class1,comdat
+	.weak	_ZTV6Class1
+	.p2align	3
+_ZTV6Class1:
 	.quad	0
-	.quad	_ZTI7Class10
-	.quad	_ZNK7Class1018doSomethingVirtualEv
-	.size	_ZTV7Class10, 24
+	.quad	_ZTI6Class1
+	.quad	_ZNK6Class118doSomethingVirtualEv
+	.size	_ZTV6Class1, 24
 
-	.type	_ZTS7Class10,@object    # @_ZTS7Class10
-	.section	.rodata._ZTS7Class10,"aG",@progbits,_ZTS7Class10,comdat
-	.weak	_ZTS7Class10
-_ZTS7Class10:
-	.asciz	"7Class10"
-	.size	_ZTS7Class10, 9
+	.type	_ZTS6Class1,@object     # @_ZTS6Class1
+	.section	.rodata._ZTS6Class1,"aG",@progbits,_ZTS6Class1,comdat
+	.weak	_ZTS6Class1
+_ZTS6Class1:
+	.asciz	"6Class1"
+	.size	_ZTS6Class1, 8
 
 	.type	_ZTS8ClassApi,@object   # @_ZTS8ClassApi
 	.section	.rodata._ZTS8ClassApi,"aG",@progbits,_ZTS8ClassApi,comdat
@@ -485,215 +503,26 @@ _ZTS8ClassApi:
 	.type	_ZTI8ClassApi,@object   # @_ZTI8ClassApi
 	.section	.rodata._ZTI8ClassApi,"aG",@progbits,_ZTI8ClassApi,comdat
 	.weak	_ZTI8ClassApi
-	.align	8
+	.p2align	3
 _ZTI8ClassApi:
 	.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
 	.quad	_ZTS8ClassApi
 	.size	_ZTI8ClassApi, 16
 
-	.type	_ZTI7Class10,@object    # @_ZTI7Class10
-	.section	.rodata._ZTI7Class10,"aG",@progbits,_ZTI7Class10,comdat
-	.weak	_ZTI7Class10
-	.align	16
-_ZTI7Class10:
+	.type	_ZTI6Class1,@object     # @_ZTI6Class1
+	.section	.rodata._ZTI6Class1,"aG",@progbits,_ZTI6Class1,comdat
+	.weak	_ZTI6Class1
+	.p2align	4
+_ZTI6Class1:
 	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS7Class10
+	.quad	_ZTS6Class1
 	.quad	_ZTI8ClassApi
-	.size	_ZTI7Class10, 24
-
-	.type	_ZTV6Class9,@object     # @_ZTV6Class9
-	.section	.rodata._ZTV6Class9,"aG",@progbits,_ZTV6Class9,comdat
-	.weak	_ZTV6Class9
-	.align	16
-_ZTV6Class9:
-	.quad	0
-	.quad	_ZTI6Class9
-	.quad	_ZNK6Class918doSomethingVirtualEv
-	.size	_ZTV6Class9, 24
-
-	.type	_ZTS6Class9,@object     # @_ZTS6Class9
-	.section	.rodata._ZTS6Class9,"aG",@progbits,_ZTS6Class9,comdat
-	.weak	_ZTS6Class9
-_ZTS6Class9:
-	.asciz	"6Class9"
-	.size	_ZTS6Class9, 8
-
-	.type	_ZTI6Class9,@object     # @_ZTI6Class9
-	.section	.rodata._ZTI6Class9,"aG",@progbits,_ZTI6Class9,comdat
-	.weak	_ZTI6Class9
-	.align	16
-_ZTI6Class9:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class9
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class9, 24
-
-	.type	_ZTV6Class8,@object     # @_ZTV6Class8
-	.section	.rodata._ZTV6Class8,"aG",@progbits,_ZTV6Class8,comdat
-	.weak	_ZTV6Class8
-	.align	16
-_ZTV6Class8:
-	.quad	0
-	.quad	_ZTI6Class8
-	.quad	_ZNK6Class818doSomethingVirtualEv
-	.size	_ZTV6Class8, 24
-
-	.type	_ZTS6Class8,@object     # @_ZTS6Class8
-	.section	.rodata._ZTS6Class8,"aG",@progbits,_ZTS6Class8,comdat
-	.weak	_ZTS6Class8
-_ZTS6Class8:
-	.asciz	"6Class8"
-	.size	_ZTS6Class8, 8
-
-	.type	_ZTI6Class8,@object     # @_ZTI6Class8
-	.section	.rodata._ZTI6Class8,"aG",@progbits,_ZTI6Class8,comdat
-	.weak	_ZTI6Class8
-	.align	16
-_ZTI6Class8:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class8
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class8, 24
-
-	.type	_ZTV6Class7,@object     # @_ZTV6Class7
-	.section	.rodata._ZTV6Class7,"aG",@progbits,_ZTV6Class7,comdat
-	.weak	_ZTV6Class7
-	.align	16
-_ZTV6Class7:
-	.quad	0
-	.quad	_ZTI6Class7
-	.quad	_ZNK6Class718doSomethingVirtualEv
-	.size	_ZTV6Class7, 24
-
-	.type	_ZTS6Class7,@object     # @_ZTS6Class7
-	.section	.rodata._ZTS6Class7,"aG",@progbits,_ZTS6Class7,comdat
-	.weak	_ZTS6Class7
-_ZTS6Class7:
-	.asciz	"6Class7"
-	.size	_ZTS6Class7, 8
-
-	.type	_ZTI6Class7,@object     # @_ZTI6Class7
-	.section	.rodata._ZTI6Class7,"aG",@progbits,_ZTI6Class7,comdat
-	.weak	_ZTI6Class7
-	.align	16
-_ZTI6Class7:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class7
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class7, 24
-
-	.type	_ZTV6Class6,@object     # @_ZTV6Class6
-	.section	.rodata._ZTV6Class6,"aG",@progbits,_ZTV6Class6,comdat
-	.weak	_ZTV6Class6
-	.align	16
-_ZTV6Class6:
-	.quad	0
-	.quad	_ZTI6Class6
-	.quad	_ZNK6Class618doSomethingVirtualEv
-	.size	_ZTV6Class6, 24
-
-	.type	_ZTS6Class6,@object     # @_ZTS6Class6
-	.section	.rodata._ZTS6Class6,"aG",@progbits,_ZTS6Class6,comdat
-	.weak	_ZTS6Class6
-_ZTS6Class6:
-	.asciz	"6Class6"
-	.size	_ZTS6Class6, 8
-
-	.type	_ZTI6Class6,@object     # @_ZTI6Class6
-	.section	.rodata._ZTI6Class6,"aG",@progbits,_ZTI6Class6,comdat
-	.weak	_ZTI6Class6
-	.align	16
-_ZTI6Class6:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class6
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class6, 24
-
-	.type	_ZTV6Class5,@object     # @_ZTV6Class5
-	.section	.rodata._ZTV6Class5,"aG",@progbits,_ZTV6Class5,comdat
-	.weak	_ZTV6Class5
-	.align	16
-_ZTV6Class5:
-	.quad	0
-	.quad	_ZTI6Class5
-	.quad	_ZNK6Class518doSomethingVirtualEv
-	.size	_ZTV6Class5, 24
-
-	.type	_ZTS6Class5,@object     # @_ZTS6Class5
-	.section	.rodata._ZTS6Class5,"aG",@progbits,_ZTS6Class5,comdat
-	.weak	_ZTS6Class5
-_ZTS6Class5:
-	.asciz	"6Class5"
-	.size	_ZTS6Class5, 8
-
-	.type	_ZTI6Class5,@object     # @_ZTI6Class5
-	.section	.rodata._ZTI6Class5,"aG",@progbits,_ZTI6Class5,comdat
-	.weak	_ZTI6Class5
-	.align	16
-_ZTI6Class5:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class5
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class5, 24
-
-	.type	_ZTV6Class4,@object     # @_ZTV6Class4
-	.section	.rodata._ZTV6Class4,"aG",@progbits,_ZTV6Class4,comdat
-	.weak	_ZTV6Class4
-	.align	16
-_ZTV6Class4:
-	.quad	0
-	.quad	_ZTI6Class4
-	.quad	_ZNK6Class418doSomethingVirtualEv
-	.size	_ZTV6Class4, 24
-
-	.type	_ZTS6Class4,@object     # @_ZTS6Class4
-	.section	.rodata._ZTS6Class4,"aG",@progbits,_ZTS6Class4,comdat
-	.weak	_ZTS6Class4
-_ZTS6Class4:
-	.asciz	"6Class4"
-	.size	_ZTS6Class4, 8
-
-	.type	_ZTI6Class4,@object     # @_ZTI6Class4
-	.section	.rodata._ZTI6Class4,"aG",@progbits,_ZTI6Class4,comdat
-	.weak	_ZTI6Class4
-	.align	16
-_ZTI6Class4:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class4
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class4, 24
-
-	.type	_ZTV6Class3,@object     # @_ZTV6Class3
-	.section	.rodata._ZTV6Class3,"aG",@progbits,_ZTV6Class3,comdat
-	.weak	_ZTV6Class3
-	.align	16
-_ZTV6Class3:
-	.quad	0
-	.quad	_ZTI6Class3
-	.quad	_ZNK6Class318doSomethingVirtualEv
-	.size	_ZTV6Class3, 24
-
-	.type	_ZTS6Class3,@object     # @_ZTS6Class3
-	.section	.rodata._ZTS6Class3,"aG",@progbits,_ZTS6Class3,comdat
-	.weak	_ZTS6Class3
-_ZTS6Class3:
-	.asciz	"6Class3"
-	.size	_ZTS6Class3, 8
-
-	.type	_ZTI6Class3,@object     # @_ZTI6Class3
-	.section	.rodata._ZTI6Class3,"aG",@progbits,_ZTI6Class3,comdat
-	.weak	_ZTI6Class3
-	.align	16
-_ZTI6Class3:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class3
-	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class3, 24
+	.size	_ZTI6Class1, 24
 
 	.type	_ZTV6Class2,@object     # @_ZTV6Class2
 	.section	.rodata._ZTV6Class2,"aG",@progbits,_ZTV6Class2,comdat
 	.weak	_ZTV6Class2
-	.align	16
+	.p2align	3
 _ZTV6Class2:
 	.quad	0
 	.quad	_ZTI6Class2
@@ -710,43 +539,232 @@ _ZTS6Class2:
 	.type	_ZTI6Class2,@object     # @_ZTI6Class2
 	.section	.rodata._ZTI6Class2,"aG",@progbits,_ZTI6Class2,comdat
 	.weak	_ZTI6Class2
-	.align	16
+	.p2align	4
 _ZTI6Class2:
 	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
 	.quad	_ZTS6Class2
 	.quad	_ZTI8ClassApi
 	.size	_ZTI6Class2, 24
 
-	.type	_ZTV6Class1,@object     # @_ZTV6Class1
-	.section	.rodata._ZTV6Class1,"aG",@progbits,_ZTV6Class1,comdat
-	.weak	_ZTV6Class1
-	.align	16
-_ZTV6Class1:
+	.type	_ZTV6Class3,@object     # @_ZTV6Class3
+	.section	.rodata._ZTV6Class3,"aG",@progbits,_ZTV6Class3,comdat
+	.weak	_ZTV6Class3
+	.p2align	3
+_ZTV6Class3:
 	.quad	0
-	.quad	_ZTI6Class1
-	.quad	_ZNK6Class118doSomethingVirtualEv
-	.size	_ZTV6Class1, 24
+	.quad	_ZTI6Class3
+	.quad	_ZNK6Class318doSomethingVirtualEv
+	.size	_ZTV6Class3, 24
 
-	.type	_ZTS6Class1,@object     # @_ZTS6Class1
-	.section	.rodata._ZTS6Class1,"aG",@progbits,_ZTS6Class1,comdat
-	.weak	_ZTS6Class1
-_ZTS6Class1:
-	.asciz	"6Class1"
-	.size	_ZTS6Class1, 8
+	.type	_ZTS6Class3,@object     # @_ZTS6Class3
+	.section	.rodata._ZTS6Class3,"aG",@progbits,_ZTS6Class3,comdat
+	.weak	_ZTS6Class3
+_ZTS6Class3:
+	.asciz	"6Class3"
+	.size	_ZTS6Class3, 8
 
-	.type	_ZTI6Class1,@object     # @_ZTI6Class1
-	.section	.rodata._ZTI6Class1,"aG",@progbits,_ZTI6Class1,comdat
-	.weak	_ZTI6Class1
-	.align	16
-_ZTI6Class1:
+	.type	_ZTI6Class3,@object     # @_ZTI6Class3
+	.section	.rodata._ZTI6Class3,"aG",@progbits,_ZTI6Class3,comdat
+	.weak	_ZTI6Class3
+	.p2align	4
+_ZTI6Class3:
 	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS6Class1
+	.quad	_ZTS6Class3
 	.quad	_ZTI8ClassApi
-	.size	_ZTI6Class1, 24
+	.size	_ZTI6Class3, 24
+
+	.type	_ZTV6Class4,@object     # @_ZTV6Class4
+	.section	.rodata._ZTV6Class4,"aG",@progbits,_ZTV6Class4,comdat
+	.weak	_ZTV6Class4
+	.p2align	3
+_ZTV6Class4:
+	.quad	0
+	.quad	_ZTI6Class4
+	.quad	_ZNK6Class418doSomethingVirtualEv
+	.size	_ZTV6Class4, 24
+
+	.type	_ZTS6Class4,@object     # @_ZTS6Class4
+	.section	.rodata._ZTS6Class4,"aG",@progbits,_ZTS6Class4,comdat
+	.weak	_ZTS6Class4
+_ZTS6Class4:
+	.asciz	"6Class4"
+	.size	_ZTS6Class4, 8
+
+	.type	_ZTI6Class4,@object     # @_ZTI6Class4
+	.section	.rodata._ZTI6Class4,"aG",@progbits,_ZTI6Class4,comdat
+	.weak	_ZTI6Class4
+	.p2align	4
+_ZTI6Class4:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS6Class4
+	.quad	_ZTI8ClassApi
+	.size	_ZTI6Class4, 24
+
+	.type	_ZTV6Class5,@object     # @_ZTV6Class5
+	.section	.rodata._ZTV6Class5,"aG",@progbits,_ZTV6Class5,comdat
+	.weak	_ZTV6Class5
+	.p2align	3
+_ZTV6Class5:
+	.quad	0
+	.quad	_ZTI6Class5
+	.quad	_ZNK6Class518doSomethingVirtualEv
+	.size	_ZTV6Class5, 24
+
+	.type	_ZTS6Class5,@object     # @_ZTS6Class5
+	.section	.rodata._ZTS6Class5,"aG",@progbits,_ZTS6Class5,comdat
+	.weak	_ZTS6Class5
+_ZTS6Class5:
+	.asciz	"6Class5"
+	.size	_ZTS6Class5, 8
+
+	.type	_ZTI6Class5,@object     # @_ZTI6Class5
+	.section	.rodata._ZTI6Class5,"aG",@progbits,_ZTI6Class5,comdat
+	.weak	_ZTI6Class5
+	.p2align	4
+_ZTI6Class5:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS6Class5
+	.quad	_ZTI8ClassApi
+	.size	_ZTI6Class5, 24
+
+	.type	_ZTV6Class6,@object     # @_ZTV6Class6
+	.section	.rodata._ZTV6Class6,"aG",@progbits,_ZTV6Class6,comdat
+	.weak	_ZTV6Class6
+	.p2align	3
+_ZTV6Class6:
+	.quad	0
+	.quad	_ZTI6Class6
+	.quad	_ZNK6Class618doSomethingVirtualEv
+	.size	_ZTV6Class6, 24
+
+	.type	_ZTS6Class6,@object     # @_ZTS6Class6
+	.section	.rodata._ZTS6Class6,"aG",@progbits,_ZTS6Class6,comdat
+	.weak	_ZTS6Class6
+_ZTS6Class6:
+	.asciz	"6Class6"
+	.size	_ZTS6Class6, 8
+
+	.type	_ZTI6Class6,@object     # @_ZTI6Class6
+	.section	.rodata._ZTI6Class6,"aG",@progbits,_ZTI6Class6,comdat
+	.weak	_ZTI6Class6
+	.p2align	4
+_ZTI6Class6:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS6Class6
+	.quad	_ZTI8ClassApi
+	.size	_ZTI6Class6, 24
+
+	.type	_ZTV6Class7,@object     # @_ZTV6Class7
+	.section	.rodata._ZTV6Class7,"aG",@progbits,_ZTV6Class7,comdat
+	.weak	_ZTV6Class7
+	.p2align	3
+_ZTV6Class7:
+	.quad	0
+	.quad	_ZTI6Class7
+	.quad	_ZNK6Class718doSomethingVirtualEv
+	.size	_ZTV6Class7, 24
+
+	.type	_ZTS6Class7,@object     # @_ZTS6Class7
+	.section	.rodata._ZTS6Class7,"aG",@progbits,_ZTS6Class7,comdat
+	.weak	_ZTS6Class7
+_ZTS6Class7:
+	.asciz	"6Class7"
+	.size	_ZTS6Class7, 8
+
+	.type	_ZTI6Class7,@object     # @_ZTI6Class7
+	.section	.rodata._ZTI6Class7,"aG",@progbits,_ZTI6Class7,comdat
+	.weak	_ZTI6Class7
+	.p2align	4
+_ZTI6Class7:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS6Class7
+	.quad	_ZTI8ClassApi
+	.size	_ZTI6Class7, 24
+
+	.type	_ZTV6Class8,@object     # @_ZTV6Class8
+	.section	.rodata._ZTV6Class8,"aG",@progbits,_ZTV6Class8,comdat
+	.weak	_ZTV6Class8
+	.p2align	3
+_ZTV6Class8:
+	.quad	0
+	.quad	_ZTI6Class8
+	.quad	_ZNK6Class818doSomethingVirtualEv
+	.size	_ZTV6Class8, 24
+
+	.type	_ZTS6Class8,@object     # @_ZTS6Class8
+	.section	.rodata._ZTS6Class8,"aG",@progbits,_ZTS6Class8,comdat
+	.weak	_ZTS6Class8
+_ZTS6Class8:
+	.asciz	"6Class8"
+	.size	_ZTS6Class8, 8
+
+	.type	_ZTI6Class8,@object     # @_ZTI6Class8
+	.section	.rodata._ZTI6Class8,"aG",@progbits,_ZTI6Class8,comdat
+	.weak	_ZTI6Class8
+	.p2align	4
+_ZTI6Class8:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS6Class8
+	.quad	_ZTI8ClassApi
+	.size	_ZTI6Class8, 24
+
+	.type	_ZTV6Class9,@object     # @_ZTV6Class9
+	.section	.rodata._ZTV6Class9,"aG",@progbits,_ZTV6Class9,comdat
+	.weak	_ZTV6Class9
+	.p2align	3
+_ZTV6Class9:
+	.quad	0
+	.quad	_ZTI6Class9
+	.quad	_ZNK6Class918doSomethingVirtualEv
+	.size	_ZTV6Class9, 24
+
+	.type	_ZTS6Class9,@object     # @_ZTS6Class9
+	.section	.rodata._ZTS6Class9,"aG",@progbits,_ZTS6Class9,comdat
+	.weak	_ZTS6Class9
+_ZTS6Class9:
+	.asciz	"6Class9"
+	.size	_ZTS6Class9, 8
+
+	.type	_ZTI6Class9,@object     # @_ZTI6Class9
+	.section	.rodata._ZTI6Class9,"aG",@progbits,_ZTI6Class9,comdat
+	.weak	_ZTI6Class9
+	.p2align	4
+_ZTI6Class9:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS6Class9
+	.quad	_ZTI8ClassApi
+	.size	_ZTI6Class9, 24
+
+	.type	_ZTV7Class10,@object    # @_ZTV7Class10
+	.section	.rodata._ZTV7Class10,"aG",@progbits,_ZTV7Class10,comdat
+	.weak	_ZTV7Class10
+	.p2align	3
+_ZTV7Class10:
+	.quad	0
+	.quad	_ZTI7Class10
+	.quad	_ZNK7Class1018doSomethingVirtualEv
+	.size	_ZTV7Class10, 24
+
+	.type	_ZTS7Class10,@object    # @_ZTS7Class10
+	.section	.rodata._ZTS7Class10,"aG",@progbits,_ZTS7Class10,comdat
+	.weak	_ZTS7Class10
+_ZTS7Class10:
+	.asciz	"7Class10"
+	.size	_ZTS7Class10, 9
+
+	.type	_ZTI7Class10,@object    # @_ZTI7Class10
+	.section	.rodata._ZTI7Class10,"aG",@progbits,_ZTI7Class10,comdat
+	.weak	_ZTI7Class10
+	.p2align	4
+_ZTI7Class10:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS7Class10
+	.quad	_ZTI8ClassApi
+	.size	_ZTI7Class10, 24
 
 	.section	.init_array,"aw",@init_array
-	.align	8
-	.quad	_GLOBAL__I_a
+	.p2align	3
+	.quad	_GLOBAL__sub_I_sasha_static_array_lookup_10_classes_test.cpp
 	.type	.Lstr,@object           # @str
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lstr:
@@ -754,5 +772,5 @@ _ZTI6Class1:
 	.size	.Lstr, 11
 
 
-	.ident	"Ubuntu clang version 3.4-1ubuntu3 (tags/RELEASE_34/final) (based on LLVM 3.4)"
+	.ident	"clang version 5.0.0 (trunk 307486)"
 	.section	".note.GNU-stack","",@progbits

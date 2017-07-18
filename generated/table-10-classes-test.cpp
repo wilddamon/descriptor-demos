@@ -13,6 +13,9 @@ class CSSPropertyAPI {
   virtual void parse() const {
     increment_me += 1;
   }
+  virtual void other() const {
+    increment_me += 1;
+  }
 };
 static constexpr CSSPropertyAPI api_0;
 
@@ -22,6 +25,9 @@ class CSSPropertyAPI1 : public CSSPropertyAPI {
   constexpr CSSPropertyAPI1() {}
 
   void parse() const override {
+    increment_me += 1;
+  }
+  void other() const override {
     increment_me += 1;
   }
 };
@@ -34,6 +40,9 @@ class CSSPropertyAPI2 : public CSSPropertyAPI {
   void parse() const override {
     increment_me += 2;
   }
+  void other() const override {
+    increment_me += 2;
+  }
 };
 static constexpr CSSPropertyAPI2 api_2;
 
@@ -42,6 +51,9 @@ class CSSPropertyAPI3 : public CSSPropertyAPI {
   constexpr CSSPropertyAPI3() {}
 
   void parse() const override {
+    increment_me += 3;
+  }
+  void other() const override {
     increment_me += 3;
   }
 };
@@ -54,6 +66,9 @@ class CSSPropertyAPI4 : public CSSPropertyAPI {
   void parse() const override {
     increment_me += 4;
   }
+  void other() const override {
+    increment_me += 4;
+  }
 };
 static constexpr CSSPropertyAPI4 api_4;
 
@@ -62,6 +77,9 @@ class CSSPropertyAPI5 : public CSSPropertyAPI {
   constexpr CSSPropertyAPI5() {}
 
   void parse() const override {
+    increment_me += 5;
+  }
+  void other() const override {
     increment_me += 5;
   }
 };
@@ -74,6 +92,9 @@ class CSSPropertyAPI6 : public CSSPropertyAPI {
   void parse() const override {
     increment_me += 6;
   }
+  void other() const override {
+    increment_me += 6;
+  }
 };
 static constexpr CSSPropertyAPI6 api_6;
 
@@ -82,6 +103,9 @@ class CSSPropertyAPI7 : public CSSPropertyAPI {
   constexpr CSSPropertyAPI7() {}
 
   void parse() const override {
+    increment_me += 7;
+  }
+  void other() const override {
     increment_me += 7;
   }
 };
@@ -94,6 +118,9 @@ class CSSPropertyAPI8 : public CSSPropertyAPI {
   void parse() const override {
     increment_me += 8;
   }
+  void other() const override {
+    increment_me += 8;
+  }
 };
 static constexpr CSSPropertyAPI8 api_8;
 
@@ -102,6 +129,9 @@ class CSSPropertyAPI9 : public CSSPropertyAPI {
   constexpr CSSPropertyAPI9() {}
 
   void parse() const override {
+    increment_me += 9;
+  }
+  void other() const override {
     increment_me += 9;
   }
 };
@@ -114,30 +144,33 @@ class CSSPropertyAPI10 : public CSSPropertyAPI {
   void parse() const override {
     increment_me += 10;
   }
+  void other() const override {
+    increment_me += 10;
+  }
 };
 static constexpr CSSPropertyAPI10 api_10;
 
 constexpr const CSSPropertyAPI* const property_apis[] = {
-  &api_0, // default implementation
-  &api_0, // default implementation
-  &api_0, // default implementation
-  &api_0, // default implementation
-  &api_7,
-  &api_3,
-  &api_2,
-  &api_1,
-  &api_10,
-  &api_0, // default implementation
-  &api_0, // default implementation
-  &api_8,
+  &api_4,
   &api_9,
-  &api_6,
+  &api_0, // default implementation
+  &api_0, // default implementation
+  &api_0, // default implementation
   &api_0, // default implementation
   &api_0, // default implementation
   &api_5,
+  &api_1,
+  &api_2,
+  &api_7,
+  &api_0, // default implementation
+  &api_6,
+  &api_0, // default implementation
+  &api_10,
+  &api_0, // default implementation
+  &api_8,
   &api_0, // default implementation
   &api_0, // default implementation
-  &api_4,
+  &api_3,
 };
 
 const CSSPropertyAPI& GetPropertyAPI(int id) {
@@ -148,6 +181,12 @@ void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
 }
+
+void other(int id) {
+  const CSSPropertyAPI& api = GetPropertyAPI(id);
+  api.other();
+}
+
 int main(int argc, char** argv) {
   srand(time(nullptr));
   clock_t t;
@@ -157,8 +196,11 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 5000; i++) {
       parse(num);
+    }
+    for (int i = 0; i < 5000; i++) {
+      other(num);
     }
     clock_t result = clock() - t;
 

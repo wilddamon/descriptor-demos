@@ -53,35 +53,35 @@ class Class10 : public ClassApi {
 
 void ClassApi::doSomethingStaticSwitch(int input) {
   switch (input) {
-  case 1:
-    Class8::doSomethingStatic();
+  case 7:
+    Class2::doSomethingStatic();
+    break;
+  case 5:
+    Class10::doSomethingStatic();
+    break;
+  case 4:
+    Class1::doSomethingStatic();
+    break;
+  case 2:
+    Class3::doSomethingStatic();
+    break;
+  case 10:
+    Class4::doSomethingStatic();
+    break;
+  case 9:
+    Class9::doSomethingStatic();
+    break;
+  case 3:
+    Class6::doSomethingStatic();
     break;
   case 8:
     Class5::doSomethingStatic();
     break;
-  case 6:
-    Class6::doSomethingStatic();
-    break;
-  case 10:
-    Class1::doSomethingStatic();
-    break;
-  case 3:
-    Class2::doSomethingStatic();
-    break;
-  case 4:
-    Class3::doSomethingStatic();
-    break;
-  case 2:
-    Class4::doSomethingStatic();
-    break;
-  case 7:
-    Class9::doSomethingStatic();
-    break;
-  case 9:
+  case 1:
     Class7::doSomethingStatic();
     break;
-  case 5:
-    Class10::doSomethingStatic();
+  case 6:
+    Class8::doSomethingStatic();
     break;
   }
   increment_me += 4;
@@ -95,7 +95,10 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 5000; i++) {
+      ClassApi::doSomethingStaticSwitch(num);
+    }
+    for (int i = 0; i < 5000; i++) {
       ClassApi::doSomethingStaticSwitch(num);
     }
     clock_t result = clock() - t;

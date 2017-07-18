@@ -62,14 +62,18 @@ echo "};
 
 const CSSPropertyAPI& GetPropertyAPI(int id) {
   return *property_apis[id];
-}"
+}
 
-echo "
 void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
-  api.other();
-}"
+}
 
-./main-gen.sh "parse" \
+void other(int id) {
+  const CSSPropertyAPI& api = GetPropertyAPI(id);
+  api.other();
+}
+"
+
+./main-gen.sh "parse" "other" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
