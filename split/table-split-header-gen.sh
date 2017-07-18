@@ -24,7 +24,4 @@ done
 
 echo "
 const CSSPropertyAPI& GetPropertyAPI(int id);
-void ParsePropertyAPI(int id);
-void OtherPropertyAPI(int id);
-
 "

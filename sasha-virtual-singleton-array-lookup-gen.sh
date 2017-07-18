@@ -48,5 +48,7 @@ void virtualArrayLookup(int input) {
   class_array[input]->doSomethingVirtual();
 }"
 
-./main-gen.sh "virtualArrayLookup" \
+./main-gen.sh \
+  "virtualArrayLookup" \
+  "virtualArrayLookup" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS

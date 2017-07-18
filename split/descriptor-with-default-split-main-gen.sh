@@ -12,14 +12,17 @@ cat <<EOF
 #include <iostream>
 #include <ctime>
 
-EOF
-
-echo "
 void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   d.parse();
-}"
+}
 
-./main-gen.sh "parse" \
+void other(int id) {
+  const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
+  d.other();
+}
+EOF
+
+./main-gen.sh "parse" "other" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
 

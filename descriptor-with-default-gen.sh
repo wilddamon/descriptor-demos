@@ -78,15 +78,20 @@ echo "};"
 echo "
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
   return descriptors[descriptorIndices[id]];
-}"
+}
 
-echo "
 void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   d.parse();
-}"
+}
 
-./main-gen.sh "parse" \
+void other(int id) {
+  const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
+  d.other();
+}
+"
+
+./main-gen.sh "parse" "other" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
 
 # Eddy's note:

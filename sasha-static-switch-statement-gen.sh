@@ -40,5 +40,7 @@ echo "  }
   increment_me += 5;
 }"
 
-./main-gen.sh "callWithSwitchStatement" \
+./main-gen.sh \
+  "callWithSwitchStatement" \
+  "callWithSwitchStatement" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS

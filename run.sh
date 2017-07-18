@@ -10,6 +10,8 @@ SFOLDER="disassembly"
 OUTFOLDER="out"
 SPLIT=0
 
+clang="/usr/local/google/src/chrome/src/third_party/llvm-build/Release+Asserts/bin/clang++"
+
 tests=(
   descriptor
   descriptor-with-default
@@ -72,11 +74,12 @@ function run_impl() {
   ./$name-gen.sh $NUM_CLASSES $NUM_ITERATIONS $REPEATS > $cppname
 
   # Compile disassembly
-  disassemble_cmd="clang++ $cppname -std=c++11 -O$OLEVEL -S -o $sname"
+  disassemble_cmd="$clang $cppname -std=c++11 -O$OLEVEL -S -o $sname"
   $disassemble_cmd
 
   #echo "running with $NUM_ITERATIONS iterations, $NUM_CLASSES classes at O$OLEVEL"
-  compile_cmd="clang++ $cppname -std=c++11 -O$OLEVEL -o $runfile"
+  compile_cmd="$clang $cppname -std=c++11 -O$OLEVEL -o $runfile"
+  echo $compile_cmd
   $compile_cmd && ./$runfile
 }
 
@@ -105,13 +108,14 @@ function run_split_impl() {
   ./split/$name-split-header-gen.sh $NUM_CLASSES > $genfolder/$headerfile
   ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename > $genfolder/$cppfile
 
-  clang++ $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
-  clang++ $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
+  $clang $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
+  $clang $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
 
-  compile_cmd="clang++ \
+  compile_cmd="$clang \
     $genfolder/$mainfile \
     $genfolder/$cppfile \
     -std=c++11 -O$OLEVEL -o $outfolder/$filename"
+  echo $compile_cmd
   $compile_cmd && ./$outfolder/$filename
 }
 

@@ -11,15 +11,18 @@ cat <<EOF
 #include <cstdio>
 #include <iostream>
 #include <ctime>
-EOF
 
-echo "
 void parse(int id) {
   const CSSPropertyAPI& api = GetPropertyAPI(id);
   api.parse();
-}"
+}
+void other(int id) {
+  const CSSPropertyAPI& api = GetPropertyAPI(id);
+  api.other();
+}
+EOF
 
-./main-gen.sh "parse" \
+./main-gen.sh "parse" "other" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
 
 

@@ -46,7 +46,9 @@ void callWithArrayLookup(int classId) {
   function_array[classId]();
 }"
 
-./main-gen.sh "callWithArrayLookup" \
+./main-gen.sh \
+  "callWithArrayLookup" \
+  "callWithArrayLookup" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
 
 

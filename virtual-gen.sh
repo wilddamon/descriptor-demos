@@ -69,5 +69,5 @@ void parse(int id) {
   api.other();
 }"
 
-./main-gen.sh "parse" \
+./main-gen.sh "parse" "parse" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS

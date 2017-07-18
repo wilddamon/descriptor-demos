@@ -20,7 +20,4 @@ class CSSPropertyAPI$a : public CSSPropertyAPI {
 };"
 done
 
-echo "const CSSPropertyAPI& GetPropertyAPI(int id);
-void ParsePropertyAPI(int id);
-void OtherPropertyAPI(int id);
-"
+echo "const CSSPropertyAPI& GetPropertyAPI(int id);"

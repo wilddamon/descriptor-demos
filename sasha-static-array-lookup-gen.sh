@@ -49,7 +49,9 @@ void ClassApi::doSomethingStaticArrayLookup(int type) {
   class_array[type]->doSomethingVirtual();
 }"
 
-./main-gen.sh "ClassApi::doSomethingStaticArrayLookup" \
+./main-gen.sh \
+  "ClassApi::doSomethingStaticArrayLookup" \
+  "ClassApi::doSomethingStaticArrayLookup" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
 
 # Eddy's note:

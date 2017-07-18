@@ -42,6 +42,8 @@ echo "  }
 }"
 
 
-./main-gen.sh "ClassApi::doSomethingStaticSwitch" \
+./main-gen.sh \
+  "ClassApi::doSomethingStaticSwitch" \
+  "ClassApi::doSomethingStaticSwitch" \
   $NUM_CLASSES $NUM_ITERATIONS $REPEATS
 
