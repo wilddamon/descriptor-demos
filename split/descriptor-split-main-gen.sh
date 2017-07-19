@@ -17,8 +17,6 @@ read -d '' loop <<EOF
         d.parse();
       }
       CSSPropertyAPI1::parse();
-    }
-    for (int i = 0; i < $(($NUM_ITERATIONS/2)); i++) {
       if (d.other) {
         d.other();
       }

@@ -14,8 +14,6 @@ read -d '' loop <<EOF
     const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(num);
     for (int i = 0; i < $(($NUM_ITERATIONS/2)); i++) {
       d.parse();
-    }
-    for (int i = 0; i < $(($NUM_ITERATIONS/2)); i++) {
       d.other();
     }
 
