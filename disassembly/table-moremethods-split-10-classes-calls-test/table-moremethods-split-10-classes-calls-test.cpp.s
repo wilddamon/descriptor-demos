@@ -1,5 +1,5 @@
 	.text
-	.file	"generated/virtual-moremethods-split-10-classes-calls-test/virtual-moremethods-split-10-classes-calls-test.cpp"
+	.file	"generated/table-moremethods-split-10-classes-calls-test/table-moremethods-split-10-classes-calls-test.cpp"
 	.globl	_ZNK14CSSPropertyAPI7method1Ev # -- Begin function _ZNK14CSSPropertyAPI7method1Ev
 	.p2align	4, 0x90
 	.type	_ZNK14CSSPropertyAPI7method1Ev,@function
@@ -2646,69 +2646,12 @@ _ZNK16CSSPropertyAPI108method20Ev:      # @_ZNK16CSSPropertyAPI108method20Ev
 _Z14GetPropertyAPIi:                    # @_Z14GetPropertyAPIi
 	.cfi_startproc
 # BB#0:                                 # %entry
-                                        # kill: %EDI<def> %EDI<kill> %RDI<def>
-	movl	$_ZZ14GetPropertyAPIiE11default_api, %eax
-	addl	$-2, %edi
-	cmpl	$18, %edi
-	ja	.LBB220_12
-# BB#1:                                 # %entry
-	jmpq	*.LJTI220_0(,%rdi,8)
-.LBB220_2:                              # %sw.bb1
-	movl	$_ZZ14GetPropertyAPIiE5api_1, %eax
-	retq
-.LBB220_3:                              # %sw.bb2
-	movl	$_ZZ14GetPropertyAPIiE5api_2, %eax
-	retq
-.LBB220_4:                              # %sw.bb4
-	movl	$_ZZ14GetPropertyAPIiE5api_6, %eax
-	retq
-.LBB220_5:                              # %sw.bb6
-	movl	$_ZZ14GetPropertyAPIiE6api_10, %eax
-	retq
-.LBB220_6:                              # %sw.bb7
-	movl	$_ZZ14GetPropertyAPIiE5api_7, %eax
-	retq
-.LBB220_7:                              # %sw.bb8
-	movl	$_ZZ14GetPropertyAPIiE5api_4, %eax
-	retq
-.LBB220_8:                              # %sw.bb12
-	movl	$_ZZ14GetPropertyAPIiE5api_9, %eax
-	retq
-.LBB220_9:                              # %sw.bb14
-	movl	$_ZZ14GetPropertyAPIiE5api_5, %eax
-	retq
-.LBB220_10:                             # %sw.bb15
-	movl	$_ZZ14GetPropertyAPIiE5api_3, %eax
-	retq
-.LBB220_11:                             # %sw.bb19
-	movl	$_ZZ14GetPropertyAPIiE5api_8, %eax
-.LBB220_12:                             # %return
+	movslq	%edi, %rax
+	movq	_ZL13property_apis(,%rax,8), %rax
 	retq
 .Lfunc_end220:
 	.size	_Z14GetPropertyAPIi, .Lfunc_end220-_Z14GetPropertyAPIi
 	.cfi_endproc
-	.section	.rodata,"a",@progbits
-	.p2align	3
-.LJTI220_0:
-	.quad	.LBB220_2
-	.quad	.LBB220_3
-	.quad	.LBB220_12
-	.quad	.LBB220_4
-	.quad	.LBB220_12
-	.quad	.LBB220_5
-	.quad	.LBB220_6
-	.quad	.LBB220_7
-	.quad	.LBB220_12
-	.quad	.LBB220_12
-	.quad	.LBB220_12
-	.quad	.LBB220_8
-	.quad	.LBB220_12
-	.quad	.LBB220_9
-	.quad	.LBB220_10
-	.quad	.LBB220_12
-	.quad	.LBB220_12
-	.quad	.LBB220_12
-	.quad	.LBB220_11
                                         # -- End function
 	.type	increment_me,@object    # @increment_me
 	.bss
@@ -2718,61 +2661,86 @@ increment_me:
 	.long	0                       # 0x0
 	.size	increment_me, 4
 
-	.type	_ZZ14GetPropertyAPIiE11default_api,@object # @_ZZ14GetPropertyAPIiE11default_api
+	.type	_ZL13property_apis,@object # @_ZL13property_apis
 	.section	.rodata,"a",@progbits
-_ZZ14GetPropertyAPIiE11default_api:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE11default_api, 1
+	.p2align	4
+_ZL13property_apis:
+	.quad	_ZL5api_0
+	.quad	_ZL5api_9
+	.quad	_ZL5api_8
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_4
+	.quad	_ZL5api_0
+	.quad	_ZL5api_6
+	.quad	_ZL5api_2
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_5
+	.quad	_ZL5api_3
+	.quad	_ZL6api_10
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_1
+	.quad	_ZL5api_0
+	.quad	_ZL5api_7
+	.size	_ZL13property_apis, 160
 
-	.type	_ZZ14GetPropertyAPIiE5api_1,@object # @_ZZ14GetPropertyAPIiE5api_1
-_ZZ14GetPropertyAPIiE5api_1:
+	.type	_ZL5api_0,@object       # @_ZL5api_0
+_ZL5api_0:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_1, 1
+	.size	_ZL5api_0, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_2,@object # @_ZZ14GetPropertyAPIiE5api_2
-_ZZ14GetPropertyAPIiE5api_2:
+	.type	_ZL5api_9,@object       # @_ZL5api_9
+_ZL5api_9:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_2, 1
+	.size	_ZL5api_9, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_6,@object # @_ZZ14GetPropertyAPIiE5api_6
-_ZZ14GetPropertyAPIiE5api_6:
+	.type	_ZL5api_8,@object       # @_ZL5api_8
+_ZL5api_8:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_6, 1
+	.size	_ZL5api_8, 1
 
-	.type	_ZZ14GetPropertyAPIiE6api_10,@object # @_ZZ14GetPropertyAPIiE6api_10
-_ZZ14GetPropertyAPIiE6api_10:
+	.type	_ZL5api_4,@object       # @_ZL5api_4
+_ZL5api_4:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE6api_10, 1
+	.size	_ZL5api_4, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_7,@object # @_ZZ14GetPropertyAPIiE5api_7
-_ZZ14GetPropertyAPIiE5api_7:
+	.type	_ZL5api_6,@object       # @_ZL5api_6
+_ZL5api_6:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_7, 1
+	.size	_ZL5api_6, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_4,@object # @_ZZ14GetPropertyAPIiE5api_4
-_ZZ14GetPropertyAPIiE5api_4:
+	.type	_ZL5api_2,@object       # @_ZL5api_2
+_ZL5api_2:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_4, 1
+	.size	_ZL5api_2, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_9,@object # @_ZZ14GetPropertyAPIiE5api_9
-_ZZ14GetPropertyAPIiE5api_9:
+	.type	_ZL5api_5,@object       # @_ZL5api_5
+_ZL5api_5:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_9, 1
+	.size	_ZL5api_5, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_5,@object # @_ZZ14GetPropertyAPIiE5api_5
-_ZZ14GetPropertyAPIiE5api_5:
+	.type	_ZL5api_3,@object       # @_ZL5api_3
+_ZL5api_3:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_5, 1
+	.size	_ZL5api_3, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_3,@object # @_ZZ14GetPropertyAPIiE5api_3
-_ZZ14GetPropertyAPIiE5api_3:
+	.type	_ZL6api_10,@object      # @_ZL6api_10
+_ZL6api_10:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_3, 1
+	.size	_ZL6api_10, 1
 
-	.type	_ZZ14GetPropertyAPIiE5api_8,@object # @_ZZ14GetPropertyAPIiE5api_8
-_ZZ14GetPropertyAPIiE5api_8:
+	.type	_ZL5api_1,@object       # @_ZL5api_1
+_ZL5api_1:
 	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_8, 1
+	.size	_ZL5api_1, 1
+
+	.type	_ZL5api_7,@object       # @_ZL5api_7
+_ZL5api_7:
+	.zero	1
+	.size	_ZL5api_7, 1
 
 
 	.ident	"clang version 5.0.0 (trunk 307486)"

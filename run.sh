@@ -28,7 +28,8 @@ split_tests=(
   descriptor-with-default-noindices
   virtual
   virtual-moremethods
-  table)
+  table
+	table-moremethods)
 WHICH="all"
 
 TYPE="getters"

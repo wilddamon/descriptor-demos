@@ -1,5 +1,5 @@
 	.text
-	.file	"generated/virtual-moremethods-split-10-classes-calls-test/virtual-moremethods-split-10-classes-calls-test-main.cpp"
+	.file	"generated/table-moremethods-split-10-classes-calls-test/table-moremethods-split-10-classes-calls-test-main.cpp"
 	.globl	main                    # -- Begin function main
 	.p2align	4, 0x90
 	.type	main,@function
@@ -62,43 +62,43 @@ main:                                   # @main
                                         #   Parent Loop BB0_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method7Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method14Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method6Ev
-	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI8method12Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method18Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method16Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method9Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method15Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method17Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method10Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method13Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method4Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method1Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method8Ev
+	callq	_ZNK14CSSPropertyAPI8method11Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI7method6Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method20Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method10Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method18Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method15Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI7method7Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method2Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method14Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI7method8Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI8method19Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method5Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method11Ev
+	callq	_ZNK14CSSPropertyAPI8method13Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method20Ev
+	callq	_ZNK14CSSPropertyAPI7method9Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method16Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method17Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method3Ev
 	decl	%ebp
@@ -145,9 +145,9 @@ main:                                   # @main
 	.cfi_endproc
                                         # -- End function
 	.section	.text.startup,"ax",@progbits
-	.p2align	4, 0x90         # -- Begin function _GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp
-	.type	_GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp,@function
-_GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp: # @_GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp
+	.p2align	4, 0x90         # -- Begin function _GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp
+	.type	_GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp,@function
+_GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp: # @_GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp
 	.cfi_startproc
 # BB#0:                                 # %entry
 	pushq	%rax
@@ -161,7 +161,7 @@ _GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp: # @_GLO
 	popq	%rax
 	jmp	__cxa_atexit            # TAILCALL
 .Lfunc_end1:
-	.size	_GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp, .Lfunc_end1-_GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp
+	.size	_GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp, .Lfunc_end1-_GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp
 	.cfi_endproc
                                         # -- End function
 	.type	_ZStL8__ioinit,@object  # @_ZStL8__ioinit
@@ -176,7 +176,7 @@ _GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp: # @_GLO
 
 	.section	.init_array,"aw",@init_array
 	.p2align	3
-	.quad	_GLOBAL__sub_I_virtual_moremethods_split_10_classes_calls_test_main.cpp
+	.quad	_GLOBAL__sub_I_table_moremethods_split_10_classes_calls_test_main.cpp
 	.type	.Lstr,@object           # @str
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lstr:
