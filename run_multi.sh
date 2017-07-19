@@ -2,6 +2,7 @@
 
 NUM_ITERATIONS=1000000000
 SPLIT=0
+TYPE="getters"
 
 classes=(10 100 500 1000)
 
