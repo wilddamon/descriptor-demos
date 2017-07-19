@@ -25,9 +25,15 @@ tests=(
 split_tests=(
   descriptor
   descriptor-with-default
+  descriptor-with-default-noindices
   virtual
   table)
 WHICH="all"
+
+TYPE="getters"
+types=(
+  getters
+  calls)
 
 while test $# -gt 0; do
   case "$1" in
@@ -50,6 +56,11 @@ while test $# -gt 0; do
       SPLIT=1
       shift
       ;;
+    -t)
+      shift
+      TYPE=$1
+      shift
+      ;;
     *)
       WHICH=$1
       shift
@@ -61,17 +72,18 @@ echo "num_classes $NUM_CLASSES"
 echo "num_it $NUM_ITERATIONS"
 echo "num_re $REPEATS"
 echo "split $SPLIT"
+echo "type $TYPE"
 
 function run_impl() {
   name=$1
   if [[ $WHICH == "all" ]]; then echo "running $name"; fi
 
-  filename="$name-$NUM_CLASSES-classes-test"
+  filename="$name-$NUM_CLASSES-classes-$TYPE-test"
   cppname="$GENFOLDER/$filename.cpp"
   sname="$SFOLDER/$filename.s"
   runfile="$OUTFOLDER/$filename"
 
-  ./$name-gen.sh $NUM_CLASSES $NUM_ITERATIONS $REPEATS > $cppname
+  ./$name-gen.sh $NUM_CLASSES $NUM_ITERATIONS $REPEATS $TYPE > $cppname
 
   # Compile disassembly
   disassemble_cmd="$clang $cppname -std=c++11 -O$OLEVEL -S -o $sname"
@@ -87,7 +99,7 @@ function run_split_impl() {
   name=$1
   if [[ $WHICH == "all" ]]; then echo "running $name"; fi
 
-  filename="$name-split-$NUM_CLASSES-classes-test"
+  filename="$name-split-$NUM_CLASSES-classes-$TYPE-test"
   mainfile=$filename-main.cpp
   headerfile=$filename.h
   cppfile=$filename.cpp
@@ -104,7 +116,7 @@ function run_split_impl() {
   done
 
   ./split/$name-split-main-gen.sh \
-    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename > $genfolder/$mainfile
+    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename $TYPE > $genfolder/$mainfile
   ./split/$name-split-header-gen.sh $NUM_CLASSES > $genfolder/$headerfile
   ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename > $genfolder/$cppfile
 
@@ -124,6 +136,11 @@ if [[ $SPLIT == 1 ]]; then
   all_tests=${split_tests[@]}
 else
   all_tests=${tests[@]}
+fi
+
+if [[ ! ${types[*]} =~ $TYPE ]]; then
+  echo "$TYPE not recognized"
+  exit 1
 fi
 
 if [[ $WHICH == "all" ]]
