@@ -15,12 +15,14 @@ read -d '' loop <<EOF
     for (int i = 0; i < $(($NUM_ITERATIONS/2)); i++) {
       if (d.parse) {
         d.parse();
+      } else {
+        CSSPropertyAPI1::parse();
       }
-      CSSPropertyAPI1::parse();
       if (d.other) {
         d.other();
+      } else {
+        CSSPropertyAPI1::other();
       }
-      CSSPropertyAPI1::other();
     }
 
 EOF
@@ -32,16 +34,18 @@ void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   if (d.parse) {
     d.parse();
+  } else {
+    CSSPropertyAPI1::parse();
   }
-  CSSPropertyAPI1::parse();
 }
 
 void other(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   if (d.other) {
     d.other();
+  } else {
+    CSSPropertyAPI1::other();
   }
-  CSSPropertyAPI1::other();
 }
 EOF
 

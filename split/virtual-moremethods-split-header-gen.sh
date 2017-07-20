@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NUM_CLASSES=$1
-NUM_METHODS=20
+NUM_METHODS=$2
 
 cat <<EOF
 class CSSPropertyAPI {

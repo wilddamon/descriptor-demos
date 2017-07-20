@@ -8,16 +8,18 @@ void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   if (d.parse) {
     d.parse();
+  } else {
+    CSSPropertyAPI1::parse();
   }
-  CSSPropertyAPI1::parse();
 }
 
 void other(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   if (d.other) {
     d.other();
+  } else {
+    CSSPropertyAPI1::other();
   }
-  CSSPropertyAPI1::other();
 }
 
 int main(int argc, char** argv) {
@@ -29,10 +31,10 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 50000; i++) {
+    for (int i = 0; i < 500000000; i++) {
       parse(num);
     }
-    for (int i = 0; i < 50000; i++) {
+    for (int i = 0; i < 500000000; i++) {
       other(num);
     }
     clock_t result = clock() - t;

@@ -56,51 +56,111 @@ main:                                   # @main
 	movl	%ebx, %edi
 	callq	_Z14GetPropertyAPIi
 	movq	%rax, %rbx
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$20000000, %ebp         # imm = 0x1312D00
 	.p2align	4, 0x90
 .LBB0_2:                                # %for.body7
                                         #   Parent Loop BB0_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method12Ev
-	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method4Ev
+	callq	_ZNK14CSSPropertyAPI8method41Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method1Ev
 	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method14Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method22Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method36Ev
+	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI8method11Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method6Ev
+	callq	_ZNK14CSSPropertyAPI8method49Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method20Ev
+	callq	_ZNK14CSSPropertyAPI8method25Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method10Ev
+	callq	_ZNK14CSSPropertyAPI7method3Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method18Ev
+	callq	_ZNK14CSSPropertyAPI8method33Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method15Ev
+	callq	_ZNK14CSSPropertyAPI8method48Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method7Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method2Ev
+	callq	_ZNK14CSSPropertyAPI8method35Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method14Ev
+	callq	_ZNK14CSSPropertyAPI7method4Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method8Ev
+	callq	_ZNK14CSSPropertyAPI8method12Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method19Ev
+	callq	_ZNK14CSSPropertyAPI8method18Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method5Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method13Ev
+	callq	_ZNK14CSSPropertyAPI8method39Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method20Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method23Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method30Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method43Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method44Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method47Ev
 	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI7method9Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method16Ev
-	movq	%rbx, %rdi
 	callq	_ZNK14CSSPropertyAPI8method17Ev
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method3Ev
+	callq	_ZNK14CSSPropertyAPI8method31Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method32Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method10Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI7method8Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method38Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method28Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI7method6Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method46Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method26Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method37Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method27Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method19Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method42Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method13Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method29Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method45Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI7method2Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method15Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method21Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method16Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method50Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method24Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method34Ev
+	movq	%rbx, %rdi
+	callq	_ZNK14CSSPropertyAPI8method40Ev
 	decl	%ebp
 	jne	.LBB0_2
 # BB#3:                                 # %for.cond.cleanup6

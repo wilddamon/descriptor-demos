@@ -4,6 +4,7 @@ OLEVEL=2
 NUM_CLASSES=10
 NUM_ITERATIONS=1000000000
 REPEATS=50
+NUM_METHODS=50
 
 GENFOLDER="generated"
 SFOLDER="disassembly"
@@ -24,12 +25,20 @@ tests=(
   sasha-virtual-singleton-array-lookup)
 split_tests=(
   descriptor
+	descriptor-moremethods
   descriptor-with-default
+	descriptor-with-default-moremethods
   descriptor-with-default-noindices
   virtual
   virtual-moremethods
   table
 	table-moremethods)
+moremethods_tests=(
+	descriptor
+	descriptor-with-default
+	virtual
+	table
+)
 WHICH="all"
 
 TYPE="getters"
@@ -49,6 +58,11 @@ while test $# -gt 0; do
       NUM_ITERATIONS=$1
       shift
       ;;
+		-m)
+			shift
+			NUM_METHODS=$1
+			shift
+			;;
     -o)
       shift
       OLEVEL=$1
@@ -75,6 +89,7 @@ echo "num_it $NUM_ITERATIONS"
 echo "num_re $REPEATS"
 echo "split $SPLIT"
 echo "type $TYPE"
+echo "methods $NUM_METHODS"
 
 function run_impl() {
   name=$1
@@ -118,9 +133,9 @@ function run_split_impl() {
   done
 
   ./split/$name-split-main-gen.sh \
-    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename $TYPE > $genfolder/$mainfile
-  ./split/$name-split-header-gen.sh $NUM_CLASSES > $genfolder/$headerfile
-  ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename > $genfolder/$cppfile
+    $NUM_CLASSES $NUM_ITERATIONS $REPEATS $filename $TYPE $NUM_METHODS > $genfolder/$mainfile
+  ./split/$name-split-header-gen.sh $NUM_CLASSES $NUM_METHODS > $genfolder/$headerfile
+  ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename $NUM_METHODS > $genfolder/$cppfile
 
   $clang $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
   $clang $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
@@ -130,7 +145,7 @@ function run_split_impl() {
     $genfolder/$cppfile \
     -std=c++11 -O$OLEVEL -o $outfolder/$filename"
   echo $compile_cmd
-  $compile_cmd && ./$outfolder/$filename
+  time $compile_cmd && ./$outfolder/$filename
 }
 
 ### main below ###

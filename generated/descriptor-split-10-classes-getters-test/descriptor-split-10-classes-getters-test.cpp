@@ -88,12 +88,40 @@ void CSSPropertyAPI10::other() {
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPI4::parse,
-    CSSPropertyAPI4::other,
+    nullptr,
+    nullptr,
   },
   {
     nullptr,
     nullptr,
+  },
+  {
+    CSSPropertyAPI5::parse,
+    CSSPropertyAPI5::other,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
+  },
+  {
+    CSSPropertyAPI4::parse,
+    CSSPropertyAPI4::other,
+  },
+  {
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
   },
   {
     nullptr,
@@ -112,44 +140,8 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     nullptr,
   },
   {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
-  },
-  {
-    CSSPropertyAPI5::parse,
-    CSSPropertyAPI5::other,
-  },
-  {
     nullptr,
     nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
-  },
-  {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
-  },
-  {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
   },
   {
     nullptr,
@@ -160,36 +152,44 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI8::other,
   },
   {
-    CSSPropertyAPI6::parse,
-    CSSPropertyAPI6::other,
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
   },
   {
     nullptr,
     nullptr,
   },
+  {
+    CSSPropertyAPI6::parse,
+    CSSPropertyAPI6::other,
+  },
 };
 
 static size_t descriptorIndices[] = {
-  13,
-  3,
-  12,
-  19,
-  16,
-  7,
-  1,
   6,
-  18,
-  2,
-  8,
   14,
+  7,
+  12,
+  8,
+  2,
   15,
+  9,
+  1,
+  0,
   5,
   10,
   11,
-  17,
+  19,
+  3,
+  16,
   4,
-  0,
-  9,
+  18,
+  13,
+  17,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

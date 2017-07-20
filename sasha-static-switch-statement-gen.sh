@@ -36,8 +36,10 @@ do
     break;"
 done
 
-echo "  }
-  increment_me += 5;
+echo "
+  default:
+    increment_me += 5;
+  }
 }"
 
 ./main-gen.sh \

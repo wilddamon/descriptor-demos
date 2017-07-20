@@ -84,7 +84,7 @@ main:                                   # @main
 	addl	%eax, %eax
 	leal	(%rax,%rax,4), %eax
 	subl	%eax, %ebx
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$500000000, %ebp        # imm = 0x1DCD6500
 	callq	clock
 	movq	%rax, %r15
 	.p2align	4, 0x90
@@ -98,7 +98,7 @@ main:                                   # @main
 	jne	.LBB2_2
 # BB#3:                                 # %for.body11.preheader
                                         #   in Loop: Header=BB2_1 Depth=1
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$500000000, %ebp        # imm = 0x1DCD6500
 	.p2align	4, 0x90
 .LBB2_4:                                # %for.body11
                                         #   Parent Loop BB2_1 Depth=1

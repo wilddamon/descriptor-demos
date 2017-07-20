@@ -98,68 +98,60 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPIDefault::other,
   },
   {
-    CSSPropertyAPI6::parse,
-    CSSPropertyAPI6::other,
-  },
-  {
-    CSSPropertyAPI9::parse,
-    CSSPropertyAPI9::other,
-  },
-  {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI10::parse,
-    CSSPropertyAPI10::other,
-  },
-  {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
-  },
-  {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
   },
   {
     CSSPropertyAPI5::parse,
     CSSPropertyAPI5::other,
   },
   {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
     CSSPropertyAPI8::parse,
     CSSPropertyAPI8::other,
   },
   {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
+    CSSPropertyAPI10::parse,
+    CSSPropertyAPI10::other,
   },
   {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
   },
   {
-    CSSPropertyAPI4::parse,
-    CSSPropertyAPI4::other,
-  },
-  {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI6::parse,
+    CSSPropertyAPI6::other,
+  },
+  {
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
+  },
+  {
+    CSSPropertyAPI9::parse,
+    CSSPropertyAPI9::other,
+  },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
   },
   {
     CSSPropertyAPIDefault::parse,
@@ -170,8 +162,16 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI1::other,
   },
   {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
+    CSSPropertyAPI4::parse,
+    CSSPropertyAPI4::other,
+  },
+  {
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
   },
 };
 

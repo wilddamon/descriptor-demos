@@ -318,24 +318,24 @@ increment_me:
 	.p2align	4
 _ZL13property_apis:
 	.quad	_ZL5api_0
-	.quad	_ZL5api_9
+	.quad	_ZL5api_0
+	.quad	_ZL5api_7
+	.quad	_ZL6api_10
 	.quad	_ZL5api_0
 	.quad	_ZL5api_0
 	.quad	_ZL5api_6
 	.quad	_ZL5api_0
-	.quad	_ZL5api_0
-	.quad	_ZL5api_8
-	.quad	_ZL5api_0
-	.quad	_ZL5api_7
-	.quad	_ZL5api_0
-	.quad	_ZL6api_10
-	.quad	_ZL5api_5
-	.quad	_ZL5api_0
-	.quad	_ZL5api_2
 	.quad	_ZL5api_1
-	.quad	_ZL5api_4
 	.quad	_ZL5api_0
 	.quad	_ZL5api_3
+	.quad	_ZL5api_5
+	.quad	_ZL5api_8
+	.quad	_ZL5api_0
+	.quad	_ZL5api_0
+	.quad	_ZL5api_2
+	.quad	_ZL5api_4
+	.quad	_ZL5api_0
+	.quad	_ZL5api_9
 	.quad	_ZL5api_0
 	.size	_ZL13property_apis, 160
 
@@ -630,24 +630,6 @@ _ZL5api_0:
 	.quad	_ZTV14CSSPropertyAPI+16
 	.size	_ZL5api_0, 8
 
-	.type	_ZL5api_9,@object       # @_ZL5api_9
-	.p2align	3
-_ZL5api_9:
-	.quad	_ZTV15CSSPropertyAPI9+16
-	.size	_ZL5api_9, 8
-
-	.type	_ZL5api_6,@object       # @_ZL5api_6
-	.p2align	3
-_ZL5api_6:
-	.quad	_ZTV15CSSPropertyAPI6+16
-	.size	_ZL5api_6, 8
-
-	.type	_ZL5api_8,@object       # @_ZL5api_8
-	.p2align	3
-_ZL5api_8:
-	.quad	_ZTV15CSSPropertyAPI8+16
-	.size	_ZL5api_8, 8
-
 	.type	_ZL5api_7,@object       # @_ZL5api_7
 	.p2align	3
 _ZL5api_7:
@@ -660,17 +642,11 @@ _ZL6api_10:
 	.quad	_ZTV16CSSPropertyAPI10+16
 	.size	_ZL6api_10, 8
 
-	.type	_ZL5api_5,@object       # @_ZL5api_5
+	.type	_ZL5api_6,@object       # @_ZL5api_6
 	.p2align	3
-_ZL5api_5:
-	.quad	_ZTV15CSSPropertyAPI5+16
-	.size	_ZL5api_5, 8
-
-	.type	_ZL5api_2,@object       # @_ZL5api_2
-	.p2align	3
-_ZL5api_2:
-	.quad	_ZTV15CSSPropertyAPI2+16
-	.size	_ZL5api_2, 8
+_ZL5api_6:
+	.quad	_ZTV15CSSPropertyAPI6+16
+	.size	_ZL5api_6, 8
 
 	.type	_ZL5api_1,@object       # @_ZL5api_1
 	.p2align	3
@@ -678,17 +654,41 @@ _ZL5api_1:
 	.quad	_ZTV15CSSPropertyAPI1+16
 	.size	_ZL5api_1, 8
 
+	.type	_ZL5api_3,@object       # @_ZL5api_3
+	.p2align	3
+_ZL5api_3:
+	.quad	_ZTV15CSSPropertyAPI3+16
+	.size	_ZL5api_3, 8
+
+	.type	_ZL5api_5,@object       # @_ZL5api_5
+	.p2align	3
+_ZL5api_5:
+	.quad	_ZTV15CSSPropertyAPI5+16
+	.size	_ZL5api_5, 8
+
+	.type	_ZL5api_8,@object       # @_ZL5api_8
+	.p2align	3
+_ZL5api_8:
+	.quad	_ZTV15CSSPropertyAPI8+16
+	.size	_ZL5api_8, 8
+
+	.type	_ZL5api_2,@object       # @_ZL5api_2
+	.p2align	3
+_ZL5api_2:
+	.quad	_ZTV15CSSPropertyAPI2+16
+	.size	_ZL5api_2, 8
+
 	.type	_ZL5api_4,@object       # @_ZL5api_4
 	.p2align	3
 _ZL5api_4:
 	.quad	_ZTV15CSSPropertyAPI4+16
 	.size	_ZL5api_4, 8
 
-	.type	_ZL5api_3,@object       # @_ZL5api_3
+	.type	_ZL5api_9,@object       # @_ZL5api_9
 	.p2align	3
-_ZL5api_3:
-	.quad	_ZTV15CSSPropertyAPI3+16
-	.size	_ZL5api_3, 8
+_ZL5api_9:
+	.quad	_ZTV15CSSPropertyAPI9+16
+	.size	_ZL5api_9, 8
 
 
 	.ident	"clang version 5.0.0 (trunk 307486)"

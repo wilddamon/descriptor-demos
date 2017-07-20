@@ -14,8 +14,9 @@ _Z5parsei:                              # @_Z5parsei
 	testq	%rax, %rax
 	je	.LBB0_2
 # BB#1:                                 # %if.then
-	callq	*%rax
-.LBB0_2:                                # %if.end
+	popq	%rcx
+	jmpq	*%rax                   # TAILCALL
+.LBB0_2:                                # %if.else
 	popq	%rax
 	jmp	_ZN15CSSPropertyAPI15parseEv # TAILCALL
 .Lfunc_end0:
@@ -36,8 +37,9 @@ _Z5otheri:                              # @_Z5otheri
 	testq	%rax, %rax
 	je	.LBB1_2
 # BB#1:                                 # %if.then
-	callq	*%rax
-.LBB1_2:                                # %if.end
+	popq	%rcx
+	jmpq	*%rax                   # TAILCALL
+.LBB1_2:                                # %if.else
 	popq	%rax
 	jmp	_ZN15CSSPropertyAPI15otherEv # TAILCALL
 .Lfunc_end1:
@@ -85,7 +87,7 @@ main:                                   # @main
 .LBB2_1:                                # %for.body
                                         # =>This Loop Header: Depth=1
                                         #     Child Loop BB2_2 Depth 2
-                                        #     Child Loop BB2_6 Depth 2
+                                        #     Child Loop BB2_7 Depth 2
 	callq	rand
 	movslq	%eax, %rbx
 	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
@@ -96,7 +98,7 @@ main:                                   # @main
 	addl	%eax, %eax
 	leal	(%rax,%rax,4), %eax
 	subl	%eax, %ebx
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$500000000, %ebp        # imm = 0x1DCD6500
 	callq	clock
 	movq	%rax, %r15
 	.p2align	4, 0x90
@@ -111,31 +113,39 @@ main:                                   # @main
 # BB#3:                                 # %if.then.i
                                         #   in Loop: Header=BB2_2 Depth=2
 	callq	*%rax
-.LBB2_4:                                # %_Z5parsei.exit
+	decl	%ebp
+	jne	.LBB2_2
+	jmp	.LBB2_6
+	.p2align	4, 0x90
+.LBB2_4:                                # %if.else.i
                                         #   in Loop: Header=BB2_2 Depth=2
 	callq	_ZN15CSSPropertyAPI15parseEv
 	decl	%ebp
 	jne	.LBB2_2
-# BB#5:                                 # %for.body11.preheader
+.LBB2_6:                                # %for.body11.preheader
                                         #   in Loop: Header=BB2_1 Depth=1
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$500000000, %ebp        # imm = 0x1DCD6500
 	.p2align	4, 0x90
-.LBB2_6:                                # %for.body11
+.LBB2_7:                                # %for.body11
                                         #   Parent Loop BB2_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	movl	%ebx, %edi
 	callq	_ZN21CSSPropertyDescriptor3GetEi
 	movq	8(%rax), %rax
 	testq	%rax, %rax
-	je	.LBB2_8
-# BB#7:                                 # %if.then.i42
-                                        #   in Loop: Header=BB2_6 Depth=2
+	je	.LBB2_11
+# BB#8:                                 # %if.then.i42
+                                        #   in Loop: Header=BB2_7 Depth=2
 	callq	*%rax
-.LBB2_8:                                # %_Z5otheri.exit
-                                        #   in Loop: Header=BB2_6 Depth=2
+	jmp	.LBB2_12
+	.p2align	4, 0x90
+.LBB2_11:                               # %if.else.i43
+                                        #   in Loop: Header=BB2_7 Depth=2
 	callq	_ZN15CSSPropertyAPI15otherEv
+.LBB2_12:                               # %_Z5otheri.exit
+                                        #   in Loop: Header=BB2_7 Depth=2
 	decl	%ebp
-	jne	.LBB2_6
+	jne	.LBB2_7
 # BB#9:                                 # %for.cond.cleanup10
                                         #   in Loop: Header=BB2_1 Depth=1
 	callq	clock

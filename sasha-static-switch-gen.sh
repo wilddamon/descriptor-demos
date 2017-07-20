@@ -37,8 +37,10 @@ do
     break;"
 done
 
-echo "  }
-  increment_me += 4;
+echo "
+  default:
+    increment_me += 4;
+  }
 }"
 
 

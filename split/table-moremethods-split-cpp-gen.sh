@@ -2,7 +2,7 @@
 
 NUM_CLASSES=$1
 filename=$2
-NUM_METHODS=20
+NUM_METHODS=$3
 
 cat <<EOF
 #include "$filename.h"

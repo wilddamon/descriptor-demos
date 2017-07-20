@@ -74,16 +74,18 @@ void parse(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   if (d.parse) {
     d.parse();
+  } else {
+    increment_me += 1;
   }
-  increment_me += 1;
 }
 
 void other(int id) {
   const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(id);
   if (d.other) {
     d.other();
+  } else {
+    increment_me += 2;
   }
-  increment_me += 2;
 }
 "
 

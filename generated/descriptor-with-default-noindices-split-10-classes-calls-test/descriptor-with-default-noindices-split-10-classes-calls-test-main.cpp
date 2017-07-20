@@ -16,10 +16,8 @@ int main(int argc, char** argv) {
     int num = rand() % (10);
     t = clock();
     const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(num);
-    for (int i = 0; i < 50000; i++) {
+    for (int i = 0; i < 500000000; i++) {
       d.parse();
-    }
-    for (int i = 0; i < 50000; i++) {
       d.other();
     }
     clock_t result = clock() - t;

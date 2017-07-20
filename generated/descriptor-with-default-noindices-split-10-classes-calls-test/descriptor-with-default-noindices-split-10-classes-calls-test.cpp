@@ -94,24 +94,8 @@ increment_me += 11;
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPI9::parse,
-    CSSPropertyAPI9::other,
-  },
-  {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
-  },
-  {
-    CSSPropertyAPI5::parse,
-    CSSPropertyAPI5::other,
-  },
-  {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
   },
   {
     CSSPropertyAPI10::parse,
@@ -122,12 +106,48 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPIDefault::other,
   },
   {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
   },
   {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
+  },
+  {
+    CSSPropertyAPI5::parse,
+    CSSPropertyAPI5::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI6::parse,
+    CSSPropertyAPI6::other,
+  },
+  {
+    CSSPropertyAPI9::parse,
+    CSSPropertyAPI9::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI4::parse,
+    CSSPropertyAPI4::other,
+  },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
+  },
+  {
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
   },
   {
     CSSPropertyAPIDefault::parse,
@@ -146,32 +166,12 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI8::other,
   },
   {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI4::parse,
-    CSSPropertyAPI4::other,
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
   },
   {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI6::parse,
-    CSSPropertyAPI6::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
   },
 };
 

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./split/virtual-moremethods-split-header-gen.sh $1
+./split/virtual-moremethods-split-header-gen.sh $1 $2

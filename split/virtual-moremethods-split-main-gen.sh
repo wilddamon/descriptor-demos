@@ -5,7 +5,7 @@ NUM_ITERATIONS=$2
 REPEATS=$3
 filename=$4
 TYPE=$5
-NUM_METHODS=20
+NUM_METHODS=$6
 
 if [[ $TYPE == "calls" ]]; then
 

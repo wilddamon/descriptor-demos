@@ -57,7 +57,7 @@ main:                                   # @main
 	movl	%ebx, %edi
 	callq	_Z14GetPropertyAPIi
 	movq	%rax, %rbx
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$500000000, %ebp        # imm = 0x1DCD6500
 	.p2align	4, 0x90
 .LBB0_2:                                # %for.body7
                                         #   Parent Loop BB0_1 Depth=1
@@ -69,7 +69,7 @@ main:                                   # @main
 	jne	.LBB0_2
 # BB#3:                                 # %for.body12.preheader
                                         #   in Loop: Header=BB0_1 Depth=1
-	movl	$50000, %ebp            # imm = 0xC350
+	movl	$500000000, %ebp        # imm = 0x1DCD6500
 	.p2align	4, 0x90
 .LBB0_4:                                # %for.body12
                                         #   Parent Loop BB0_1 Depth=1
