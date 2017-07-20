@@ -94,15 +94,15 @@ Class10* class10_singleton = new Class10();
 
 ClassApi *class_array[] = {
   class9_singleton,
-  class7_singleton,
+  class3_singleton,
+  class8_singleton,
+  class10_singleton,
   class4_singleton,
   class6_singleton,
-  class10_singleton,
+  class7_singleton,
   class5_singleton,
-  class8_singleton,
-  class1_singleton,
   class2_singleton,
-  class3_singleton,
+  class1_singleton,
 };
 
 void ClassApi::doSomethingStaticArrayLookup(int type) {

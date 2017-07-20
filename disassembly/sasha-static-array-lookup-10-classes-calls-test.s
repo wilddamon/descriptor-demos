@@ -357,17 +357,17 @@ _GLOBAL__sub_I_sasha_static_array_lookup_10_classes_calls_test.cpp: # @_GLOBAL__
 	movq	$_ZTV7Class10+16, (%rax)
 	movq	%rax, class10_singleton(%rip)
 	movq	%r12, class_array(%rip)
-	movq	%r14, class_array+8(%rip)
-	movq	%r13, class_array+16(%rip)
-	movq	%rbp, class_array+24(%rip)
-	movq	%rax, class_array+32(%rip)
-	movq	%rbx, class_array+40(%rip)
-	movq	%r15, class_array+48(%rip)
-	movq	16(%rsp), %rax          # 8-byte Reload
-	movq	%rax, class_array+56(%rip)
+	movq	(%rsp), %rcx            # 8-byte Reload
+	movq	%rcx, class_array+8(%rip)
+	movq	%r15, class_array+16(%rip)
+	movq	%rax, class_array+24(%rip)
+	movq	%r13, class_array+32(%rip)
+	movq	%rbp, class_array+40(%rip)
+	movq	%r14, class_array+48(%rip)
+	movq	%rbx, class_array+56(%rip)
 	movq	8(%rsp), %rax           # 8-byte Reload
 	movq	%rax, class_array+64(%rip)
-	movq	(%rsp), %rax            # 8-byte Reload
+	movq	16(%rsp), %rax          # 8-byte Reload
 	movq	%rax, class_array+72(%rip)
 	addq	$24, %rsp
 	popq	%rbx

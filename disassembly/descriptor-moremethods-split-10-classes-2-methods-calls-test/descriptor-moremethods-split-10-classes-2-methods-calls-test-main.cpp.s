@@ -61,7 +61,7 @@ main:                                   # @main
 .LBB0_2:                                # %for.body7
                                         #   Parent Loop BB0_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
-	movq	(%rbx), %rax
+	movq	8(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_6
 # BB#3:                                 # %if.then
@@ -71,10 +71,10 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_6:                                # %if.else
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method1Ev
+	callq	_ZN15CSSPropertyAPI17method2Ev
 .LBB0_7:                                # %if.end
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	8(%rbx), %rax
+	movq	(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_9
 # BB#8:                                 # %if.then10
@@ -84,7 +84,7 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_9:                                # %if.else12
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method2Ev
+	callq	_ZN15CSSPropertyAPI17method1Ev
 .LBB0_10:                               # %for.inc
                                         #   in Loop: Header=BB0_2 Depth=2
 	decl	%ebp

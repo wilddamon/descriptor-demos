@@ -88,52 +88,16 @@ void CSSPropertyAPI10::other() {
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
-  },
-  {
-    nullptr,
-    nullptr,
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
   },
   {
     CSSPropertyAPI6::parse,
     CSSPropertyAPI6::other,
   },
   {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
-  },
-  {
-    CSSPropertyAPI5::parse,
-    CSSPropertyAPI5::other,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI10::parse,
-    CSSPropertyAPI10::other,
+    CSSPropertyAPI8::parse,
+    CSSPropertyAPI8::other,
   },
   {
     CSSPropertyAPI7::parse,
@@ -156,40 +120,76 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     nullptr,
   },
   {
-    CSSPropertyAPI8::parse,
-    CSSPropertyAPI8::other,
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
   },
   {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
+    CSSPropertyAPI10::parse,
+    CSSPropertyAPI10::other,
+  },
+  {
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
+  },
+  {
+    nullptr,
+    nullptr,
   },
   {
     CSSPropertyAPI4::parse,
     CSSPropertyAPI4::other,
   },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI5::parse,
+    CSSPropertyAPI5::other,
+  },
 };
 
 static size_t descriptorIndices[] = {
-  18,
-  15,
-  5,
-  16,
-  4,
-  1,
-  8,
-  17,
-  13,
-  7,
-  2,
-  3,
   19,
-  0,
+  7,
+  17,
   12,
-  14,
-  9,
+  8,
   6,
-  10,
+  13,
+  3,
+  14,
+  16,
   11,
+  0,
+  10,
+  9,
+  1,
+  5,
+  4,
+  2,
+  15,
+  18,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

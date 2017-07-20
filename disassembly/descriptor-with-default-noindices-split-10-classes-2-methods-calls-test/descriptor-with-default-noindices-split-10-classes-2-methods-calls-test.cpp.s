@@ -293,44 +293,44 @@ increment_me:
 _ZL11descriptors:
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN15CSSPropertyAPI55parseEv
-	.quad	_ZN15CSSPropertyAPI55otherEv
-	.quad	_ZN15CSSPropertyAPI75parseEv
-	.quad	_ZN15CSSPropertyAPI75otherEv
 	.quad	_ZN15CSSPropertyAPI65parseEv
 	.quad	_ZN15CSSPropertyAPI65otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN16CSSPropertyAPI105parseEv
-	.quad	_ZN16CSSPropertyAPI105otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
-	.quad	_ZN15CSSPropertyAPI25parseEv
-	.quad	_ZN15CSSPropertyAPI25otherEv
-	.quad	_ZN15CSSPropertyAPI95parseEv
-	.quad	_ZN15CSSPropertyAPI95otherEv
 	.quad	_ZN15CSSPropertyAPI15parseEv
 	.quad	_ZN15CSSPropertyAPI15otherEv
-	.quad	_ZN15CSSPropertyAPI35parseEv
-	.quad	_ZN15CSSPropertyAPI35otherEv
 	.quad	_ZN15CSSPropertyAPI45parseEv
 	.quad	_ZN15CSSPropertyAPI45otherEv
-	.quad	_ZN21CSSPropertyAPIDefault5parseEv
-	.quad	_ZN21CSSPropertyAPIDefault5otherEv
 	.quad	_ZN15CSSPropertyAPI85parseEv
 	.quad	_ZN15CSSPropertyAPI85otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN15CSSPropertyAPI25parseEv
+	.quad	_ZN15CSSPropertyAPI25otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
 	.quad	_ZN21CSSPropertyAPIDefault5parseEv
 	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN15CSSPropertyAPI35parseEv
+	.quad	_ZN15CSSPropertyAPI35otherEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN15CSSPropertyAPI55parseEv
+	.quad	_ZN15CSSPropertyAPI55otherEv
+	.quad	_ZN16CSSPropertyAPI105parseEv
+	.quad	_ZN16CSSPropertyAPI105otherEv
+	.quad	_ZN15CSSPropertyAPI75parseEv
+	.quad	_ZN15CSSPropertyAPI75otherEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN21CSSPropertyAPIDefault5parseEv
+	.quad	_ZN21CSSPropertyAPIDefault5otherEv
+	.quad	_ZN15CSSPropertyAPI95parseEv
+	.quad	_ZN15CSSPropertyAPI95otherEv
 	.size	_ZL11descriptors, 320
 
 

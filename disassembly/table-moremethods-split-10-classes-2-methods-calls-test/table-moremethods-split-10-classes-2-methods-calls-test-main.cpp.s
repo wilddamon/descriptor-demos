@@ -61,10 +61,12 @@ main:                                   # @main
 .LBB0_2:                                # %for.body7
                                         #   Parent Loop BB0_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method2Ev
+	callq	*(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method1Ev
+	callq	*8(%rax)
 	decl	%ebp
 	jne	.LBB0_2
 # BB#3:                                 # %for.cond.cleanup6

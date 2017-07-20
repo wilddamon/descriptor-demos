@@ -13,45 +13,6 @@ _ZN6Class917doSomethingStaticEv:        # @_ZN6Class917doSomethingStaticEv
 	.size	_ZN6Class917doSomethingStaticEv, .Lfunc_end0-_ZN6Class917doSomethingStaticEv
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN6Class217doSomethingStaticEv,"axG",@progbits,_ZN6Class217doSomethingStaticEv,comdat
-	.weak	_ZN6Class217doSomethingStaticEv # -- Begin function _ZN6Class217doSomethingStaticEv
-	.p2align	4, 0x90
-	.type	_ZN6Class217doSomethingStaticEv,@function
-_ZN6Class217doSomethingStaticEv:        # @_ZN6Class217doSomethingStaticEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$2, increment_me(%rip)
-	retq
-.Lfunc_end1:
-	.size	_ZN6Class217doSomethingStaticEv, .Lfunc_end1-_ZN6Class217doSomethingStaticEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN6Class817doSomethingStaticEv,"axG",@progbits,_ZN6Class817doSomethingStaticEv,comdat
-	.weak	_ZN6Class817doSomethingStaticEv # -- Begin function _ZN6Class817doSomethingStaticEv
-	.p2align	4, 0x90
-	.type	_ZN6Class817doSomethingStaticEv,@function
-_ZN6Class817doSomethingStaticEv:        # @_ZN6Class817doSomethingStaticEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$8, increment_me(%rip)
-	retq
-.Lfunc_end2:
-	.size	_ZN6Class817doSomethingStaticEv, .Lfunc_end2-_ZN6Class817doSomethingStaticEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN6Class617doSomethingStaticEv,"axG",@progbits,_ZN6Class617doSomethingStaticEv,comdat
-	.weak	_ZN6Class617doSomethingStaticEv # -- Begin function _ZN6Class617doSomethingStaticEv
-	.p2align	4, 0x90
-	.type	_ZN6Class617doSomethingStaticEv,@function
-_ZN6Class617doSomethingStaticEv:        # @_ZN6Class617doSomethingStaticEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$6, increment_me(%rip)
-	retq
-.Lfunc_end3:
-	.size	_ZN6Class617doSomethingStaticEv, .Lfunc_end3-_ZN6Class617doSomethingStaticEv
-	.cfi_endproc
-                                        # -- End function
 	.section	.text._ZN7Class1017doSomethingStaticEv,"axG",@progbits,_ZN7Class1017doSomethingStaticEv,comdat
 	.weak	_ZN7Class1017doSomethingStaticEv # -- Begin function _ZN7Class1017doSomethingStaticEv
 	.p2align	4, 0x90
@@ -61,47 +22,8 @@ _ZN7Class1017doSomethingStaticEv:       # @_ZN7Class1017doSomethingStaticEv
 # BB#0:                                 # %entry
 	addl	$10, increment_me(%rip)
 	retq
-.Lfunc_end4:
-	.size	_ZN7Class1017doSomethingStaticEv, .Lfunc_end4-_ZN7Class1017doSomethingStaticEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN6Class117doSomethingStaticEv,"axG",@progbits,_ZN6Class117doSomethingStaticEv,comdat
-	.weak	_ZN6Class117doSomethingStaticEv # -- Begin function _ZN6Class117doSomethingStaticEv
-	.p2align	4, 0x90
-	.type	_ZN6Class117doSomethingStaticEv,@function
-_ZN6Class117doSomethingStaticEv:        # @_ZN6Class117doSomethingStaticEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	incl	increment_me(%rip)
-	retq
-.Lfunc_end5:
-	.size	_ZN6Class117doSomethingStaticEv, .Lfunc_end5-_ZN6Class117doSomethingStaticEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN6Class317doSomethingStaticEv,"axG",@progbits,_ZN6Class317doSomethingStaticEv,comdat
-	.weak	_ZN6Class317doSomethingStaticEv # -- Begin function _ZN6Class317doSomethingStaticEv
-	.p2align	4, 0x90
-	.type	_ZN6Class317doSomethingStaticEv,@function
-_ZN6Class317doSomethingStaticEv:        # @_ZN6Class317doSomethingStaticEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$3, increment_me(%rip)
-	retq
-.Lfunc_end6:
-	.size	_ZN6Class317doSomethingStaticEv, .Lfunc_end6-_ZN6Class317doSomethingStaticEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN6Class717doSomethingStaticEv,"axG",@progbits,_ZN6Class717doSomethingStaticEv,comdat
-	.weak	_ZN6Class717doSomethingStaticEv # -- Begin function _ZN6Class717doSomethingStaticEv
-	.p2align	4, 0x90
-	.type	_ZN6Class717doSomethingStaticEv,@function
-_ZN6Class717doSomethingStaticEv:        # @_ZN6Class717doSomethingStaticEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$7, increment_me(%rip)
-	retq
-.Lfunc_end7:
-	.size	_ZN6Class717doSomethingStaticEv, .Lfunc_end7-_ZN6Class717doSomethingStaticEv
+.Lfunc_end1:
+	.size	_ZN7Class1017doSomethingStaticEv, .Lfunc_end1-_ZN7Class1017doSomethingStaticEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN6Class517doSomethingStaticEv,"axG",@progbits,_ZN6Class517doSomethingStaticEv,comdat
@@ -113,8 +35,47 @@ _ZN6Class517doSomethingStaticEv:        # @_ZN6Class517doSomethingStaticEv
 # BB#0:                                 # %entry
 	addl	$5, increment_me(%rip)
 	retq
-.Lfunc_end8:
-	.size	_ZN6Class517doSomethingStaticEv, .Lfunc_end8-_ZN6Class517doSomethingStaticEv
+.Lfunc_end2:
+	.size	_ZN6Class517doSomethingStaticEv, .Lfunc_end2-_ZN6Class517doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class117doSomethingStaticEv,"axG",@progbits,_ZN6Class117doSomethingStaticEv,comdat
+	.weak	_ZN6Class117doSomethingStaticEv # -- Begin function _ZN6Class117doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class117doSomethingStaticEv,@function
+_ZN6Class117doSomethingStaticEv:        # @_ZN6Class117doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	incl	increment_me(%rip)
+	retq
+.Lfunc_end3:
+	.size	_ZN6Class117doSomethingStaticEv, .Lfunc_end3-_ZN6Class117doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class217doSomethingStaticEv,"axG",@progbits,_ZN6Class217doSomethingStaticEv,comdat
+	.weak	_ZN6Class217doSomethingStaticEv # -- Begin function _ZN6Class217doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class217doSomethingStaticEv,@function
+_ZN6Class217doSomethingStaticEv:        # @_ZN6Class217doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$2, increment_me(%rip)
+	retq
+.Lfunc_end4:
+	.size	_ZN6Class217doSomethingStaticEv, .Lfunc_end4-_ZN6Class217doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class617doSomethingStaticEv,"axG",@progbits,_ZN6Class617doSomethingStaticEv,comdat
+	.weak	_ZN6Class617doSomethingStaticEv # -- Begin function _ZN6Class617doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class617doSomethingStaticEv,@function
+_ZN6Class617doSomethingStaticEv:        # @_ZN6Class617doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$6, increment_me(%rip)
+	retq
+.Lfunc_end5:
+	.size	_ZN6Class617doSomethingStaticEv, .Lfunc_end5-_ZN6Class617doSomethingStaticEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN6Class417doSomethingStaticEv,"axG",@progbits,_ZN6Class417doSomethingStaticEv,comdat
@@ -126,8 +87,47 @@ _ZN6Class417doSomethingStaticEv:        # @_ZN6Class417doSomethingStaticEv
 # BB#0:                                 # %entry
 	addl	$4, increment_me(%rip)
 	retq
+.Lfunc_end6:
+	.size	_ZN6Class417doSomethingStaticEv, .Lfunc_end6-_ZN6Class417doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class317doSomethingStaticEv,"axG",@progbits,_ZN6Class317doSomethingStaticEv,comdat
+	.weak	_ZN6Class317doSomethingStaticEv # -- Begin function _ZN6Class317doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class317doSomethingStaticEv,@function
+_ZN6Class317doSomethingStaticEv:        # @_ZN6Class317doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$3, increment_me(%rip)
+	retq
+.Lfunc_end7:
+	.size	_ZN6Class317doSomethingStaticEv, .Lfunc_end7-_ZN6Class317doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class817doSomethingStaticEv,"axG",@progbits,_ZN6Class817doSomethingStaticEv,comdat
+	.weak	_ZN6Class817doSomethingStaticEv # -- Begin function _ZN6Class817doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class817doSomethingStaticEv,@function
+_ZN6Class817doSomethingStaticEv:        # @_ZN6Class817doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$8, increment_me(%rip)
+	retq
+.Lfunc_end8:
+	.size	_ZN6Class817doSomethingStaticEv, .Lfunc_end8-_ZN6Class817doSomethingStaticEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN6Class717doSomethingStaticEv,"axG",@progbits,_ZN6Class717doSomethingStaticEv,comdat
+	.weak	_ZN6Class717doSomethingStaticEv # -- Begin function _ZN6Class717doSomethingStaticEv
+	.p2align	4, 0x90
+	.type	_ZN6Class717doSomethingStaticEv,@function
+_ZN6Class717doSomethingStaticEv:        # @_ZN6Class717doSomethingStaticEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$7, increment_me(%rip)
+	retq
 .Lfunc_end9:
-	.size	_ZN6Class417doSomethingStaticEv, .Lfunc_end9-_ZN6Class417doSomethingStaticEv
+	.size	_ZN6Class717doSomethingStaticEv, .Lfunc_end9-_ZN6Class717doSomethingStaticEv
 	.cfi_endproc
                                         # -- End function
 	.text
@@ -304,15 +304,15 @@ increment_me:
 	.p2align	4
 function_array:
 	.quad	_ZN6Class917doSomethingStaticEv
-	.quad	_ZN6Class217doSomethingStaticEv
-	.quad	_ZN6Class817doSomethingStaticEv
-	.quad	_ZN6Class617doSomethingStaticEv
 	.quad	_ZN7Class1017doSomethingStaticEv
-	.quad	_ZN6Class117doSomethingStaticEv
-	.quad	_ZN6Class317doSomethingStaticEv
-	.quad	_ZN6Class717doSomethingStaticEv
 	.quad	_ZN6Class517doSomethingStaticEv
+	.quad	_ZN6Class117doSomethingStaticEv
+	.quad	_ZN6Class217doSomethingStaticEv
+	.quad	_ZN6Class617doSomethingStaticEv
 	.quad	_ZN6Class417doSomethingStaticEv
+	.quad	_ZN6Class317doSomethingStaticEv
+	.quad	_ZN6Class817doSomethingStaticEv
+	.quad	_ZN6Class717doSomethingStaticEv
 	.size	function_array, 80
 
 	.type	.L.str,@object          # @.str

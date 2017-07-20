@@ -11,7 +11,7 @@ EOF
 
 for ((a=1; a <= $NUM_METHODS; a++)); do
 cat <<EOF
-  void method$a() const;
+  virtual void method$a() const;
 EOF
 done
 
@@ -30,7 +30,7 @@ EOF
 
 for ((b=1; b <= $NUM_METHODS; b++)); do
 cat <<EOF
-  void method$b() const;
+  void method$b() const override;
 EOF
 done
 

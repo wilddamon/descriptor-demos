@@ -151,25 +151,25 @@ class CSSPropertyAPI10 : public CSSPropertyAPI {
 static constexpr CSSPropertyAPI10 api_10;
 
 constexpr const CSSPropertyAPI* const property_apis[] = {
-  &api_4,
-  &api_1,
-  &api_0, // default implementation
-  &api_2,
-  &api_0, // default implementation
   &api_6,
-  &api_8,
-  &api_0, // default implementation
+  &api_5,
+  &api_3,
+  &api_9,
   &api_0, // default implementation
   &api_0, // default implementation
   &api_0, // default implementation
   &api_7,
   &api_0, // default implementation
+  &api_0, // default implementation
+  &api_0, // default implementation
+  &api_0, // default implementation
   &api_10,
-  &api_5,
   &api_0, // default implementation
-  &api_3,
-  &api_9,
+  &api_4,
   &api_0, // default implementation
+  &api_1,
+  &api_2,
+  &api_8,
   &api_0, // default implementation
 };
 

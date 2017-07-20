@@ -83,55 +83,55 @@ const CSSPropertyAPI& GetPropertyAPI(int id) {
   static constexpr CSSPropertyAPI default_api;
   switch (id) {
   case 1:
+    static constexpr CSSPropertyAPI1 api_1;
+    return api_1;
+  case 2:
     static constexpr CSSPropertyAPI5 api_5;
     return api_5;
-  case 2:
-    return default_api;  // default implementation
   case 3:
-    return default_api;  // default implementation
+    static constexpr CSSPropertyAPI6 api_6;
+    return api_6;
   case 4:
-    return default_api;  // default implementation
+    static constexpr CSSPropertyAPI3 api_3;
+    return api_3;
   case 5:
-    static constexpr CSSPropertyAPI8 api_8;
-    return api_8;
+    return default_api;  // default implementation
   case 6:
     return default_api;  // default implementation
   case 7:
-    static constexpr CSSPropertyAPI1 api_1;
-    return api_1;
-  case 8:
     return default_api;  // default implementation
+  case 8:
+    static constexpr CSSPropertyAPI7 api_7;
+    return api_7;
   case 9:
     return default_api;  // default implementation
   case 10:
-    static constexpr CSSPropertyAPI2 api_2;
-    return api_2;
+    static constexpr CSSPropertyAPI4 api_4;
+    return api_4;
   case 11:
-    static constexpr CSSPropertyAPI6 api_6;
-    return api_6;
-  case 12:
     return default_api;  // default implementation
-  case 13:
+  case 12:
     static constexpr CSSPropertyAPI9 api_9;
     return api_9;
+  case 13:
+    return default_api;  // default implementation
   case 14:
-    static constexpr CSSPropertyAPI3 api_3;
-    return api_3;
+    return default_api;  // default implementation
   case 15:
     return default_api;  // default implementation
   case 16:
-    static constexpr CSSPropertyAPI7 api_7;
-    return api_7;
+    static constexpr CSSPropertyAPI8 api_8;
+    return api_8;
   case 17:
     static constexpr CSSPropertyAPI10 api_10;
     return api_10;
   case 18:
     return default_api;  // default implementation
   case 19:
-    static constexpr CSSPropertyAPI4 api_4;
-    return api_4;
-  case 20:
     return default_api;  // default implementation
+  case 20:
+    static constexpr CSSPropertyAPI2 api_2;
+    return api_2;
   default:
     return default_api;
   }

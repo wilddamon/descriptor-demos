@@ -267,61 +267,61 @@ increment_me:
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL11descriptors:
-	.zero	16
-	.quad	_ZN15CSSPropertyAPI95parseEv
-	.quad	_ZN15CSSPropertyAPI95otherEv
-	.quad	_ZN15CSSPropertyAPI25parseEv
-	.quad	_ZN15CSSPropertyAPI25otherEv
-	.quad	_ZN15CSSPropertyAPI55parseEv
-	.quad	_ZN15CSSPropertyAPI55otherEv
-	.zero	16
-	.zero	16
-	.zero	16
-	.quad	_ZN15CSSPropertyAPI15parseEv
-	.quad	_ZN15CSSPropertyAPI15otherEv
-	.quad	_ZN15CSSPropertyAPI45parseEv
-	.quad	_ZN15CSSPropertyAPI45otherEv
 	.quad	_ZN15CSSPropertyAPI85parseEv
 	.quad	_ZN15CSSPropertyAPI85otherEv
 	.zero	16
-	.zero	16
-	.zero	16
-	.zero	16
 	.quad	_ZN15CSSPropertyAPI75parseEv
 	.quad	_ZN15CSSPropertyAPI75otherEv
+	.quad	_ZN15CSSPropertyAPI25parseEv
+	.quad	_ZN15CSSPropertyAPI25otherEv
+	.zero	16
+	.quad	_ZN15CSSPropertyAPI35parseEv
+	.quad	_ZN15CSSPropertyAPI35otherEv
+	.zero	16
+	.zero	16
+	.quad	_ZN15CSSPropertyAPI45parseEv
+	.quad	_ZN15CSSPropertyAPI45otherEv
+	.zero	16
+	.quad	_ZN15CSSPropertyAPI15parseEv
+	.quad	_ZN15CSSPropertyAPI15otherEv
+	.zero	16
+	.zero	16
+	.quad	_ZN15CSSPropertyAPI95parseEv
+	.quad	_ZN15CSSPropertyAPI95otherEv
 	.quad	_ZN16CSSPropertyAPI105parseEv
 	.quad	_ZN16CSSPropertyAPI105otherEv
 	.zero	16
 	.quad	_ZN15CSSPropertyAPI65parseEv
 	.quad	_ZN15CSSPropertyAPI65otherEv
-	.quad	_ZN15CSSPropertyAPI35parseEv
-	.quad	_ZN15CSSPropertyAPI35otherEv
+	.quad	_ZN15CSSPropertyAPI55parseEv
+	.quad	_ZN15CSSPropertyAPI55otherEv
+	.zero	16
 	.zero	16
 	.size	_ZL11descriptors, 320
 
 	.type	_ZL17descriptorIndices,@object # @_ZL17descriptorIndices
 	.p2align	4
 _ZL17descriptorIndices:
-	.quad	10                      # 0xa
-	.quad	4                       # 0x4
-	.quad	3                       # 0x3
-	.quad	1                       # 0x1
-	.quad	6                       # 0x6
 	.quad	19                      # 0x13
-	.quad	0                       # 0x0
-	.quad	17                      # 0x11
-	.quad	8                       # 0x8
-	.quad	7                       # 0x7
+	.quad	14                      # 0xe
+	.quad	15                      # 0xf
 	.quad	5                       # 0x5
 	.quad	18                      # 0x12
-	.quad	11                      # 0xb
-	.quad	16                      # 0x10
+	.quad	3                       # 0x3
+	.quad	4                       # 0x4
+	.quad	6                       # 0x6
+	.quad	10                      # 0xa
+	.quad	1                       # 0x1
 	.quad	9                       # 0x9
-	.quad	2                       # 0x2
+	.quad	8                       # 0x8
+	.quad	11                      # 0xb
 	.quad	12                      # 0xc
-	.quad	14                      # 0xe
+	.quad	2                       # 0x2
+	.quad	17                      # 0x11
+	.quad	7                       # 0x7
+	.quad	16                      # 0x10
+	.quad	0                       # 0x0
 	.quad	13                      # 0xd
-	.quad	15                      # 0xf
 	.size	_ZL17descriptorIndices, 160
 
 

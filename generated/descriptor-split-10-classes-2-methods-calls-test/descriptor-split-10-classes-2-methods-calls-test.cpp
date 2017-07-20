@@ -88,20 +88,28 @@ void CSSPropertyAPI10::other() {
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
+    CSSPropertyAPI8::parse,
+    CSSPropertyAPI8::other,
+  },
+  {
     nullptr,
     nullptr,
   },
   {
-    CSSPropertyAPI9::parse,
-    CSSPropertyAPI9::other,
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
   },
   {
     CSSPropertyAPI2::parse,
     CSSPropertyAPI2::other,
   },
   {
-    CSSPropertyAPI5::parse,
-    CSSPropertyAPI5::other,
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
   },
   {
     nullptr,
@@ -110,6 +118,10 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
   {
     nullptr,
     nullptr,
+  },
+  {
+    CSSPropertyAPI4::parse,
+    CSSPropertyAPI4::other,
   },
   {
     nullptr,
@@ -120,14 +132,6 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI1::other,
   },
   {
-    CSSPropertyAPI4::parse,
-    CSSPropertyAPI4::other,
-  },
-  {
-    CSSPropertyAPI8::parse,
-    CSSPropertyAPI8::other,
-  },
-  {
     nullptr,
     nullptr,
   },
@@ -136,16 +140,8 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     nullptr,
   },
   {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
+    CSSPropertyAPI9::parse,
+    CSSPropertyAPI9::other,
   },
   {
     CSSPropertyAPI10::parse,
@@ -160,8 +156,12 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI6::other,
   },
   {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
+    CSSPropertyAPI5::parse,
+    CSSPropertyAPI5::other,
+  },
+  {
+    nullptr,
+    nullptr,
   },
   {
     nullptr,
@@ -170,26 +170,26 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
 };
 
 static size_t descriptorIndices[] = {
-  10,
-  4,
-  3,
-  1,
-  6,
   19,
-  0,
-  17,
-  8,
-  7,
+  14,
+  15,
   5,
   18,
-  11,
-  16,
+  3,
+  4,
+  6,
+  10,
+  1,
   9,
-  2,
+  8,
+  11,
   12,
-  14,
+  2,
+  17,
+  7,
+  16,
+  0,
   13,
-  15,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

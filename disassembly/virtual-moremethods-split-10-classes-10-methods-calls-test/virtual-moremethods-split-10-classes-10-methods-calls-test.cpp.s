@@ -1331,38 +1331,38 @@ _Z14GetPropertyAPIi:                    # @_Z14GetPropertyAPIi
 	cmpl	$19, %edi
 	ja	.LBB110_11
 # BB#1:                                 # %entry
-	movl	$_ZZ14GetPropertyAPIiE5api_7, %eax
+	movl	$_ZZ14GetPropertyAPIiE5api_5, %eax
 	jmpq	*.LJTI110_0(,%rdi,8)
 .LBB110_11:                             # %sw.default
 	movl	$_ZZ14GetPropertyAPIiE11default_api, %eax
 .LBB110_12:                             # %return
 	retq
-.LBB110_2:                              # %sw.bb3
-	movl	$_ZZ14GetPropertyAPIiE5api_1, %eax
+.LBB110_2:                              # %sw.bb1
+	movl	$_ZZ14GetPropertyAPIiE5api_9, %eax
 	retq
-.LBB110_3:                              # %sw.bb4
+.LBB110_3:                              # %sw.bb5
 	movl	$_ZZ14GetPropertyAPIiE5api_3, %eax
 	retq
 .LBB110_4:                              # %sw.bb6
-	movl	$_ZZ14GetPropertyAPIiE5api_8, %eax
-	retq
-.LBB110_5:                              # %sw.bb9
-	movl	$_ZZ14GetPropertyAPIiE5api_2, %eax
-	retq
-.LBB110_6:                              # %sw.bb10
 	movl	$_ZZ14GetPropertyAPIiE5api_4, %eax
 	retq
-.LBB110_7:                              # %sw.bb13
-	movl	$_ZZ14GetPropertyAPIiE5api_9, %eax
+.LBB110_5:                              # %sw.bb8
+	movl	$_ZZ14GetPropertyAPIiE5api_1, %eax
 	retq
-.LBB110_8:                              # %sw.bb15
-	movl	$_ZZ14GetPropertyAPIiE5api_5, %eax
+.LBB110_6:                              # %sw.bb9
+	movl	$_ZZ14GetPropertyAPIiE5api_6, %eax
+	retq
+.LBB110_7:                              # %sw.bb11
+	movl	$_ZZ14GetPropertyAPIiE5api_8, %eax
+	retq
+.LBB110_8:                              # %sw.bb13
+	movl	$_ZZ14GetPropertyAPIiE5api_7, %eax
 	retq
 .LBB110_9:                              # %sw.bb16
-	movl	$_ZZ14GetPropertyAPIiE6api_10, %eax
+	movl	$_ZZ14GetPropertyAPIiE5api_2, %eax
 	retq
-.LBB110_10:                             # %sw.bb19
-	movl	$_ZZ14GetPropertyAPIiE5api_6, %eax
+.LBB110_10:                             # %sw.bb17
+	movl	$_ZZ14GetPropertyAPIiE6api_10, %eax
 	retq
 .Lfunc_end110:
 	.size	_Z14GetPropertyAPIi, .Lfunc_end110-_Z14GetPropertyAPIi
@@ -1371,25 +1371,25 @@ _Z14GetPropertyAPIi:                    # @_Z14GetPropertyAPIi
 	.p2align	3
 .LJTI110_0:
 	.quad	.LBB110_12
-	.quad	.LBB110_11
-	.quad	.LBB110_11
 	.quad	.LBB110_2
+	.quad	.LBB110_11
+	.quad	.LBB110_11
+	.quad	.LBB110_11
 	.quad	.LBB110_3
-	.quad	.LBB110_11
 	.quad	.LBB110_4
-	.quad	.LBB110_11
 	.quad	.LBB110_11
 	.quad	.LBB110_5
 	.quad	.LBB110_6
 	.quad	.LBB110_11
-	.quad	.LBB110_11
 	.quad	.LBB110_7
 	.quad	.LBB110_11
 	.quad	.LBB110_8
+	.quad	.LBB110_11
+	.quad	.LBB110_11
 	.quad	.LBB110_9
-	.quad	.LBB110_11
-	.quad	.LBB110_11
 	.quad	.LBB110_10
+	.quad	.LBB110_11
+	.quad	.LBB110_11
                                         # -- End function
 	.type	increment_me,@object    # @increment_me
 	.bss
@@ -1401,59 +1401,443 @@ increment_me:
 
 	.type	_ZZ14GetPropertyAPIiE11default_api,@object # @_ZZ14GetPropertyAPIiE11default_api
 	.section	.rodata,"a",@progbits
+	.p2align	3
 _ZZ14GetPropertyAPIiE11default_api:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE11default_api, 1
+	.quad	_ZTV14CSSPropertyAPI+16
+	.size	_ZZ14GetPropertyAPIiE11default_api, 8
 
-	.type	_ZZ14GetPropertyAPIiE5api_7,@object # @_ZZ14GetPropertyAPIiE5api_7
-_ZZ14GetPropertyAPIiE5api_7:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_7, 1
-
-	.type	_ZZ14GetPropertyAPIiE5api_1,@object # @_ZZ14GetPropertyAPIiE5api_1
-_ZZ14GetPropertyAPIiE5api_1:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_1, 1
-
-	.type	_ZZ14GetPropertyAPIiE5api_3,@object # @_ZZ14GetPropertyAPIiE5api_3
-_ZZ14GetPropertyAPIiE5api_3:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_3, 1
-
-	.type	_ZZ14GetPropertyAPIiE5api_8,@object # @_ZZ14GetPropertyAPIiE5api_8
-_ZZ14GetPropertyAPIiE5api_8:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_8, 1
-
-	.type	_ZZ14GetPropertyAPIiE5api_2,@object # @_ZZ14GetPropertyAPIiE5api_2
-_ZZ14GetPropertyAPIiE5api_2:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_2, 1
-
-	.type	_ZZ14GetPropertyAPIiE5api_4,@object # @_ZZ14GetPropertyAPIiE5api_4
-_ZZ14GetPropertyAPIiE5api_4:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_4, 1
-
-	.type	_ZZ14GetPropertyAPIiE5api_9,@object # @_ZZ14GetPropertyAPIiE5api_9
-_ZZ14GetPropertyAPIiE5api_9:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_9, 1
+	.type	_ZTV14CSSPropertyAPI,@object # @_ZTV14CSSPropertyAPI
+	.globl	_ZTV14CSSPropertyAPI
+	.p2align	3
+_ZTV14CSSPropertyAPI:
+	.quad	0
+	.quad	_ZTI14CSSPropertyAPI
+	.quad	_ZNK14CSSPropertyAPI7method1Ev
+	.quad	_ZNK14CSSPropertyAPI7method2Ev
+	.quad	_ZNK14CSSPropertyAPI7method3Ev
+	.quad	_ZNK14CSSPropertyAPI7method4Ev
+	.quad	_ZNK14CSSPropertyAPI7method5Ev
+	.quad	_ZNK14CSSPropertyAPI7method6Ev
+	.quad	_ZNK14CSSPropertyAPI7method7Ev
+	.quad	_ZNK14CSSPropertyAPI7method8Ev
+	.quad	_ZNK14CSSPropertyAPI7method9Ev
+	.quad	_ZNK14CSSPropertyAPI8method10Ev
+	.size	_ZTV14CSSPropertyAPI, 96
 
 	.type	_ZZ14GetPropertyAPIiE5api_5,@object # @_ZZ14GetPropertyAPIiE5api_5
+	.p2align	3
 _ZZ14GetPropertyAPIiE5api_5:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_5, 1
+	.quad	_ZTV15CSSPropertyAPI5+16
+	.size	_ZZ14GetPropertyAPIiE5api_5, 8
 
-	.type	_ZZ14GetPropertyAPIiE6api_10,@object # @_ZZ14GetPropertyAPIiE6api_10
-_ZZ14GetPropertyAPIiE6api_10:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE6api_10, 1
+	.type	_ZTV15CSSPropertyAPI5,@object # @_ZTV15CSSPropertyAPI5
+	.globl	_ZTV15CSSPropertyAPI5
+	.p2align	3
+_ZTV15CSSPropertyAPI5:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI5
+	.quad	_ZNK15CSSPropertyAPI57method1Ev
+	.quad	_ZNK15CSSPropertyAPI57method2Ev
+	.quad	_ZNK15CSSPropertyAPI57method3Ev
+	.quad	_ZNK15CSSPropertyAPI57method4Ev
+	.quad	_ZNK15CSSPropertyAPI57method5Ev
+	.quad	_ZNK15CSSPropertyAPI57method6Ev
+	.quad	_ZNK15CSSPropertyAPI57method7Ev
+	.quad	_ZNK15CSSPropertyAPI57method8Ev
+	.quad	_ZNK15CSSPropertyAPI57method9Ev
+	.quad	_ZNK15CSSPropertyAPI58method10Ev
+	.size	_ZTV15CSSPropertyAPI5, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_9,@object # @_ZZ14GetPropertyAPIiE5api_9
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_9:
+	.quad	_ZTV15CSSPropertyAPI9+16
+	.size	_ZZ14GetPropertyAPIiE5api_9, 8
+
+	.type	_ZTV15CSSPropertyAPI9,@object # @_ZTV15CSSPropertyAPI9
+	.globl	_ZTV15CSSPropertyAPI9
+	.p2align	3
+_ZTV15CSSPropertyAPI9:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI9
+	.quad	_ZNK15CSSPropertyAPI97method1Ev
+	.quad	_ZNK15CSSPropertyAPI97method2Ev
+	.quad	_ZNK15CSSPropertyAPI97method3Ev
+	.quad	_ZNK15CSSPropertyAPI97method4Ev
+	.quad	_ZNK15CSSPropertyAPI97method5Ev
+	.quad	_ZNK15CSSPropertyAPI97method6Ev
+	.quad	_ZNK15CSSPropertyAPI97method7Ev
+	.quad	_ZNK15CSSPropertyAPI97method8Ev
+	.quad	_ZNK15CSSPropertyAPI97method9Ev
+	.quad	_ZNK15CSSPropertyAPI98method10Ev
+	.size	_ZTV15CSSPropertyAPI9, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_3,@object # @_ZZ14GetPropertyAPIiE5api_3
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_3:
+	.quad	_ZTV15CSSPropertyAPI3+16
+	.size	_ZZ14GetPropertyAPIiE5api_3, 8
+
+	.type	_ZTV15CSSPropertyAPI3,@object # @_ZTV15CSSPropertyAPI3
+	.globl	_ZTV15CSSPropertyAPI3
+	.p2align	3
+_ZTV15CSSPropertyAPI3:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI3
+	.quad	_ZNK15CSSPropertyAPI37method1Ev
+	.quad	_ZNK15CSSPropertyAPI37method2Ev
+	.quad	_ZNK15CSSPropertyAPI37method3Ev
+	.quad	_ZNK15CSSPropertyAPI37method4Ev
+	.quad	_ZNK15CSSPropertyAPI37method5Ev
+	.quad	_ZNK15CSSPropertyAPI37method6Ev
+	.quad	_ZNK15CSSPropertyAPI37method7Ev
+	.quad	_ZNK15CSSPropertyAPI37method8Ev
+	.quad	_ZNK15CSSPropertyAPI37method9Ev
+	.quad	_ZNK15CSSPropertyAPI38method10Ev
+	.size	_ZTV15CSSPropertyAPI3, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_4,@object # @_ZZ14GetPropertyAPIiE5api_4
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_4:
+	.quad	_ZTV15CSSPropertyAPI4+16
+	.size	_ZZ14GetPropertyAPIiE5api_4, 8
+
+	.type	_ZTV15CSSPropertyAPI4,@object # @_ZTV15CSSPropertyAPI4
+	.globl	_ZTV15CSSPropertyAPI4
+	.p2align	3
+_ZTV15CSSPropertyAPI4:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI4
+	.quad	_ZNK15CSSPropertyAPI47method1Ev
+	.quad	_ZNK15CSSPropertyAPI47method2Ev
+	.quad	_ZNK15CSSPropertyAPI47method3Ev
+	.quad	_ZNK15CSSPropertyAPI47method4Ev
+	.quad	_ZNK15CSSPropertyAPI47method5Ev
+	.quad	_ZNK15CSSPropertyAPI47method6Ev
+	.quad	_ZNK15CSSPropertyAPI47method7Ev
+	.quad	_ZNK15CSSPropertyAPI47method8Ev
+	.quad	_ZNK15CSSPropertyAPI47method9Ev
+	.quad	_ZNK15CSSPropertyAPI48method10Ev
+	.size	_ZTV15CSSPropertyAPI4, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_1,@object # @_ZZ14GetPropertyAPIiE5api_1
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_1:
+	.quad	_ZTV15CSSPropertyAPI1+16
+	.size	_ZZ14GetPropertyAPIiE5api_1, 8
+
+	.type	_ZTV15CSSPropertyAPI1,@object # @_ZTV15CSSPropertyAPI1
+	.globl	_ZTV15CSSPropertyAPI1
+	.p2align	3
+_ZTV15CSSPropertyAPI1:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI1
+	.quad	_ZNK15CSSPropertyAPI17method1Ev
+	.quad	_ZNK15CSSPropertyAPI17method2Ev
+	.quad	_ZNK15CSSPropertyAPI17method3Ev
+	.quad	_ZNK15CSSPropertyAPI17method4Ev
+	.quad	_ZNK15CSSPropertyAPI17method5Ev
+	.quad	_ZNK15CSSPropertyAPI17method6Ev
+	.quad	_ZNK15CSSPropertyAPI17method7Ev
+	.quad	_ZNK15CSSPropertyAPI17method8Ev
+	.quad	_ZNK15CSSPropertyAPI17method9Ev
+	.quad	_ZNK15CSSPropertyAPI18method10Ev
+	.size	_ZTV15CSSPropertyAPI1, 96
 
 	.type	_ZZ14GetPropertyAPIiE5api_6,@object # @_ZZ14GetPropertyAPIiE5api_6
+	.p2align	3
 _ZZ14GetPropertyAPIiE5api_6:
-	.zero	1
-	.size	_ZZ14GetPropertyAPIiE5api_6, 1
+	.quad	_ZTV15CSSPropertyAPI6+16
+	.size	_ZZ14GetPropertyAPIiE5api_6, 8
+
+	.type	_ZTV15CSSPropertyAPI6,@object # @_ZTV15CSSPropertyAPI6
+	.globl	_ZTV15CSSPropertyAPI6
+	.p2align	3
+_ZTV15CSSPropertyAPI6:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI6
+	.quad	_ZNK15CSSPropertyAPI67method1Ev
+	.quad	_ZNK15CSSPropertyAPI67method2Ev
+	.quad	_ZNK15CSSPropertyAPI67method3Ev
+	.quad	_ZNK15CSSPropertyAPI67method4Ev
+	.quad	_ZNK15CSSPropertyAPI67method5Ev
+	.quad	_ZNK15CSSPropertyAPI67method6Ev
+	.quad	_ZNK15CSSPropertyAPI67method7Ev
+	.quad	_ZNK15CSSPropertyAPI67method8Ev
+	.quad	_ZNK15CSSPropertyAPI67method9Ev
+	.quad	_ZNK15CSSPropertyAPI68method10Ev
+	.size	_ZTV15CSSPropertyAPI6, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_8,@object # @_ZZ14GetPropertyAPIiE5api_8
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_8:
+	.quad	_ZTV15CSSPropertyAPI8+16
+	.size	_ZZ14GetPropertyAPIiE5api_8, 8
+
+	.type	_ZTV15CSSPropertyAPI8,@object # @_ZTV15CSSPropertyAPI8
+	.globl	_ZTV15CSSPropertyAPI8
+	.p2align	3
+_ZTV15CSSPropertyAPI8:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI8
+	.quad	_ZNK15CSSPropertyAPI87method1Ev
+	.quad	_ZNK15CSSPropertyAPI87method2Ev
+	.quad	_ZNK15CSSPropertyAPI87method3Ev
+	.quad	_ZNK15CSSPropertyAPI87method4Ev
+	.quad	_ZNK15CSSPropertyAPI87method5Ev
+	.quad	_ZNK15CSSPropertyAPI87method6Ev
+	.quad	_ZNK15CSSPropertyAPI87method7Ev
+	.quad	_ZNK15CSSPropertyAPI87method8Ev
+	.quad	_ZNK15CSSPropertyAPI87method9Ev
+	.quad	_ZNK15CSSPropertyAPI88method10Ev
+	.size	_ZTV15CSSPropertyAPI8, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_7,@object # @_ZZ14GetPropertyAPIiE5api_7
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_7:
+	.quad	_ZTV15CSSPropertyAPI7+16
+	.size	_ZZ14GetPropertyAPIiE5api_7, 8
+
+	.type	_ZTV15CSSPropertyAPI7,@object # @_ZTV15CSSPropertyAPI7
+	.globl	_ZTV15CSSPropertyAPI7
+	.p2align	3
+_ZTV15CSSPropertyAPI7:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI7
+	.quad	_ZNK15CSSPropertyAPI77method1Ev
+	.quad	_ZNK15CSSPropertyAPI77method2Ev
+	.quad	_ZNK15CSSPropertyAPI77method3Ev
+	.quad	_ZNK15CSSPropertyAPI77method4Ev
+	.quad	_ZNK15CSSPropertyAPI77method5Ev
+	.quad	_ZNK15CSSPropertyAPI77method6Ev
+	.quad	_ZNK15CSSPropertyAPI77method7Ev
+	.quad	_ZNK15CSSPropertyAPI77method8Ev
+	.quad	_ZNK15CSSPropertyAPI77method9Ev
+	.quad	_ZNK15CSSPropertyAPI78method10Ev
+	.size	_ZTV15CSSPropertyAPI7, 96
+
+	.type	_ZZ14GetPropertyAPIiE5api_2,@object # @_ZZ14GetPropertyAPIiE5api_2
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_2:
+	.quad	_ZTV15CSSPropertyAPI2+16
+	.size	_ZZ14GetPropertyAPIiE5api_2, 8
+
+	.type	_ZTV15CSSPropertyAPI2,@object # @_ZTV15CSSPropertyAPI2
+	.globl	_ZTV15CSSPropertyAPI2
+	.p2align	3
+_ZTV15CSSPropertyAPI2:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI2
+	.quad	_ZNK15CSSPropertyAPI27method1Ev
+	.quad	_ZNK15CSSPropertyAPI27method2Ev
+	.quad	_ZNK15CSSPropertyAPI27method3Ev
+	.quad	_ZNK15CSSPropertyAPI27method4Ev
+	.quad	_ZNK15CSSPropertyAPI27method5Ev
+	.quad	_ZNK15CSSPropertyAPI27method6Ev
+	.quad	_ZNK15CSSPropertyAPI27method7Ev
+	.quad	_ZNK15CSSPropertyAPI27method8Ev
+	.quad	_ZNK15CSSPropertyAPI27method9Ev
+	.quad	_ZNK15CSSPropertyAPI28method10Ev
+	.size	_ZTV15CSSPropertyAPI2, 96
+
+	.type	_ZZ14GetPropertyAPIiE6api_10,@object # @_ZZ14GetPropertyAPIiE6api_10
+	.p2align	3
+_ZZ14GetPropertyAPIiE6api_10:
+	.quad	_ZTV16CSSPropertyAPI10+16
+	.size	_ZZ14GetPropertyAPIiE6api_10, 8
+
+	.type	_ZTV16CSSPropertyAPI10,@object # @_ZTV16CSSPropertyAPI10
+	.globl	_ZTV16CSSPropertyAPI10
+	.p2align	3
+_ZTV16CSSPropertyAPI10:
+	.quad	0
+	.quad	_ZTI16CSSPropertyAPI10
+	.quad	_ZNK16CSSPropertyAPI107method1Ev
+	.quad	_ZNK16CSSPropertyAPI107method2Ev
+	.quad	_ZNK16CSSPropertyAPI107method3Ev
+	.quad	_ZNK16CSSPropertyAPI107method4Ev
+	.quad	_ZNK16CSSPropertyAPI107method5Ev
+	.quad	_ZNK16CSSPropertyAPI107method6Ev
+	.quad	_ZNK16CSSPropertyAPI107method7Ev
+	.quad	_ZNK16CSSPropertyAPI107method8Ev
+	.quad	_ZNK16CSSPropertyAPI107method9Ev
+	.quad	_ZNK16CSSPropertyAPI108method10Ev
+	.size	_ZTV16CSSPropertyAPI10, 96
+
+	.type	_ZTS14CSSPropertyAPI,@object # @_ZTS14CSSPropertyAPI
+	.globl	_ZTS14CSSPropertyAPI
+	.p2align	4
+_ZTS14CSSPropertyAPI:
+	.asciz	"14CSSPropertyAPI"
+	.size	_ZTS14CSSPropertyAPI, 17
+
+	.type	_ZTI14CSSPropertyAPI,@object # @_ZTI14CSSPropertyAPI
+	.globl	_ZTI14CSSPropertyAPI
+	.p2align	3
+_ZTI14CSSPropertyAPI:
+	.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+	.quad	_ZTS14CSSPropertyAPI
+	.size	_ZTI14CSSPropertyAPI, 16
+
+	.type	_ZTS15CSSPropertyAPI1,@object # @_ZTS15CSSPropertyAPI1
+	.globl	_ZTS15CSSPropertyAPI1
+	.p2align	4
+_ZTS15CSSPropertyAPI1:
+	.asciz	"15CSSPropertyAPI1"
+	.size	_ZTS15CSSPropertyAPI1, 18
+
+	.type	_ZTI15CSSPropertyAPI1,@object # @_ZTI15CSSPropertyAPI1
+	.globl	_ZTI15CSSPropertyAPI1
+	.p2align	4
+_ZTI15CSSPropertyAPI1:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI1
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI1, 24
+
+	.type	_ZTS15CSSPropertyAPI2,@object # @_ZTS15CSSPropertyAPI2
+	.globl	_ZTS15CSSPropertyAPI2
+	.p2align	4
+_ZTS15CSSPropertyAPI2:
+	.asciz	"15CSSPropertyAPI2"
+	.size	_ZTS15CSSPropertyAPI2, 18
+
+	.type	_ZTI15CSSPropertyAPI2,@object # @_ZTI15CSSPropertyAPI2
+	.globl	_ZTI15CSSPropertyAPI2
+	.p2align	4
+_ZTI15CSSPropertyAPI2:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI2
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI2, 24
+
+	.type	_ZTS15CSSPropertyAPI3,@object # @_ZTS15CSSPropertyAPI3
+	.globl	_ZTS15CSSPropertyAPI3
+	.p2align	4
+_ZTS15CSSPropertyAPI3:
+	.asciz	"15CSSPropertyAPI3"
+	.size	_ZTS15CSSPropertyAPI3, 18
+
+	.type	_ZTI15CSSPropertyAPI3,@object # @_ZTI15CSSPropertyAPI3
+	.globl	_ZTI15CSSPropertyAPI3
+	.p2align	4
+_ZTI15CSSPropertyAPI3:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI3
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI3, 24
+
+	.type	_ZTS15CSSPropertyAPI4,@object # @_ZTS15CSSPropertyAPI4
+	.globl	_ZTS15CSSPropertyAPI4
+	.p2align	4
+_ZTS15CSSPropertyAPI4:
+	.asciz	"15CSSPropertyAPI4"
+	.size	_ZTS15CSSPropertyAPI4, 18
+
+	.type	_ZTI15CSSPropertyAPI4,@object # @_ZTI15CSSPropertyAPI4
+	.globl	_ZTI15CSSPropertyAPI4
+	.p2align	4
+_ZTI15CSSPropertyAPI4:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI4
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI4, 24
+
+	.type	_ZTS15CSSPropertyAPI5,@object # @_ZTS15CSSPropertyAPI5
+	.globl	_ZTS15CSSPropertyAPI5
+	.p2align	4
+_ZTS15CSSPropertyAPI5:
+	.asciz	"15CSSPropertyAPI5"
+	.size	_ZTS15CSSPropertyAPI5, 18
+
+	.type	_ZTI15CSSPropertyAPI5,@object # @_ZTI15CSSPropertyAPI5
+	.globl	_ZTI15CSSPropertyAPI5
+	.p2align	4
+_ZTI15CSSPropertyAPI5:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI5
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI5, 24
+
+	.type	_ZTS15CSSPropertyAPI6,@object # @_ZTS15CSSPropertyAPI6
+	.globl	_ZTS15CSSPropertyAPI6
+	.p2align	4
+_ZTS15CSSPropertyAPI6:
+	.asciz	"15CSSPropertyAPI6"
+	.size	_ZTS15CSSPropertyAPI6, 18
+
+	.type	_ZTI15CSSPropertyAPI6,@object # @_ZTI15CSSPropertyAPI6
+	.globl	_ZTI15CSSPropertyAPI6
+	.p2align	4
+_ZTI15CSSPropertyAPI6:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI6
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI6, 24
+
+	.type	_ZTS15CSSPropertyAPI7,@object # @_ZTS15CSSPropertyAPI7
+	.globl	_ZTS15CSSPropertyAPI7
+	.p2align	4
+_ZTS15CSSPropertyAPI7:
+	.asciz	"15CSSPropertyAPI7"
+	.size	_ZTS15CSSPropertyAPI7, 18
+
+	.type	_ZTI15CSSPropertyAPI7,@object # @_ZTI15CSSPropertyAPI7
+	.globl	_ZTI15CSSPropertyAPI7
+	.p2align	4
+_ZTI15CSSPropertyAPI7:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI7
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI7, 24
+
+	.type	_ZTS15CSSPropertyAPI8,@object # @_ZTS15CSSPropertyAPI8
+	.globl	_ZTS15CSSPropertyAPI8
+	.p2align	4
+_ZTS15CSSPropertyAPI8:
+	.asciz	"15CSSPropertyAPI8"
+	.size	_ZTS15CSSPropertyAPI8, 18
+
+	.type	_ZTI15CSSPropertyAPI8,@object # @_ZTI15CSSPropertyAPI8
+	.globl	_ZTI15CSSPropertyAPI8
+	.p2align	4
+_ZTI15CSSPropertyAPI8:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI8
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI8, 24
+
+	.type	_ZTS15CSSPropertyAPI9,@object # @_ZTS15CSSPropertyAPI9
+	.globl	_ZTS15CSSPropertyAPI9
+	.p2align	4
+_ZTS15CSSPropertyAPI9:
+	.asciz	"15CSSPropertyAPI9"
+	.size	_ZTS15CSSPropertyAPI9, 18
+
+	.type	_ZTI15CSSPropertyAPI9,@object # @_ZTI15CSSPropertyAPI9
+	.globl	_ZTI15CSSPropertyAPI9
+	.p2align	4
+_ZTI15CSSPropertyAPI9:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS15CSSPropertyAPI9
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI15CSSPropertyAPI9, 24
+
+	.type	_ZTS16CSSPropertyAPI10,@object # @_ZTS16CSSPropertyAPI10
+	.globl	_ZTS16CSSPropertyAPI10
+	.p2align	4
+_ZTS16CSSPropertyAPI10:
+	.asciz	"16CSSPropertyAPI10"
+	.size	_ZTS16CSSPropertyAPI10, 19
+
+	.type	_ZTI16CSSPropertyAPI10,@object # @_ZTI16CSSPropertyAPI10
+	.globl	_ZTI16CSSPropertyAPI10
+	.p2align	4
+_ZTI16CSSPropertyAPI10:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS16CSSPropertyAPI10
+	.quad	_ZTI14CSSPropertyAPI
+	.size	_ZTI16CSSPropertyAPI10, 24
 
 
 	.ident	"clang version 5.0.0 (trunk 307486)"

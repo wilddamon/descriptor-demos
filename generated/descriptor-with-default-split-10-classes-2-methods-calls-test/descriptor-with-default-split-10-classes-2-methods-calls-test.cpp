@@ -94,44 +94,12 @@ increment_me += 11;
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPI8::parse,
-    CSSPropertyAPI8::other,
-  },
-  {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
   },
   {
     CSSPropertyAPIDefault::parse,
     CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
-  },
-  {
-    CSSPropertyAPI10::parse,
-    CSSPropertyAPI10::other,
-  },
-  {
-    CSSPropertyAPI6::parse,
-    CSSPropertyAPI6::other,
-  },
-  {
-    CSSPropertyAPI9::parse,
-    CSSPropertyAPI9::other,
   },
   {
     CSSPropertyAPI2::parse,
@@ -146,20 +114,48 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPIDefault::other,
   },
   {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI6::parse,
+    CSSPropertyAPI6::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
   },
   {
     CSSPropertyAPI5::parse,
     CSSPropertyAPI5::other,
   },
   {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
+    CSSPropertyAPIDefault::parse,
+    CSSPropertyAPIDefault::other,
+  },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
+  },
+  {
+    CSSPropertyAPI10::parse,
+    CSSPropertyAPI10::other,
   },
   {
     CSSPropertyAPI4::parse,
     CSSPropertyAPI4::other,
+  },
+  {
+    CSSPropertyAPI9::parse,
+    CSSPropertyAPI9::other,
   },
   {
     CSSPropertyAPIDefault::parse,
@@ -170,32 +166,36 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI7::other,
   },
   {
-    CSSPropertyAPIDefault::parse,
-    CSSPropertyAPIDefault::other,
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
+  },
+  {
+    CSSPropertyAPI8::parse,
+    CSSPropertyAPI8::other,
   },
 };
 
 static size_t descriptorIndices[] = {
-  17,
-  0,
-  19,
-  13,
-  5,
-  2,
-  15,
-  10,
-  9,
-  4,
-  8,
   6,
+  15,
+  5,
+  3,
+  0,
+  11,
+  8,
+  12,
+  13,
+  9,
+  10,
+  2,
+  4,
+  7,
+  18,
+  14,
+  19,
   1,
   16,
-  12,
-  14,
-  11,
-  3,
-  18,
-  7,
+  17,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

@@ -17,26 +17,26 @@ int main(int argc, char** argv) {
     t = clock();
     const CSSPropertyAPI& api = GetPropertyAPI(num);
     for (int i = 0; i < 50; i++) {
-      api.method4();
-      api.method14();
-      api.method18();
+      api.method3();
+      api.method6();
+      api.method1();
       api.method13();
+      api.method2();
       api.method15();
       api.method20();
-      api.method1();
-      api.method19();
-      api.method12();
-      api.method10();
-      api.method7();
-      api.method8();
       api.method16();
-      api.method17();
-      api.method9();
-      api.method2();
-      api.method6();
-      api.method3();
+      api.method14();
+      api.method7();
+      api.method12();
+      api.method18();
       api.method5();
+      api.method9();
+      api.method8();
+      api.method4();
       api.method11();
+      api.method10();
+      api.method17();
+      api.method19();
     }
     clock_t result = clock() - t;
 

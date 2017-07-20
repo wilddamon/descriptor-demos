@@ -61,26 +61,36 @@ main:                                   # @main
 .LBB0_2:                                # %for.body7
                                         #   Parent Loop BB0_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method9Ev
+	callq	*72(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method10Ev
+	callq	*64(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method6Ev
+	callq	*8(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method1Ev
+	callq	*48(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method3Ev
+	callq	*24(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method4Ev
+	callq	*32(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method8Ev
+	callq	*40(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method2Ev
+	callq	*56(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method7Ev
+	callq	*(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method5Ev
+	callq	*16(%rax)
 	decl	%ebp
 	jne	.LBB0_2
 # BB#3:                                 # %for.cond.cleanup6

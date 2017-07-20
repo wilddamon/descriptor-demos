@@ -17,8 +17,8 @@ int main(int argc, char** argv) {
     t = clock();
     const CSSPropertyAPI& api = GetPropertyAPI(num);
     for (int i = 0; i < 500; i++) {
-      api.method2();
       api.method1();
+      api.method2();
     }
     clock_t result = clock() - t;
 

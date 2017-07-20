@@ -234,16 +234,16 @@ increment_me:
 	.section	.rodata,"a",@progbits
 	.p2align	4
 .Lswitch.table.main.2:
-	.long	6                       # 0x6
 	.long	7                       # 0x7
-	.long	2                       # 0x2
-	.long	5                       # 0x5
-	.long	9                       # 0x9
-	.long	4                       # 0x4
 	.long	3                       # 0x3
-	.long	1                       # 0x1
 	.long	8                       # 0x8
+	.long	4                       # 0x4
+	.long	9                       # 0x9
+	.long	5                       # 0x5
 	.long	10                      # 0xa
+	.long	1                       # 0x1
+	.long	2                       # 0x2
+	.long	6                       # 0x6
 	.size	.Lswitch.table.main.2, 40
 
 

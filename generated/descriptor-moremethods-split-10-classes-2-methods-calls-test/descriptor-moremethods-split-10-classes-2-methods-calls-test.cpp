@@ -68,32 +68,16 @@ void CSSPropertyAPI10::method2() {
 }
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-CSSPropertyAPI1::method1,
-CSSPropertyAPI1::method2,
-  },
-  {
 nullptr,
 nullptr,
   },
   {
-CSSPropertyAPI8::method1,
-CSSPropertyAPI8::method2,
+CSSPropertyAPI2::method1,
+CSSPropertyAPI2::method2,
   },
   {
 CSSPropertyAPI3::method1,
 CSSPropertyAPI3::method2,
-  },
-  {
-CSSPropertyAPI7::method1,
-CSSPropertyAPI7::method2,
-  },
-  {
-nullptr,
-nullptr,
-  },
-  {
-nullptr,
-nullptr,
   },
   {
 nullptr,
@@ -112,12 +96,20 @@ nullptr,
 nullptr,
   },
   {
-CSSPropertyAPI5::method1,
-CSSPropertyAPI5::method2,
+CSSPropertyAPI7::method1,
+CSSPropertyAPI7::method2,
   },
   {
-CSSPropertyAPI4::method1,
-CSSPropertyAPI4::method2,
+CSSPropertyAPI1::method1,
+CSSPropertyAPI1::method2,
+  },
+  {
+nullptr,
+nullptr,
+  },
+  {
+nullptr,
+nullptr,
   },
   {
 CSSPropertyAPI9::method1,
@@ -136,40 +128,48 @@ nullptr,
 nullptr,
   },
   {
-nullptr,
-nullptr,
-  },
-  {
-CSSPropertyAPI2::method1,
-CSSPropertyAPI2::method2,
-  },
-  {
 CSSPropertyAPI10::method1,
 CSSPropertyAPI10::method2,
+  },
+  {
+CSSPropertyAPI5::method1,
+CSSPropertyAPI5::method2,
+  },
+  {
+CSSPropertyAPI8::method1,
+CSSPropertyAPI8::method2,
+  },
+  {
+CSSPropertyAPI4::method1,
+CSSPropertyAPI4::method2,
+  },
+  {
+nullptr,
+nullptr,
   },
 };
 
 static size_t descriptorIndices[] = {
-  8,
-  9,
-  7,
-  1,
-  0,
   17,
+  7,
   12,
-  10,
-  3,
-  6,
-  19,
-  15,
-  2,
   13,
+  0,
+  18,
+  5,
+  4,
+  15,
+  10,
+  19,
+  6,
+  16,
   14,
   11,
-  18,
-  4,
-  16,
-  5,
+  8,
+  3,
+  9,
+  2,
+  1,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

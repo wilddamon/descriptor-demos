@@ -41,7 +41,6 @@ main:                                   # @main
 .LBB0_1:                                # %for.body
                                         # =>This Loop Header: Depth=1
                                         #     Child Loop BB0_2 Depth 2
-                                        #     Child Loop BB0_4 Depth 2
 	callq	rand
 	movslq	%eax, %rbx
 	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
@@ -65,21 +64,12 @@ main:                                   # @main
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	callq	*(%rax)
-	decl	%ebp
-	jne	.LBB0_2
-# BB#3:                                 # %for.body12.preheader
-                                        #   in Loop: Header=BB0_1 Depth=1
-	movl	$500, %ebp              # imm = 0x1F4
-	.p2align	4, 0x90
-.LBB0_4:                                # %for.body12
-                                        #   Parent Loop BB0_1 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	callq	*8(%rax)
 	decl	%ebp
-	jne	.LBB0_4
-# BB#5:                                 # %for.cond.cleanup11
+	jne	.LBB0_2
+# BB#3:                                 # %for.cond.cleanup6
                                         #   in Loop: Header=BB0_1 Depth=1
 	callq	clock
 	movq	%rax, %rcx
@@ -95,7 +85,7 @@ main:                                   # @main
 	incl	%r12d
 	cmpl	$51, %r12d
 	jne	.LBB0_1
-# BB#6:                                 # %for.cond.cleanup
+# BB#4:                                 # %for.cond.cleanup
 	movl	$.Lstr, %edi
 	callq	puts
 	movabsq	$-6640827866535438581, %rcx # imm = 0xA3D70A3D70A3D70B

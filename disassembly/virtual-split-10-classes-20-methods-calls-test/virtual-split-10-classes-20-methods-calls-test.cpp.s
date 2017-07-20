@@ -273,42 +273,42 @@ _Z14GetPropertyAPIi:                    # @_Z14GetPropertyAPIi
 	.cfi_startproc
 # BB#0:                                 # %entry
                                         # kill: %EDI<def> %EDI<kill> %RDI<def>
-	movl	$_ZZ14GetPropertyAPIiE11default_api, %eax
-	addl	$-3, %edi
-	cmpl	$16, %edi
-	ja	.LBB22_12
+	decl	%edi
+	cmpl	$19, %edi
+	ja	.LBB22_11
 # BB#1:                                 # %entry
-	jmpq	*.LJTI22_0(,%rdi,8)
-.LBB22_2:                               # %sw.bb2
 	movl	$_ZZ14GetPropertyAPIiE5api_7, %eax
+	jmpq	*.LJTI22_0(,%rdi,8)
+.LBB22_11:                              # %sw.default
+	movl	$_ZZ14GetPropertyAPIiE11default_api, %eax
+.LBB22_12:                              # %return
 	retq
-.LBB22_3:                               # %sw.bb4
-	movl	$_ZZ14GetPropertyAPIiE6api_10, %eax
-	retq
-.LBB22_4:                               # %sw.bb5
-	movl	$_ZZ14GetPropertyAPIiE5api_3, %eax
-	retq
-.LBB22_5:                               # %sw.bb6
-	movl	$_ZZ14GetPropertyAPIiE5api_8, %eax
-	retq
-.LBB22_6:                               # %sw.bb7
-	movl	$_ZZ14GetPropertyAPIiE5api_4, %eax
-	retq
-.LBB22_7:                               # %sw.bb9
-	movl	$_ZZ14GetPropertyAPIiE5api_2, %eax
-	retq
-.LBB22_8:                               # %sw.bb12
+.LBB22_2:                               # %sw.bb3
 	movl	$_ZZ14GetPropertyAPIiE5api_5, %eax
 	retq
-.LBB22_9:                               # %sw.bb16
+.LBB22_3:                               # %sw.bb4
+	movl	$_ZZ14GetPropertyAPIiE5api_8, %eax
+	retq
+.LBB22_4:                               # %sw.bb6
+	movl	$_ZZ14GetPropertyAPIiE5api_3, %eax
+	retq
+.LBB22_5:                               # %sw.bb9
+	movl	$_ZZ14GetPropertyAPIiE5api_6, %eax
+	retq
+.LBB22_6:                               # %sw.bb11
+	movl	$_ZZ14GetPropertyAPIiE5api_2, %eax
+	retq
+.LBB22_7:                               # %sw.bb12
 	movl	$_ZZ14GetPropertyAPIiE5api_1, %eax
 	retq
-.LBB22_10:                              # %sw.bb17
+.LBB22_8:                               # %sw.bb13
 	movl	$_ZZ14GetPropertyAPIiE5api_9, %eax
 	retq
-.LBB22_11:                              # %sw.bb18
-	movl	$_ZZ14GetPropertyAPIiE5api_6, %eax
-.LBB22_12:                              # %return
+.LBB22_9:                               # %sw.bb17
+	movl	$_ZZ14GetPropertyAPIiE5api_4, %eax
+	retq
+.LBB22_10:                              # %sw.bb19
+	movl	$_ZZ14GetPropertyAPIiE6api_10, %eax
 	retq
 .Lfunc_end22:
 	.size	_Z14GetPropertyAPIi, .Lfunc_end22-_Z14GetPropertyAPIi
@@ -316,23 +316,26 @@ _Z14GetPropertyAPIi:                    # @_Z14GetPropertyAPIi
 	.section	.rodata,"a",@progbits
 	.p2align	3
 .LJTI22_0:
-	.quad	.LBB22_2
 	.quad	.LBB22_12
-	.quad	.LBB22_3
-	.quad	.LBB22_4
-	.quad	.LBB22_5
-	.quad	.LBB22_6
-	.quad	.LBB22_12
-	.quad	.LBB22_7
-	.quad	.LBB22_12
-	.quad	.LBB22_12
-	.quad	.LBB22_8
-	.quad	.LBB22_12
-	.quad	.LBB22_12
-	.quad	.LBB22_12
-	.quad	.LBB22_9
-	.quad	.LBB22_10
 	.quad	.LBB22_11
+	.quad	.LBB22_11
+	.quad	.LBB22_2
+	.quad	.LBB22_3
+	.quad	.LBB22_11
+	.quad	.LBB22_4
+	.quad	.LBB22_11
+	.quad	.LBB22_11
+	.quad	.LBB22_5
+	.quad	.LBB22_11
+	.quad	.LBB22_6
+	.quad	.LBB22_7
+	.quad	.LBB22_8
+	.quad	.LBB22_11
+	.quad	.LBB22_11
+	.quad	.LBB22_11
+	.quad	.LBB22_9
+	.quad	.LBB22_11
+	.quad	.LBB22_10
                                         # -- End function
 	.text
 	.globl	_Z16ParsePropertyAPIi   # -- Begin function _Z16ParsePropertyAPIi
@@ -342,51 +345,51 @@ _Z16ParsePropertyAPIi:                  # @_Z16ParsePropertyAPIi
 	.cfi_startproc
 # BB#0:                                 # %entry
 	movl	%edi, %eax
-	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
-	addl	$-3, %eax
-	cmpl	$16, %eax
-	ja	.LBB23_12
+	decl	%eax
+	cmpl	$19, %eax
+	ja	.LBB23_11
 # BB#1:                                 # %entry
-	jmpq	*.LJTI23_0(,%rax,8)
-.LBB23_2:                               # %sw.bb2.i
 	movl	$_ZZ14GetPropertyAPIiE5api_7, %edi
+	jmpq	*.LJTI23_0(,%rax,8)
+.LBB23_11:                              # %sw.default.i
+	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
+.LBB23_12:                              # %_Z14GetPropertyAPIi.exit
 	movq	(%rdi), %rax
 	jmpq	*(%rax)                 # TAILCALL
-.LBB23_3:                               # %sw.bb4.i
-	movl	$_ZZ14GetPropertyAPIiE6api_10, %edi
-	movq	(%rdi), %rax
-	jmpq	*(%rax)                 # TAILCALL
-.LBB23_4:                               # %sw.bb5.i
-	movl	$_ZZ14GetPropertyAPIiE5api_3, %edi
-	movq	(%rdi), %rax
-	jmpq	*(%rax)                 # TAILCALL
-.LBB23_5:                               # %sw.bb6.i
-	movl	$_ZZ14GetPropertyAPIiE5api_8, %edi
-	movq	(%rdi), %rax
-	jmpq	*(%rax)                 # TAILCALL
-.LBB23_6:                               # %sw.bb7.i
-	movl	$_ZZ14GetPropertyAPIiE5api_4, %edi
-	movq	(%rdi), %rax
-	jmpq	*(%rax)                 # TAILCALL
-.LBB23_7:                               # %sw.bb9.i
-	movl	$_ZZ14GetPropertyAPIiE5api_2, %edi
-	movq	(%rdi), %rax
-	jmpq	*(%rax)                 # TAILCALL
-.LBB23_8:                               # %sw.bb12.i
+.LBB23_2:                               # %sw.bb3.i
 	movl	$_ZZ14GetPropertyAPIiE5api_5, %edi
 	movq	(%rdi), %rax
 	jmpq	*(%rax)                 # TAILCALL
-.LBB23_9:                               # %sw.bb16.i
+.LBB23_3:                               # %sw.bb4.i
+	movl	$_ZZ14GetPropertyAPIiE5api_8, %edi
+	movq	(%rdi), %rax
+	jmpq	*(%rax)                 # TAILCALL
+.LBB23_4:                               # %sw.bb6.i
+	movl	$_ZZ14GetPropertyAPIiE5api_3, %edi
+	movq	(%rdi), %rax
+	jmpq	*(%rax)                 # TAILCALL
+.LBB23_5:                               # %sw.bb9.i
+	movl	$_ZZ14GetPropertyAPIiE5api_6, %edi
+	movq	(%rdi), %rax
+	jmpq	*(%rax)                 # TAILCALL
+.LBB23_6:                               # %sw.bb11.i
+	movl	$_ZZ14GetPropertyAPIiE5api_2, %edi
+	movq	(%rdi), %rax
+	jmpq	*(%rax)                 # TAILCALL
+.LBB23_7:                               # %sw.bb12.i
 	movl	$_ZZ14GetPropertyAPIiE5api_1, %edi
 	movq	(%rdi), %rax
 	jmpq	*(%rax)                 # TAILCALL
-.LBB23_10:                              # %sw.bb17.i
+.LBB23_8:                               # %sw.bb13.i
 	movl	$_ZZ14GetPropertyAPIiE5api_9, %edi
 	movq	(%rdi), %rax
 	jmpq	*(%rax)                 # TAILCALL
-.LBB23_11:                              # %sw.bb18.i
-	movl	$_ZZ14GetPropertyAPIiE5api_6, %edi
-.LBB23_12:                              # %_Z14GetPropertyAPIi.exit
+.LBB23_9:                               # %sw.bb17.i
+	movl	$_ZZ14GetPropertyAPIiE5api_4, %edi
+	movq	(%rdi), %rax
+	jmpq	*(%rax)                 # TAILCALL
+.LBB23_10:                              # %sw.bb19.i
+	movl	$_ZZ14GetPropertyAPIiE6api_10, %edi
 	movq	(%rdi), %rax
 	jmpq	*(%rax)                 # TAILCALL
 .Lfunc_end23:
@@ -395,23 +398,26 @@ _Z16ParsePropertyAPIi:                  # @_Z16ParsePropertyAPIi
 	.section	.rodata,"a",@progbits
 	.p2align	3
 .LJTI23_0:
-	.quad	.LBB23_2
 	.quad	.LBB23_12
-	.quad	.LBB23_3
-	.quad	.LBB23_4
-	.quad	.LBB23_5
-	.quad	.LBB23_6
-	.quad	.LBB23_12
-	.quad	.LBB23_7
-	.quad	.LBB23_12
-	.quad	.LBB23_12
-	.quad	.LBB23_8
-	.quad	.LBB23_12
-	.quad	.LBB23_12
-	.quad	.LBB23_12
-	.quad	.LBB23_9
-	.quad	.LBB23_10
 	.quad	.LBB23_11
+	.quad	.LBB23_11
+	.quad	.LBB23_2
+	.quad	.LBB23_3
+	.quad	.LBB23_11
+	.quad	.LBB23_4
+	.quad	.LBB23_11
+	.quad	.LBB23_11
+	.quad	.LBB23_5
+	.quad	.LBB23_11
+	.quad	.LBB23_6
+	.quad	.LBB23_7
+	.quad	.LBB23_8
+	.quad	.LBB23_11
+	.quad	.LBB23_11
+	.quad	.LBB23_11
+	.quad	.LBB23_9
+	.quad	.LBB23_11
+	.quad	.LBB23_10
                                         # -- End function
 	.text
 	.globl	_Z16OtherPropertyAPIi   # -- Begin function _Z16OtherPropertyAPIi
@@ -421,51 +427,51 @@ _Z16OtherPropertyAPIi:                  # @_Z16OtherPropertyAPIi
 	.cfi_startproc
 # BB#0:                                 # %entry
 	movl	%edi, %eax
-	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
-	addl	$-3, %eax
-	cmpl	$16, %eax
-	ja	.LBB24_12
+	decl	%eax
+	cmpl	$19, %eax
+	ja	.LBB24_11
 # BB#1:                                 # %entry
-	jmpq	*.LJTI24_0(,%rax,8)
-.LBB24_2:                               # %sw.bb2.i
 	movl	$_ZZ14GetPropertyAPIiE5api_7, %edi
+	jmpq	*.LJTI24_0(,%rax,8)
+.LBB24_11:                              # %sw.default.i
+	movl	$_ZZ14GetPropertyAPIiE11default_api, %edi
+.LBB24_12:                              # %_Z14GetPropertyAPIi.exit
 	movq	(%rdi), %rax
 	jmpq	*8(%rax)                # TAILCALL
-.LBB24_3:                               # %sw.bb4.i
-	movl	$_ZZ14GetPropertyAPIiE6api_10, %edi
-	movq	(%rdi), %rax
-	jmpq	*8(%rax)                # TAILCALL
-.LBB24_4:                               # %sw.bb5.i
-	movl	$_ZZ14GetPropertyAPIiE5api_3, %edi
-	movq	(%rdi), %rax
-	jmpq	*8(%rax)                # TAILCALL
-.LBB24_5:                               # %sw.bb6.i
-	movl	$_ZZ14GetPropertyAPIiE5api_8, %edi
-	movq	(%rdi), %rax
-	jmpq	*8(%rax)                # TAILCALL
-.LBB24_6:                               # %sw.bb7.i
-	movl	$_ZZ14GetPropertyAPIiE5api_4, %edi
-	movq	(%rdi), %rax
-	jmpq	*8(%rax)                # TAILCALL
-.LBB24_7:                               # %sw.bb9.i
-	movl	$_ZZ14GetPropertyAPIiE5api_2, %edi
-	movq	(%rdi), %rax
-	jmpq	*8(%rax)                # TAILCALL
-.LBB24_8:                               # %sw.bb12.i
+.LBB24_2:                               # %sw.bb3.i
 	movl	$_ZZ14GetPropertyAPIiE5api_5, %edi
 	movq	(%rdi), %rax
 	jmpq	*8(%rax)                # TAILCALL
-.LBB24_9:                               # %sw.bb16.i
+.LBB24_3:                               # %sw.bb4.i
+	movl	$_ZZ14GetPropertyAPIiE5api_8, %edi
+	movq	(%rdi), %rax
+	jmpq	*8(%rax)                # TAILCALL
+.LBB24_4:                               # %sw.bb6.i
+	movl	$_ZZ14GetPropertyAPIiE5api_3, %edi
+	movq	(%rdi), %rax
+	jmpq	*8(%rax)                # TAILCALL
+.LBB24_5:                               # %sw.bb9.i
+	movl	$_ZZ14GetPropertyAPIiE5api_6, %edi
+	movq	(%rdi), %rax
+	jmpq	*8(%rax)                # TAILCALL
+.LBB24_6:                               # %sw.bb11.i
+	movl	$_ZZ14GetPropertyAPIiE5api_2, %edi
+	movq	(%rdi), %rax
+	jmpq	*8(%rax)                # TAILCALL
+.LBB24_7:                               # %sw.bb12.i
 	movl	$_ZZ14GetPropertyAPIiE5api_1, %edi
 	movq	(%rdi), %rax
 	jmpq	*8(%rax)                # TAILCALL
-.LBB24_10:                              # %sw.bb17.i
+.LBB24_8:                               # %sw.bb13.i
 	movl	$_ZZ14GetPropertyAPIiE5api_9, %edi
 	movq	(%rdi), %rax
 	jmpq	*8(%rax)                # TAILCALL
-.LBB24_11:                              # %sw.bb18.i
-	movl	$_ZZ14GetPropertyAPIiE5api_6, %edi
-.LBB24_12:                              # %_Z14GetPropertyAPIi.exit
+.LBB24_9:                               # %sw.bb17.i
+	movl	$_ZZ14GetPropertyAPIiE5api_4, %edi
+	movq	(%rdi), %rax
+	jmpq	*8(%rax)                # TAILCALL
+.LBB24_10:                              # %sw.bb19.i
+	movl	$_ZZ14GetPropertyAPIiE6api_10, %edi
 	movq	(%rdi), %rax
 	jmpq	*8(%rax)                # TAILCALL
 .Lfunc_end24:
@@ -474,23 +480,26 @@ _Z16OtherPropertyAPIi:                  # @_Z16OtherPropertyAPIi
 	.section	.rodata,"a",@progbits
 	.p2align	3
 .LJTI24_0:
-	.quad	.LBB24_2
 	.quad	.LBB24_12
-	.quad	.LBB24_3
-	.quad	.LBB24_4
-	.quad	.LBB24_5
-	.quad	.LBB24_6
-	.quad	.LBB24_12
-	.quad	.LBB24_7
-	.quad	.LBB24_12
-	.quad	.LBB24_12
-	.quad	.LBB24_8
-	.quad	.LBB24_12
-	.quad	.LBB24_12
-	.quad	.LBB24_12
-	.quad	.LBB24_9
-	.quad	.LBB24_10
 	.quad	.LBB24_11
+	.quad	.LBB24_11
+	.quad	.LBB24_2
+	.quad	.LBB24_3
+	.quad	.LBB24_11
+	.quad	.LBB24_4
+	.quad	.LBB24_11
+	.quad	.LBB24_11
+	.quad	.LBB24_5
+	.quad	.LBB24_11
+	.quad	.LBB24_6
+	.quad	.LBB24_7
+	.quad	.LBB24_8
+	.quad	.LBB24_11
+	.quad	.LBB24_11
+	.quad	.LBB24_11
+	.quad	.LBB24_9
+	.quad	.LBB24_11
+	.quad	.LBB24_10
                                         # -- End function
 	.type	increment_me,@object    # @increment_me
 	.bss
@@ -533,37 +542,21 @@ _ZTV15CSSPropertyAPI7:
 	.quad	_ZNK15CSSPropertyAPI75otherEv
 	.size	_ZTV15CSSPropertyAPI7, 32
 
-	.type	_ZZ14GetPropertyAPIiE6api_10,@object # @_ZZ14GetPropertyAPIiE6api_10
+	.type	_ZZ14GetPropertyAPIiE5api_5,@object # @_ZZ14GetPropertyAPIiE5api_5
 	.p2align	3
-_ZZ14GetPropertyAPIiE6api_10:
-	.quad	_ZTV16CSSPropertyAPI10+16
-	.size	_ZZ14GetPropertyAPIiE6api_10, 8
+_ZZ14GetPropertyAPIiE5api_5:
+	.quad	_ZTV15CSSPropertyAPI5+16
+	.size	_ZZ14GetPropertyAPIiE5api_5, 8
 
-	.type	_ZTV16CSSPropertyAPI10,@object # @_ZTV16CSSPropertyAPI10
-	.globl	_ZTV16CSSPropertyAPI10
+	.type	_ZTV15CSSPropertyAPI5,@object # @_ZTV15CSSPropertyAPI5
+	.globl	_ZTV15CSSPropertyAPI5
 	.p2align	3
-_ZTV16CSSPropertyAPI10:
+_ZTV15CSSPropertyAPI5:
 	.quad	0
-	.quad	_ZTI16CSSPropertyAPI10
-	.quad	_ZNK16CSSPropertyAPI105parseEv
-	.quad	_ZNK16CSSPropertyAPI105otherEv
-	.size	_ZTV16CSSPropertyAPI10, 32
-
-	.type	_ZZ14GetPropertyAPIiE5api_3,@object # @_ZZ14GetPropertyAPIiE5api_3
-	.p2align	3
-_ZZ14GetPropertyAPIiE5api_3:
-	.quad	_ZTV15CSSPropertyAPI3+16
-	.size	_ZZ14GetPropertyAPIiE5api_3, 8
-
-	.type	_ZTV15CSSPropertyAPI3,@object # @_ZTV15CSSPropertyAPI3
-	.globl	_ZTV15CSSPropertyAPI3
-	.p2align	3
-_ZTV15CSSPropertyAPI3:
-	.quad	0
-	.quad	_ZTI15CSSPropertyAPI3
-	.quad	_ZNK15CSSPropertyAPI35parseEv
-	.quad	_ZNK15CSSPropertyAPI35otherEv
-	.size	_ZTV15CSSPropertyAPI3, 32
+	.quad	_ZTI15CSSPropertyAPI5
+	.quad	_ZNK15CSSPropertyAPI55parseEv
+	.quad	_ZNK15CSSPropertyAPI55otherEv
+	.size	_ZTV15CSSPropertyAPI5, 32
 
 	.type	_ZZ14GetPropertyAPIiE5api_8,@object # @_ZZ14GetPropertyAPIiE5api_8
 	.p2align	3
@@ -581,21 +574,37 @@ _ZTV15CSSPropertyAPI8:
 	.quad	_ZNK15CSSPropertyAPI85otherEv
 	.size	_ZTV15CSSPropertyAPI8, 32
 
-	.type	_ZZ14GetPropertyAPIiE5api_4,@object # @_ZZ14GetPropertyAPIiE5api_4
+	.type	_ZZ14GetPropertyAPIiE5api_3,@object # @_ZZ14GetPropertyAPIiE5api_3
 	.p2align	3
-_ZZ14GetPropertyAPIiE5api_4:
-	.quad	_ZTV15CSSPropertyAPI4+16
-	.size	_ZZ14GetPropertyAPIiE5api_4, 8
+_ZZ14GetPropertyAPIiE5api_3:
+	.quad	_ZTV15CSSPropertyAPI3+16
+	.size	_ZZ14GetPropertyAPIiE5api_3, 8
 
-	.type	_ZTV15CSSPropertyAPI4,@object # @_ZTV15CSSPropertyAPI4
-	.globl	_ZTV15CSSPropertyAPI4
+	.type	_ZTV15CSSPropertyAPI3,@object # @_ZTV15CSSPropertyAPI3
+	.globl	_ZTV15CSSPropertyAPI3
 	.p2align	3
-_ZTV15CSSPropertyAPI4:
+_ZTV15CSSPropertyAPI3:
 	.quad	0
-	.quad	_ZTI15CSSPropertyAPI4
-	.quad	_ZNK15CSSPropertyAPI45parseEv
-	.quad	_ZNK15CSSPropertyAPI45otherEv
-	.size	_ZTV15CSSPropertyAPI4, 32
+	.quad	_ZTI15CSSPropertyAPI3
+	.quad	_ZNK15CSSPropertyAPI35parseEv
+	.quad	_ZNK15CSSPropertyAPI35otherEv
+	.size	_ZTV15CSSPropertyAPI3, 32
+
+	.type	_ZZ14GetPropertyAPIiE5api_6,@object # @_ZZ14GetPropertyAPIiE5api_6
+	.p2align	3
+_ZZ14GetPropertyAPIiE5api_6:
+	.quad	_ZTV15CSSPropertyAPI6+16
+	.size	_ZZ14GetPropertyAPIiE5api_6, 8
+
+	.type	_ZTV15CSSPropertyAPI6,@object # @_ZTV15CSSPropertyAPI6
+	.globl	_ZTV15CSSPropertyAPI6
+	.p2align	3
+_ZTV15CSSPropertyAPI6:
+	.quad	0
+	.quad	_ZTI15CSSPropertyAPI6
+	.quad	_ZNK15CSSPropertyAPI65parseEv
+	.quad	_ZNK15CSSPropertyAPI65otherEv
+	.size	_ZTV15CSSPropertyAPI6, 32
 
 	.type	_ZZ14GetPropertyAPIiE5api_2,@object # @_ZZ14GetPropertyAPIiE5api_2
 	.p2align	3
@@ -612,22 +621,6 @@ _ZTV15CSSPropertyAPI2:
 	.quad	_ZNK15CSSPropertyAPI25parseEv
 	.quad	_ZNK15CSSPropertyAPI25otherEv
 	.size	_ZTV15CSSPropertyAPI2, 32
-
-	.type	_ZZ14GetPropertyAPIiE5api_5,@object # @_ZZ14GetPropertyAPIiE5api_5
-	.p2align	3
-_ZZ14GetPropertyAPIiE5api_5:
-	.quad	_ZTV15CSSPropertyAPI5+16
-	.size	_ZZ14GetPropertyAPIiE5api_5, 8
-
-	.type	_ZTV15CSSPropertyAPI5,@object # @_ZTV15CSSPropertyAPI5
-	.globl	_ZTV15CSSPropertyAPI5
-	.p2align	3
-_ZTV15CSSPropertyAPI5:
-	.quad	0
-	.quad	_ZTI15CSSPropertyAPI5
-	.quad	_ZNK15CSSPropertyAPI55parseEv
-	.quad	_ZNK15CSSPropertyAPI55otherEv
-	.size	_ZTV15CSSPropertyAPI5, 32
 
 	.type	_ZZ14GetPropertyAPIiE5api_1,@object # @_ZZ14GetPropertyAPIiE5api_1
 	.p2align	3
@@ -661,21 +654,37 @@ _ZTV15CSSPropertyAPI9:
 	.quad	_ZNK15CSSPropertyAPI95otherEv
 	.size	_ZTV15CSSPropertyAPI9, 32
 
-	.type	_ZZ14GetPropertyAPIiE5api_6,@object # @_ZZ14GetPropertyAPIiE5api_6
+	.type	_ZZ14GetPropertyAPIiE5api_4,@object # @_ZZ14GetPropertyAPIiE5api_4
 	.p2align	3
-_ZZ14GetPropertyAPIiE5api_6:
-	.quad	_ZTV15CSSPropertyAPI6+16
-	.size	_ZZ14GetPropertyAPIiE5api_6, 8
+_ZZ14GetPropertyAPIiE5api_4:
+	.quad	_ZTV15CSSPropertyAPI4+16
+	.size	_ZZ14GetPropertyAPIiE5api_4, 8
 
-	.type	_ZTV15CSSPropertyAPI6,@object # @_ZTV15CSSPropertyAPI6
-	.globl	_ZTV15CSSPropertyAPI6
+	.type	_ZTV15CSSPropertyAPI4,@object # @_ZTV15CSSPropertyAPI4
+	.globl	_ZTV15CSSPropertyAPI4
 	.p2align	3
-_ZTV15CSSPropertyAPI6:
+_ZTV15CSSPropertyAPI4:
 	.quad	0
-	.quad	_ZTI15CSSPropertyAPI6
-	.quad	_ZNK15CSSPropertyAPI65parseEv
-	.quad	_ZNK15CSSPropertyAPI65otherEv
-	.size	_ZTV15CSSPropertyAPI6, 32
+	.quad	_ZTI15CSSPropertyAPI4
+	.quad	_ZNK15CSSPropertyAPI45parseEv
+	.quad	_ZNK15CSSPropertyAPI45otherEv
+	.size	_ZTV15CSSPropertyAPI4, 32
+
+	.type	_ZZ14GetPropertyAPIiE6api_10,@object # @_ZZ14GetPropertyAPIiE6api_10
+	.p2align	3
+_ZZ14GetPropertyAPIiE6api_10:
+	.quad	_ZTV16CSSPropertyAPI10+16
+	.size	_ZZ14GetPropertyAPIiE6api_10, 8
+
+	.type	_ZTV16CSSPropertyAPI10,@object # @_ZTV16CSSPropertyAPI10
+	.globl	_ZTV16CSSPropertyAPI10
+	.p2align	3
+_ZTV16CSSPropertyAPI10:
+	.quad	0
+	.quad	_ZTI16CSSPropertyAPI10
+	.quad	_ZNK16CSSPropertyAPI105parseEv
+	.quad	_ZNK16CSSPropertyAPI105otherEv
+	.size	_ZTV16CSSPropertyAPI10, 32
 
 	.type	_ZTS14CSSPropertyAPI,@object # @_ZTS14CSSPropertyAPI
 	.globl	_ZTS14CSSPropertyAPI

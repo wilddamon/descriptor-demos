@@ -71,15 +71,15 @@ class Class10 {
 typedef void (*do_something_function)();
 do_something_function function_array[] = {
   Class9::doSomethingStatic,
-  Class2::doSomethingStatic,
-  Class8::doSomethingStatic,
-  Class6::doSomethingStatic,
   Class10::doSomethingStatic,
-  Class1::doSomethingStatic,
-  Class3::doSomethingStatic,
-  Class7::doSomethingStatic,
   Class5::doSomethingStatic,
+  Class1::doSomethingStatic,
+  Class2::doSomethingStatic,
+  Class6::doSomethingStatic,
   Class4::doSomethingStatic,
+  Class3::doSomethingStatic,
+  Class8::doSomethingStatic,
+  Class7::doSomethingStatic,
 };
 
 void callWithArrayLookup(int classId) {

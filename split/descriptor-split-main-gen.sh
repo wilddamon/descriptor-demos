@@ -52,8 +52,6 @@ EOF
 read -d '' loop <<EOF
     for (int i = 0; i < $(($NUM_ITERATIONS/2)); i++) {
       parse(num);
-    }
-    for (int i = 0; i < $(($NUM_ITERATIONS/2)); i++) {
       other(num);
     }
 

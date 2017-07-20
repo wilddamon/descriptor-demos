@@ -61,46 +61,66 @@ main:                                   # @main
 .LBB0_2:                                # %for.body7
                                         #   Parent Loop BB0_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method4Ev
+	callq	*16(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method14Ev
+	callq	*40(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method18Ev
+	callq	*(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method13Ev
+	callq	*96(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method15Ev
+	callq	*8(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method20Ev
+	callq	*112(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method1Ev
+	callq	*152(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method19Ev
+	callq	*120(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method12Ev
+	callq	*104(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method10Ev
+	callq	*48(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method7Ev
+	callq	*88(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method8Ev
+	callq	*136(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method16Ev
+	callq	*32(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method17Ev
+	callq	*64(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method9Ev
+	callq	*56(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method2Ev
+	callq	*24(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method6Ev
+	callq	*80(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method3Ev
+	callq	*72(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI7method5Ev
+	callq	*128(%rax)
+	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	callq	_ZNK14CSSPropertyAPI8method11Ev
+	callq	*144(%rax)
 	decl	%ebp
 	jne	.LBB0_2
 # BB#3:                                 # %for.cond.cleanup6

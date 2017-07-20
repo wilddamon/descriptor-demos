@@ -53,34 +53,34 @@ class Class10 : public ClassApi {
 
 void callWithSwitchStatement(int classId) {
   switch (classId) {
-  case 3:
-    Class9::doSomethingStatic();
-    break;
-  case 8:
-    Class4::doSomethingStatic();
-    break;
-  case 6:
-    Class2::doSomethingStatic();
-    break;
   case 5:
     Class3::doSomethingStatic();
     break;
-  case 7:
-    Class6::doSomethingStatic();
-    break;
   case 1:
-    Class5::doSomethingStatic();
+    Class4::doSomethingStatic();
     break;
-  case 2:
-    Class8::doSomethingStatic();
-    break;
-  case 9:
+  case 8:
     Class10::doSomethingStatic();
     break;
-  case 4:
+  case 9:
+    Class5::doSomethingStatic();
+    break;
+  case 7:
     Class1::doSomethingStatic();
     break;
+  case 2:
+    Class2::doSomethingStatic();
+    break;
+  case 3:
+    Class9::doSomethingStatic();
+    break;
   case 10:
+    Class6::doSomethingStatic();
+    break;
+  case 4:
+    Class8::doSomethingStatic();
+    break;
+  case 6:
     Class7::doSomethingStatic();
     break;
 

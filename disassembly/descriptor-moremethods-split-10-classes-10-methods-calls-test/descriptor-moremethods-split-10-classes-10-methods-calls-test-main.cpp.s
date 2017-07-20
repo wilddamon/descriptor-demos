@@ -87,7 +87,7 @@ main:                                   # @main
 	callq	_ZN15CSSPropertyAPI17method6Ev
 .LBB0_10:                               # %if.end13
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	16(%rbx), %rax
+	movq	8(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_12
 # BB#11:                                # %if.then15
@@ -97,10 +97,10 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_12:                               # %if.else17
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method3Ev
+	callq	_ZN15CSSPropertyAPI17method2Ev
 .LBB0_13:                               # %if.end18
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	32(%rbx), %rax
+	movq	72(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_15
 # BB#14:                                # %if.then20
@@ -110,10 +110,10 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_15:                               # %if.else22
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method5Ev
+	callq	_ZN15CSSPropertyAPI18method10Ev
 .LBB0_16:                               # %if.end23
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	48(%rbx), %rax
+	movq	24(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_18
 # BB#17:                                # %if.then25
@@ -123,10 +123,10 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_18:                               # %if.else27
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method7Ev
+	callq	_ZN15CSSPropertyAPI17method4Ev
 .LBB0_19:                               # %if.end28
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	8(%rbx), %rax
+	movq	16(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_21
 # BB#20:                                # %if.then30
@@ -136,7 +136,7 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_21:                               # %if.else32
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method2Ev
+	callq	_ZN15CSSPropertyAPI17method3Ev
 .LBB0_22:                               # %if.end33
                                         #   in Loop: Header=BB0_2 Depth=2
 	movq	56(%rbx), %rax
@@ -165,7 +165,7 @@ main:                                   # @main
 	callq	_ZN15CSSPropertyAPI17method1Ev
 .LBB0_28:                               # %if.end43
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	72(%rbx), %rax
+	movq	48(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_30
 # BB#29:                                # %if.then45
@@ -175,10 +175,10 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_30:                               # %if.else47
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI18method10Ev
+	callq	_ZN15CSSPropertyAPI17method7Ev
 .LBB0_31:                               # %if.end48
                                         #   in Loop: Header=BB0_2 Depth=2
-	movq	24(%rbx), %rax
+	movq	32(%rbx), %rax
 	testq	%rax, %rax
 	je	.LBB0_33
 # BB#32:                                # %if.then50
@@ -188,7 +188,7 @@ main:                                   # @main
 	.p2align	4, 0x90
 .LBB0_33:                               # %if.else52
                                         #   in Loop: Header=BB0_2 Depth=2
-	callq	_ZN15CSSPropertyAPI17method4Ev
+	callq	_ZN15CSSPropertyAPI17method5Ev
 .LBB0_34:                               # %for.inc
                                         #   in Loop: Header=BB0_2 Depth=2
 	decl	%ebp

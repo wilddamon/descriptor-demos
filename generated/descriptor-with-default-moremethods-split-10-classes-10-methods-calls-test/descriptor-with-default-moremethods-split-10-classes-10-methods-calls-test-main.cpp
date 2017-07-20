@@ -17,36 +17,6 @@ int main(int argc, char** argv) {
     t = clock();
     const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(num);
     for (int i = 0; i < 100; i++) {
-      if (d.method10) {
-        d.method10();
-      } else {
-        CSSPropertyAPI1::method10();
-      }
-      if (d.method2) {
-        d.method2();
-      } else {
-        CSSPropertyAPI1::method2();
-      }
-      if (d.method3) {
-        d.method3();
-      } else {
-        CSSPropertyAPI1::method3();
-      }
-      if (d.method8) {
-        d.method8();
-      } else {
-        CSSPropertyAPI1::method8();
-      }
-      if (d.method9) {
-        d.method9();
-      } else {
-        CSSPropertyAPI1::method9();
-      }
-      if (d.method5) {
-        d.method5();
-      } else {
-        CSSPropertyAPI1::method5();
-      }
       if (d.method1) {
         d.method1();
       } else {
@@ -57,10 +27,40 @@ int main(int argc, char** argv) {
       } else {
         CSSPropertyAPI1::method7();
       }
+      if (d.method10) {
+        d.method10();
+      } else {
+        CSSPropertyAPI1::method10();
+      }
+      if (d.method5) {
+        d.method5();
+      } else {
+        CSSPropertyAPI1::method5();
+      }
+      if (d.method9) {
+        d.method9();
+      } else {
+        CSSPropertyAPI1::method9();
+      }
+      if (d.method8) {
+        d.method8();
+      } else {
+        CSSPropertyAPI1::method8();
+      }
+      if (d.method2) {
+        d.method2();
+      } else {
+        CSSPropertyAPI1::method2();
+      }
       if (d.method4) {
         d.method4();
       } else {
         CSSPropertyAPI1::method4();
+      }
+      if (d.method3) {
+        d.method3();
+      } else {
+        CSSPropertyAPI1::method3();
       }
       if (d.method6) {
         d.method6();
