@@ -22,14 +22,18 @@ while test $# -gt 0; do
 done
 
 for classnum in ${classes[@]}; do
-  for methodsnum in ${num_methods[@]}; do
-    cmd="./run.sh -i $NUM_ITERATIONS -c $classnum -m $methodsnum -t $TYPE all"
 
-    if [[ $SPLIT == 1 ]]; then
-      cmd="$cmd -s"
-    fi
-
+  # number of methods only supported in split mode.
+  if [[ $SPLIT == 1 ]]; then
+    for methodsnum in ${num_methods[@]}; do
+      cmd="./run.sh -i $NUM_ITERATIONS -s -c $classnum -m $methodsnum -t $TYPE all"
+      echo $cmd
+      $cmd
+    done
+  else
+    cmd="./run.sh -i $NUM_ITERATIONS -c $classnum -t $TYPE all"
     echo $cmd
     $cmd
-  done
+  fi
+
 done

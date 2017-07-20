@@ -116,7 +116,7 @@ function run_split_impl() {
   name=$1
   if [[ $WHICH == "all" ]]; then echo "running $name"; fi
 
-  filename="$name-split-$NUM_CLASSES-classes-$TYPE-test"
+  filename="$name-split-$NUM_CLASSES-classes-$NUM_METHODS-methods-$TYPE-test"
   mainfile=$filename-main.cpp
   headerfile=$filename.h
   cppfile=$filename.cpp
