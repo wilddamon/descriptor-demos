@@ -76,6 +76,26 @@ CSSPropertyAPI1::method1,
 CSSPropertyAPI1::method2,
   },
   {
+CSSPropertyAPI6::method1,
+CSSPropertyAPI6::method2,
+  },
+  {
+CSSPropertyAPI1::method1,
+CSSPropertyAPI1::method2,
+  },
+  {
+CSSPropertyAPI1::method1,
+CSSPropertyAPI1::method2,
+  },
+  {
+CSSPropertyAPI1::method1,
+CSSPropertyAPI1::method2,
+  },
+  {
+CSSPropertyAPI1::method1,
+CSSPropertyAPI1::method2,
+  },
+  {
 CSSPropertyAPI2::method1,
 CSSPropertyAPI2::method2,
   },
@@ -84,24 +104,8 @@ CSSPropertyAPI1::method1,
 CSSPropertyAPI1::method2,
   },
   {
-CSSPropertyAPI6::method1,
-CSSPropertyAPI6::method2,
-  },
-  {
-CSSPropertyAPI3::method1,
-CSSPropertyAPI3::method2,
-  },
-  {
-CSSPropertyAPI7::method1,
-CSSPropertyAPI7::method2,
-  },
-  {
 CSSPropertyAPI1::method1,
 CSSPropertyAPI1::method2,
-  },
-  {
-CSSPropertyAPI10::method1,
-CSSPropertyAPI10::method2,
   },
   {
 CSSPropertyAPI8::method1,
@@ -112,28 +116,20 @@ CSSPropertyAPI1::method1,
 CSSPropertyAPI1::method2,
   },
   {
-CSSPropertyAPI1::method1,
-CSSPropertyAPI1::method2,
+CSSPropertyAPI7::method1,
+CSSPropertyAPI7::method2,
+  },
+  {
+CSSPropertyAPI5::method1,
+CSSPropertyAPI5::method2,
   },
   {
 CSSPropertyAPI1::method1,
 CSSPropertyAPI1::method2,
   },
   {
-CSSPropertyAPI1::method1,
-CSSPropertyAPI1::method2,
-  },
-  {
-CSSPropertyAPI1::method1,
-CSSPropertyAPI1::method2,
-  },
-  {
-CSSPropertyAPI1::method1,
-CSSPropertyAPI1::method2,
-  },
-  {
-CSSPropertyAPI9::method1,
-CSSPropertyAPI9::method2,
+CSSPropertyAPI3::method1,
+CSSPropertyAPI3::method2,
   },
   {
 CSSPropertyAPI1::method1,
@@ -144,32 +140,36 @@ CSSPropertyAPI4::method1,
 CSSPropertyAPI4::method2,
   },
   {
-CSSPropertyAPI5::method1,
-CSSPropertyAPI5::method2,
+CSSPropertyAPI9::method1,
+CSSPropertyAPI9::method2,
+  },
+  {
+CSSPropertyAPI10::method1,
+CSSPropertyAPI10::method2,
   },
 };
 
 static size_t descriptorIndices[] = {
-  4,
-  15,
-  13,
-  6,
-  12,
-  16,
-  10,
-  1,
   9,
   2,
-  11,
-  19,
-  18,
-  3,
+  13,
   0,
-  8,
-  14,
   17,
+  8,
   7,
+  6,
+  10,
+  18,
+  11,
+  14,
+  15,
+  12,
+  4,
+  1,
+  3,
+  19,
   5,
+  16,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {

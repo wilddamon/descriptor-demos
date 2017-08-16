@@ -23,7 +23,7 @@ _Z5parsei:                              # @_Z5parsei
 # BB#0:                                 # %entry
 	movslq	%edi, %rax
 	movq	_ZL17descriptorIndices(,%rax,8), %rax
-	movl	$615372, %ecx           # imm = 0x963CC
+	movl	$518529, %ecx           # imm = 0x7E981
 	btq	%rax, %rcx
 	jb	.LBB1_1
 # BB#2:                                 # %if.then
@@ -44,7 +44,7 @@ _Z5otheri:                              # @_Z5otheri
 # BB#0:                                 # %entry
 	movslq	%edi, %rax
 	movq	_ZL17descriptorIndices(,%rax,8), %rax
-	movl	$615372, %ecx           # imm = 0x963CC
+	movl	$518529, %ecx           # imm = 0x7E981
 	btq	%rax, %rcx
 	jb	.LBB2_1
 # BB#2:                                 # %if.then
@@ -100,13 +100,12 @@ main:                                   # @main
 	callq	time
 	movl	%eax, %edi
 	callq	srand
-	xorl	%r15d, %r15d
+	movl	$518529, %r15d          # imm = 0x7E981
+	xorl	%r13d, %r13d
 	xorl	%r12d, %r12d
 	.p2align	4, 0x90
 .LBB3_1:                                # %for.body
-                                        # =>This Loop Header: Depth=1
-                                        #     Child Loop BB3_2 Depth 2
-                                        #     Child Loop BB3_7 Depth 2
+                                        # =>This Inner Loop Header: Depth=1
 	callq	rand
 	movslq	%eax, %rbx
 	imulq	$1717986919, %rbx, %rax # imm = 0x66666667
@@ -118,78 +117,63 @@ main:                                   # @main
 	leal	(%rax,%rax,4), %eax
 	subl	%eax, %ebx
 	callq	clock
-	movq	%rax, (%rsp)            # 8-byte Spill
+	movq	%rax, %r14
 	movslq	%ebx, %rax
-	movq	_ZL17descriptorIndices(,%rax,8), %r13
-	movl	$615372, %ebp           # imm = 0x963CC
-	movl	%r13d, %ecx
-	shrq	%cl, %rbp
-	shlq	$4, %r13
-	leaq	_ZL11descriptors(%r13), %rbx
-	movl	$500, %r14d             # imm = 0x1F4
-	.p2align	4, 0x90
-.LBB3_2:                                # %for.body6
-                                        #   Parent Loop BB3_1 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	testb	$1, %bpl
-	jne	.LBB3_4
-# BB#3:                                 # %if.then.i
-                                        #   in Loop: Header=BB3_2 Depth=2
-	callq	*(%rbx)
-	decl	%r14d
-	jne	.LBB3_2
-	jmp	.LBB3_6
-	.p2align	4, 0x90
-.LBB3_4:                                # %if.else.i
-                                        #   in Loop: Header=BB3_2 Depth=2
-	incl	increment_me(%rip)
-	decl	%r14d
-	jne	.LBB3_2
-.LBB3_6:                                # %for.cond8.preheader
+	movq	_ZL17descriptorIndices(,%rax,8), %rbx
+	btq	%rbx, %r15
+	jb	.LBB3_2
+# BB#3:                                 # %if.then.i43.4
                                         #   in Loop: Header=BB3_1 Depth=1
-	leaq	_ZL11descriptors+8(%r13), %r14
-	movl	$500, %ebx              # imm = 0x1F4
+	shlq	$4, %rbx
+	movq	_ZL11descriptors(%rbx), %rbp
+	callq	*%rbp
+	callq	*%rbp
+	callq	*%rbp
+	callq	*%rbp
+	callq	*%rbp
+	movq	_ZL11descriptors+8(%rbx), %rbx
+	callq	*%rbx
+	callq	*%rbx
+	callq	*%rbx
+	callq	*%rbx
+	callq	*%rbx
+	jmp	.LBB3_4
 	.p2align	4, 0x90
-.LBB3_7:                                # %for.body11
-                                        #   Parent Loop BB3_1 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	testb	$1, %bpl
-	jne	.LBB3_11
-# BB#8:                                 # %if.then.i43
-                                        #   in Loop: Header=BB3_7 Depth=2
-	callq	*(%r14)
-	jmp	.LBB3_12
-	.p2align	4, 0x90
-.LBB3_11:                               # %if.else.i45
-                                        #   in Loop: Header=BB3_7 Depth=2
+.LBB3_2:                                # %if.else.i45.4
+                                        #   in Loop: Header=BB3_1 Depth=1
+	incl	increment_me(%rip)
+	incl	increment_me(%rip)
+	incl	increment_me(%rip)
+	incl	increment_me(%rip)
+	incl	increment_me(%rip)
 	addl	$2, increment_me(%rip)
-.LBB3_12:                               # %_Z5otheri.exit
-                                        #   in Loop: Header=BB3_7 Depth=2
-	decl	%ebx
-	jne	.LBB3_7
-# BB#9:                                 # %for.cond.cleanup10
+	addl	$2, increment_me(%rip)
+	addl	$2, increment_me(%rip)
+	addl	$2, increment_me(%rip)
+	addl	$2, increment_me(%rip)
+.LBB3_4:                                # %_Z5otheri.exit.4
                                         #   in Loop: Header=BB3_1 Depth=1
 	callq	clock
 	movq	%rax, %rcx
-	subq	(%rsp), %rcx            # 8-byte Folded Reload
-	testl	%r12d, %r12d
+	subq	%r14, %rcx
+	testl	%r13d, %r13d
 	movl	$0, %eax
 	cmovneq	%rcx, %rax
-	addq	%rax, %r15
+	addq	%rax, %r12
 	movl	$.L.str, %edi
 	xorl	%eax, %eax
 	movq	%rcx, %rsi
 	callq	printf
-	incl	%r12d
-	cmpl	$51, %r12d
+	decl	%r13d
+	cmpl	$-51, %r13d
 	jne	.LBB3_1
-# BB#10:                                # %for.cond.cleanup
+# BB#5:                                 # %for.cond.cleanup
 	movl	$.Lstr, %edi
 	callq	puts
 	movabsq	$-6640827866535438581, %rcx # imm = 0xA3D70A3D70A3D70B
-	movq	%r15, %rax
+	movq	%r12, %rax
 	imulq	%rcx
-	addq	%r15, %rdx
+	addq	%r12, %rdx
 	movq	%rdx, %rax
 	shrq	$63, %rax
 	sarq	$5, %rdx
@@ -210,82 +194,82 @@ main:                                   # @main
 	.size	main, .Lfunc_end3-main
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN15CSSPropertyAPI15parseEv,"axG",@progbits,_ZN15CSSPropertyAPI15parseEv,comdat
-	.weak	_ZN15CSSPropertyAPI15parseEv # -- Begin function _ZN15CSSPropertyAPI15parseEv
+	.section	.text._ZN15CSSPropertyAPI45parseEv,"axG",@progbits,_ZN15CSSPropertyAPI45parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI45parseEv # -- Begin function _ZN15CSSPropertyAPI45parseEv
 	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI15parseEv,@function
-_ZN15CSSPropertyAPI15parseEv:           # @_ZN15CSSPropertyAPI15parseEv
+	.type	_ZN15CSSPropertyAPI45parseEv,@function
+_ZN15CSSPropertyAPI45parseEv:           # @_ZN15CSSPropertyAPI45parseEv
 	.cfi_startproc
 # BB#0:                                 # %entry
-	incl	increment_me(%rip)
+	addl	$4, increment_me(%rip)
 	retq
 .Lfunc_end4:
-	.size	_ZN15CSSPropertyAPI15parseEv, .Lfunc_end4-_ZN15CSSPropertyAPI15parseEv
+	.size	_ZN15CSSPropertyAPI45parseEv, .Lfunc_end4-_ZN15CSSPropertyAPI45parseEv
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN15CSSPropertyAPI15otherEv,"axG",@progbits,_ZN15CSSPropertyAPI15otherEv,comdat
-	.weak	_ZN15CSSPropertyAPI15otherEv # -- Begin function _ZN15CSSPropertyAPI15otherEv
+	.section	.text._ZN15CSSPropertyAPI45otherEv,"axG",@progbits,_ZN15CSSPropertyAPI45otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI45otherEv # -- Begin function _ZN15CSSPropertyAPI45otherEv
 	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI15otherEv,@function
-_ZN15CSSPropertyAPI15otherEv:           # @_ZN15CSSPropertyAPI15otherEv
+	.type	_ZN15CSSPropertyAPI45otherEv,@function
+_ZN15CSSPropertyAPI45otherEv:           # @_ZN15CSSPropertyAPI45otherEv
 	.cfi_startproc
 # BB#0:                                 # %entry
-	addl	$2, increment_me(%rip)
+	addl	$5, increment_me(%rip)
 	retq
 .Lfunc_end5:
-	.size	_ZN15CSSPropertyAPI15otherEv, .Lfunc_end5-_ZN15CSSPropertyAPI15otherEv
+	.size	_ZN15CSSPropertyAPI45otherEv, .Lfunc_end5-_ZN15CSSPropertyAPI45otherEv
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN15CSSPropertyAPI95parseEv,"axG",@progbits,_ZN15CSSPropertyAPI95parseEv,comdat
-	.weak	_ZN15CSSPropertyAPI95parseEv # -- Begin function _ZN15CSSPropertyAPI95parseEv
+	.section	.text._ZN16CSSPropertyAPI105parseEv,"axG",@progbits,_ZN16CSSPropertyAPI105parseEv,comdat
+	.weak	_ZN16CSSPropertyAPI105parseEv # -- Begin function _ZN16CSSPropertyAPI105parseEv
 	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI95parseEv,@function
-_ZN15CSSPropertyAPI95parseEv:           # @_ZN15CSSPropertyAPI95parseEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$9, increment_me(%rip)
-	retq
-.Lfunc_end6:
-	.size	_ZN15CSSPropertyAPI95parseEv, .Lfunc_end6-_ZN15CSSPropertyAPI95parseEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN15CSSPropertyAPI95otherEv,"axG",@progbits,_ZN15CSSPropertyAPI95otherEv,comdat
-	.weak	_ZN15CSSPropertyAPI95otherEv # -- Begin function _ZN15CSSPropertyAPI95otherEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI95otherEv,@function
-_ZN15CSSPropertyAPI95otherEv:           # @_ZN15CSSPropertyAPI95otherEv
+	.type	_ZN16CSSPropertyAPI105parseEv,@function
+_ZN16CSSPropertyAPI105parseEv:          # @_ZN16CSSPropertyAPI105parseEv
 	.cfi_startproc
 # BB#0:                                 # %entry
 	addl	$10, increment_me(%rip)
 	retq
-.Lfunc_end7:
-	.size	_ZN15CSSPropertyAPI95otherEv, .Lfunc_end7-_ZN15CSSPropertyAPI95otherEv
+.Lfunc_end6:
+	.size	_ZN16CSSPropertyAPI105parseEv, .Lfunc_end6-_ZN16CSSPropertyAPI105parseEv
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN15CSSPropertyAPI85parseEv,"axG",@progbits,_ZN15CSSPropertyAPI85parseEv,comdat
-	.weak	_ZN15CSSPropertyAPI85parseEv # -- Begin function _ZN15CSSPropertyAPI85parseEv
+	.section	.text._ZN16CSSPropertyAPI105otherEv,"axG",@progbits,_ZN16CSSPropertyAPI105otherEv,comdat
+	.weak	_ZN16CSSPropertyAPI105otherEv # -- Begin function _ZN16CSSPropertyAPI105otherEv
 	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI85parseEv,@function
-_ZN15CSSPropertyAPI85parseEv:           # @_ZN15CSSPropertyAPI85parseEv
+	.type	_ZN16CSSPropertyAPI105otherEv,@function
+_ZN16CSSPropertyAPI105otherEv:          # @_ZN16CSSPropertyAPI105otherEv
 	.cfi_startproc
 # BB#0:                                 # %entry
-	addl	$8, increment_me(%rip)
+	addl	$11, increment_me(%rip)
+	retq
+.Lfunc_end7:
+	.size	_ZN16CSSPropertyAPI105otherEv, .Lfunc_end7-_ZN16CSSPropertyAPI105otherEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI35parseEv,"axG",@progbits,_ZN15CSSPropertyAPI35parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI35parseEv # -- Begin function _ZN15CSSPropertyAPI35parseEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI35parseEv,@function
+_ZN15CSSPropertyAPI35parseEv:           # @_ZN15CSSPropertyAPI35parseEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$3, increment_me(%rip)
 	retq
 .Lfunc_end8:
-	.size	_ZN15CSSPropertyAPI85parseEv, .Lfunc_end8-_ZN15CSSPropertyAPI85parseEv
+	.size	_ZN15CSSPropertyAPI35parseEv, .Lfunc_end8-_ZN15CSSPropertyAPI35parseEv
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN15CSSPropertyAPI85otherEv,"axG",@progbits,_ZN15CSSPropertyAPI85otherEv,comdat
-	.weak	_ZN15CSSPropertyAPI85otherEv # -- Begin function _ZN15CSSPropertyAPI85otherEv
+	.section	.text._ZN15CSSPropertyAPI35otherEv,"axG",@progbits,_ZN15CSSPropertyAPI35otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI35otherEv # -- Begin function _ZN15CSSPropertyAPI35otherEv
 	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI85otherEv,@function
-_ZN15CSSPropertyAPI85otherEv:           # @_ZN15CSSPropertyAPI85otherEv
+	.type	_ZN15CSSPropertyAPI35otherEv,@function
+_ZN15CSSPropertyAPI35otherEv:           # @_ZN15CSSPropertyAPI35otherEv
 	.cfi_startproc
 # BB#0:                                 # %entry
-	addl	$9, increment_me(%rip)
+	addl	$4, increment_me(%rip)
 	retq
 .Lfunc_end9:
-	.size	_ZN15CSSPropertyAPI85otherEv, .Lfunc_end9-_ZN15CSSPropertyAPI85otherEv
+	.size	_ZN15CSSPropertyAPI35otherEv, .Lfunc_end9-_ZN15CSSPropertyAPI35otherEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN15CSSPropertyAPI75parseEv,"axG",@progbits,_ZN15CSSPropertyAPI75parseEv,comdat
@@ -340,110 +324,6 @@ _ZN15CSSPropertyAPI25otherEv:           # @_ZN15CSSPropertyAPI25otherEv
 	.size	_ZN15CSSPropertyAPI25otherEv, .Lfunc_end13-_ZN15CSSPropertyAPI25otherEv
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN15CSSPropertyAPI35parseEv,"axG",@progbits,_ZN15CSSPropertyAPI35parseEv,comdat
-	.weak	_ZN15CSSPropertyAPI35parseEv # -- Begin function _ZN15CSSPropertyAPI35parseEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI35parseEv,@function
-_ZN15CSSPropertyAPI35parseEv:           # @_ZN15CSSPropertyAPI35parseEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$3, increment_me(%rip)
-	retq
-.Lfunc_end14:
-	.size	_ZN15CSSPropertyAPI35parseEv, .Lfunc_end14-_ZN15CSSPropertyAPI35parseEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN15CSSPropertyAPI35otherEv,"axG",@progbits,_ZN15CSSPropertyAPI35otherEv,comdat
-	.weak	_ZN15CSSPropertyAPI35otherEv # -- Begin function _ZN15CSSPropertyAPI35otherEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI35otherEv,@function
-_ZN15CSSPropertyAPI35otherEv:           # @_ZN15CSSPropertyAPI35otherEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$4, increment_me(%rip)
-	retq
-.Lfunc_end15:
-	.size	_ZN15CSSPropertyAPI35otherEv, .Lfunc_end15-_ZN15CSSPropertyAPI35otherEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN15CSSPropertyAPI65parseEv,"axG",@progbits,_ZN15CSSPropertyAPI65parseEv,comdat
-	.weak	_ZN15CSSPropertyAPI65parseEv # -- Begin function _ZN15CSSPropertyAPI65parseEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI65parseEv,@function
-_ZN15CSSPropertyAPI65parseEv:           # @_ZN15CSSPropertyAPI65parseEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$6, increment_me(%rip)
-	retq
-.Lfunc_end16:
-	.size	_ZN15CSSPropertyAPI65parseEv, .Lfunc_end16-_ZN15CSSPropertyAPI65parseEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN15CSSPropertyAPI65otherEv,"axG",@progbits,_ZN15CSSPropertyAPI65otherEv,comdat
-	.weak	_ZN15CSSPropertyAPI65otherEv # -- Begin function _ZN15CSSPropertyAPI65otherEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI65otherEv,@function
-_ZN15CSSPropertyAPI65otherEv:           # @_ZN15CSSPropertyAPI65otherEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$7, increment_me(%rip)
-	retq
-.Lfunc_end17:
-	.size	_ZN15CSSPropertyAPI65otherEv, .Lfunc_end17-_ZN15CSSPropertyAPI65otherEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN16CSSPropertyAPI105parseEv,"axG",@progbits,_ZN16CSSPropertyAPI105parseEv,comdat
-	.weak	_ZN16CSSPropertyAPI105parseEv # -- Begin function _ZN16CSSPropertyAPI105parseEv
-	.p2align	4, 0x90
-	.type	_ZN16CSSPropertyAPI105parseEv,@function
-_ZN16CSSPropertyAPI105parseEv:          # @_ZN16CSSPropertyAPI105parseEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$10, increment_me(%rip)
-	retq
-.Lfunc_end18:
-	.size	_ZN16CSSPropertyAPI105parseEv, .Lfunc_end18-_ZN16CSSPropertyAPI105parseEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN16CSSPropertyAPI105otherEv,"axG",@progbits,_ZN16CSSPropertyAPI105otherEv,comdat
-	.weak	_ZN16CSSPropertyAPI105otherEv # -- Begin function _ZN16CSSPropertyAPI105otherEv
-	.p2align	4, 0x90
-	.type	_ZN16CSSPropertyAPI105otherEv,@function
-_ZN16CSSPropertyAPI105otherEv:          # @_ZN16CSSPropertyAPI105otherEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$11, increment_me(%rip)
-	retq
-.Lfunc_end19:
-	.size	_ZN16CSSPropertyAPI105otherEv, .Lfunc_end19-_ZN16CSSPropertyAPI105otherEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN15CSSPropertyAPI45parseEv,"axG",@progbits,_ZN15CSSPropertyAPI45parseEv,comdat
-	.weak	_ZN15CSSPropertyAPI45parseEv # -- Begin function _ZN15CSSPropertyAPI45parseEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI45parseEv,@function
-_ZN15CSSPropertyAPI45parseEv:           # @_ZN15CSSPropertyAPI45parseEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$4, increment_me(%rip)
-	retq
-.Lfunc_end20:
-	.size	_ZN15CSSPropertyAPI45parseEv, .Lfunc_end20-_ZN15CSSPropertyAPI45parseEv
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN15CSSPropertyAPI45otherEv,"axG",@progbits,_ZN15CSSPropertyAPI45otherEv,comdat
-	.weak	_ZN15CSSPropertyAPI45otherEv # -- Begin function _ZN15CSSPropertyAPI45otherEv
-	.p2align	4, 0x90
-	.type	_ZN15CSSPropertyAPI45otherEv,@function
-_ZN15CSSPropertyAPI45otherEv:           # @_ZN15CSSPropertyAPI45otherEv
-	.cfi_startproc
-# BB#0:                                 # %entry
-	addl	$5, increment_me(%rip)
-	retq
-.Lfunc_end21:
-	.size	_ZN15CSSPropertyAPI45otherEv, .Lfunc_end21-_ZN15CSSPropertyAPI45otherEv
-	.cfi_endproc
-                                        # -- End function
 	.section	.text._ZN15CSSPropertyAPI55parseEv,"axG",@progbits,_ZN15CSSPropertyAPI55parseEv,comdat
 	.weak	_ZN15CSSPropertyAPI55parseEv # -- Begin function _ZN15CSSPropertyAPI55parseEv
 	.p2align	4, 0x90
@@ -453,8 +333,8 @@ _ZN15CSSPropertyAPI55parseEv:           # @_ZN15CSSPropertyAPI55parseEv
 # BB#0:                                 # %entry
 	addl	$5, increment_me(%rip)
 	retq
-.Lfunc_end22:
-	.size	_ZN15CSSPropertyAPI55parseEv, .Lfunc_end22-_ZN15CSSPropertyAPI55parseEv
+.Lfunc_end14:
+	.size	_ZN15CSSPropertyAPI55parseEv, .Lfunc_end14-_ZN15CSSPropertyAPI55parseEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN15CSSPropertyAPI55otherEv,"axG",@progbits,_ZN15CSSPropertyAPI55otherEv,comdat
@@ -466,8 +346,112 @@ _ZN15CSSPropertyAPI55otherEv:           # @_ZN15CSSPropertyAPI55otherEv
 # BB#0:                                 # %entry
 	addl	$6, increment_me(%rip)
 	retq
+.Lfunc_end15:
+	.size	_ZN15CSSPropertyAPI55otherEv, .Lfunc_end15-_ZN15CSSPropertyAPI55otherEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI95parseEv,"axG",@progbits,_ZN15CSSPropertyAPI95parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI95parseEv # -- Begin function _ZN15CSSPropertyAPI95parseEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI95parseEv,@function
+_ZN15CSSPropertyAPI95parseEv:           # @_ZN15CSSPropertyAPI95parseEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$9, increment_me(%rip)
+	retq
+.Lfunc_end16:
+	.size	_ZN15CSSPropertyAPI95parseEv, .Lfunc_end16-_ZN15CSSPropertyAPI95parseEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI95otherEv,"axG",@progbits,_ZN15CSSPropertyAPI95otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI95otherEv # -- Begin function _ZN15CSSPropertyAPI95otherEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI95otherEv,@function
+_ZN15CSSPropertyAPI95otherEv:           # @_ZN15CSSPropertyAPI95otherEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$10, increment_me(%rip)
+	retq
+.Lfunc_end17:
+	.size	_ZN15CSSPropertyAPI95otherEv, .Lfunc_end17-_ZN15CSSPropertyAPI95otherEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI65parseEv,"axG",@progbits,_ZN15CSSPropertyAPI65parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI65parseEv # -- Begin function _ZN15CSSPropertyAPI65parseEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI65parseEv,@function
+_ZN15CSSPropertyAPI65parseEv:           # @_ZN15CSSPropertyAPI65parseEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$6, increment_me(%rip)
+	retq
+.Lfunc_end18:
+	.size	_ZN15CSSPropertyAPI65parseEv, .Lfunc_end18-_ZN15CSSPropertyAPI65parseEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI65otherEv,"axG",@progbits,_ZN15CSSPropertyAPI65otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI65otherEv # -- Begin function _ZN15CSSPropertyAPI65otherEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI65otherEv,@function
+_ZN15CSSPropertyAPI65otherEv:           # @_ZN15CSSPropertyAPI65otherEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$7, increment_me(%rip)
+	retq
+.Lfunc_end19:
+	.size	_ZN15CSSPropertyAPI65otherEv, .Lfunc_end19-_ZN15CSSPropertyAPI65otherEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI15parseEv,"axG",@progbits,_ZN15CSSPropertyAPI15parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI15parseEv # -- Begin function _ZN15CSSPropertyAPI15parseEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI15parseEv,@function
+_ZN15CSSPropertyAPI15parseEv:           # @_ZN15CSSPropertyAPI15parseEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	incl	increment_me(%rip)
+	retq
+.Lfunc_end20:
+	.size	_ZN15CSSPropertyAPI15parseEv, .Lfunc_end20-_ZN15CSSPropertyAPI15parseEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI15otherEv,"axG",@progbits,_ZN15CSSPropertyAPI15otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI15otherEv # -- Begin function _ZN15CSSPropertyAPI15otherEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI15otherEv,@function
+_ZN15CSSPropertyAPI15otherEv:           # @_ZN15CSSPropertyAPI15otherEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$2, increment_me(%rip)
+	retq
+.Lfunc_end21:
+	.size	_ZN15CSSPropertyAPI15otherEv, .Lfunc_end21-_ZN15CSSPropertyAPI15otherEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI85parseEv,"axG",@progbits,_ZN15CSSPropertyAPI85parseEv,comdat
+	.weak	_ZN15CSSPropertyAPI85parseEv # -- Begin function _ZN15CSSPropertyAPI85parseEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI85parseEv,@function
+_ZN15CSSPropertyAPI85parseEv:           # @_ZN15CSSPropertyAPI85parseEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$8, increment_me(%rip)
+	retq
+.Lfunc_end22:
+	.size	_ZN15CSSPropertyAPI85parseEv, .Lfunc_end22-_ZN15CSSPropertyAPI85parseEv
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN15CSSPropertyAPI85otherEv,"axG",@progbits,_ZN15CSSPropertyAPI85otherEv,comdat
+	.weak	_ZN15CSSPropertyAPI85otherEv # -- Begin function _ZN15CSSPropertyAPI85otherEv
+	.p2align	4, 0x90
+	.type	_ZN15CSSPropertyAPI85otherEv,@function
+_ZN15CSSPropertyAPI85otherEv:           # @_ZN15CSSPropertyAPI85otherEv
+	.cfi_startproc
+# BB#0:                                 # %entry
+	addl	$9, increment_me(%rip)
+	retq
 .Lfunc_end23:
-	.size	_ZN15CSSPropertyAPI55otherEv, .Lfunc_end23-_ZN15CSSPropertyAPI55otherEv
+	.size	_ZN15CSSPropertyAPI85otherEv, .Lfunc_end23-_ZN15CSSPropertyAPI85otherEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text.startup,"ax",@progbits
@@ -506,61 +490,61 @@ increment_me:
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL11descriptors:
-	.quad	_ZN15CSSPropertyAPI15parseEv
-	.quad	_ZN15CSSPropertyAPI15otherEv
+	.zero	16
+	.quad	_ZN15CSSPropertyAPI45parseEv
+	.quad	_ZN15CSSPropertyAPI45otherEv
+	.quad	_ZN16CSSPropertyAPI105parseEv
+	.quad	_ZN16CSSPropertyAPI105otherEv
+	.quad	_ZN15CSSPropertyAPI35parseEv
+	.quad	_ZN15CSSPropertyAPI35otherEv
+	.quad	_ZN15CSSPropertyAPI75parseEv
+	.quad	_ZN15CSSPropertyAPI75otherEv
+	.quad	_ZN15CSSPropertyAPI25parseEv
+	.quad	_ZN15CSSPropertyAPI25otherEv
+	.quad	_ZN15CSSPropertyAPI55parseEv
+	.quad	_ZN15CSSPropertyAPI55otherEv
+	.zero	16
+	.zero	16
 	.quad	_ZN15CSSPropertyAPI95parseEv
 	.quad	_ZN15CSSPropertyAPI95otherEv
+	.quad	_ZN15CSSPropertyAPI65parseEv
+	.quad	_ZN15CSSPropertyAPI65otherEv
+	.zero	16
+	.quad	_ZN15CSSPropertyAPI15parseEv
+	.quad	_ZN15CSSPropertyAPI15otherEv
+	.zero	16
+	.zero	16
+	.zero	16
+	.zero	16
 	.zero	16
 	.zero	16
 	.quad	_ZN15CSSPropertyAPI85parseEv
 	.quad	_ZN15CSSPropertyAPI85otherEv
-	.quad	_ZN15CSSPropertyAPI75parseEv
-	.quad	_ZN15CSSPropertyAPI75otherEv
-	.zero	16
-	.zero	16
-	.zero	16
-	.zero	16
-	.quad	_ZN15CSSPropertyAPI25parseEv
-	.quad	_ZN15CSSPropertyAPI25otherEv
-	.quad	_ZN15CSSPropertyAPI35parseEv
-	.quad	_ZN15CSSPropertyAPI35otherEv
-	.quad	_ZN15CSSPropertyAPI65parseEv
-	.quad	_ZN15CSSPropertyAPI65otherEv
-	.zero	16
-	.zero	16
-	.quad	_ZN16CSSPropertyAPI105parseEv
-	.quad	_ZN16CSSPropertyAPI105otherEv
-	.zero	16
-	.quad	_ZN15CSSPropertyAPI45parseEv
-	.quad	_ZN15CSSPropertyAPI45otherEv
-	.quad	_ZN15CSSPropertyAPI55parseEv
-	.quad	_ZN15CSSPropertyAPI55otherEv
-	.zero	16
 	.size	_ZL11descriptors, 320
 
 	.type	_ZL17descriptorIndices,@object # @_ZL17descriptorIndices
 	.p2align	4
 _ZL17descriptorIndices:
-	.quad	15                      # 0xf
-	.quad	14                      # 0xe
-	.quad	2                       # 0x2
-	.quad	9                       # 0x9
-	.quad	17                      # 0x11
-	.quad	10                      # 0xa
-	.quad	12                      # 0xc
-	.quad	0                       # 0x0
-	.quad	16                      # 0x10
-	.quad	6                       # 0x6
-	.quad	13                      # 0xd
-	.quad	4                       # 0x4
-	.quad	11                      # 0xb
-	.quad	8                       # 0x8
-	.quad	1                       # 0x1
-	.quad	5                       # 0x5
-	.quad	19                      # 0x13
 	.quad	3                       # 0x3
 	.quad	18                      # 0x12
+	.quad	17                      # 0x11
+	.quad	15                      # 0xf
+	.quad	10                      # 0xa
+	.quad	14                      # 0xe
+	.quad	12                      # 0xc
+	.quad	5                       # 0x5
 	.quad	7                       # 0x7
+	.quad	8                       # 0x8
+	.quad	4                       # 0x4
+	.quad	16                      # 0x10
+	.quad	0                       # 0x0
+	.quad	9                       # 0x9
+	.quad	13                      # 0xd
+	.quad	6                       # 0x6
+	.quad	11                      # 0xb
+	.quad	1                       # 0x1
+	.quad	2                       # 0x2
+	.quad	19                      # 0x13
 	.size	_ZL17descriptorIndices, 160
 
 	.type	.L.str,@object          # @.str
@@ -579,5 +563,5 @@ _ZL17descriptorIndices:
 	.size	.Lstr, 11
 
 
-	.ident	"clang version 5.0.0 (trunk 307486)"
+	.ident	"clang version 6.0.0 (trunk 309984)"
 	.section	".note.GNU-stack","",@progbits

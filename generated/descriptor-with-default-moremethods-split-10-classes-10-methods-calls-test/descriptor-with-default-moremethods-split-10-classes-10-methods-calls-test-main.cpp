@@ -16,58 +16,19 @@ int main(int argc, char** argv) {
     int num = rand() % (10);
     t = clock();
     const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(num);
-    for (int i = 0; i < 100; i++) {
-      if (d.method1) {
+    for (int i = 0; i < 1; i++) {
         d.method1();
-      } else {
-        CSSPropertyAPI1::method1();
-      }
-      if (d.method7) {
-        d.method7();
-      } else {
-        CSSPropertyAPI1::method7();
-      }
-      if (d.method10) {
-        d.method10();
-      } else {
-        CSSPropertyAPI1::method10();
-      }
-      if (d.method5) {
-        d.method5();
-      } else {
-        CSSPropertyAPI1::method5();
-      }
-      if (d.method9) {
-        d.method9();
-      } else {
-        CSSPropertyAPI1::method9();
-      }
-      if (d.method8) {
-        d.method8();
-      } else {
-        CSSPropertyAPI1::method8();
-      }
-      if (d.method2) {
-        d.method2();
-      } else {
-        CSSPropertyAPI1::method2();
-      }
-      if (d.method4) {
-        d.method4();
-      } else {
-        CSSPropertyAPI1::method4();
-      }
-      if (d.method3) {
-        d.method3();
-      } else {
-        CSSPropertyAPI1::method3();
-      }
-      if (d.method6) {
         d.method6();
-      } else {
-        CSSPropertyAPI1::method6();
-      }
+        d.method5();
+        d.method3();
+        d.method7();
+        d.method9();
+        d.method4();
+        d.method8();
+        d.method2();
+        d.method10();
     }
+
     clock_t result = clock() - t;
 
     // Ignore the first N runs

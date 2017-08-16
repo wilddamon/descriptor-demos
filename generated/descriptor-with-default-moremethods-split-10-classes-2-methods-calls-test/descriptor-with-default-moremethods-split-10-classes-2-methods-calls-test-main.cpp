@@ -16,18 +16,11 @@ int main(int argc, char** argv) {
     int num = rand() % (10);
     t = clock();
     const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(num);
-    for (int i = 0; i < 500; i++) {
-      if (d.method2) {
+    for (int i = 0; i < 5; i++) {
         d.method2();
-      } else {
-        CSSPropertyAPI1::method2();
-      }
-      if (d.method1) {
         d.method1();
-      } else {
-        CSSPropertyAPI1::method1();
-      }
     }
+
     clock_t result = clock() - t;
 
     // Ignore the first N runs

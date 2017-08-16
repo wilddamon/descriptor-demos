@@ -2,8 +2,8 @@
 
 OLEVEL=2
 NUM_CLASSES=10
-NUM_ITERATIONS=1000000000
-REPEATS=50
+NUM_ITERATIONS=100000000
+REPEATS=10
 NUM_METHODS=50
 
 GENFOLDER="generated"
@@ -25,19 +25,21 @@ tests=(
   sasha-virtual-singleton-array-lookup)
 split_tests=(
   descriptor
-	descriptor-moremethods
+  descriptor-moremethods
   descriptor-with-default
-	descriptor-with-default-moremethods
+  descriptor-with-default-moremethods
   descriptor-with-default-noindices
   virtual
   virtual-moremethods
   table
-	table-moremethods)
+  table-moremethods
+  static-local-moremethods)
 moremethods_tests=(
-	descriptor
-	descriptor-with-default
-	virtual
-	table
+  descriptor
+  descriptor-with-default
+  virtual
+  table
+  static-local
 )
 WHICH="all"
 
@@ -58,11 +60,11 @@ while test $# -gt 0; do
       NUM_ITERATIONS=$1
       shift
       ;;
-		-m)
-			shift
-			NUM_METHODS=$1
-			shift
-			;;
+    -m)
+      shift
+      NUM_METHODS=$1
+      shift
+      ;;
     -o)
       shift
       OLEVEL=$1

@@ -106,12 +106,72 @@ struct CSSPropertyDescriptor {
 
 static constexpr CSSPropertyDescriptor descriptors[] = {
   {
-    CSSPropertyAPI1::parse,
-    CSSPropertyAPI1::other,
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI4::parse,
+    CSSPropertyAPI4::other,
+  },
+  {
+    CSSPropertyAPI10::parse,
+    CSSPropertyAPI10::other,
+  },
+  {
+    CSSPropertyAPI3::parse,
+    CSSPropertyAPI3::other,
+  },
+  {
+    CSSPropertyAPI7::parse,
+    CSSPropertyAPI7::other,
+  },
+  {
+    CSSPropertyAPI2::parse,
+    CSSPropertyAPI2::other,
+  },
+  {
+    CSSPropertyAPI5::parse,
+    CSSPropertyAPI5::other,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
   },
   {
     CSSPropertyAPI9::parse,
     CSSPropertyAPI9::other,
+  },
+  {
+    CSSPropertyAPI6::parse,
+    CSSPropertyAPI6::other,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    CSSPropertyAPI1::parse,
+    CSSPropertyAPI1::other,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
+  },
+  {
+    nullptr,
+    nullptr,
   },
   {
     nullptr,
@@ -125,89 +185,29 @@ static constexpr CSSPropertyDescriptor descriptors[] = {
     CSSPropertyAPI8::parse,
     CSSPropertyAPI8::other,
   },
-  {
-    CSSPropertyAPI7::parse,
-    CSSPropertyAPI7::other,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI2::parse,
-    CSSPropertyAPI2::other,
-  },
-  {
-    CSSPropertyAPI3::parse,
-    CSSPropertyAPI3::other,
-  },
-  {
-    CSSPropertyAPI6::parse,
-    CSSPropertyAPI6::other,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI10::parse,
-    CSSPropertyAPI10::other,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
-  {
-    CSSPropertyAPI4::parse,
-    CSSPropertyAPI4::other,
-  },
-  {
-    CSSPropertyAPI5::parse,
-    CSSPropertyAPI5::other,
-  },
-  {
-    nullptr,
-    nullptr,
-  },
 };
 
 static size_t descriptorIndices[] = {
-  15,
-  14,
-  2,
-  9,
-  17,
-  10,
-  12,
-  0,
-  16,
-  6,
-  13,
-  4,
-  11,
-  8,
-  1,
-  5,
-  19,
   3,
   18,
+  17,
+  15,
+  10,
+  14,
+  12,
+  5,
   7,
+  8,
+  4,
+  16,
+  0,
+  9,
+  13,
+  6,
+  11,
+  1,
+  2,
+  19,
 };
 
 const CSSPropertyDescriptor& CSSPropertyDescriptor::Get(int id) {
@@ -241,10 +241,10 @@ int main(int argc, char** argv) {
   for (int r = 0; r < 50 + 1; r++) {
     int num = rand() % (10);
     t = clock();
-    for (int i = 0; i < 500; i++) {
+    for (int i = 0; i < 5; i++) {
       parse(num);
     }
-    for (int i = 0; i < 500; i++) {
+    for (int i = 0; i < 5; i++) {
       other(num);
     }
     clock_t result = clock() - t;

@@ -1228,17 +1228,27 @@ increment_me:
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL11descriptors:
+	.quad	_ZN15CSSPropertyAPI97method1Ev
+	.quad	_ZN15CSSPropertyAPI97method2Ev
+	.quad	_ZN15CSSPropertyAPI97method3Ev
+	.quad	_ZN15CSSPropertyAPI97method4Ev
+	.quad	_ZN15CSSPropertyAPI97method5Ev
+	.quad	_ZN15CSSPropertyAPI97method6Ev
+	.quad	_ZN15CSSPropertyAPI97method7Ev
+	.quad	_ZN15CSSPropertyAPI97method8Ev
+	.quad	_ZN15CSSPropertyAPI97method9Ev
+	.quad	_ZN15CSSPropertyAPI98method10Ev
+	.quad	_ZN15CSSPropertyAPI57method1Ev
+	.quad	_ZN15CSSPropertyAPI57method2Ev
+	.quad	_ZN15CSSPropertyAPI57method3Ev
+	.quad	_ZN15CSSPropertyAPI57method4Ev
+	.quad	_ZN15CSSPropertyAPI57method5Ev
+	.quad	_ZN15CSSPropertyAPI57method6Ev
+	.quad	_ZN15CSSPropertyAPI57method7Ev
+	.quad	_ZN15CSSPropertyAPI57method8Ev
+	.quad	_ZN15CSSPropertyAPI57method9Ev
+	.quad	_ZN15CSSPropertyAPI58method10Ev
 	.zero	80
-	.quad	_ZN15CSSPropertyAPI87method1Ev
-	.quad	_ZN15CSSPropertyAPI87method2Ev
-	.quad	_ZN15CSSPropertyAPI87method3Ev
-	.quad	_ZN15CSSPropertyAPI87method4Ev
-	.quad	_ZN15CSSPropertyAPI87method5Ev
-	.quad	_ZN15CSSPropertyAPI87method6Ev
-	.quad	_ZN15CSSPropertyAPI87method7Ev
-	.quad	_ZN15CSSPropertyAPI87method8Ev
-	.quad	_ZN15CSSPropertyAPI87method9Ev
-	.quad	_ZN15CSSPropertyAPI88method10Ev
 	.quad	_ZN15CSSPropertyAPI37method1Ev
 	.quad	_ZN15CSSPropertyAPI37method2Ev
 	.quad	_ZN15CSSPropertyAPI37method3Ev
@@ -1249,21 +1259,19 @@ _ZL11descriptors:
 	.quad	_ZN15CSSPropertyAPI37method8Ev
 	.quad	_ZN15CSSPropertyAPI37method9Ev
 	.quad	_ZN15CSSPropertyAPI38method10Ev
+	.quad	_ZN15CSSPropertyAPI17method1Ev
+	.quad	_ZN15CSSPropertyAPI17method2Ev
+	.quad	_ZN15CSSPropertyAPI17method3Ev
+	.quad	_ZN15CSSPropertyAPI17method4Ev
+	.quad	_ZN15CSSPropertyAPI17method5Ev
+	.quad	_ZN15CSSPropertyAPI17method6Ev
+	.quad	_ZN15CSSPropertyAPI17method7Ev
+	.quad	_ZN15CSSPropertyAPI17method8Ev
+	.quad	_ZN15CSSPropertyAPI17method9Ev
+	.quad	_ZN15CSSPropertyAPI18method10Ev
 	.zero	80
 	.zero	80
 	.zero	80
-	.zero	80
-	.zero	80
-	.quad	_ZN15CSSPropertyAPI77method1Ev
-	.quad	_ZN15CSSPropertyAPI77method2Ev
-	.quad	_ZN15CSSPropertyAPI77method3Ev
-	.quad	_ZN15CSSPropertyAPI77method4Ev
-	.quad	_ZN15CSSPropertyAPI77method5Ev
-	.quad	_ZN15CSSPropertyAPI77method6Ev
-	.quad	_ZN15CSSPropertyAPI77method7Ev
-	.quad	_ZN15CSSPropertyAPI77method8Ev
-	.quad	_ZN15CSSPropertyAPI77method9Ev
-	.quad	_ZN15CSSPropertyAPI78method10Ev
 	.quad	_ZN15CSSPropertyAPI67method1Ev
 	.quad	_ZN15CSSPropertyAPI67method2Ev
 	.quad	_ZN15CSSPropertyAPI67method3Ev
@@ -1275,56 +1283,7 @@ _ZL11descriptors:
 	.quad	_ZN15CSSPropertyAPI67method9Ev
 	.quad	_ZN15CSSPropertyAPI68method10Ev
 	.zero	80
-	.quad	_ZN15CSSPropertyAPI57method1Ev
-	.quad	_ZN15CSSPropertyAPI57method2Ev
-	.quad	_ZN15CSSPropertyAPI57method3Ev
-	.quad	_ZN15CSSPropertyAPI57method4Ev
-	.quad	_ZN15CSSPropertyAPI57method5Ev
-	.quad	_ZN15CSSPropertyAPI57method6Ev
-	.quad	_ZN15CSSPropertyAPI57method7Ev
-	.quad	_ZN15CSSPropertyAPI57method8Ev
-	.quad	_ZN15CSSPropertyAPI57method9Ev
-	.quad	_ZN15CSSPropertyAPI58method10Ev
-	.quad	_ZN15CSSPropertyAPI97method1Ev
-	.quad	_ZN15CSSPropertyAPI97method2Ev
-	.quad	_ZN15CSSPropertyAPI97method3Ev
-	.quad	_ZN15CSSPropertyAPI97method4Ev
-	.quad	_ZN15CSSPropertyAPI97method5Ev
-	.quad	_ZN15CSSPropertyAPI97method6Ev
-	.quad	_ZN15CSSPropertyAPI97method7Ev
-	.quad	_ZN15CSSPropertyAPI97method8Ev
-	.quad	_ZN15CSSPropertyAPI97method9Ev
-	.quad	_ZN15CSSPropertyAPI98method10Ev
-	.quad	_ZN15CSSPropertyAPI47method1Ev
-	.quad	_ZN15CSSPropertyAPI47method2Ev
-	.quad	_ZN15CSSPropertyAPI47method3Ev
-	.quad	_ZN15CSSPropertyAPI47method4Ev
-	.quad	_ZN15CSSPropertyAPI47method5Ev
-	.quad	_ZN15CSSPropertyAPI47method6Ev
-	.quad	_ZN15CSSPropertyAPI47method7Ev
-	.quad	_ZN15CSSPropertyAPI47method8Ev
-	.quad	_ZN15CSSPropertyAPI47method9Ev
-	.quad	_ZN15CSSPropertyAPI48method10Ev
-	.quad	_ZN15CSSPropertyAPI17method1Ev
-	.quad	_ZN15CSSPropertyAPI17method2Ev
-	.quad	_ZN15CSSPropertyAPI17method3Ev
-	.quad	_ZN15CSSPropertyAPI17method4Ev
-	.quad	_ZN15CSSPropertyAPI17method5Ev
-	.quad	_ZN15CSSPropertyAPI17method6Ev
-	.quad	_ZN15CSSPropertyAPI17method7Ev
-	.quad	_ZN15CSSPropertyAPI17method8Ev
-	.quad	_ZN15CSSPropertyAPI17method9Ev
-	.quad	_ZN15CSSPropertyAPI18method10Ev
-	.quad	_ZN15CSSPropertyAPI27method1Ev
-	.quad	_ZN15CSSPropertyAPI27method2Ev
-	.quad	_ZN15CSSPropertyAPI27method3Ev
-	.quad	_ZN15CSSPropertyAPI27method4Ev
-	.quad	_ZN15CSSPropertyAPI27method5Ev
-	.quad	_ZN15CSSPropertyAPI27method6Ev
-	.quad	_ZN15CSSPropertyAPI27method7Ev
-	.quad	_ZN15CSSPropertyAPI27method8Ev
-	.quad	_ZN15CSSPropertyAPI27method9Ev
-	.quad	_ZN15CSSPropertyAPI28method10Ev
+	.zero	80
 	.quad	_ZN16CSSPropertyAPI107method1Ev
 	.quad	_ZN16CSSPropertyAPI107method2Ev
 	.quad	_ZN16CSSPropertyAPI107method3Ev
@@ -1335,7 +1294,48 @@ _ZL11descriptors:
 	.quad	_ZN16CSSPropertyAPI107method8Ev
 	.quad	_ZN16CSSPropertyAPI107method9Ev
 	.quad	_ZN16CSSPropertyAPI108method10Ev
+	.quad	_ZN15CSSPropertyAPI87method1Ev
+	.quad	_ZN15CSSPropertyAPI87method2Ev
+	.quad	_ZN15CSSPropertyAPI87method3Ev
+	.quad	_ZN15CSSPropertyAPI87method4Ev
+	.quad	_ZN15CSSPropertyAPI87method5Ev
+	.quad	_ZN15CSSPropertyAPI87method6Ev
+	.quad	_ZN15CSSPropertyAPI87method7Ev
+	.quad	_ZN15CSSPropertyAPI87method8Ev
+	.quad	_ZN15CSSPropertyAPI87method9Ev
+	.quad	_ZN15CSSPropertyAPI88method10Ev
+	.quad	_ZN15CSSPropertyAPI27method1Ev
+	.quad	_ZN15CSSPropertyAPI27method2Ev
+	.quad	_ZN15CSSPropertyAPI27method3Ev
+	.quad	_ZN15CSSPropertyAPI27method4Ev
+	.quad	_ZN15CSSPropertyAPI27method5Ev
+	.quad	_ZN15CSSPropertyAPI27method6Ev
+	.quad	_ZN15CSSPropertyAPI27method7Ev
+	.quad	_ZN15CSSPropertyAPI27method8Ev
+	.quad	_ZN15CSSPropertyAPI27method9Ev
+	.quad	_ZN15CSSPropertyAPI28method10Ev
 	.zero	80
+	.quad	_ZN15CSSPropertyAPI77method1Ev
+	.quad	_ZN15CSSPropertyAPI77method2Ev
+	.quad	_ZN15CSSPropertyAPI77method3Ev
+	.quad	_ZN15CSSPropertyAPI77method4Ev
+	.quad	_ZN15CSSPropertyAPI77method5Ev
+	.quad	_ZN15CSSPropertyAPI77method6Ev
+	.quad	_ZN15CSSPropertyAPI77method7Ev
+	.quad	_ZN15CSSPropertyAPI77method8Ev
+	.quad	_ZN15CSSPropertyAPI77method9Ev
+	.quad	_ZN15CSSPropertyAPI78method10Ev
+	.zero	80
+	.quad	_ZN15CSSPropertyAPI47method1Ev
+	.quad	_ZN15CSSPropertyAPI47method2Ev
+	.quad	_ZN15CSSPropertyAPI47method3Ev
+	.quad	_ZN15CSSPropertyAPI47method4Ev
+	.quad	_ZN15CSSPropertyAPI47method5Ev
+	.quad	_ZN15CSSPropertyAPI47method6Ev
+	.quad	_ZN15CSSPropertyAPI47method7Ev
+	.quad	_ZN15CSSPropertyAPI47method8Ev
+	.quad	_ZN15CSSPropertyAPI47method9Ev
+	.quad	_ZN15CSSPropertyAPI48method10Ev
 	.zero	80
 	.zero	80
 	.size	_ZL11descriptors, 1600
@@ -1343,28 +1343,28 @@ _ZL11descriptors:
 	.type	_ZL17descriptorIndices,@object # @_ZL17descriptorIndices
 	.p2align	4
 _ZL17descriptorIndices:
-	.quad	15                      # 0xf
-	.quad	14                      # 0xe
-	.quad	10                      # 0xa
-	.quad	12                      # 0xc
 	.quad	19                      # 0x13
 	.quad	5                       # 0x5
-	.quad	3                       # 0x3
-	.quad	8                       # 0x8
-	.quad	9                       # 0x9
-	.quad	17                      # 0x11
-	.quad	1                       # 0x1
-	.quad	11                      # 0xb
-	.quad	13                      # 0xd
-	.quad	2                       # 0x2
-	.quad	6                       # 0x6
-	.quad	4                       # 0x4
+	.quad	16                      # 0x10
 	.quad	0                       # 0x0
+	.quad	9                       # 0x9
+	.quad	8                       # 0x8
+	.quad	11                      # 0xb
+	.quad	3                       # 0x3
 	.quad	7                       # 0x7
 	.quad	18                      # 0x12
-	.quad	16                      # 0x10
+	.quad	14                      # 0xe
+	.quad	1                       # 0x1
+	.quad	17                      # 0x11
+	.quad	6                       # 0x6
+	.quad	4                       # 0x4
+	.quad	10                      # 0xa
+	.quad	12                      # 0xc
+	.quad	2                       # 0x2
+	.quad	15                      # 0xf
+	.quad	13                      # 0xd
 	.size	_ZL17descriptorIndices, 160
 
 
-	.ident	"clang version 5.0.0 (trunk 307486)"
+	.ident	"clang version 6.0.0 (trunk 309984)"
 	.section	".note.GNU-stack","",@progbits

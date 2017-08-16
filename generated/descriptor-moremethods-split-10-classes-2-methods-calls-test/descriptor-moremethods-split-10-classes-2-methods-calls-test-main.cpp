@@ -16,16 +16,16 @@ int main(int argc, char** argv) {
     int num = rand() % (10);
     t = clock();
     const CSSPropertyDescriptor& d = CSSPropertyDescriptor::Get(num);
-    for (int i = 0; i < 500; i++) {
-      if (d.method2) {
-        d.method2();
-      } else {
-        CSSPropertyAPI1::method2();
-      }
+    for (int i = 0; i < 5; i++) {
       if (d.method1) {
         d.method1();
       } else {
         CSSPropertyAPI1::method1();
+      }
+      if (d.method2) {
+        d.method2();
+      } else {
+        CSSPropertyAPI1::method2();
       }
     }
     clock_t result = clock() - t;
