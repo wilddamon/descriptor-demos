@@ -2,7 +2,7 @@
 
 OLEVEL=2
 NUM_CLASSES=10
-NUM_ITERATIONS=100000000
+NUM_ITERATIONS=1000000000
 REPEATS=10
 NUM_METHODS=50
 
@@ -33,7 +33,9 @@ split_tests=(
   virtual-moremethods
   table
   table-moremethods
-  static-local-moremethods)
+  static-local-moremethods
+  landed-moremethods
+  hybrid-moremethods)
 moremethods_tests=(
   descriptor
   descriptor-with-default
@@ -139,15 +141,23 @@ function run_split_impl() {
   ./split/$name-split-header-gen.sh $NUM_CLASSES $NUM_METHODS > $genfolder/$headerfile
   ./split/$name-split-cpp-gen.sh $NUM_CLASSES $filename $NUM_METHODS > $genfolder/$cppfile
 
-  $clang $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s
-  $clang $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s
+  assemble_main="$clang $genfolder/$mainfile -std=c++11 -O$OLEVEL -S -o $sfolder/$mainfile.s"
+  assemble_cpp="$clang $genfolder/$cppfile -std=c++11 -O$OLEVEL -S -o $sfolder/$cppfile.s"
+  echo $assemble_main
+  $assemble_main
+  echo $assemble_cpp
+  $assemble_cpp
 
   compile_cmd="$clang \
     $genfolder/$mainfile \
     $genfolder/$cppfile \
     -std=c++11 -O$OLEVEL -o $outfolder/$filename"
   echo $compile_cmd
-  time $compile_cmd && ./$outfolder/$filename
+  time $compile_cmd
+
+  run_cmd="./$outfolder/$filename"
+  echo $run_cmd
+  $run_cmd
 }
 
 ### main below ###

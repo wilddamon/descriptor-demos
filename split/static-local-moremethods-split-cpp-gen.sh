@@ -23,7 +23,7 @@ for ((a=1; a<= NUM_CLASSES; a++)); do
 done
 
 echo "
-  std::vector<const CSSPropertyAPI*> property_apis = {"
+  const CSSPropertyAPI* const property_apis[] = {"
 
 # Shuffle the mapping of Class number -> input value.
 for a in $(seq 1 $((NUM_CLASSES*2)) | shuf)
